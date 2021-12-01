@@ -1,3 +1,26 @@
+@media (max-width: 1200px) {
+  #hero {
+    &.hero-homepage {
+      .container {
+        .row-hero {
+          .content {
+            h1 {
+              font-size: 80px;
+              line-height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+  #join-the-team {
+    .positions {
+      .position {
+        padding: 14px 22px;
+      }
+    }
+  }
+}
 @media (max-width: 1024px) {
   #hero {
     &.hero-homepage {
@@ -7,10 +30,10 @@
             img {
               &.mobile-left {
                 top: -15%;
-                left: -20px;
+                left: -28%;
               }
               &.mobile-right {
-                left: 30%;
+                left: 8%;
               }
             }
           }
@@ -30,39 +53,41 @@
               max-width: 290px;
               &.mobile-left {
                 top: -15%;
-                left: -30px;
+                left: -10%;
               }
               &.mobile-right {
-                left: 26%;
+                left: 30%;
                 top: 30px;
               }
             }
           }
           .content {
             padding-top: 0;
+            h1 {
+              font-size: 56px;
+              line-height: 60px;
+            }
           }
         }
       }
     }
   }
-  #features {
-    padding: 0 0 10px;
-    .row {
-      margin-top: -50px;
-      margin-bottom: 80px;
-      .content {
-        padding: 0;
-      }
-    }
-  }
+  // TEAM PAGE
   #advisors {
     .container {
       .tab-box {
         #menuTabs {
+          justify-content: center;
+          padding-bottom: 20px;
           .nav-item {
             width: 14%;
-            margin: 0 30px 20px;
+            margin: 0 15px 50px;
           }
+        }
+      }
+      .tab-content {
+        .tab-info {
+          padding: 0 30px;
         }
       }
     }
@@ -71,10 +96,20 @@
     .positions {
       .position {
         padding: 14px 24px;
+        h4 {
+          font-size: 19px;
+        }
       }
     }
   }
   #pre-footer {
+    #media,
+    #press {
+      width: 100%;
+      h1 {
+        width: 100%;
+      }
+    }
     #carouselExampleCaptions {
       min-height: 400px;
       .carousel-inner {
@@ -96,25 +131,43 @@
       }
     }
   }
+  #footer {
+    .box-logo {
+      text-align: center;
+    }
+    .provide-by {
+      justify-content: center;
+    }
+    .contact {
+      margin-top: 25px;
+      div:first-child {
+        justify-content: center;
+      }
+      .links {
+        text-align: center;
+      }
+    }
+  }
 }
 @media (max-width: 767px) {
   #hero {
     &.hero-homepage {
       .container {
-        .row-logo {
-          padding-top: 40px;
-        }
         .row-hero {
           text-align: center;
           .content {
-            padding-top: 60px;
+            padding-top: 0;
             padding-bottom: 60px;
             h1 {
               text-align: center;
+              max-width: 400px;
+              margin: 0 auto;
             }
             p {
-              margin: 20px 0;
-              padding: 0 40px;
+              margin: 20px auto 0;
+            }
+            .download {
+              margin-top: 30px;
             }
             form {
               width: 60%;
@@ -123,8 +176,8 @@
             }
           }
           .mobiles {
-            margin-top: 60px;
-            padding-bottom: 60px;
+            margin-top: 150px;
+            padding-bottom: 30px;
             img {
               &.mobile-left {
                 left: 10%;
@@ -134,6 +187,9 @@
                 top: 10px;
               }
             }
+          }
+          .col-lg-5 {
+            order: -1;
           }
         }
       }
@@ -145,35 +201,80 @@
       right: 25px;
     }
   }
+  #approachable {
+    padding: 80px 0;
+    .content {
+      h2,
+      p {
+        text-align: center;
+      }
+      p {
+        max-width: 500px;
+        margin: 20px auto 0;
+      }
+      .button {
+        margin: 30px auto 0;
+      }
+    }
+  }
   #features {
     .row {
       .content {
         text-align: center;
         padding-top: 20px;
-        h2,
+        img {
+          margin-left: 0;
+        }
+        h4,
         p {
           text-align: center !important;
+          padding: 0;
+          margin: 0 auto;
+        }
+        hr {
+          width: 100%;
+        }
+        &.middle {
+          margin: 0 auto;
+          h4,
+          p {
+            text-align: center !important;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 550px;
+          }
         }
       }
       .col-mobile {
+        text-align: center !important;
         .mobile-desktop {
-          display: none;
-        }
-        .mobile {
-          display: block;
-          max-width: 300px;
-          margin: 0 auto;
+          max-width: 200px;
         }
       }
     }
-    .row:nth-child(2) {
-      .col-12:nth-child(2) {
+    .row#feature-2 {
+      .col-md-4 {
         order: -1;
       }
     }
   }
   .social-box {
     justify-content: center;
+  }
+  #transparency {
+    padding: 80px 0;
+    .content {
+      h1 {
+        text-align: center;
+      }
+      p {
+        margin: 0 auto;
+        text-align: center;
+      }
+      .button {
+        margin: 20px auto 0;
+      }
+    }
   }
   #team {
     .container {
@@ -234,33 +335,13 @@
     }
   }
   #approachable {
-    padding: 100px 0 180px;
+    background-position: right;
     .sport-left,
     .sport-right,
     .sport-top,
     .sport-bottom {
       display: none;
     }
-    // .sport-top {
-    //   height: auto;
-    //   padding: 0px;
-    //   max-width: 400px;
-    //   position: absolute;
-    //   left: 0;
-    //   top: -14%;
-    //   display: block;
-    //   margin: 0 auto;
-    // }
-    // .sport-bottom {
-    //   height: auto;
-    //   padding: 0px;
-    //   max-width: 480px;
-    //   position: absolute;
-    //   right: 0;
-    //   bottom: -14%;
-    //   display: block;
-    //   margin: 0 auto;
-    // }
   }
   #transparency {
     .circle-bg {
@@ -270,8 +351,7 @@
   }
   #features {
     .row {
-      margin-top: -100px;
-      margin-bottom: 120px;
+      margin-bottom: 40px;
     }
   }
   #team {
@@ -297,13 +377,34 @@
       }
     }
   }
+  // TEAM PAGE
   #advisors {
     .container {
       .tab-box {
         #menuTabs {
+          background-image: none;
           .nav-item {
-            width: 18%;
-            margin: 0 10px 20px;
+            width: 25%;
+            margin: 0 10px 15px;
+            .nav-link {
+              &.active {
+                img {
+                  transform: scale(1);
+                }
+                &:after {
+                  transform: scale(0.9);
+                }
+              }
+            }
+          }
+        }
+      }
+      .tab-content {
+        .tab-info {
+          margin-top: 0;
+          .name,
+          .description {
+            text-align: center;
           }
         }
       }
@@ -352,6 +453,8 @@
   }
   #footer {
     .contact {
+      border-top: 1px solid #2d3c5b;
+      padding-top: 40px;
       div:first-child {
         justify-content: center;
         h3 {
@@ -359,22 +462,46 @@
         }
       }
       .links {
+        display: none;
         a {
-          margin: 10px 0;
-          display: block;
+          margin: 15px 0;
           text-align: center;
         }
-        span {
-          display: none;
-        }
       }
+    }
+    .links-mobile {
+      text-align: center;
+      max-width: 260px;
+      margin: 0 auto 35px;
+      a {
+        color: $orange;
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  // ABOUT PAGE
+  #hero {
+    &.hero-about {
+      padding: 140px 0 100px;
+    }
+  }
+
+  // TEAM PAGE
+  #hero {
+    &.hero-team {
+      padding: 140px 0 100px;
     }
   }
 }
 @media (max-width: 425px) {
   #hero {
     &.hero-homepage {
+      min-height: auto;
       .container {
+        min-height: auto;
         .row-logo {
           img {
             max-width: 150px;
@@ -382,7 +509,12 @@
         }
         .row-hero {
           .content {
-            padding-top: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            h1 {
+              font-size: 44px;
+              line-height: 45px;
+            }
             p {
               padding: 0;
             }
@@ -417,13 +549,6 @@
       h2 {
         padding: 0 30px;
       }
-      .tab-box {
-        #menuTabs {
-          .nav-item {
-            width: 25%;
-          }
-        }
-      }
     }
   }
   #join-the-team {
@@ -437,14 +562,16 @@
     }
   }
   #pre-footer {
-    padding: 60px 0 20px;
     .video-cover {
       iframe {
         height: 208px;
       }
     }
     .description-video {
-      padding: 40px 8px 10px;
+      p {
+        font-size: 13px;
+        line-height: 17px;
+      }
     }
     #carouselExampleCaptions {
       min-height: 380px;
@@ -465,21 +592,10 @@
         }
       }
     }
-    .contact {
-      .contact-us {
-        font-size: 21px;
-      }
-      .box-logo {
-        margin-top: 50px;
-        text-align: center;
-        img {
-          max-width: 50px;
-        }
-      }
-    }
+
     .provide-by {
       img {
-        margin-top: 15px;
+        margin: 0;
       }
     }
   }
