@@ -947,6 +947,7 @@ p {
     min-height: 320px;
     .carousel-inner {
       .carousel-item {
+        opacity: 0;
         .content {
           padding: 0 12px;
           .box-image {
@@ -983,6 +984,18 @@ p {
             font-size: 18px;
             color: $orange;
             text-decoration: underline;
+          }
+        }
+        &.active {
+          opacity: 1;
+          animation: showItem 0.5s ease-in-out;
+        }
+        @keyframes showItem {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
           }
         }
       }
@@ -1559,7 +1572,7 @@ p {
               margin: 15px 0;
               width: 100%;
               height: 2px;
-              background-color: $light-blue;
+              background-color: $orange;
             }
             @media (max-width: 575px) {
               font-size: 19px;
