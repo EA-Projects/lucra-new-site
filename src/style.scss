@@ -466,23 +466,25 @@ p {
           position: relative;
           z-index: 1;
           img {
-            max-width: 420px;
             &.mobile-left {
+              max-width: 273px;
               position: absolute;
-              z-index: 1;
-              top: -6%;
-              left: -15%;
+              top: 0%;
+              left: -12%;
               transform: translate(-20px, -250px) scale(1.1);
               opacity: 0;
               transition: all 1s ease;
             }
             &.mobile-right {
+              max-width: 352px;
               position: relative;
-              top: 75px;
-              left: 35%;
+              top: -15%;
+              left: 22%;
               transform: translate(150px, -250px);
               opacity: 0;
               transition: all 1s ease;
+              z-index: 1;
+              margin-top: -50px;
             }
           }
         }
