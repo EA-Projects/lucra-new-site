@@ -265,12 +265,13 @@ p {
   width: 100%;
   top: 0;
   padding: 20px 0;
+  z-index: 99999;
   .container {
     padding: 0;
     .navbar-toggler {
       border: 0;
       span {
-        filter: invert(1);
+        background-image: url(../images/menu-icon.svg);
       }
       &:focus,
       &:focus-visible,
@@ -1449,7 +1450,7 @@ p {
     background-image: linear-gradient(
       180deg,
       #000d3a 10%,
-      rgba(255, 255, 255, 0) 50%
+      rgba(4, 11, 35, 0) 50%
     );
     z-index: 0;
   }

@@ -293,6 +293,7 @@
 @media (max-width: 575px) {
   #hero {
     &.hero-homepage {
+      background-image: url(../images/homepage/hero-mobile-bg.png);
       min-height: 100vh;
       height: auto;
       .container {
@@ -485,6 +486,7 @@
   // ABOUT PAGE
   #hero {
     &.hero-about {
+      background-image: url(../images/about/hero-about-mobile-bg.jpg);
       padding: 140px 0 100px;
     }
   }
@@ -492,6 +494,7 @@
   // TEAM PAGE
   #hero {
     &.hero-team {
+      background-image: url(../images/team/hero-team-mobile-bg.jpg);
       padding: 140px 0 100px;
     }
   }
@@ -512,7 +515,7 @@
             padding-top: 20px;
             padding-bottom: 20px;
             h1 {
-              font-size: 44px;
+              font-size: 47px;
               line-height: 45px;
             }
             p {
@@ -594,6 +597,7 @@
     }
 
     .provide-by {
+      flex-direction: column;
       img {
         margin: 0;
       }
