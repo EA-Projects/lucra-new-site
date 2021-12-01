@@ -281,9 +281,11 @@ p {
       }
     }
     .navbar-brand {
+      line-height: 0;
       img {
         @media (max-width: 575px) {
           max-width: 100px;
+          margin-left: 10px;
         }
       }
     }
