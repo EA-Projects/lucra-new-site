@@ -179,16 +179,16 @@ h2 {
 }
 
 h3 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 400;
-  line-height: 54px;
+  line-height: 40px;
   @media (max-width: 991px) {
     font-size: 32px;
-    line-height: 48px;
+    line-height: 38px;
   }
   @media (max-width: 767px) {
     font-size: 26px;
-    line-height: 34px;
+    line-height: 32px;
   }
   @media (max-width: 575px) {
     font-size: 22px;
@@ -207,10 +207,8 @@ h4 {
 }
 
 h5 {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 30px;
-  font-family: 'Arbeit';
+  font-size: 18px;
+  line-height: 32px;
 }
 
 h6 {
@@ -1700,6 +1698,189 @@ p {
   }
 }
 
+// NEWSLETTER PAGE
+#hero {
+  &.hero-newsletter {
+    background-image: url(../images/newsletter/newsletter-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 180px 0 110px;
+    background-color: #020c1e;
+  }
+}
+#whats-new {
+  background-color: $orange;
+  background-image: url(../images/newsletter/new-on-lucra-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  .content {
+    .top {
+      margin-bottom: 50px;
+      h1 {
+        text-align: left;
+        color: $dark;
+      }
+      span {
+        color: #fff;
+      }
+    }
+    .description {
+      margin-bottom: 40px;
+      p {
+        color: $dark;
+        font-weight: 400;
+        span {
+          color: $blue;
+        }
+      }
+    }
+    a {
+      margin-left: 0;
+      text-transform: none;
+    }
+  }
+}
+#featured-matchups {
+  background-color: #fff;
+  background-image: url(../images/homepage/features-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  .top-section {
+    h1 {
+      color: $dark;
+      text-align: left;
+      margin-bottom: 50px;
+    }
+    h3 {
+      color: $orange;
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+  .profile {
+    margin-top: 60px;
+    .photo {
+      text-align: center;
+      img {
+        max-width: 393px;
+        margin: 0 auto;
+        filter: drop-shadow(0px 9px 30px rgba(47, 129, 222, 0.4));
+      }
+    }
+    .name {
+      color: $dark;
+      margin: 30px 0;
+    }
+    .description {
+      text-align: center;
+      span {
+        font-size: 18px;
+        line-height: 30px;
+        font-family: 'Open Sans', sans-serif;
+        color: $dark;
+      }
+      p {
+        margin: 0;
+        color: $gray;
+      }
+    }
+  }
+  .resume {
+    margin-top: 120px;
+    h5 {
+      color: $dark;
+      text-align: left;
+      margin-bottom: 0;
+      span {
+        color: $orange;
+      }
+    }
+  }
+  .button {
+    margin: 70px 0 0 0;
+    text-transform: none;
+  }
+  .second-match {
+    margin-top: 100px;
+  }
+}
+
+#whos-hot {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    #042156;
+  padding: 130px 0 120px;
+  .top-section {
+    h1 {
+      text-align: left;
+    }
+  }
+  .row-profile {
+    margin-top: 60px;
+    justify-content: center;
+  }
+  .profile {
+    .photo {
+      text-align: center;
+      img {
+        max-width: 217px;
+      }
+    }
+    .name {
+      margin-top: 16px;
+      text-align: center;
+      p {
+        font-family: 'Bauziet';
+        font-size: 24px;
+        line-height: 30px;
+        color: #fff;
+        font-weight: 400;
+        margin: 0;
+      }
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .description {
+    .stats {
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ffffff20;
+      p {
+        color: $orange;
+        font-weight: 300;
+        margin: 0;
+        font-size: 23px;
+        line-height: 30px;
+        strong {
+          font-family: 'Bauziet';
+        }
+        span {
+          font-size: 17px;
+        }
+      }
+      &.blue {
+        p {
+          color: $light-blue;
+        }
+      }
+    }
+    .bio {
+      padding-top: 15px;
+      p {
+        color: #828995;
+      }
+    }
+  }
+}
 /****************** ANIMATIONS ******************/
 
 @import './animations.scss';
