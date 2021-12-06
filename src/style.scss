@@ -151,8 +151,8 @@ h1 {
     line-height: 50px;
   }
   @media (max-width: 767px) {
-    font-size: 38px;
-    line-height: 46px;
+    font-size: 34px;
+    line-height: 40px;
   }
   @media (max-width: 575px) {
     font-size: 35px;
@@ -187,7 +187,7 @@ h3 {
     line-height: 38px;
   }
   @media (max-width: 767px) {
-    font-size: 26px;
+    font-size: 25px;
     line-height: 32px;
   }
   @media (max-width: 575px) {
@@ -209,6 +209,14 @@ h4 {
 h5 {
   font-size: 18px;
   line-height: 32px;
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  @media (max-width: 575px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 h6 {
