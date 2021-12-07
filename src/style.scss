@@ -621,7 +621,7 @@ p {
     }
     .button {
       margin-left: 0;
-      margin-top: 35px;
+      margin-top: 45px;
     }
   }
 }
@@ -1740,9 +1740,6 @@ p {
       p {
         color: $dark;
         font-weight: 400;
-        span {
-          color: $blue;
-        }
       }
     }
     a {
@@ -1762,7 +1759,7 @@ p {
     h1 {
       color: $dark;
       text-align: left;
-      margin-bottom: 50px;
+      margin-bottom: 80px;
     }
     h3 {
       color: $orange;
@@ -1799,22 +1796,37 @@ p {
     }
   }
   .resume {
-    margin-top: 120px;
+    margin-top: 50px;
     h5 {
       color: $dark;
       text-align: left;
       margin-bottom: 0;
-      span {
-        color: $orange;
-      }
+    }
+  }
+  .our-pick {
+    padding: 10px 0 10px 30px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 54, 114, 0.1) -5.81%,
+      rgba(0, 54, 114, 0) 53.98%
+    );
+    margin-top: 50px;
+    h4 {
+      text-align: left;
+      text-transform: uppercase;
+      color: $orange;
+      font-size: 21px;
+      line-height: 32px;
+      letter-spacing: 0.05em;
+      margin-bottom: 0;
     }
   }
   .button {
-    margin: 70px 0 0 0;
+    margin: 30px 0 0 0;
     text-transform: none;
   }
   .second-match {
-    margin-top: 100px;
+    margin-top: 150px;
   }
 }
 
