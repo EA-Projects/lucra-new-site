@@ -372,10 +372,12 @@ p {
             text-align: left;
           }
           p {
+            font-family: 'Arbeit';
             color: $light;
             margin-top: 50px;
             max-width: 320px;
             font-weight: 200;
+            font-size: 19px;
             strong {
               color: $light-blue;
             }
