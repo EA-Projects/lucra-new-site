@@ -1537,7 +1537,7 @@ p {
     position: relative;
     z-index: 1;
     .position {
-      padding: 14px 40px;
+      padding: 14px 34px;
       background: linear-gradient(
         153.51deg,
         rgba(15, 27, 71, 0.45) 5%,
@@ -1550,7 +1550,7 @@ p {
       margin: 20px 0;
       transition: all 0.3s ease-in;
       .icon {
-        margin-right: 20px;
+        margin-right: 15px;
         img {
           max-width: 23px;
         }
@@ -1561,6 +1561,7 @@ p {
         letter-spacing: 0.01rem;
         margin: 0;
         line-height: 56px;
+        font-size: 22px;
       }
     }
     a {

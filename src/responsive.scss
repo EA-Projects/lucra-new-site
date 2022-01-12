@@ -583,6 +583,18 @@
       }
     }
   }
+  #join-the-team {
+    .positions {
+      .position {
+        padding: 14px 15px;
+        h4 {
+          font-size: 16px;
+          line-height: 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 425px) {
   #hero {
@@ -656,9 +668,10 @@
   #join-the-team {
     .positions {
       .position {
-        padding: 14px 20px;
+        padding: 14px 15px;
         h4 {
-          font-size: 20px;
+          font-size: 14px;
+          line-height: 18px;
         }
       }
     }
@@ -735,7 +748,7 @@
       .position {
         padding: 10px 14px;
         h4 {
-          font-size: 17px;
+          font-size: 13px;
         }
       }
     }
