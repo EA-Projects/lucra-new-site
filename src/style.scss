@@ -390,6 +390,22 @@ p {
               color: $light-blue;
             }
           }
+
+          .hiring-cta {
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            padding-bottom: 2px;
+            margin-left: 20px;
+            font-weight: 200;
+            font-family: 'Arbeit';
+            font-size: 19px;
+
+            &:hover {
+              color: $orange;
+              border-color: $orange;
+            }
+          }
+
           .row-logo {
             img {
               max-width: 220px;
