@@ -324,7 +324,7 @@ p {
             margin-left: 10px;
             img {
               max-width: 20px;
-              &.twitter {
+              &.swag-store {
                 margin-right: 0;
               }
             }
@@ -393,12 +393,15 @@ p {
 
           .hiring-cta {
             color: #fff;
-            border-bottom: 1px solid #fff;
-            padding-bottom: 2px;
+            border: 2px solid #fff;
             margin-left: 20px;
             font-weight: 200;
             font-family: 'Arbeit';
             font-size: 19px;
+            border-radius: 6px;
+            padding: 19px 25px 20px;
+            position: relative;
+            top: 2px;
 
             &:hover {
               color: $orange;
