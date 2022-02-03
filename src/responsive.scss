@@ -189,7 +189,7 @@
             }
           }
           .mobiles {
-            margin-top: 150px;
+            margin-top: 135px;
             padding-bottom: 60px;
             img {
               &.mobile-left {
@@ -388,7 +388,7 @@
             }
           }
           .mobiles {
-            padding-top: 120px;
+            padding-top: 0px;
             padding-bottom: 0;
             img {
               &.mobile-left {
@@ -626,13 +626,13 @@
             img {
               &.mobile-left {
                 left: 7%;
-                max-width: 170px;
-                top: 5%;
+                max-width: 140px;
+                top: -40px;
               }
               &.mobile-right {
                 left: 15%;
-                top: -120px;
-                max-width: 240px;
+                top: -20px;
+                max-width: 200px;
               }
             }
           }
@@ -729,10 +729,10 @@
           .mobiles {
             img {
               &.mobile-left {
-                left: 0%;
+                left: 8%;
               }
               &.mobile-right {
-                left: 13%;
+                left: 15%;
               }
             }
           }
