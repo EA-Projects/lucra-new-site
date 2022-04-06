@@ -1072,11 +1072,12 @@ p {
   .contact {
     margin-top: 15px;
     div:first-child {
-
     }
     .contact-us {
+      font-family: 'Open Sans', sans-serif;
       color: #ffffff;
       font-size: 15px;
+      font-weight: 100;
       margin-right: 20px;
       margin-bottom: 0;
       opacity: 60%;
@@ -1122,7 +1123,7 @@ p {
     }
     a:first-child {
       img {
-      margin-right: 20px;
+        margin-right: 20px;
       }
     }
   }
