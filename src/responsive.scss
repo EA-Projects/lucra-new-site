@@ -150,6 +150,7 @@
     }
     .provide-by {
       justify-content: center;
+      text-align: center;
     }
     .contact {
       margin-top: 25px;
@@ -531,12 +532,12 @@
           width: 100%;
         }
       }
-      .links {
-        display: none;
-        a {
-          margin: 15px 0;
-          text-align: center;
-        }
+    }
+    .links {
+      text-align: center;
+      a {
+        margin: 15px 0;
+        text-align: center;
       }
     }
     .links-mobile {

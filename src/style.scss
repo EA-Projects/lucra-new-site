@@ -1070,8 +1070,9 @@ p {
   padding: 50px 0 70px;
   position: relative;
   .contact {
+    margin-top: 15px;
     div:first-child {
-      justify-content: flex-end;
+
     }
     .contact-us {
       color: #ffffff;
@@ -1080,47 +1081,51 @@ p {
       margin-bottom: 0;
       opacity: 60%;
     }
-    .links {
-      margin-top: 12px;
-      text-align: right;
-      a {
-        font-size: 13px;
-        line-height: 20px;
-        font-family: 'Bauziet';
-        margin: 0 10px;
-        color: $orange;
-        text-decoration: underline;
-        &:hover {
-          color: $orange;
-        }
-      }
-      span {
-        color: $gray;
-      }
-      &.links-mobile {
-        display: none;
-      }
-    }
   }
   .box-logo {
     img {
       max-width: 160px;
     }
   }
-  .provide-by {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
+  .links {
     margin-top: 12px;
+    text-align: right;
+    a {
+      font-size: 13px;
+      line-height: 20px;
+      font-family: 'Bauziet';
+      color: $orange;
+      text-decoration: underline;
+      &:hover {
+        color: $orange;
+      }
+    }
+    span {
+      color: $gray;
+      margin: 0 10px;
+    }
+    &.links-mobile {
+      display: none;
+    }
+  }
+  .provide-by {
+    margin-top: 20px;
     color: $light;
     font-family: 'Open Sans', sans-serif;
     font-weight: 200;
     color: #ffffff60;
+    font-size: 13px;
+    text-align: end;
+    max-width: 200px;
+    margin: 20px auto;
     img {
-      max-width: 130px;
+      max-width: 90px;
       margin-left: 6px;
-      margin-top: 1px;
+    }
+    a:first-child {
+      img {
+      margin-right: 20px;
+      }
     }
   }
   .gradient {
