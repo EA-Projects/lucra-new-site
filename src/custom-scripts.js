@@ -135,6 +135,17 @@ var videos = [
   `<iframe
       id="video-0"
       class="video-iframe"
+      src="//content.jwplatform.com/players/ZppCgNir-YrbGYzGZ.html"
+      width="100%"
+      height="300"
+      allowscriptaccess="always"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>`,
+  `<iframe
+      id="video-1"
+      class="video-iframe"
       src="https://www.bloomberg.com/multimedia/api/embed/iframe?id=b2d1e5d1-4198-41d4-a6bf-03d3d7f3d86d"
       width="100%"
       height="300"
@@ -145,7 +156,7 @@ var videos = [
     ></iframe>`,
 
   `<iframe
-      id="video-1"
+      id="video-2"
       class="video-iframe"
       width="100%"
       height="300"
