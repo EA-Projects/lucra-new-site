@@ -140,7 +140,7 @@ var videos = [
       height="300"
       allowscriptaccess="always"
       frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>`,
   `<iframe
