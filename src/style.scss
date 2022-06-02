@@ -1396,7 +1396,7 @@ p {
 // Our team
 #team {
   padding: 120px 0 50px;
-  background-image: url(../images/team/team-bg.png);
+  background-image: url(../images/team/team-and-values-bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1426,6 +1426,35 @@ p {
           font-family: 'Bauziet';
           font-weight: 400;
         }
+      }
+    }
+  }
+  .mission-vision-values {
+    padding-top: 80px;
+    h2 {
+      text-align: center;
+      color: $blue;
+      margin-bottom: 70px;
+    }
+    .box-mission {
+      max-width: 370px;
+      margin: 0 auto 90px;
+      .top-content {
+        padding-bottom: 15px;
+        margin-bottom: 22px;
+        border-bottom: 2px solid #666e7b20;
+        img {
+          max-width: 42px;
+          margin-bottom: 20px;
+        }
+        h5 {
+          color: $blue;
+          text-align: left;
+        }
+      }
+      p {
+        color: $gray;
+        margin-bottom: 10px;
       }
     }
   }
