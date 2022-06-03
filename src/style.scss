@@ -368,6 +368,13 @@ p {
       flex-wrap: wrap;
       .row-hero {
         align-items: center;
+        width: 100%;
+        margin-left: -50px;
+        margin-right: -20px;
+        @media (max-width: 767px) {
+          margin-left: auto;
+          margin-right: auto;
+        }
         .content {
           padding-top: 20px;
           transform: translateX(-200px);
@@ -395,11 +402,10 @@ p {
             color: #fff;
             border-bottom: 1px solid #fff;
             padding-bottom: 2px;
-            margin-left: 20px;
+            margin: auto 16px;
             font-weight: 200;
             font-family: 'Arbeit';
             font-size: 19px;
-
             &:hover {
               color: $orange;
               border-color: $orange;
@@ -422,6 +428,13 @@ p {
           }
           .download {
             margin: 50px 0 30px;
+            @media (max-width: 991px) {
+              display: flex;
+              justify-content: space-between;
+            }
+            @media (max-width: 767px) {
+              display: block;
+            }
             a {
               img {
                 transition: all 0.3s ease-in;
@@ -891,7 +904,7 @@ p {
     flex-wrap: wrap;
     h2 {
       font-weight: 400;
-      margin-bottom: 60px;
+      margin-bottom: -40px;
       align-self: flex-start;
     }
   }
@@ -993,16 +1006,16 @@ p {
             margin-bottom: 40px;
             img {
               &.bloomberg {
-                width: 171px;
+                width: 270px;
               }
               &.sportico {
-                width: 160px;
-              }
-              &.bw {
                 width: 220px;
               }
+              &.bw {
+                width: 290px;
+              }
               &.yahoo {
-                width: 160px;
+                width: 190px;
               }
               &.pymnts {
                 width: 190px;
