@@ -361,7 +361,7 @@
 @media (max-width: 575px) {
   #hero {
     &.hero-homepage {
-      background-image: url(../images/homepage/hero-mobile-bg.png);
+      background-image: url(../images/homepage/hero-mobile.jpg);
       min-height: 100vh;
       height: auto;
       .container {
@@ -383,9 +383,13 @@
             //   }
             // }
             .download {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
               a {
                 img {
                   max-width: 160px;
+                  margin-bottom: 15px;
                 }
               }
             }
@@ -396,10 +400,11 @@
             img {
               &.mobile-left {
                 left: 5%;
+                top: -70px;
               }
               &.mobile-right {
                 left: 20%;
-                top: -155px;
+                top: -50px;
               }
             }
           }
@@ -415,6 +420,11 @@
     .sport-bottom {
       display: none;
     }
+    .content {
+      h3 {
+        text-align: center;
+      }
+    }
   }
   #transparency {
     .circle-bg {
@@ -425,6 +435,32 @@
   #features {
     .row {
       margin-bottom: 40px;
+      .content {
+        h5 {
+          max-width: 100%;
+          text-align: center;
+          padding: 0;
+          &.small-title {
+            max-width: 100%;
+            text-align: center;
+            padding: 0;
+          }
+        }
+        &.middle {
+          h5 {
+            max-width: 100%;
+            text-align: center;
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  #transparency {
+    .content {
+      h2 {
+        text-align: center;
+      }
     }
   }
   #team {
