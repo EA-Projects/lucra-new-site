@@ -1471,6 +1471,19 @@ p {
         color: $gray;
         margin-bottom: 10px;
       }
+      ul {
+        li {
+          color: $gray;
+          font-size: 18px;
+          line-height: 30px;
+          font-weight: 200;
+          font-family: 'Open Sans', sans-serif;
+          @media (max-width: 575px) {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+      }
     }
   }
 }
