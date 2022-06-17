@@ -1800,13 +1800,18 @@ p {
         letter-spacing: 0.13em;
       }
       h3 {
-        margin: 20px 0 25px;
+        margin: 20px 0 10px;
       }
       p {
         color: #949db7;
         font-weight: 200;
         max-width: 850px;
         margin: 0 auto;
+        &.disclaimer {
+          color: $orange;
+          font-size: 15px;
+          font-style: italic;
+        }
       }
     }
     #job-description {
