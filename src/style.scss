@@ -230,7 +230,7 @@ p {
   font-size: 18px;
   line-height: 30px;
   font-weight: 200;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   @media (max-width: 991px) {
     font-size: 18px;
     line-height: 30px;
@@ -267,13 +267,15 @@ p {
 /****************** CONTENTS ******************/
 //Header
 #header-nav {
-  position: absolute;
+  // position: absolute;
   width: 100%;
   top: 0;
   padding: 20px 0;
   z-index: 99999;
-  .container {
-    padding: 0;
+  background-color: #fff;
+  .container-nav {
+    padding-right: 20px;
+    padding-left: 20px;
     .navbar-toggler {
       border: 0;
       span {
@@ -292,6 +294,7 @@ p {
     .navbar-brand {
       line-height: 0;
       img {
+        max-width: 200px;
         @media (max-width: 575px) {
           max-width: 100px;
           margin-left: 10px;
@@ -303,9 +306,12 @@ p {
         .nav-item {
           margin: 0 25px;
           .nav-link {
-            color: #fff;
-            font-size: 16px;
-            line-height: 21px;
+            color: #000;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             &:hover {
               color: $orange;
             }
@@ -355,7 +361,7 @@ p {
 // Hero
 #hero {
   &.hero-homepage {
-    background-image: url(../images/homepage/hero-bg.jpg);
+    background-image: url(../images/homepage/homepage-hero-image.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -609,58 +615,33 @@ p {
   }
 }
 
-// Lucra is the approachable sports gaming platform
-#approachable {
-  margin-top: -6px;
-  padding: 140px 0;
+// MEET THE TEAM
+#meet-the-team {
+  margin-top: -5px;
+  padding: 150px 0;
   position: relative;
   background-color: #f16348;
   overflow: hidden;
-  background-image: url(../images/homepage/lucra-is-changing.jpg);
+  background-image: url(../images/homepage/meet-the-team.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  .sport-mobile {
-    display: none;
-  }
-  .sport-left {
-    height: auto;
-    padding: 0px;
-    max-width: 275px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: scale(1.5) rotate(-30deg) translateX(-200px);
-    opacity: 0;
-    transition: all 1s ease;
-  }
-  .sport-right {
-    height: auto;
-    padding: 0px;
-    max-width: 220px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform: scale(1.5) rotate(30deg) translateX(200px);
-    opacity: 0;
-    transition: all 1s ease;
-  }
+  min-height: 600px;
+  display: flex;
+  align-items: center;
   .content {
     h3 {
-      text-align: left;
-      span {
-        color: $dark;
-      }
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 70px;
+      line-height: 78px;
     }
     p {
-      text-align: left;
-      color: $light;
-      max-width: 450px;
-      margin: 25px 0 0;
-    }
-    .button {
-      margin-left: 0;
-      margin-top: 45px;
+      text-align: center;
+      color: #fff;
+      margin: 15px 0 0;
     }
   }
 }
