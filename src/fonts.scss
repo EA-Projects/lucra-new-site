@@ -45,6 +45,17 @@
 
 @font-face {
   font-family: 'Roboto';
+  font-weight: 200;
+  src: url('../dist/fonts/Roboto-Light-webfont.eot') format('embedded-opentype'); /* IE9 + later */
+  src: url('../dist/fonts/Roboto-Light-webfont.eot?#iefix')
+      format('embedded-opentype'),
+    url('../dist/fonts/Roboto-Light-webfont.woff') format('woff'),
+    url('../dist/fonts/Roboto-Light-webfont.ttf') format('truetype'),
+    url('../dist/fonts/Roboto-Light-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: 'Roboto';
   font-weight: 400;
   src: url('../dist/fonts/Roboto-Medium-webfont.eot')
     format('embedded-opentype'); /* IE9 + later */
@@ -53,17 +64,6 @@
     url('../dist/fonts/Roboto-Medium-webfont.woff') format('woff'),
     url('../dist/fonts/Roboto-Medium-webfont.ttf') format('truetype'),
     url('../dist/fonts/Roboto-Medium-webfont.svg') format('svg');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-weight: 200;
-  src: url('../dist/fonts/Roboto-Light-webfont.eot') format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Roboto-Light-webfont.eot?#iefix')
-      format('embedded-opentype'),
-    url('../dist/fonts/Roboto-Light-webfont.woff') format('woff'),
-    url('../dist/fonts/Roboto-Light-webfont.ttf') format('truetype'),
-    url('../dist/fonts/Roboto-Light-webfont.svg') format('svg');
 }
 
 @font-face {
