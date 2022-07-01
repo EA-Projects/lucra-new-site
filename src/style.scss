@@ -317,9 +317,9 @@ a {
     .navbar-brand {
       line-height: 0;
       img {
-        max-width: 200px;
+        max-width: 120px;
         @media (max-width: 575px) {
-          max-width: 100px;
+          max-width: 90px;
           margin-left: 10px;
         }
       }
@@ -388,252 +388,93 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100vh;
-    .container {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      .row-hero {
-        align-items: center;
-        width: 100%;
-        margin-left: -50px;
-        margin-right: -20px;
-        @media (max-width: 767px) {
-          margin-left: auto;
-          margin-right: auto;
-        }
-        .content {
-          padding-top: 20px;
-          transform: translateX(-200px);
-          opacity: 0;
-          transition: all 1s ease;
-          h1 {
-            font-weight: 400;
-            font-size: 94px;
-            line-height: 90px;
-            text-align: left;
-          }
-          p {
-            font-family: 'Arbeit';
-            color: $light;
-            margin-top: 50px;
-            max-width: 320px;
-            font-weight: 200;
-            font-size: 19px;
-            strong {
-              color: $light-blue;
-            }
-          }
-
-          .hiring-cta {
-            color: #fff;
-            border-bottom: 1px solid #fff;
-            padding-bottom: 2px;
-            margin: auto 16px;
-            font-weight: 200;
-            font-family: 'Arbeit';
-            font-size: 19px;
-            &:hover {
-              color: $orange;
-              border-color: $orange;
-            }
-          }
-
-          .row-logo {
-            img {
-              max-width: 220px;
-              transform: translateY(-100px);
-              opacity: 0;
-              margin-bottom: 10px;
-              transition: all 1s ease;
-            }
-          }
-          img {
-            &.both-mobiles {
-              display: none;
-            }
-          }
-          .download {
-            margin: 50px 0 30px;
-            @media (max-width: 991px) {
-              display: flex;
-              justify-content: space-between;
-            }
-            @media (max-width: 767px) {
-              display: block;
-            }
-            a {
-              img {
-                transition: all 0.3s ease-in;
-                max-width: 200px;
-              }
-              &:hover {
-                img {
-                  transform: scale(1.04);
-                }
-              }
-              &:focus-visible,
-              &:focus {
-                outline: 0;
-                border: 0;
-              }
-            }
-          }
-          form {
-            display: inline-block;
-            position: relative;
-            width: 80%;
-            margin: 10px 0 30px;
-            #email {
-              width: 100%;
-              background: #ffffff;
-              border-radius: 100px;
-              border: none;
-              padding: 10px 20px;
-              &::placeholder {
-                font-family: 'Arbeit';
-                font-weight: 600;
-                font-size: 16px;
-                color: #969696;
-              }
-              &:focus-visible {
-                outline: 0;
-              }
-            }
-            #submit {
-              position: absolute;
-              background-image: url(../images/icon_arrow.png);
-              background-position: center;
-              background-size: contain;
-              background-repeat: no-repeat;
-              right: 15px;
-              height: 42px;
-              width: 30px;
-              cursor: pointer;
-              background-color: rgba(255, 255, 255, 0);
-              border-radius: 100px;
-              border: none;
-              outline: none;
-            }
-
-            .klaviyo_messages {
-              font-family: 'Arbeit';
-              margin: 15px 0 0 20px;
-              font-size: 14px;
-
-              .success_message {
-                color: #ffff;
-                .klaviyo_header {
-                  font-size: 15px;
-                  font-weight: 600;
-                  color: #f57159;
-                }
-              }
-
-              .error_message {
-                color: #f57159;
-              }
-            }
-          }
-        }
-        .mobiles {
-          position: relative;
-          z-index: 1;
-          img {
-            &.mobile-left {
-              max-width: 273px;
-              position: absolute;
-              top: 0%;
-              left: -12%;
-              transform: translate(-20px, -250px) scale(1.1);
-              opacity: 0;
-              transition: all 1s ease;
-            }
-            &.mobile-right {
-              max-width: 352px;
-              position: relative;
-              top: -15%;
-              left: 22%;
-              transform: translate(150px, -250px);
-              opacity: 0;
-              transition: all 1s ease;
-              z-index: 1;
-              margin-top: -50px;
-            }
-          }
-        }
-      }
-    }
+    min-height: 90vh;
   }
 }
 
-// Video
-#video {
-  background-color: #c15a51;
-  position: relative;
-  .placeholder {
-    width: 100%;
-    // opacity: 0.5;
-    position: relative;
-  }
-  .volume {
+#screens {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  .box-container {
     position: absolute;
-    cursor: pointer;
-    bottom: 50px;
-    right: 50px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-image: url(../images/volume.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    &.muted {
-      background-image: url(../images/mute.svg);
-    }
-  }
-}
-#video-modal {
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999;
-  .modal-dialog {
-    max-width: 1340px;
-    padding: 0;
-    .modal-header {
-      display: none;
-      border: 0;
-      padding: 8px 0 0;
-      button {
-        img {
-          filter: invert(1);
-          margin-right: 20px;
-          max-width: 20px;
+    top: 0;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    .container-screens {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      .box-screen {
+        min-height: 720px;
+        min-width: 500px;
+        width: 500px;
+        padding: 50px 30px 40px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        transition: all 0.7s ease 0s;
+        &.screen-one {
+          background-image: url(../images/homepage/lucra-screen.jpg);
+        }
+        &.screen-two {
+          background-image: url(../images/homepage/the-game-screen.jpg);
+          justify-content: flex-end;
+        }
+        &.screen-three {
+          background-image: url(../images/homepage/fair-game-screen.jpg);
+          justify-content: flex-end;
+        }
+        &.screen-four {
+          background-image: url(../images/homepage/lucra-screen-two.jpg);
+        }
+        p {
+          font-size: 22px;
+          line-height: 30px;
+          max-width: 450px;
+          margin: 0 auto;
+        }
+        h2 {
+          font-size: 110px;
+          line-height: 84px;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          text-align: left;
+          max-width: 300px;
+        }
+        .bottom-screen {
+          display: flex;
+          justify-content: space-between;
+          img {
+            width: 32px;
+          }
+          .button.outline {
+            border-color: #fff;
+            background-color: inherit;
+            color: #fff;
+            margin: 0;
+          }
         }
       }
-    }
-    .modal-content,
-    .modal-body {
-      padding: 0;
-      background-color: rgb(255 255 255 / 0%);
-      border: 0;
-      position: relative;
-      z-index: 99999;
-      .close {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        z-index: 9999;
-        &:focus {
-          border: 0;
-          outline: 0;
+      &.col-one {
+        transform: translateY(150px);
+        transition: all 0.5s ease-out;
+        &.move-up {
+          transform: translateY(0);
         }
       }
-    }
-    #lucra-video {
-      width: 100%;
+      &.col-two {
+        transform: translateY(0);
+        transition: all 0.5s ease-out;
+        &.move-down {
+          transform: translateY(150px);
+        }
+      }
     }
   }
 }

@@ -199,3 +199,33 @@ $(function () {
     $(`#video-${e.from}`).replaceWith(videos[e.from]);
   });
 });
+
+//Init Scrollmagic
+var controller = new ScrollMagic.Controller();
+
+// Pin the intro
+var pinIntroScene = new ScrollMagic.Scene({
+  triggerElement: '#hero',
+  triggerHook: 0,
+  duration: '40%',
+})
+  .setPin('#hero', { pushFollowers: false })
+  .addTo(controller);
+
+//Create a scene
+var ourScene = new ScrollMagic.Scene({
+  triggerElement: '#screens',
+  triggerHook: 0.9,
+})
+  .setClassToggle('.container-screens.col-one', 'move-up')
+  .addIndicators()
+  .addTo(controller);
+
+//Create a scene 2
+var ourScene2 = new ScrollMagic.Scene({
+  triggerElement: '#screens',
+  triggerHook: 0.9,
+})
+  .setClassToggle('.container-screens.col-two', 'move-down')
+  .addIndicators()
+  .addTo(controller);
