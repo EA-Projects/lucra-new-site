@@ -218,7 +218,6 @@ var ourScene = new ScrollMagic.Scene({
   triggerHook: 0.9,
 })
   .setClassToggle('.container-screens.col-one', 'move-up')
-  .addIndicators()
   .addTo(controller);
 
 //Create a scene 2
@@ -227,5 +226,4 @@ var ourScene2 = new ScrollMagic.Scene({
   triggerHook: 0.9,
 })
   .setClassToggle('.container-screens.col-two', 'move-down')
-  .addIndicators()
   .addTo(controller);
