@@ -210,7 +210,7 @@ var pinIntroScene = new ScrollMagic.Scene({
   duration: 400,
 })
   .setPin('#hero')
-  .addIndicators()
+  // .addIndicators()
   .addTo(controller);
 
 //Create a scene
@@ -221,7 +221,7 @@ var ourScene = new ScrollMagic.Scene({
   offset: 200,
 })
   .setClassToggle('.container-screens.col-one', 'move-up')
-  .addIndicators()
+  // .addIndicators()
   .addTo(controller);
 
 //Create a scene 2
@@ -232,7 +232,7 @@ var ourScene2 = new ScrollMagic.Scene({
   offset: 200,
 })
   .setClassToggle('.container-screens.col-two', 'move-down')
-  .addIndicators()
+  // .addIndicators()
   .addTo(controller);
 
 $(window).scroll(function () {
