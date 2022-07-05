@@ -288,11 +288,17 @@ a {
 //Header
 #header-nav {
   // position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   padding: 20px 0;
-  z-index: 99999;
+  z-index: 2;
   background-color: #fff;
+  transition: all 0.2s ease-in-out;
+  &.fixed {
+    z-index: 9;
+    padding: 5px 0;
+  }
   .container-nav {
     padding-right: 20px;
     padding-left: 20px;
@@ -385,20 +391,24 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 90vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
   }
 }
-
-#screens {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
+#animation-container {
+  overflow: hidden;
   .box-container {
-    position: absolute;
-    top: 0;
     max-width: 1140px;
     margin: 0 auto;
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    pointer-events: none;
     .container-screens {
       display: flex;
       flex-direction: column;
@@ -455,6 +465,7 @@ a {
             background-color: inherit;
             color: #fff;
             margin: 0;
+            pointer-events: initial;
             &:hover {
               color: #fff;
               background-color: $orange;
@@ -465,16 +476,16 @@ a {
       }
       &.col-one {
         transform: translateY(150px);
-        transition: all 1s ease-out;
+        transition: all 1s ease-in-out;
         &.move-up {
-          transform: translateY(0);
+          transform: translateY(-350px);
         }
       }
       &.col-two {
         transform: translateY(0);
-        transition: all 1s ease-out;
+        transition: all 1s ease-in-out;
         &.move-down {
-          transform: translateY(150px);
+          transform: translateY(-350px);
         }
       }
     }
@@ -487,6 +498,7 @@ a {
   background-position: bottom right;
   background-size: contain;
   background-repeat: no-repeat;
+  position: relative;
   .container-slider {
     max-width: 1300px;
     padding: 0 20px;
@@ -716,7 +728,7 @@ a {
     }
     .content {
       position: absolute;
-      z-index: 9;
+      z-index: 1;
       width: 900px;
       left: 50%;
       bottom: 140px;

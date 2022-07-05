@@ -207,23 +207,40 @@ var controller = new ScrollMagic.Controller();
 var pinIntroScene = new ScrollMagic.Scene({
   triggerElement: '#hero',
   triggerHook: 0,
-  duration: '40%',
+  duration: 400,
 })
-  .setPin('#hero', { pushFollowers: false })
+  .setPin('#hero')
+  .addIndicators()
   .addTo(controller);
 
 //Create a scene
 var ourScene = new ScrollMagic.Scene({
-  triggerElement: '#screens',
-  triggerHook: 0.9,
+  duration: 2500,
+  triggerElement: '#hero',
+  triggerHook: 0,
+  offset: 200,
 })
   .setClassToggle('.container-screens.col-one', 'move-up')
+  .addIndicators()
   .addTo(controller);
 
 //Create a scene 2
 var ourScene2 = new ScrollMagic.Scene({
-  triggerElement: '#screens',
-  triggerHook: 0.9,
+  duration: 2500,
+  triggerElement: '#hero',
+  triggerHook: 0,
+  offset: 200,
 })
   .setClassToggle('.container-screens.col-two', 'move-down')
+  .addIndicators()
   .addTo(controller);
+
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+
+  if (scroll >= 200) {
+    $('#header-nav').addClass('fixed');
+  } else {
+    $('#header-nav').removeClass('fixed');
+  }
+});
