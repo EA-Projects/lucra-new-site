@@ -205,18 +205,18 @@ var controller = new ScrollMagic.Controller();
 
 // Pin the intro
 var pinIntroScene = new ScrollMagic.Scene({
-  triggerElement: '#hero',
+  triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
   duration: 400,
 })
-  .setPin('#hero')
+  .setPin('#hero.hero-homepage')
   // .addIndicators()
   .addTo(controller);
 
 //Create a scene
 var ourScene = new ScrollMagic.Scene({
   duration: 2500,
-  triggerElement: '#hero',
+  triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
   offset: 200,
 })
@@ -227,7 +227,7 @@ var ourScene = new ScrollMagic.Scene({
 //Create a scene 2
 var ourScene2 = new ScrollMagic.Scene({
   duration: 2500,
-  triggerElement: '#hero',
+  triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
   offset: 200,
 })
@@ -237,7 +237,7 @@ var ourScene2 = new ScrollMagic.Scene({
 
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
-
+  console.log('scroll');
   if (scroll >= 200) {
     $('#header-nav').addClass('fixed');
   } else {
