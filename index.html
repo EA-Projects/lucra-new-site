@@ -46,24 +46,26 @@
       <header id="header-nav">
         <div class="container-nav">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">
-              <img
-                src="images/lucra-blue.svg"
-                class="logo d-inline-block align-top"
-                alt="Lucra Sports"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="mobile-top">
+              <a class="navbar-brand" href="/">
+                <img
+                  src="images/lucra-blue.svg"
+                  class="logo d-inline-block align-top"
+                  alt="Lucra Sports"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
             <div
               class="collapse navbar-collapse justify-content-between"
               id="navbarNav"
@@ -79,17 +81,22 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#slider-app">how to play</a>
-                  </li>
-                  <li class="nav-item">
                     <a class="nav-link" href="#shop">shop APPAREL</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="pages/about.html">about us</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/careers.html">careers</a>
+                  </li>
+                  <li class="nav-item lucra">
+                    <a class="nav-link" href="index.html">
+                      <img src="images/lucra-soft.svg" alt="Lucra Sports" />
+                    </a>
+                  </li>
                 </ul>
               </div>
-              <div>
+              <div class="d-none d-lg-block">
                 <div class="social-box nav-box">
                   <a
                     href="https://lucra-sports.myshopify.com/collections/all"
@@ -119,8 +126,8 @@
           <div class="container-screens col-one">
             <div class="box-screen screen-one">
               <p class="animate fadeInDown">
-                Compete with your friends in everything from basketball games to
-                ping pong to chess...
+                Build a social network around the games you love and the friends
+                you love to beat.
               </p>
               <div class="bottom-screen animate fadeInUp">
                 <img src="images/homepage/apple.svg" alt="Apple" />
@@ -167,7 +174,7 @@
             </div>
             <div class="box-screen screen-four">
               <p class="animate fadeInDown">
-                ...even who will have more touchdowns in the Super Bowl!
+                Compete with your friends in almost anything for real money...
               </p>
               <div class="bottom-screen animate fadeInUp">
                 <a
@@ -219,6 +226,15 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2">
                   3/6
                 </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                  4/6
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4">
+                  5/6
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5">
+                  6/6
+                </li>
               </ol>
               <a
                 class="carousel-control-next"
@@ -239,7 +255,45 @@
                   <div class="content-left">
                     <p class="top-title">Explore the App</p>
                     <div>
-                      <h2>STAKE. <span>WIN.</span> BRAG.</h2>
+                      <h2>
+                        COMPETE. <br class="d-none d-sm-block" />
+                        <span>WIN.</span>
+                        <br class="d-none d-sm-block" />
+                        BRAG.
+                      </h2>
+                      <p class="description">
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests — be it a game of chess
+                        or the Super Bowl!
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/compete-win-brag.png"
+                      class="app-image"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        CHALLENGE YOUR FRIENDS AT ALMOST <span>ANYTHING!</span>
+                      </h2>
                       <p class="description">
                         Lucra introduces a new way to compete with friends in a
                         safe and easy to use social platform that gives you
@@ -258,8 +312,8 @@
                   </div>
                   <div class="image-slider">
                     <img
-                      src="images/homepage/explore-app-img.png"
-                      class="explore-app"
+                      src="images/homepage/challenge-your-friends.png"
+                      class="app-image"
                       alt=""
                     />
                   </div>
@@ -268,14 +322,14 @@
               <div class="carousel-item">
                 <div class="box-content-slide">
                   <div class="content-left">
-                    <p class="top-title">Lorem, ipsum dolor</p>
+                    <p class="top-title">Explore the App</p>
                     <div>
-                      <h2>LOREM. <span>IPSUM.</span> DOLOR.</h2>
+                      <h2>COMPETE USING YOUR <span>FAV PRO PLAYERS.</span></h2>
                       <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Soluta assumenda quibusdam quam fuga dolores sunt vero
-                        in! Illum sequi consequatur tempore reprehenderit!
-                        Excepturi ipsam enim accusamus.
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests — be it a game of chess
+                        or an NBA playoff game!
                       </p>
                       <a
                         href="https://apps.apple.com/us/app/lucra/id1563098618"
@@ -289,8 +343,8 @@
                   </div>
                   <div class="image-slider">
                     <img
-                      src="images/homepage/explore-app-img.png"
-                      class="explore-app"
+                      src="images/homepage/compete-win-brag.png"
+                      class="app-image"
                       alt=""
                     />
                   </div>
@@ -299,13 +353,16 @@
               <div class="carousel-item">
                 <div class="box-content-slide">
                   <div class="content-left">
-                    <p class="top-title">Ipsum dolor</p>
+                    <p class="top-title">Explore the App</p>
                     <div>
-                      <h2>LOREM. <span>IPSUM.</span></h2>
+                      <h2>
+                        BUILD A COMMUNITY OF FRIENDS TO <span>CRUSH!</span>
+                      </h2>
                       <p class="description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Soluta assumenda quibusdam quam fuga dolores sunt vero
-                        in! Illum sequi consequatur tempore reprehenderit!
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests — be it a game of chess
+                        or an NBA playoff game!
                       </p>
                       <a
                         href="https://apps.apple.com/us/app/lucra/id1563098618"
@@ -319,8 +376,76 @@
                   </div>
                   <div class="image-slider">
                     <img
-                      src="images/homepage/explore-app-img.png"
-                      class="explore-app"
+                      src="images/homepage/compete-win-brag.png"
+                      class="app-image"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        SEE HOW WELL YOU <span>COMPETE AGAINST</span> YOUR
+                        FRIENDS!
+                      </h2>
+                      <p class="description">
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests — be it a game of chess
+                        or an NBA playoff game!
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/compete-win-brag.png"
+                      class="app-image"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        SEE HOW WELL YOU <span>COMPETE AGAINST</span> YOUR
+                        FRIENDS!
+                      </h2>
+                      <p class="description">
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests — be it a game of chess
+                        or an NBA playoff game!
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/compete-win-brag.png"
+                      class="app-image"
                       alt=""
                     />
                   </div>
@@ -529,7 +654,7 @@
       <footer>
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-8">
               <div class="top-contact">
                 <div class="contact-us">
                   <img src="images/homepage/lucra-l.svg" alt="Lucra Sports" />
@@ -553,6 +678,7 @@
                 </div>
               </div>
               <div class="navigation-links">
+                <a href="pages/careers.html">careers</a>
                 <a href="pages/faqs.html">faqs</a>
                 <a href="pages/responsible-gaming.html">responsible gaming</a>
                 <a href="pages/terms-of-service.html">terms of service</a>
@@ -562,7 +688,7 @@
                 <p>Copyright © 2022 Lucra Sports</p>
               </div>
             </div>
-            <div class="col-12 col-lg-4 offset-lg-1">
+            <div class="col-12 col-lg-4">
               <div class="up-your-game">
                 <h4>Up Your Game</h4>
                 <p>Get first access lorem ipsum set amet dolor.</p>

@@ -25,6 +25,22 @@
     <meta property="twitter:description" content="" />
     <meta property="twitter:image" content="" />
 
+    <!-- Slick Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
@@ -40,24 +56,26 @@
       <header id="header-nav">
         <div class="container-nav">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">
-              <img
-                src="../images/lucra-blue.svg"
-                class="logo d-inline-block align-top"
-                alt="Lucra Sports"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="mobile-top">
+              <a class="navbar-brand" href="/">
+                <img
+                  src="../images/lucra-blue.svg"
+                  class="logo d-inline-block align-top"
+                  alt="Lucra Sports"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
             <div
               class="collapse navbar-collapse justify-content-between"
               id="navbarNav"
@@ -73,17 +91,22 @@
                     >
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">how to play</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">shop APPAREL</a>
+                    <a class="nav-link" href="#shop">shop APPAREL</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="about.html">about us</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="careers.html">careers</a>
+                  </li>
+                  <li class="nav-item lucra">
+                    <a class="nav-link" href="../index.html">
+                      <img src="../images/lucra-soft.svg" alt="Lucra Sports" />
+                    </a>
+                  </li>
                 </ul>
               </div>
-              <div>
+              <div class="d-none d-lg-block">
                 <div class="social-box nav-box">
                   <a
                     href="https://lucra-sports.myshopify.com/collections/all"
@@ -107,92 +130,543 @@
           </nav>
         </div>
       </header>
-      <section id="hero" class="hero-about">
-        <div class="container" id="header">
-          <div class="row row-hero">
+      <section id="hero" class="hero-about"></section>
+      <section id="animation-container" class="about-screens">
+        <div class="box-container">
+          <div class="container-screens col-one">
+            <div class="box-screen screen-one">
+              <span>Our Mission</span>
+              <h2>WE ARE REDEFINING FRIENDLY COMPETITION</h2>
+            </div>
+            <div class="box-screen screen-three"></div>
+            <div class="box-screen screen-five">
+              <h3 class="text-left">
+                ENGAGED THROUGH SHARED COMPETITIVE EXPERIENCES IN A SAFE AND
+                APPROACHABLE SPACE.
+              </h3>
+            </div>
+          </div>
+          <div class="container-screens col-two">
+            <div class="box-screen screen-two"></div>
+            <div class="box-screen screen-four">
+              <h3 class="text-right">
+                BY BUILDING COMMUNITIES OF FANS AND FRIENDS WITH A LOVE FOR THE
+                GAME
+              </h3>
+            </div>
+            <div class="box-screen screen-six"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="our-vision">
+        <img
+          src="../images/lucra-soft.svg"
+          class="lucra-soft"
+          alt="Lucra Sports"
+        />
+        <div class="container">
+          <div class="row">
             <div class="col-12">
-              <div class="content" id="hero-headline">
-                <h2>about lucra</h2>
+              <h4 class="pre-title">Our Vision</h4>
+              <h2>
+                A WORLD WHERE LUCRA IS SYNONYMOUS WITH FRIENDLY COMPETITION IN
+                ALMOST ANYTHING - ANYWHERE, ANYTIME.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="our-values">
+        <div class="container-slider">
+          <div class="row">
+            <div class="col-12">
+              <div class="values-slider">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="content-side">
+                      <h5>Our Values</h5>
+                      <h2>THE FAN COMES FIRST.</h2>
+                      <img
+                        src="../images/about/the-fan-come-first.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="number-side">
+                      <img src="../images/about/number-one.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="content-side">
+                      <h5>Our Values</h5>
+                      <h2>Lorem ipsum dolor sit.</h2>
+                      <img src="../images/about/placeholder-one.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="number-side">
+                      <img src="../images/about/number-two.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <div class="content-side">
+                      <h5>Our Values</h5>
+                      <h2>Lorem, ipsum dolor sit.</h2>
+                      <img src="../images/about/placeholder-two.jpg" alt="" />
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <div class="number-side">
+                      <img src="../images/about/number-three.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-nav">
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="image-slider">
+                      <img
+                        src="../images/about/number-one.svg"
+                        class="number-image"
+                        alt=""
+                      />
+                    </div>
+                    <div class="content-left">
+                      <h3>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit.
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="image-slider">
+                      <img
+                        src="../images/about/number-two.svg"
+                        class="number-image"
+                        alt=""
+                      />
+                    </div>
+                    <div class="content-left">
+                      <h3>
+                        Earn the trust of every member of the Lucra community.
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="image-slider">
+                      <img
+                        src="../images/about/number-three.svg"
+                        class="number-image"
+                        alt=""
+                      />
+                    </div>
+                    <div class="content-left">
+                      <h3>
+                        Our platform is for all types of fans; our company
+                        makeup should reflect the same.
+                      </h3>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- FUNDAMENTALS -->
-      <section id="fundamentals">
+      <section id="our-team">
+        <div class="content-top">
+          <div class="team-title">
+            <h2>OUR TEAM</h2>
+            <p>We share a passion for the game.</p>
+          </div>
+          <img
+            src="../images/homepage/lucra-outline.svg"
+            class="lucra-outline"
+            alt=""
+          />
+        </div>
+        <div class="team-slider">
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/dylan.jpg"
+              alt="Dylan Robbins"
+            />
+            <h5>Dylan Robbins</h5>
+            <p class="role">Chief Executive Officer</p>
+          </div>
+          <div class="team-item">
+            <img src="../images/about/team-photos/ed.jpg" alt="Ed Psyk" />
+            <h5>Ed Psyk</h5>
+            <p class="role">Chief Technology Officer</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/mike.jpg"
+              alt="Michael Madding"
+            />
+            <h5>Michael Madding</h5>
+            <p class="role">Chief Strategy Officer</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/david.jpg"
+              alt="David Feinberg"
+            />
+            <h5>David Feinberg</h5>
+            <p class="role">VP of Engineering</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/schmidty.jpg"
+              alt="Mike Schmidt"
+            />
+            <h5>Mike Schmidt</h5>
+            <p class="role">Head of Mobile Development</p>
+          </div>
+          <div class="team-item">
+            <img src="../images/about/team-photos/ed.jpg" alt="Chris Ahn" />
+            <h5>Chris Ahn</h5>
+            <p class="role">Head of Growth Marketing</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/landon.jpg"
+              alt="Landon Febuary"
+            />
+            <h5>Landon Febuary</h5>
+            <p class="role">Head of Design</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/rae.jpg"
+              alt="Raebekkah Pratt-Clarke"
+            />
+            <h5>Raebekkah Pratt-Clarke</h5>
+            <p class="role">Business Development Manager</p>
+          </div>
+          <div class="team-item">
+            <img src="../images/about/team-photos/ed.jpg" alt="Devin Wright" />
+            <h5>Devin Wright</h5>
+            <p class="role">Director of Product Management</p>
+          </div>
+          <div class="team-item">
+            <img src="../images/about/team-photos/zach.jpg" alt="Zach Keller" />
+            <h5>Zach Keller</h5>
+            <p class="role">Head of Data and Analytics</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/santi.jpg"
+              alt="Santiago Pereira"
+            />
+            <h5>Santiago Pereira</h5>
+            <p class="role">Sr. Performance Marketing Manager</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/cameron.jpg"
+              alt="Cameron Coleman"
+            />
+            <h5>Cameron Coleman</h5>
+            <p class="role">Chief of Staff</p>
+          </div>
+          <div class="team-item">
+            <img
+              src="../images/about/team-photos/ed.jpg"
+              alt="Mackenzie Freeman"
+            />
+            <h5>Mackenzie Freeman</h5>
+            <p class="role">Operations and Logistics</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="our-investors">
         <div class="container">
-          <h3>Lucra Fundamentals</h3>
-          <div class="row justify-content-center">
+          <div class="row">
             <div class="col-12">
-              <ul class="faq-list faqs">
-                <li class="faq-box">
-                  <h4 class="faq-heading">How do I play?</h4>
-                  <p class="read faq-text">
-                    Lucra is a new player vs. player game in which you stake
-                    real money on a player and stat (e.g., Lebron James points)
-                    versus another user’s player and stat (e.g., Steph Curry
-                    points) in what we call a “contest.” Players can be from the
-                    same or different sports, as long as they both compete
-                    during a given week and the stats selected for each player
-                    can be the same or different (e.g., can be Tom Brady
-                    touchdowns vs. Tiger Woods birdies). Unlike daily fantasy or
-                    sports betting apps, you set your own terms (odds and
-                    spread) for contests based on publicly available data that
-                    we provide in the app, removing the dynamic where you’re
-                    betting against the House. Finish up by choosing whether to
-                    send contests to a friend, a group, or the Lucra public
-                    feed. Contests take less than one minute to create on
-                    average, leaving you time to explore the social features
-                    that are at the heart of what we built, including friending
-                    other users, creating groups, smack talking, and viewing
-                    head-to-head stats. To try it out, once you’ve signed up,
-                    tap the “create a contest” button or navigate to “contests”
-                    to accept a contest that someone else created. Start
-                    building out your Lucra network by adding friends or
-                    creating public or private groups on the “friends” tab.
-                    Finally, swipe up on your account bar at the bottom of the
-                    home page to easily track your contests and winnings at any
-                    time.
-                  </p>
-                </li>
-                <li class="faq-box">
-                  <h4 class="faq-heading">How do I sign up?</h4>
-                  <p class="read faq-text">
-                    Signing up is easy! Just download the Lucra Sports iOS app
-                    on on your phone and follow the sign up flow once you open
-                    the app.
-                  </p>
-                </li>
-                <li class="faq-box">
-                  <h4 class="faq-heading">What sports do you offer?</h4>
-                  <p class="read faq-text">
-                    We currently offer NFL, NBA, MLB, NHL, golf, tennis, soccer
-                    (MLS, UEFA Champions League, Premier League) and eSports
-                    (League of Legends) and are always looking to add more
-                    sports. Shoot us an email at support@lucrasports.com if
-                    there’s a sport or competition that you’d like to see in
-                    Lucra in the future and we’ll work on adding it.
-                  </p>
-                </li>
-                <li class="faq-box">
-                  <h4 class="faq-heading">What are Lucra Bucks?</h4>
-                  <p class="read faq-text">
-                    Lucra Bucks are Lucra’s version of “free play.” They are
-                    awarded for things like referrals and can be used in place
-                    of cash on the platform, however they have no cash value
-                    (not eligible for withdrawal) until they are used to create
-                    or accept contests. Once they are used, they are treated
-                    like cash.
-                  </p>
-                </li>
-                <li class="faq-box">
-                  <h4 class="faq-heading">Want to learn more?</h4>
-                  <p class="read faq-text">
-                    Read our <a href="faqs.html">FAQs here.</a>
-                  </p>
-                </li>
-              </ul>
+              <h2>OUR INVESTORS</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div
+                id="carouselInvestors"
+                class="carousel slide carousel-fade"
+                data-ride="carousel"
+                data-pause="false"
+                data-interval="8000"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/raptor.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Raptor Group</h5>
+                        <p class="description">
+                          Raptor Group, led by Jim Pallotta, focuses on
+                          investing in various industries including: technology,
+                          fintech, sports, consumer, and media. Raptor Group
+                          provides unique sports-focused expertise with dozens
+                          of previous investments in the space including the
+                          Boston Celtics and AS Roma.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/marc-lasry.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Marc Lasry</h5>
+                        <p class="description">
+                          Marc Lasry is a co-owner of the Milwaukee Bucks and
+                          CEO and Co-Founder of Avenue Capital Group, a global
+                          investment firm with over $9 billion in assets under
+                          management.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/julie-ertz.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Julie Ertz</h5>
+                        <p class="description">
+                          Julie Ertz is an American soccer player signed to the
+                          Chicago Red Stars of the National Women's Soccer
+                          League and also plays for the United States women's
+                          national soccer team. She has been part of two FIFA
+                          Women's World Cup winning teams in 2015 and 2019 and
+                          also represented US at the 2016 Olympic Games where
+                          she won gold and at the 2020 Olympic Games where she
+                          won bronze. She earned the 'U.S. Soccer Female Player
+                          of the Year' honor twice in 2017 and 2019.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/john-isner.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>John Isner</h5>
+                        <p class="description">
+                          John Isner is a top American professional tennis
+                          player, who has won 12 ATP titles and reached a peak
+                          ATP ranking of #8 in the world. Isner is the 2018
+                          Miami Open Champion, has over 400 wins and $19 million
+                          earned in prize money.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/zach-ertz.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Zach Ertz</h5>
+                        <p class="description">
+                          Zach Ertz was originally drafted by the Eagles in the
+                          2nd round (35th overall) of the 2013 NFL Draft. A
+                          three-time Pro Bowler who caught the game-winning TD
+                          in Super Bowl LII, Zach Ertz has produced more
+                          receptions (525) than any other NFL TE in his first
+                          seven seasons.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/jonathan-levav.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Jonathan Levav</h5>
+                        <p class="description">
+                          Jonathan Levav is the King Philanthropies Professor of
+                          Marketing at the Stanford School of Business, where he
+                          leads research on consumer behavior and behavioral
+                          decision theory.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/ramnik-arora.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Ramnik Arora</h5>
+                        <p class="description">
+                          Ramnik is the Head of Product at FTX Cryptocurrencies
+                          Derivative Exchange and Co-Founder of Toy Ventures, an
+                          operator led early stage venture fund. Previously,
+                          Ramnik was a Product Manager and Research Scientist at
+                          Facebook working on Libra Blockchain and Facebook Ad
+                          Auctions.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/mike-tollin.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Mike Tollin</h5>
+                        <p class="description">
+                          Mike Tollin is a writer, producer, and director and
+                          Co-Chairman of Mandalay Sports Media. Tollin has
+                          produced and directed over a dozen hit films and
+                          documentaries including Hard Ball, Varsity Blues, and
+                          recently, The Last Dance.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="box-content-slide">
+                      <div class="image-slider">
+                        <img
+                          src="../images/about/seventy-six.jpg"
+                          class="investor-image"
+                          alt=""
+                        />
+                      </div>
+                      <div class="content-left">
+                        <h5>Seventy Six</h5>
+                        <p class="description">
+                          SeventySix Capital invests in passionate and smart
+                          entrepreneurs launching game-changing startups in
+                          sports betting, esports, and sports tech. SeventySix
+                          Capital is a value-add investor for many industry
+                          peers such as Vigtory (sold to FuboTV), VSiN (sold to
+                          DraftKings), and Swish Analytics.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="arrows-navigation">
+                  <a
+                    class="carousel-control-prev"
+                    href="#carouselInvestors"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <ol class="carousel-indicators">
+                    <li
+                      data-target="#carouselInvestors"
+                      data-slide-to="0"
+                      class="active"
+                    >
+                      1/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="1">
+                      2/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="2">
+                      3/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="3">
+                      4/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="4">
+                      5/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="5">
+                      6/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="6">
+                      7/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="7">
+                      8/9
+                    </li>
+                    <li data-target="#carouselInvestors" data-slide-to="8">
+                      9/9
+                    </li>
+                  </ol>
+                  <a
+                    class="carousel-control-next"
+                    href="#carouselInvestors"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -200,64 +674,15 @@
 
       <!-- PRE-FOOTER -->
 
-      <section id="recent-press">
+      <section id="prefooter">
         <div class="container">
-          <h4 class="recent-press-title animate fadeInUp">Recent Press</h4>
-          <div class="row align-items-center">
-            <div class="col-6 col-md-3 text-center">
-              <div class="animate fadeInUp company-logo">
-                <a
-                  href="https://www.sportico.com/business/sports-betting/2022/lucra-sports-betting-app-raises-vc-funds-1234670009/"
-                  target="_blank"
-                >
-                  <img
-                    src="../images/sportico.png"
-                    class="sportico"
-                    alt="Sportico"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-6 col-md-3 text-center">
-              <div class="animate fadeInUp company-logo" data-wow-delay=".2s">
-                <a
-                  href="https://www.businesswire.com/news/home/20220330005224/en/Lucra-Sports-Raises-10-Million%5B%E2%80%A6%5Dr-Sports-Gaming-Marketplace-to-Wager-on-Player-Performance'/"
-                  target="_blank"
-                >
-                  <img
-                    src="../images/business-wire-logo-white.svg"
-                    class="business-wire"
-                    alt="Business Wire"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-6 col-md-3 text-center">
-              <div class="animate fadeInUp company-logo" data-wow-delay=".4s">
-                <a
-                  href="https://www.bloomberg.com/news/articles/2021-10-07/lasry-backed-sports-gambling-app-wants-you-to-bet-your-friends?sref=2gRlZMND"
-                  target="_blank"
-                >
-                  <img
-                    src="../images/bloomberg-logo.svg"
-                    class="bloomberg"
-                    alt="Bloomberg"
-                  />
-                </a>
-              </div>
-            </div>
-            <div class="col-6 col-md-3 text-center">
-              <div class="animate fadeInUp company-logo" data-wow-delay=".6s">
-                <a
-                  href="https://sports.yahoo.com/lucra-peer-sports-betting-raises-095549408.html"
-                  target="_blank"
-                >
-                  <img
-                    src="../images/yahoo-logo.png"
-                    class="yahoo"
-                    alt="Yahoo! Sports"
-                  />
-                </a>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-8">
+              <div class="content-prefooter animate fadeInUp">
+                <p>
+                  WE’RE BUILDING COMMUNITIES OF FANS & FRIENDS THROUGH shared
+                  experiences that connect people in friendly competition
+                </p>
               </div>
             </div>
           </div>
@@ -268,7 +693,7 @@
       <footer>
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-7">
+            <div class="col-12 col-lg-8">
               <div class="top-contact">
                 <div class="contact-us">
                   <img
@@ -295,6 +720,7 @@
                 </div>
               </div>
               <div class="navigation-links">
+                <a href="careers.html">careers</a>
                 <a href="faqs.html">faqs</a>
                 <a href="responsible-gaming.html">responsible gaming</a>
                 <a href="terms-of-service.html">terms of service</a>
@@ -304,7 +730,7 @@
                 <p>Copyright © 2022 Lucra Sports</p>
               </div>
             </div>
-            <div class="col-12 col-lg-4 offset-lg-1">
+            <div class="col-12 col-lg-4">
               <div class="up-your-game">
                 <h4>Up Your Game</h4>
                 <p>Get first access lorem ipsum set amet dolor.</p>
@@ -376,6 +802,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <!-- Slick Slider -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <script>
       wow = new WOW({

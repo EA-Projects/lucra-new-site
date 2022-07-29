@@ -27,7 +27,7 @@
   #join-the-team {
     .positions {
       .position {
-        padding: 14px 22px;
+        padding: 24px 20px;
       }
     }
   }
@@ -107,8 +107,8 @@
   }
   #join-the-team {
     .positions {
+      justify-content: center;
       .position {
-        padding: 14px 24px;
         h4 {
           font-size: 19px;
         }
@@ -632,18 +632,6 @@
       }
     }
   }
-  #join-the-team {
-    .positions {
-      .position {
-        padding: 14px 15px;
-        h4 {
-          font-size: 16px;
-          line-height: 20px;
-          text-align: left;
-        }
-      }
-    }
-  }
 }
 @media (max-width: 425px) {
   #hero {
@@ -717,10 +705,13 @@
   #join-the-team {
     .positions {
       .position {
-        padding: 14px 15px;
         h5 {
-          font-size: 14px;
-          line-height: 18px;
+          text-align: left;
+        }
+        .icon {
+          img {
+            width: 27px;
+          }
         }
       }
     }

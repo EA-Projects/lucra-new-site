@@ -235,12 +235,117 @@ var ourScene2 = new ScrollMagic.Scene({
   // .addIndicators()
   .addTo(controller);
 
+// ******************************************************************
+// About page animation scene
+
+//Init Scrollmagic
+var controllerAbout = new ScrollMagic.Controller();
+
+// Pin the intro
+var pinIntroSceneAbout = new ScrollMagic.Scene({
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  duration: 600,
+})
+  .setPin('#hero.hero-about')
+  // .addIndicators()
+  .addTo(controllerAbout);
+
+//Create a scene
+var ourScene3 = new ScrollMagic.Scene({
+  duration: 2500,
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  offset: 200,
+})
+  .setClassToggle('.container-screens.col-one', 'move-up')
+  // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
+  .addTo(controllerAbout);
+
+//Create a scene 2
+var ourScene4 = new ScrollMagic.Scene({
+  duration: 2500,
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  offset: 200,
+})
+  .setClassToggle('.container-screens.col-two', 'move-down')
+  // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
+  .addTo(controllerAbout);
+
+// Fix navbar when scroll
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
-  console.log('scroll');
-  if (scroll >= 200) {
+  if (scroll >= 60) {
     $('#header-nav').addClass('fixed');
   } else {
     $('#header-nav').removeClass('fixed');
   }
 });
+
+// Values Slider on About page
+$('.values-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  fade: true,
+  asNavFor: '.slider-nav',
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
+});
+$('.slider-nav').slick({
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  asNavFor: '.values-slider',
+  dots: false,
+  centerMode: false,
+  focusOnSelect: false,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+// Team Slider on About page
+$('.team-slider').slick({
+  centerMode: true,
+  centerPadding: '50px',
+  slidesToShow: 2,
+  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
+  arrows: true,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+// Add class to de prev and next Team Slider for move position
+$('.team-slider').on(
+  'beforeChange',
+  function (event, { slideCount: count }, currentSlide, nextSlide) {
+    let selectors = [nextSlide, nextSlide - count, nextSlide + count]
+      .map((n) => `[data-slick-index="${n}"]`)
+      .join(', ');
+    $('.slick-now').removeClass('slick-now');
+    $(selectors).next().addClass('slick-now');
+    $('.prev-now').removeClass('prev-now');
+    $(selectors).prev().addClass('prev-now');
+  }
+);
+
+$('[data-slick-index="0"]').addClass('slick-now');
+$('[data-slick-index="0"]').prev().addClass('prev-now');
