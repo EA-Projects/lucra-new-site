@@ -2003,6 +2003,8 @@ footer {
         }
       }
       .slick-arrow {
+        width: 40px;
+        height: 60px;
         &.slick-prev {
           display: none !important;
         }
@@ -2015,12 +2017,12 @@ footer {
           content: '';
           display: block;
           color: #000;
-          width: 15px;
-          height: 30px;
+          width: 25px;
+          height: 60px;
           background-image: url(../images/about/arrowright-blue.svg);
           background-position: center;
           background-repeat: no-repeat;
-          background-size: contain;
+          background-size: 10px;
           opacity: 1;
         }
       }
@@ -2184,7 +2186,7 @@ footer {
           }
         }
         .slick-arrow.slick-next {
-          top: 30%;
+          top: 20%;
         }
       }
     }
@@ -2249,16 +2251,18 @@ footer {
     }
     .slick-arrow {
       z-index: 999;
+      width: 40px;
+      height: 60px;
       &:before {
         content: '';
         display: block;
         color: #000;
-        width: 15px;
-        height: 30px;
+        width: 25px;
+        height: 60px;
         background-image: url(../images/about/arrowright-white.svg);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 15px;
         opacity: 1;
       }
       &.slick-next {
