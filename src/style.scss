@@ -1239,6 +1239,7 @@ a {
     }
   }
   @media (max-width: 425px) {
+    background-position: initial;
     .content {
       h3 {
         font-size: 50px;
@@ -1495,6 +1496,7 @@ a {
     }
   }
   @media (max-width: 767px) {
+    background-attachment: initial;
     min-height: 400px;
     .content-prefooter {
       p {
