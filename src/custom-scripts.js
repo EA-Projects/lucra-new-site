@@ -284,23 +284,16 @@ $(window).scroll(function () {
 });
 
 // Values Slider on About page
-$('.values-slider').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  fade: true,
-  asNavFor: '.slider-nav',
-  autoplay: true,
-  autoplaySpeed: 5000,
-  pauseOnHover: false,
-});
 $('.slider-nav').slick({
   slidesToShow: 2,
   slidesToScroll: 1,
-  asNavFor: '.values-slider',
   dots: false,
   centerMode: false,
   focusOnSelect: false,
   arrows: true,
+  autoplay: false,
+  autoplaySpeed: 6000,
+  pauseOnHover: false,
   responsive: [
     {
       breakpoint: 767,
@@ -349,3 +342,8 @@ $('.team-slider').on(
 
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
+
+// Menu mobile | Prevent scroll when menu is open
+$('.navbar-toggler').on('click', function () {
+  $('body').toggleClass('hidde');
+});

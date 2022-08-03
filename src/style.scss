@@ -49,6 +49,11 @@ body {
   font-weight: 400;
   color: $dark-blue;
   background-color: $background;
+  &.hidde {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
 }
 
 img {
@@ -401,7 +406,6 @@ a {
     // .navbar-collapse.collapse,
     .navbar-collapse.collapsing,
     .navbar-collapse.show {
-      height: 100%;
       background-image: url(../images/mobile-bg.jpg);
       background-position: center;
       background-size: cover;
@@ -410,7 +414,7 @@ a {
       top: 0;
       width: 100%;
       height: 100vh;
-      padding: 20px 30px;
+      padding: 60px 30px 30px;
       // margin-top: 10px;
       z-index: 9;
       > div {
@@ -427,7 +431,7 @@ a {
       .navbar-nav {
         width: 100%;
         .nav-item {
-          margin: 20px 0;
+          margin: 10px 0;
           .nav-link {
             text-align: center;
             font-family: 'Bauziet';
@@ -442,10 +446,6 @@ a {
             display: block;
           }
         }
-      }
-      &.navbar-collapse.show {
-        margin: 0;
-        padding: 0;
       }
     }
   }
@@ -665,7 +665,7 @@ a {
           }
           &.screen-one {
             background-image: none;
-            justify-content: center;
+            justify-content: flex-start;
           }
           &.screen-two {
             background-image: url(../images/about/placeholder-one.jpg);
@@ -998,8 +998,10 @@ a {
               flex-wrap: wrap;
               .content-left {
                 width: 100%;
-                min-height: auto;
+                min-height: 500px;
                 text-align: center;
+                max-width: 600px;
+                margin: 0 auto;
                 .top-title {
                   margin-bottom: 30px;
                 }
@@ -1018,7 +1020,7 @@ a {
                 min-height: auto;
                 justify-content: center;
                 padding-top: 100px;
-                img {
+                .app-image {
                   max-width: 350px;
                 }
               }
@@ -1029,9 +1031,9 @@ a {
           position: absolute;
           bottom: inherit;
           left: 50%;
-          top: 50%;
+          top: 58%;
           transform: translate(-50%, -50%);
-          z-index: 9;
+          z-index: 8;
           .carousel-control-prev {
             left: -45px;
           }
@@ -1049,6 +1051,7 @@ a {
           .carousel-item {
             .box-content-slide {
               .content-left {
+                min-height: 470px;
                 h2 {
                   font-size: 36px;
                   line-height: 33px;
@@ -1064,7 +1067,34 @@ a {
           }
         }
         .arrows-navigation {
-          top: 58%;
+          top: 50%;
+        }
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    .container-slider {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            .box-content-slide {
+              .content-left {
+                min-height: 500px;
+              }
+            }
+          }
+        }
+        .arrows-navigation {
+          top: 52%;
+        }
+      }
+    }
+  }
+  @media (max-width: 375px) {
+    .container-slider {
+      .carousel {
+        .arrows-navigation {
+          top: 59%;
         }
       }
     }
@@ -1241,6 +1271,8 @@ a {
   }
   @media (max-width: 425px) {
     background-attachment: initial;
+    min-height: 300px;
+    padding: 50px 0;
     .content {
       h3 {
         font-size: 50px;
@@ -1946,33 +1978,27 @@ footer {
       max-width: 80%;
     }
     .values-slider {
-      .slick-list {
-        max-width: 80%;
-        .slick-slide {
-          display: flex;
-          .content-side {
-            h5,
-            h2 {
-              text-align: left;
-              color: $new-darkblue;
-              margin-bottom: 30px;
-            }
-            h2 {
-              text-transform: uppercase;
-              font-size: 78px;
-              line-height: 68px;
-              font-weight: 800;
-              max-width: 180px;
-              margin-bottom: 60px;
-            }
-          }
-          .number-side {
-            text-align: center;
-            img {
-              max-width: 400px;
-              margin: 20px auto 0;
-            }
-          }
+      .content-side {
+        h5,
+        h2 {
+          text-align: left;
+          color: $new-darkblue;
+          margin-bottom: 30px;
+        }
+        h2 {
+          text-transform: uppercase;
+          font-size: 78px;
+          line-height: 68px;
+          font-weight: 800;
+          max-width: 180px;
+          margin-bottom: 60px;
+        }
+      }
+      .number-side {
+        text-align: center;
+        img {
+          max-width: 400px;
+          margin: 20px auto 0;
         }
       }
     }
@@ -3011,6 +3037,7 @@ footer {
         }
       }
       h5 {
+        font-family: 'Bauziet';
         color: #fff;
         letter-spacing: 0.01rem;
         margin-bottom: 5px;
