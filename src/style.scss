@@ -2097,29 +2097,16 @@ footer {
     .container-slider {
       margin: 0 auto;
       .values-slider {
-        .slick-list {
-          margin: 0 auto;
-          .slick-slide {
-            .number-side {
-              img {
-                display: none;
-              }
-            }
-            .content-side {
-              h5 {
-                text-align: center;
-              }
-              h2 {
-                font-size: 68px;
-                line-height: 55px;
-                max-width: 100%;
-                text-align: center;
-              }
-              img {
-                max-width: 400px;
-                margin: 0 auto;
-              }
-            }
+        margin: 0 auto;
+        .content-side {
+          h2 {
+            font-size: 68px;
+            line-height: 55px;
+            max-width: 100%;
+          }
+          img {
+            max-width: 400px;
+            margin: 0 auto;
           }
         }
       }
@@ -2144,21 +2131,35 @@ footer {
       }
     }
   }
+  @media (max-width: 767px) {
+    .container-slider {
+      .values-slider {
+        .number-side {
+          img {
+            display: none;
+          }
+        }
+        .content-side {
+          text-align: center;
+          h5,
+          h2 {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
   @media (max-width: 575px) {
     .container-slider {
       .values-slider {
-        .slick-list {
-          .slick-slide {
-            .content-side {
-              h2 {
-                font-size: 55px;
-                line-height: 45px;
-                margin-bottom: 30px;
-              }
-              img {
-                max-width: 250px;
-              }
-            }
+        .content-side {
+          h2 {
+            font-size: 55px;
+            line-height: 45px;
+            margin-bottom: 30px;
+          }
+          img {
+            max-width: 250px;
           }
         }
       }
@@ -2174,17 +2175,13 @@ footer {
     padding: 40px 0;
     .container-slider {
       .values-slider {
-        .slick-list {
-          .slick-slide {
-            .content-side {
-              h2 {
-                font-size: 37px;
-                line-height: 33px;
-              }
-              img {
-                max-width: 200px;
-              }
-            }
+        .content-side {
+          h2 {
+            font-size: 37px;
+            line-height: 33px;
+          }
+          img {
+            max-width: 200px;
           }
         }
       }
