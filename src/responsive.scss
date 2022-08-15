@@ -358,9 +358,6 @@
 @media (max-width: 575px) {
   #hero {
     &.hero-homepage {
-      background-image: url(../images/homepage/hero-mobile.jpg);
-      min-height: 100vh;
-      height: auto;
       .container {
         .row-hero {
           .content {

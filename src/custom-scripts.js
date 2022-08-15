@@ -200,6 +200,10 @@ $(function () {
   });
 });
 
+//////////////////////////////////////////////////
+////////// Homepage page animation scene ////////////
+//////////////////////////////////////////////////
+
 //Init Scrollmagic
 var controller = new ScrollMagic.Controller();
 
@@ -207,7 +211,7 @@ var controller = new ScrollMagic.Controller();
 var pinIntroScene = new ScrollMagic.Scene({
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  duration: 400,
+  duration: 600,
 })
   .setPin('#hero.hero-homepage')
   // .addIndicators()
@@ -215,29 +219,29 @@ var pinIntroScene = new ScrollMagic.Scene({
 
 //Create a scene
 var ourScene = new ScrollMagic.Scene({
-  duration: 2500,
+  duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 200,
+  offset: 500,
 })
   .setClassToggle('.container-screens.col-one', 'move-up')
-  // .addIndicators()
+  // .addIndicators({ name: 'Start home', colorEnd: '#000' })
   .addTo(controller);
 
 //Create a scene 2
 var ourScene2 = new ScrollMagic.Scene({
-  duration: 2500,
+  duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 200,
+  offset: 500,
 })
   .setClassToggle('.container-screens.col-two', 'move-down')
   // .addIndicators()
   .addTo(controller);
 
-// ******************************************************************
-// About page animation scene
-
+//////////////////////////////////////////////////
+////////// About page animation scene ////////////
+//////////////////////////////////////////////////
 //Init Scrollmagic
 var controllerAbout = new ScrollMagic.Controller();
 
@@ -258,7 +262,7 @@ var ourScene3 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: 200,
 })
-  .setClassToggle('.container-screens.col-one', 'move-up')
+  .setClassToggle('.container-screens.col-one.about', 'move-up')
   // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
   .addTo(controllerAbout);
 
@@ -269,7 +273,7 @@ var ourScene4 = new ScrollMagic.Scene({
   triggerHook: 0,
   offset: 200,
 })
-  .setClassToggle('.container-screens.col-two', 'move-down')
+  .setClassToggle('.container-screens.col-two.about', 'move-down')
   // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
   .addTo(controllerAbout);
 
