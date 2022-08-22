@@ -1286,6 +1286,41 @@ a {
               .content-left {
                 min-height: 450px;
               }
+              .image-slider {
+                min-height: 350px;
+                img {
+                  &.one,
+                  &.two,
+                  &.three,
+                  &.four,
+                  &.five,
+                  &.six,
+                  &.seven,
+                  &.eight,
+                  &.nine {
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-width: 380px;
+                  }
+                  &.three,
+                  &.two {
+                    max-width: 450px;
+                    width: 450px;
+                  }
+                  &.four {
+                    max-width: 420px;
+                    width: 400px;
+                  }
+                  &.five {
+                    max-width: 250px;
+                  }
+                  &.eight {
+                    max-width: 220px;
+                  }
+                }
+              }
             }
           }
         }
@@ -1360,7 +1395,7 @@ a {
       }
       .slide-item {
         width: 250px;
-        animation: translateinfiniteMobile 20s linear infinite;
+        animation: translateinfiniteMobile 30s linear infinite;
         img {
           max-width: 90%;
         }
@@ -1368,7 +1403,7 @@ a {
     }
     @keyframes translateinfiniteMobile {
       to {
-        transform: translateX(calc(-250px * 4));
+        transform: translateX(calc(-250px * 12));
       }
     }
   }
@@ -1469,13 +1504,13 @@ a {
   }
   @media (max-width: 425px) {
     background-attachment: initial;
-    min-height: 300px;
-    padding: 50px 0;
+    padding: 30px 0;
     .content {
       h3 {
-        font-size: 50px;
-        line-height: 58px;
+        font-size: 45px;
+        line-height: 45px;
         letter-spacing: 10px;
+        margin-bottom: 280px;
       }
     }
   }
@@ -1823,6 +1858,10 @@ footer {
       line-height: 18px;
       color: #4d4d4d;
     }
+    h6 {
+      text-align: left;
+      color: #001035;
+    }
     .form {
       margin: 10px 0 25px;
       input {
@@ -1866,6 +1905,7 @@ footer {
     .up-your-game {
       margin-top: 30px;
       text-align: center;
+      h6,
       h4 {
         text-align: center;
       }
@@ -2017,6 +2057,7 @@ footer {
   }
   h2 {
     margin: 0;
+    text-transform: uppercase;
   }
   @media (max-width: 575px) {
     padding: 150px 0;
@@ -2168,6 +2209,9 @@ footer {
             }
             .content-left {
               width: 90%;
+              .description {
+                min-height: 320px;
+              }
             }
           }
         }
