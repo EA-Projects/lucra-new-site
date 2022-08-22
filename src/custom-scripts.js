@@ -298,7 +298,6 @@ $('.slider-nav').slick({
   autoplay: false,
   autoplaySpeed: 6000,
   pauseOnHover: false,
-  draggable: false,
   responsive: [
     {
       breakpoint: 767,
@@ -319,7 +318,6 @@ $('.team-slider').slick({
   autoplaySpeed: 5000,
   pauseOnHover: false,
   arrows: true,
-  draggable: false,
   responsive: [
     {
       breakpoint: 991,
@@ -348,3 +346,8 @@ $('.team-slider').on(
 
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
+
+// Menu mobile | Prevent scroll when menu is open
+$('.navbar-toggler').on('click', function () {
+  $('body').toggleClass('hidde');
+});
