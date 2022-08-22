@@ -960,6 +960,7 @@ a {
       justify-content: center;
       align-items: flex-end;
       .carousel-inner {
+        overflow: initial;
         .carousel-item {
           .box-content-slide {
             display: flex;
@@ -1009,12 +1010,63 @@ a {
             .image-slider {
               min-height: 650px;
               width: 50%;
-              padding-top: 80px;
+              // padding-top: 80px;
               display: flex;
+              justify-content: center;
               align-items: flex-end;
-              .app-image {
-                max-width: 745px;
-                margin-bottom: -150px;
+              position: relative;
+              img {
+                &.one {
+                  max-width: 763px;
+                }
+                &.two {
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 900px;
+                }
+                &.three {
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 900px;
+                }
+                &.four {
+                  position: absolute;
+                  left: 60%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 800px;
+                }
+                &.five {
+                  max-width: 550px;
+                }
+                &.six {
+                  position: absolute;
+                  left: 52%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 620px;
+                }
+                &.seven {
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 650px;
+                }
+                &.eight {
+                  max-width: 400px;
+                }
+                &.nine {
+                  position: absolute;
+                  left: 50%;
+                  bottom: 0;
+                  transform: translateX(-50%);
+                  width: 750px;
+                }
               }
             }
           }
@@ -1073,6 +1125,49 @@ a {
       }
     }
   }
+  @media (max-width: 1200px) {
+    .container-slider {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            .box-content-slide {
+              .image-slider {
+                img {
+                  &.six {
+                    width: 520px;
+                  }
+                  &.seven {
+                    width: 550px;
+                  }
+                  &.nine {
+                    width: 620px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    .container-slider {
+      .carousel {
+        .carousel-inner {
+          .carousel-item {
+            .box-content-slide {
+              .content-left {
+                h2 {
+                  font-size: 48px;
+                  line-height: 50px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   @media (max-width: 991px) {
     .container-slider {
       .carousel {
@@ -1082,7 +1177,7 @@ a {
               flex-wrap: wrap;
               .content-left {
                 width: 100%;
-                min-height: 500px;
+                min-height: 400px;
                 text-align: center;
                 max-width: 600px;
                 margin: 0 auto;
@@ -1103,9 +1198,26 @@ a {
                 width: 100%;
                 min-height: auto;
                 justify-content: center;
-                padding-top: 100px;
-                .app-image {
-                  max-width: 350px;
+                padding-top: 30px;
+                img {
+                  &.one,
+                  &.two,
+                  &.three,
+                  &.four,
+                  &.six,
+                  &.seven,
+                  &.nine {
+                    position: static;
+                    width: 100%;
+                    transform: none;
+                    max-width: 450px;
+                  }
+                  &.five {
+                    max-width: 450px;
+                  }
+                  &.eight {
+                    max-width: 320px;
+                  }
                 }
               }
             }
@@ -1115,7 +1227,7 @@ a {
           position: absolute;
           bottom: inherit;
           left: 50%;
-          top: 58%;
+          top: 4%;
           transform: translate(-50%, -50%);
           z-index: 8;
           .carousel-control-prev {
@@ -1135,23 +1247,32 @@ a {
           .carousel-item {
             .box-content-slide {
               .content-left {
-                min-height: 470px;
                 h2 {
                   font-size: 36px;
                   line-height: 33px;
                 }
               }
               .image-slider {
-                .app-image {
-                  max-width: 345px;
-                  margin-bottom: -100px;
+                img {
+                  &.one,
+                  &.two,
+                  &.three,
+                  &.four,
+                  &.six,
+                  &.seven,
+                  &.nine {
+                    max-width: 350px;
+                  }
+                  &.five {
+                    max-width: 350px;
+                  }
+                  &.eight {
+                    max-width: 250px;
+                  }
                 }
               }
             }
           }
-        }
-        .arrows-navigation {
-          top: 50%;
         }
       }
     }
@@ -1193,13 +1314,13 @@ a {
   .slider-container {
     display: flex;
     min-height: 750px;
-    width: calc(550px * 8);
+    width: calc(550px * 24);
     .slide-item {
       background: #fff;
       // height: 450px;
       width: 550px;
       margin-right: 5px;
-      animation: translateinfinite 30s linear infinite;
+      animation: translateinfinite 45s linear infinite;
       align-self: stretch;
       display: flex;
       align-items: flex-start;
@@ -1301,7 +1422,7 @@ a {
 //Translate infinite Shop slider
 @keyframes translateinfinite {
   to {
-    transform: translateX(calc(-550px * 4));
+    transform: translateX(calc(-550px * 12));
   }
 }
 
@@ -2007,6 +2128,8 @@ footer {
           cursor: default;
           background-color: inherit;
           color: $new-darkblue;
+          width: 50px;
+          text-align: center;
           &:before,
           &:after {
             display: none;
