@@ -1410,9 +1410,17 @@ a {
   @media (max-width: 425px) {
     padding: 50px 0;
     .slider-container {
+      .slide-item {
+        width: 250px;
+        animation: none;
+        img {
+          max-width: 90%;
+        }
+      }
       .content {
         top: 50%;
         transform: translate(-50%, -50%);
+        z-index: 9;
         .shop-cta {
           h2 {
             font-size: 50px;
@@ -1423,8 +1431,7 @@ a {
       .slide-item {
         img {
           &.lucra-outline {
-            top: 140px;
-            left: -10px;
+            display: none;
           }
         }
       }
