@@ -1408,7 +1408,7 @@ a {
     }
   }
   @media (max-width: 425px) {
-    padding: 50px 0;
+    padding: 50px 0 220px;
     .slider-container {
       .slide-item {
         width: 250px;
@@ -1418,8 +1418,7 @@ a {
         }
       }
       .content {
-        top: 50%;
-        transform: translate(-50%, -50%);
+        bottom: 5%;
         z-index: 9;
         .shop-cta {
           h2 {
