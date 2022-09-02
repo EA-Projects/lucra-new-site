@@ -44,52 +44,884 @@
     <div id="sb-site">
       <!-- HERO -->
       <header id="header-nav">
-        <div class="container">
+        <div class="container-nav">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/">
-              <img
-                src="images/lucra-white.svg"
-                class="logo d-inline-block align-top"
-                alt="Lucra Sports"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="mobile-top">
+              <a class="navbar-brand" href="/">
+                <img
+                  src="images/lucra-blue.svg"
+                  class="logo d-inline-block align-top"
+                  alt="Lucra Sports"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
             <div
-              class="collapse navbar-collapse justify-content-end"
+              class="collapse navbar-collapse justify-content-between"
               id="navbarNav"
             >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" href="/">home</a>
+              <div class="d-flex align-items-center">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/about.html">about us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="pages/careers.html">careers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="https://lucra-sports.myshopify.com/collections/all"
+                      target="_blank"
+                      >shop apparel</a
+                    >
+                  </li>
+                  <li class="d-block d-lg-none nav-item">
+                    <a
+                      class="button outline m-0"
+                      href="https://apps.apple.com/us/app/lucra/id1563098618"
+                      target="_blank"
+                      >Download the App</a
+                    >
+                  </li>
+                  <li class="nav-item lucra">
+                    <a class="nav-link" href="index.html">
+                      <img src="images/lucra-soft.svg" alt="Lucra Sports" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="d-none d-lg-block">
+                <ul class="p-0 m-0 list-unstyled">
+                  <li>
+                    <a
+                      class="nav-link button outline m-0"
+                      href="https://apps.apple.com/us/app/lucra/id1563098618"
+                      target="_blank"
+                      >Download the App</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <section id="hero" class="hero-homepage">
+        <div class="container">
+          <div class="row justify-content-center">
+            <h1>
+              CHALLENGE FRIENDS. <br />
+              <span>WIN MONEY.</span>
+            </h1>
+            <a
+              href="https://apps.apple.com/us/app/lucra/id1563098618"
+              target="_blank"
+              class="button outline"
+            >
+              <img src="images/homepage/apple.svg" alt="Apple" />
+              Download Lucra
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="animation-container">
+        <div class="box-container">
+          <div class="container-screens col-one">
+            <div class="box-screen screen-one">
+              <p class="">
+                Build a social network around the games you love and the friends
+                you love to beat.
+              </p>
+            </div>
+            <div class="box-screen screen-three">
+              <h2>
+                <span class="" data-wow-delay=".1s">IT’S</span>
+                <span class="" data-wow-delay=".2s">ALL</span>
+                <span class="" data-wow-delay=".3s">FAIR</span>
+                <span class="" data-wow-delay=".4s">GAME</span>
+              </h2>
+            </div>
+          </div>
+          <div class="container-screens col-two">
+            <div class="box-screen screen-two">
+              <h2 class="full-width">
+                <span class="" data-wow-delay=".1s">GET</span>
+                <span class="" data-wow-delay=".2s">IN</span>
+                <span class="" data-wow-delay=".3s">ON</span>
+                <span class="" data-wow-delay=".4s">THE</span>
+                <span class="" data-wow-delay=".5s">ACTION</span>
+              </h2>
+            </div>
+            <div class="box-screen screen-four">
+              <p class="">
+                Compete with your friends in almost anything for real money...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="slider-app">
+        <div class="container-slider">
+          <div
+            id="carouselExampleIndicators"
+            class="carousel slide carousel-fade"
+            data-pause="false"
+            data-ride="carousel"
+          >
+            <div class="arrows-navigation">
+              <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <ol class="carousel-indicators">
+                <li
+                  data-target="#carouselExampleIndicators"
+                  data-slide-to="0"
+                  class="active"
+                >
+                  1/9
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/team.html">our team</a>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                  2/9
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/about.html">about lucra</a>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                  3/9
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="pages/team.html#join-the-team"
-                    >careers</a
+                <li data-target="#carouselExampleIndicators" data-slide-to="3">
+                  4/9
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4">
+                  5/9
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5">
+                  6/9
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6">
+                  7/9
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7">
+                  8/9
+                </li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="8">
+                  9/9
+                </li>
+              </ol>
+              <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        CHALLENGE FRIENDS.
+                        <span>WIN MONEY.</span>
+                      </h2>
+                      <p class="description">
+                        Lucra introduces a new way to compete with friends in a
+                        safe and easy to use social platform that gives you
+                        total control of your contests.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/challenge-friends.png"
+                      class="one"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        COMPETE ON THE
+                        <span>GAMES YOU PLAY.</span>
+                      </h2>
+                      <p class="description">
+                        If you play it, we have it! With over 100 games ranging
+                        from console gaming via streaming to an in person round
+                        of golf with your buddies, Lucra is the home of friendly
+                        competition. Say goodbye to awkward payment requests.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/complete-games.png"
+                      class="two"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        AND ON THE SPORTS
+                        <span>YOU WATCH.</span>
+                      </h2>
+                      <p class="description">
+                        Lucra transforms your living room into a stadium filled
+                        with the energy of thousands of passionate fans – feel
+                        the electricity as you challenge  your friends across
+                        all major sports leagues and savor that sweet, sweet
+                        victory.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/sports-you-watch.png"
+                      class="three"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>PLAY AGAINST <span>ANYONE.</span></h2>
+                      <p class="description">
+                        Friends, family, co-workers, or any user on Lucra!
+                        Compete against new friends anywhere in the country by
+                        publishing to the Lucra feed, or quickly text out
+                        contest invites and see your games come to life.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/play-against.png"
+                      class="four"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        YOU PLAY IT, WE GOT IT:
+                        <span>TRENDING GAMES.</span>
+                      </h2>
+                      <p class="description">
+                        Trending TikTok challenges, new video game releases, or
+                        even games submitted by you! Our games library is
+                        continuously updated to offer the latest competitions
+                        you and your friends can’t stop playing.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    class="image-slider align-items-center justify-content-center"
                   >
-                </li>
-                <div class="social-box nav-box">
+                    <img
+                      src="images/homepage/features/trending-games.png"
+                      class="five"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        TRACK WINS AND
+                        <span>GO HEAD-TO-HEAD.</span>
+                      </h2>
+                      <p class="description">
+                        Keeping score has never been easier than with Lucra.
+                        Compare your wins against friends, share your top games
+                        and set your sights on taking down your top opponents.
+                        Winning is fun, but beating your friends is even better.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/track-wins.png"
+                      class="six"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        SAFE & SEAMLESS
+                        <span>TRANSACTIONS.</span>
+                      </h2>
+                      <p class="description">
+                        Quickly add your payment information and you’re ready to
+                        start playing. Create a contest in as little as 15
+                        seconds and start winning — waiting around for your
+                        friends to pay up is a thing of the past.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/safe-seamless.png"
+                      class="seven"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        COMPLETE CUSTOMIZATION <br class="d-none d-md-block" />
+                        <span>IN YOUR HANDS.</span>
+                      </h2>
+                      <p class="description">
+                        Get ready to win on your own terms. We’re giving you
+                        complete control over your contests! Get creative and
+                        pit athletes from across pro leagues against each other
+                        or even create match ups within the same team.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider align-items-center">
+                    <img
+                      src="images/homepage/features/complete-customization.png"
+                      class="eight"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="box-content-slide">
+                  <div class="content-left">
+                    <p class="top-title">Explore the App</p>
+                    <div>
+                      <h2>
+                        GET THE PLAYER
+                        <span>STATS YOU NEED.</span>
+                      </h2>
+                      <p class="description">
+                        Lucra is built for every fan. Whether you’re a
+                        statistician or allergic to numbers, we hook you up with
+                        the latest data and projections so everyone is on an
+                        even playing field and you can focus on what matters:
+                        talking sh*t and beating your friends.
+                      </p>
+                      <a
+                        href="https://apps.apple.com/us/app/lucra/id1563098618"
+                        target="_blank"
+                        class="button outline"
+                      >
+                        <img src="images/homepage/apple.svg" alt="" />
+                        Download Lucra
+                      </a>
+                    </div>
+                  </div>
+                  <div class="image-slider">
+                    <img
+                      src="images/homepage/features/get-the-player.png"
+                      class="nine"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="shop">
+        <div class="slider-container">
+          <div class="content">
+            <div class="shop-cta">
+              <h2 class="animate fadeInUp">APPAREL</h2>
+              <p class="animate fadeInUp" data-wow-delay=".2s">
+                Gear up for football season.
+              </p>
+              <a
+                href="https://lucra-sports.myshopify.com/collections/all"
+                target="_blank"
+                target="_blank"
+                class="button outline animate fadeInUp"
+                data-wow-delay=".4s"
+                >Shop the Store</a
+              >
+            </div>
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-one.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/lucra-outline.svg"
+              class="lucra-outline"
+              alt=""
+            />
+            <img
+              src="images/homepage/apparel/apparel-two.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-three.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-four.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-five.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-six.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-seven.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-eight.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-nine.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-ten.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-eleven.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-eight.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+
+          <!-- Repeat -->
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-one.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/lucra-outline.svg"
+              class="lucra-outline"
+              alt=""
+            />
+            <img
+              src="images/homepage/apparel/apparel-two.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-three.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-four.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-five.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-six.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-seven.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-eight.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-nine.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-ten.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item">
+            <img
+              src="images/homepage/apparel/apparel-eleven.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+          <div class="slide-item bottom">
+            <img
+              src="images/homepage/apparel/apparel-eight.jpg"
+              alt="Shop the Store"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- MEET THE TEAM -->
+      <section id="meet-the-team">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-5">
+              <div class="content">
+                <h3 class="animate fadeInUp">We are<br />all fans.</h3>
+                <a
+                  href="pages/about.html#our-team"
+                  class="button outline animate fadeInUp"
+                  data-wow-delay=".2s"
+                  >Meet the Team</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission-blocks">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="block transparency animate fadeInUp">
+                <div class="content-hidde">
+                  <p class="description-block">
+                    Lucra is committed to transparency, integrity, and fairness
+                    throughout our platform
+                  </p>
+                </div>
+              </div>
+              <h5 class="block-title animate fadeInUp">
+                Transparency & Responsibility
+              </h5>
+            </div>
+            <div class="col-12 col-md-6">
+              <div class="block mission animate fadeInUp" data-wow-delay=".2s">
+                <a class="link" href="pages/about.html#our-values"></a>
+                <div class="content-hidde">
+                  <p class="description-block">
+                    LUCRA IS BUILDING COMMUNITIES OF FANS AND FRIENDS WHO LOVE
+                    THE RUSH OF A CHALLENGE
+                  </p>
+                </div>
+              </div>
+              <h5 class="block-title animate fadeInUp" data-wow-delay=".2s">
+                Mission & Values
+              </h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="block were-hiring animate fadeInUp"
+                data-wow-delay=".4s"
+              >
+                <a class="link" href="pages/careers.html"></a>
+                <h3>WE’RE<br />HIRING</h3>
+                <p>Join our team of passionate competitors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recent-press">
+        <div class="container">
+          <h4 class="recent-press-title animate fadeInUp">Recent Press</h4>
+          <div class="row align-items-center">
+            <div class="col-6 col-md-3 text-center">
+              <div class="animate fadeInUp company-logo">
+                <a
+                  href="https://www.sportico.com/business/sports-betting/2022/lucra-sports-betting-app-raises-vc-funds-1234670009/"
+                  target="_blank"
+                >
+                  <img
+                    src="images/sportico.png"
+                    class="sportico"
+                    alt="Sportico"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="animate fadeInUp company-logo" data-wow-delay=".2s">
+                <a
+                  href="https://www.businesswire.com/news/home/20220330005224/en/Lucra-Sports-Raises-10-Million%5B%E2%80%A6%5Dr-Sports-Gaming-Marketplace-to-Wager-on-Player-Performance'/"
+                  target="_blank"
+                >
+                  <img
+                    src="images/business-wire-logo-white.svg"
+                    class="business-wire"
+                    alt="Business Wire"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="animate fadeInUp company-logo" data-wow-delay=".4s">
+                <a
+                  href="https://www.bloomberg.com/news/articles/2021-10-07/lasry-backed-sports-gambling-app-wants-you-to-bet-your-friends?sref=2gRlZMND"
+                  target="_blank"
+                >
+                  <img
+                    src="images/bloomberg-logo.svg"
+                    class="bloomberg"
+                    alt="Bloomberg"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="animate fadeInUp company-logo" data-wow-delay=".6s">
+                <a
+                  href="https://sports.yahoo.com/lucra-peer-sports-betting-raises-095549408.html"
+                  target="_blank"
+                >
+                  <img
+                    src="images/yahoo-logo.png"
+                    class="yahoo"
+                    alt="Yahoo! Sports"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prefooter">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-8">
+              <div class="content-prefooter animate fadeInUp">
+                <p>
+                  WE’RE BUILDING COMMUNITIES OF FANS & FRIENDS THROUGH shared
+                  experiences that connect people in friendly competition
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <div class="top-contact">
+                <div class="contact-us">
+                  <img src="images/homepage/lucra-l.svg" alt="Lucra Sports" />
+                  <div class="contact">
+                    <p>Contact Us</p>
+                    <a href="mailto:info@lucrasports.com"
+                      >info@lucrasports.com</a
+                    >
+                  </div>
+                </div>
+                <div class="download">
+                  <a
+                    href="https://apps.apple.com/us/app/lucra/id1563098618"
+                    target="_blank"
+                  >
+                    <img
+                      src="images/homepage/appstore.png"
+                      alt="Download Lucra"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="navigation-links">
+                <a href="pages/careers.html">careers</a>
+                <a href="pages/faqs.html">faqs</a>
+                <a href="pages/responsible-gaming.html">responsible gaming</a>
+                <a href="pages/terms-of-service.html">terms of service</a>
+                <a href="pages/privacy-policy.html">privacy policy</a>
+              </div>
+              <div class="copyright">
+                <p>Copyright © 2022 Lucra Sports</p>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="up-your-game">
+                <h4>Up Your Game</h4>
+                <p>Be the first to learn about promotions and updates.</p>
+                <h6>Follow us on social media</h6>
+                <div class="social-box">
                   <a
                     href="https://www.instagram.com/lucrasports/"
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/logo-instagram.svg"
+                      src="images/homepage/instagram.svg"
                       class="instagram"
                       alt="Instagram"
                   /></a>
@@ -98,7 +930,7 @@
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/logo-facebook.svg"
+                      src="images/homepage/facebook.svg"
                       class="facebook"
                       alt="Facebook"
                   /></a>
@@ -107,725 +939,26 @@
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/logo-twitter.svg"
+                      src="images/homepage/twitter.svg"
                       class="twitter"
                       alt="Twitter"
                   /></a>
                   <a
-                    href="https://lucra-sports.myshopify.com/collections/all"
+                    href="https://www.youtube.com/channel/UCMKf_D_n80bE9OjegIcPRJA"
                     target="_blank"
                     rel="noopener"
                   >
                     <img
-                      src="images/lucra-swags.svg"
-                      class="swag-store"
-                      alt="Swag Store"
+                      src="images/homepage/youtube.svg"
+                      class="youtube"
+                      alt="YouTube"
                     />
                   </a>
                 </div>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <section id="hero" class="hero-homepage">
-        <div class="container" id="header">
-          <div class="row row-hero">
-            <div class="col-12 col-md-6 col-lg-7">
-              <div class="content" id="hero-headline">
-                <img
-                  src="images/homepage/both_screens_hero-v2.png"
-                  alt=""
-                  class="both-mobiles"
-                />
-                <h1>risk it for <br />the biscuit.</h1>
-                <p>
-                  download Lucra - where winning is fun, but
-                  <strong>beating your friends is better!</strong>
-                </p>
-
-                <div class="download">
-                  <a
-                    href="https://app.adjust.com/v6hpzmk?fallback=https%3A%2F%2Flucrasports.com%2F"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <img
-                      src="images/homepage/app-store.svg"
-                      alt="Download on the App Store"
-                    />
-                  </a>
-
-                  <a class="hiring-cta" href="/pages/team.html#join-the-team"
-                    >We're hiring!</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-5">
-              <div class="mobiles">
-                <img
-                  src="images/homepage/phone-left-v2.png"
-                  class="mobile-left"
-                  alt=""
-                  id="hero-phone-fore"
-                />
-                <img
-                  src="images/homepage/phone-right-v2.png"
-                  class="mobile-right"
-                  alt=""
-                  id="hero-phone-back"
-                />
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- VIDEO -->
-      <!-- <section id="video">
-        <video
-          id="video-lucra"
-          class="placeholder"
-          autoplay
-          muted
-          playsinline
-          preload
-          loop
-        >
-          <source src="images/lucra_sports.mp4" />
-        </video>
-        <div class="volume muted"></div>
-      </section> -->
-
-      <!-- APPROACHABLE -->
-      <section id="approachable" data-animable id="mission">
-        <!-- <img
-          src="images/image-sportsicons-1@2x.png"
-          class="sport-left"
-          alt=""
-        />
-        <img
-          src="images/image-sportsicons-2@2x.png"
-          class="sport-right"
-          alt=""
-        />
-        <img
-          src="images/image_sportsicons1_m.png"
-          class="sport-top sport-mobile"
-          alt=""
-        />
-        <img
-          src="images/image_sportsicons2_m.png"
-          class="sport-bottom sport-mobile"
-          alt=""
-        /> -->
-        <div class="container">
-          <div class="row justify-content-center justify-content-md-start">
-            <div class="col-12 col-md-8">
-              <div class="content">
-                <h3>
-                  Lucra is changing the way you engage
-                  <span
-                    >around sports by introducing a new social and approachable
-                    way to compete with friends.</span
-                  >
-                </h3>
-                <a
-                  href="https://app.adjust.com/v6hpzmk?fallback=https%3A%2F%2Flucrasports.com%2F"
-                  class="button secondary"
-                  target="_blank"
-                  >download now!</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FEATURES -->
-      <section id="features">
-        <div class="container">
-          <h2>Lucra is built for all fans</h2>
-          <div class="row" id="feature-1" data-animable>
-            <div class="col-12 col-md-4 col-lg-5 p-0">
-              <div class="col-mobile col-top text-right">
-                <img
-                  src="images/homepage/choose-player.png"
-                  alt=""
-                  class="mobile-desktop"
-                  id="feature-1-image"
-                />
-              </div>
-            </div>
-            <div class="col-12 col-md-8 col-lg-7 p-0">
-              <div class="content">
-                <img src="images/homepage/insights-icon.svg" alt="" />
-                <h5 class="small-title">contest creation is simple and easy</h5>
-                <hr class="divider" />
-                <p>
-                  <span>Quickly create your own customized contests</span> with
-                  your favorite players, or use one of our recommended contests
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row" id="feature-2" data-animable>
-            <div class="col-12 col-md-8 col-lg-5 offset-lg-2 p-0">
-              <div class="content middle">
-                <img src="images/homepage/controls-icon.svg" alt="" />
-                <h5 class="">
-                  ultimate customization & control of your contests
-                </h5>
-                <hr class="divider" />
-                <p>
-                  Customize your contests to your liking with complete control
-                  over the sports, players, stats, contest details.
-                  <span>Compete for any amount, even as low as $1!</span>
-                </p>
-              </div>
-            </div>
-            <div class="col-12 col-md-4 col-lg-5 p-0">
-              <div class="col-mobile col-center text-left">
-                <img
-                  src="images/homepage/create-contest.png"
-                  alt=""
-                  class="mobile-desktop"
-                  id="feature-2-image"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="row" id="feature-3" data-animable>
-            <div class="col-12 col-md-4 col-lg-5 p-0">
-              <div class="col-mobile col-bottom text-right">
-                <img
-                  src="images/homepage/head-to-head.png"
-                  alt=""
-                  class="mobile-desktop"
-                  id="feature-3-image"
-                />
-              </div>
-            </div>
-            <div class="col-12 col-md-8 col-lg-7 p-0">
-              <div class="content">
-                <img src="images/homepage/social-icon.svg" alt="" />
-                <h5 class="">
-                  social play puts smack talk at the heart of the experience
-                </h5>
-                <hr class="divider" />
-                <p>
-                  <span>Build a social network</span> by inviting friends,
-                  creating groups, and keep a running tally of your success with
-                  our head-to-head stats and group leaderboards
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TRANSPARENCY AND RESPONSABILITY -->
-      <section id="transparency" data-animable>
-        <div class="container">
-          <div class="row justify-content-center justify-content-md-start">
-            <div class="col-12 col-md-7 col-lg-6">
-              <div class="content">
-                <h2>transparency & responsibility</h2>
-                <p>
-                  Lucra will always connect friends through friendly competition
-                  in a safe, transparent, and responsible way.
-                </p>
-                <a
-                  href="#"
-                  class="button primary"
-                  data-toggle="modal"
-                  data-target="#responsability-modal"
-                  >learn more</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Modal Transparency and Responsability -->
-      <div
-        class="modal fade"
-        id="responsability-modal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="title"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
-                <img src="images/icon_close.png" aria-hidden="true" />
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="box-image">
-                <img src="images/icon_transparency.png" alt="" />
-              </div>
-              <h3>transparency</h3>
-              <p>
-                Lucra is changing the game in skill-based contests disrupting
-                the way that fans engage with their friends. Our fair and
-                responsible platform and extensive responsible gaming policy
-                ensures every Lucra User can play within their financial means.
-                Lucra is committed to transparency, integrity, and fairness
-                throughout our platform and we will always do everything
-                possible to prevent gaming-related problems.
-              </p>
-              <ul>
-                <li>
-                  Lucra’s mission relies on transparency; at every step we give
-                  detailed information about how funds are being used on the
-                  platform.
-                </li>
-                <li>
-                  Users can easily access their contest history, funds history,
-                  and fee structure
-                </li>
-                <li>
-                  Fees (5%) are only taken from the contest winner, meaning you
-                  never lose more than you stake
-                </li>
-                <li>
-                  Users can withdraw and deposit at a minimum of $1 to allow for
-                  complete flexibility of funds on the platform
-                </li>
-              </ul>
-              <h4>responsible gaming</h4>
-              <p>
-                Lucra has built out an extensive Responsible Gaming policy to
-                protect its users through a suite of on platform settings and
-                connection to a set of external resources.
-              </p>
-              <ul>
-                <li>
-                  Manage exactly how you want to play Lucra in a healthy way
-                  through our limits on contest size, contest frequency, and
-                  deposit frequency
-                </li>
-                <li>
-                  Lucra also allows users to take a break from the action with
-                  our Self-Exclusion feature, which allows users to block
-                  themselves from participating on the platform for a specific
-                  amount of time
-                </li>
-                <li>
-                  Responsible Gaming is at the core of Lucra’s mission to create
-                  a transparent and fair platform where its users can feel safe
-                  to engage in fun contests with their friends
-                </li>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="button primary" data-dismiss="modal">
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PRE-FOOTER -->
-
-      <section id="pre-footer">
-        <div id="media">
-          <h2>media</h2>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-9">
-                <div class="bd-example video-slider">
-                  <div
-                    id="carouselExampleCaption"
-                    class="carousel slide"
-                    data-ride="carousel"
-                    data-interval="false"
-                    data-pause="hover"
-                  >
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="video-cover">
-                          <iframe
-                            id="video-0"
-                            class="video-iframe"
-                            width="100%"
-                            height="300"
-                            allowscriptaccess="always"
-                            src="https://www.youtube.com/embed/DjZWyOPQJcU?start=1"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                          <div class="playvideo"></div>
-                          <div class="video-holder youtube"></div>
-                        </div>
-                        <div class="description-video">
-                          <p>
-                            You can also listen to the podcast episode
-                            <a
-                              href="https://anchor.fm/seventysixcapital"
-                              target="_blank"
-                              >here.</a
-                            >
-                          </p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="video-cover">
-                          <iframe
-                            id="video-1"
-                            class="video-iframe"
-                            src="//content.jwplatform.com/players/ZppCgNir-YrbGYzGZ.html"
-                            width="100%"
-                            height="300"
-                            allowscriptaccess="always"
-                            frameborder="0"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                          <div class="playvideo"></div>
-                          <div class="video-holder pymnts"></div>
-                        </div>
-                        <div class="description-video">
-                          <p>
-                            You can read the full article
-                            <a
-                              href="https://www.pymnts.com/news/social-commerce/2022/the-next-3-years-p2p-sites-bring-friendly-betting-into-the-online-gaming-orbit/"
-                              target="_blank"
-                              >here.</a
-                            >
-                          </p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="video-cover">
-                          <iframe
-                            id="video-2"
-                            class="video-iframe"
-                            src="https://www.youtube.com/embed/amHTD3bF1Zo"
-                            width="100%"
-                            height="300"
-                            allowscriptaccess="always"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                          <div class="playvideo"></div>
-                          <div class="video-holder gaming-america"></div>
-                        </div>
-                        <div class="description-video">
-                          <p>Lucra Sports interview with Gaming America</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="video-cover">
-                          <iframe
-                            id="video-3"
-                            class="video-iframe"
-                            src="https://www.bloomberg.com/multimedia/api/embed/iframe?id=b2d1e5d1-4198-41d4-a6bf-03d3d7f3d86d"
-                            width="100%"
-                            height="300"
-                            allowscriptaccess="always"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                          ></iframe>
-                          <div class="playvideo"></div>
-                          <div class="video-holder bloomberg"></div>
-                        </div>
-                        <div class="description-video">
-                          <p>Lucra Sports featured in Bloomberg</p>
-                        </div>
-                      </div>
-                    </div>
-                    <a
-                      class="carousel-control-prev"
-                      href="#carouselExampleCaption"
-                      role="button"
-                      data-slide="prev"
-                    >
-                      <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a
-                      class="carousel-control-next"
-                      href="#carouselExampleCaption"
-                      role="button"
-                      data-slide="next"
-                    >
-                      <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="press">
-          <h2>press</h2>
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-10">
-                <div class="bd-example">
-                  <div
-                    id="carouselExampleCaptions"
-                    class="carousel slide d-flex align-items-center"
-                    data-ride="carousel"
-                  >
-                    <ol class="carousel-indicators">
-                      <li
-                        data-target="#carouselExampleCaptions"
-                        data-slide-to="0"
-                        class="active"
-                      ></li>
-                      <li
-                        data-target="#carouselExampleCaptions"
-                        data-slide-to="1"
-                      ></li>
-                      <li
-                        data-target="#carouselExampleCaptions"
-                        data-slide-to="2"
-                      ></li>
-                      <li
-                        data-target="#carouselExampleCaptions"
-                        data-slide-to="3"
-                      ></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="content">
-                          <div class="box-image">
-                            <a
-                              href="https://www.sportico.com/business/sports-betting/2022/lucra-sports-betting-app-raises-vc-funds-1234670009/"
-                              target="_blank"
-                              rel="noopener"
-                              class="read-more"
-                            >
-                              <img
-                                src="images/sportico.png"
-                                class="sportico"
-                                alt="Sportico"
-                              />
-                            </a>
-                          </div>
-                          <!-- <hr class="divider" />
-                          <h4 class="title">
-                            Lucra peer sports betting raises $10 millon from
-                            raptor, Marc Lasry
-                          </h4> -->
-                          <a
-                            href="https://www.sportico.com/business/sports-betting/2022/lucra-sports-betting-app-raises-vc-funds-1234670009/"
-                            target="_blank"
-                            rel="noopener"
-                            class="read-more"
-                            >read more</a
-                          >
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="content">
-                          <div class="box-image">
-                            <a
-                              href="https://www.businesswire.com/news/home/20220330005224/en/Lucra-Sports-Raises-10-Million%5B%E2%80%A6%5Dr-Sports-Gaming-Marketplace-to-Wager-on-Player-Performance'/"
-                              target="_blank"
-                              rel="noopener"
-                              class="read-more"
-                            >
-                              <img
-                                src="images/business-wire-logo-white.svg"
-                                class="bw"
-                                alt="Business Wire"
-                              />
-                            </a>
-                          </div>
-                          <!-- <hr class="divider" />
-                          <h4 class="title">
-                            Lucra Sports raises $10 million series a for
-                            Peer-to-Peer sports gaming marketplace to wager on
-                            player performance
-                          </h4> -->
-                          <a
-                            href="https://www.businesswire.com/news/home/20220330005224/en/Lucra-Sports-Raises-10-Million%5B%E2%80%A6%5Dr-Sports-Gaming-Marketplace-to-Wager-on-Player-Performance'/"
-                            target="_blank"
-                            rel="noopener"
-                            class="read-more"
-                            >read more</a
-                          >
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="content">
-                          <div class="box-image">
-                            <a
-                              href="https://sports.yahoo.com/lucra-peer-sports-betting-raises-095549408.html"
-                              target="_blank"
-                              rel="noopener"
-                              class="read-more"
-                            >
-                              <img
-                                src="images/yahoo-sports-white.png"
-                                class="yahoo"
-                                alt="Yahoo! Sports"
-                              />
-                            </a>
-                          </div>
-                          <!-- <hr class="divider" />
-                          <h4 class="title">
-                            Lucra peer sports betting raises $10 millon from
-                            raptor, Marc Lasry
-                          </h4> -->
-                          <a
-                            href="https://sports.yahoo.com/lucra-peer-sports-betting-raises-095549408.html"
-                            target="_blank"
-                            rel="noopener"
-                            class="read-more"
-                            >read more</a
-                          >
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="content">
-                          <div class="box-image">
-                            <a
-                              href="https://www.bloomberg.com/news/articles/2021-10-07/lasry-backed-sports-gambling-app-wants-you-to-bet-your-friends?sref=2gRlZMND"
-                              target="_blank"
-                              rel="noopener"
-                              class="read-more"
-                            >
-                              <img
-                                src="images/bloomberg-logo.svg"
-                                class="bloomberg"
-                                alt="Bloomberg"
-                              />
-                            </a>
-                          </div>
-                          <!-- <hr class="divider" />
-                          <h4 class="title">
-                            Sports Gambling App Wants You to Bet Your Friends
-                          </h4> -->
-                          <a
-                            href="https://www.bloomberg.com/news/articles/2021-10-07/lasry-backed-sports-gambling-app-wants-you-to-bet-your-friends?sref=2gRlZMND"
-                            target="_blank"
-                            rel="noopener"
-                            class="read-more"
-                            >read more</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer id="footer">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-lg-4">
-              <div class="box-logo">
-                <img src="images/lucra-logo-orange.svg" alt="Lucra Sports" />
-              </div>
-              <div class="contact">
-                <div class="d-flex align-items-center flex-wrap">
-                  <a href="mailto:team@lucrasports.com" class="contact-us"
-                    >contact us</a
-                  >
-                  <div class="social-box">
-                    <a
-                      href="https://www.instagram.com/lucrasports/"
-                      target="_blank"
-                      rel="noopener"
-                      ><img
-                        src="images/logo-instagram.svg"
-                        class="instagram"
-                        alt="Instagram"
-                    /></a>
-                    <a
-                      href="https://www.facebook.com/Lucra-Sports-104710225235562"
-                      target="_blank"
-                      rel="noopener"
-                      ><img
-                        src="images/logo-facebook.svg"
-                        class="facebook"
-                        alt="Facebook"
-                    /></a>
-                    <a
-                      href="https://twitter.com/LucraSports"
-                      target="_blank"
-                      rel="noopener"
-                      ><img
-                        src="images/logo-twitter.svg"
-                        class="twitter"
-                        alt="Twitter"
-                    /></a>
-                    <a
-                      href="https://lucra-sports.myshopify.com/collections/all"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <img
-                        src="images/lucra-swags.svg"
-                        class="swag-store"
-                        alt="Swag Store"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-8">
-              <div class="links">
-                <a href="pages/faqs.html">faqs</a>
-                <span>·</span>
-                <a href="pages/responsible-gaming.html">responsible gaming</a>
-                <span>·</span>
-                <a href="pages/terms-of-service.html">terms of service</a>
-                <span>·</span>
-                <a href="pages/privacy-policy.html">privacy policy</a>
-              </div>
-              <div class="provide-by">
-                real-time sports data provided by
-                <a href="https://sportsdata.io/" target="_blank" rel="noopener">
-                  <img
-                    src="images/homepage/sports-dataio.png"
-                    alt="Sports Data IO"
-                  /> </a
-                ><br class="d-block d-sm-none" />
-                peer-to-peer integrity insured by
-                <a href="" target="_blank" rel="noopener">
-                  <img
-                    src="images/homepage/usintegrity-logo.png"
-                    alt="USIntegrity Logo"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="gradient"></div>
       </footer>
     </div>
 
@@ -833,7 +966,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
-
+    <!-- Scroll Magic -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <!-- Slick Slider -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script>
       wow = new WOW({
         boxClass: 'animate',

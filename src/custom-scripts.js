@@ -199,3 +199,152 @@ $(function () {
     $(`#video-${e.from}`).replaceWith(videos[e.from]);
   });
 });
+
+//////////////////////////////////////////////////
+////////// Homepage page animation scene ////////////
+//////////////////////////////////////////////////
+
+//Init Scrollmagic
+var controller = new ScrollMagic.Controller();
+
+// Pin the intro
+var pinIntroScene = new ScrollMagic.Scene({
+  triggerElement: '#hero.hero-homepage',
+  triggerHook: 0,
+  duration: 600,
+})
+  .setPin('#hero.hero-homepage')
+  // .addIndicators()
+  .addTo(controller);
+
+//Create a scene
+var ourScene = new ScrollMagic.Scene({
+  duration: 3000,
+  triggerElement: '#hero.hero-homepage',
+  triggerHook: 0,
+  offset: 500,
+})
+  .setClassToggle('.container-screens.col-one', 'move-up')
+  // .addIndicators({ name: 'Start home', colorEnd: '#000' })
+  .addTo(controller);
+
+//Create a scene 2
+var ourScene2 = new ScrollMagic.Scene({
+  duration: 3000,
+  triggerElement: '#hero.hero-homepage',
+  triggerHook: 0,
+  offset: 500,
+})
+  .setClassToggle('.container-screens.col-two', 'move-down')
+  // .addIndicators()
+  .addTo(controller);
+
+//////////////////////////////////////////////////
+////////// About page animation scene ////////////
+//////////////////////////////////////////////////
+//Init Scrollmagic
+var controllerAbout = new ScrollMagic.Controller();
+
+// Pin the intro
+var pinIntroSceneAbout = new ScrollMagic.Scene({
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  duration: 600,
+})
+  .setPin('#hero.hero-about')
+  // .addIndicators()
+  .addTo(controllerAbout);
+
+//Create a scene
+var ourScene3 = new ScrollMagic.Scene({
+  duration: 2500,
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  offset: 200,
+})
+  .setClassToggle('.container-screens.col-one.about', 'move-up')
+  // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
+  .addTo(controllerAbout);
+
+//Create a scene 2
+var ourScene4 = new ScrollMagic.Scene({
+  duration: 2500,
+  triggerElement: '#hero.hero-about',
+  triggerHook: 0,
+  offset: 200,
+})
+  .setClassToggle('.container-screens.col-two.about', 'move-down')
+  // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
+  .addTo(controllerAbout);
+
+// Fix navbar when scroll
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 60) {
+    $('#header-nav').addClass('fixed');
+  } else {
+    $('#header-nav').removeClass('fixed');
+  }
+});
+
+// Values Slider on About page
+$('.slider-nav').slick({
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  dots: false,
+  centerMode: false,
+  focusOnSelect: false,
+  arrows: true,
+  autoplay: false,
+  autoplaySpeed: 6000,
+  pauseOnHover: false,
+  draggable: false,
+  responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+// Team Slider on About page
+$('.team-slider').slick({
+  centerMode: true,
+  centerPadding: '50px',
+  slidesToShow: 2,
+  speed: 500,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: false,
+  arrows: true,
+  draggable: false,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1,
+      },
+    },
+  ],
+});
+
+// Add class to de prev and next Team Slider for move position
+$('.team-slider').on(
+  'beforeChange',
+  function (event, { slideCount: count }, currentSlide, nextSlide) {
+    let selectors = [nextSlide, nextSlide - count, nextSlide + count]
+      .map((n) => `[data-slick-index="${n}"]`)
+      .join(', ');
+    $('.slick-now').removeClass('slick-now');
+    $(selectors).next().addClass('slick-now');
+    $('.prev-now').removeClass('prev-now');
+    $(selectors).prev().addClass('prev-now');
+  }
+);
+
+$('[data-slick-index="0"]').addClass('slick-now');
+$('[data-slick-index="0"]').prev().addClass('prev-now');
