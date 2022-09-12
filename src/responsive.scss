@@ -53,7 +53,6 @@
     }
   }
 }
-
 @media (max-width: 991px) {
   #hero {
     &.hero-homepage {
@@ -161,6 +160,16 @@
       }
       .links {
         text-align: center;
+      }
+    }
+  }
+  #levels-section {
+    .levels-container {
+      #level {
+        display: none;
+        &.active {
+          display: block;
+        }
       }
     }
   }
@@ -790,6 +799,7 @@
       }
     }
   }
+
   #pre-footer {
     .video-cover {
       iframe {
