@@ -126,110 +126,32 @@
         </div>
       </section>
 
-      <!-- REWARDS -->
-      <section id="levels-section">
+      <!-- BODY-->
+      <section id="levels-section" class="rewards-state success">
         <div class="container">
-        <h2>CONGRATS ON LEVELING UP!</h2>
-          <div class="row levels-container">
-            <div id="level" class="complete">
-                <div class="level-box-img">
-                    <img src="/images/rewards/reward-icon-lvl-1.png" alt="">
-                </div>
-                <h6>Level 1: Rookie</h6>
-                <svg width="52" height="23" viewBox="0 0 52 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.9808 0.499997L51.9615 23L0 23L25.9808 0.499997Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div id="level" class="active">
-                <div class="level-box-img">
-                    <img src="/images/rewards/reward-icon-lvl-2.png" alt="">
-                </div>
-                <h6>Level 2: Starter</h6>
-                <svg width="52" height="23" viewBox="0 0 52 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.9808 0.499997L51.9615 23L0 23L25.9808 0.499997Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div id="level" class="">
-                <div class="level-box-img">
-                    <img src="/images/rewards/reward-icon-lvl-3.png" alt="">
-                </div>
-                <h6>Level 3: Star</h6>
-                <svg width="52" height="23" viewBox="0 0 52 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.9808 0.499997L51.9615 23L0 23L25.9808 0.499997Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div id="level" class="">
-                <div class="level-box-img">
-                    <img src="/images/rewards/reward-icon-lvl-4.png" alt="">
-                </div>
-                <h6>Level 4: MVP</h6>
-                <svg width="52" height="23" viewBox="0 0 52 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.9808 0.499997L51.9615 23L0 23L25.9808 0.499997Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <div id="level" class="">
-                <div class="level-box-img">
-                    <img src="/images/rewards/reward-icon-lvl-5.png" alt="">
-                </div>
-                <h6>Level 5: HOF</h6>
-                <svg width="52" height="23" viewBox="0 0 52 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25.9808 0.499997L51.9615 23L0 23L25.9808 0.499997Z" fill="currentColor"/>
-                </svg>
-            </div>
-          </div>
-        </div>
-        <div class="container redeem">
-            <h4>Redeem Your Rewards</h4>
-            <p>All of your kicking butt has paid off and you have unlocked Silver awards! Choose your reward below...</p>
-            <div class="row jus redeem-cards-container">
-                
-                    <div class="redeem-card">
-                        <h5>$10 in Lucra Bucks</h5>
-                        <p>Lucra Bucks work just like cash in the app!</p>
-                        <a class="button outline" href="rewards-states.html">Select this Reward</a>
-                    </div>
-                
-                <div class="d-flex justify-content-center align-items-center">
-                    <h4>or</h4>
-                </div>
-                
-                    <div class="redeem-card">
-                        <h5>$10 store credit for Lucra apparel</h5>
-                        <p>Get some sweet Lucra apparel to make your friends jelly :)</p>
-                        <a class="button outline" href="rewards-states.html">Select this Reward</a>
-                        <a class="redeem-card-link" href=""><p>View the Lucra Store</p></a>
-                    </div>
-                
-            </div>
+            <h2>YOU CHOSE LUCRA BUCKS!</h2>
+            <h4>$10 in Lucra Bucks is now in your account, go play some contests!</h4>        
         </div>
       </section>
 
-      <section id="more-points">
+      <section id="levels-section" class="rewards-state store">
         <div class="container">
-            <h4>How to Earn More Points</h4>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="more-points-column">
-                        <div class="more-point-box-img">
-                            <img src="/images/rewards/more-point-1.png" alt="">
-                        </div>
-                        <h5>Earn 5 points for every referral!</h5>
-                        <p>Lucra is meant to be played with friends, get em in here!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="more-points-column">
-                        <div class="more-point-box-img">
-                            <img src="/images/rewards/more-point-2.png" alt="">
-                        </div>
-                        <h5>Earn 1 point for every $20 played!</h5>
-                        <p>You’re already creating contests, so why not get points for them!</p>
-                    </div>
-                </div>
-            </div>
-            <a class="button outline"href="">Learn More About Rewards</a>
+            <h2>YOU CHOSE STORE CREDIT!</h2>
+            <h4>Here is your code for $10 in store credit: <span>CODEHERE</span></h4>
+            <p>Enter code when checking out in the Lucra store.</p>
+            <a class="button outline"href="">Shop the Lucra Store</a>
         </div>
       </section>
+
+      <section id="levels-section" class="rewards-state error">
+        <div class="container">
+            <div class="opss">
+                <img src="/images/rewards/oops.png" alt="">
+            </div>
+            <h4 class="h4-error">Looks like something went wrong and/or you have already received this reward.</h4>
+        </div>
+      </section>
+
       <!-- FOOTER -->
       <footer>
         <div class="container">

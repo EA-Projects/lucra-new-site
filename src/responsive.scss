@@ -31,6 +31,13 @@
       }
     }
   }
+  #levels-section {
+    .levels-container {
+      #level {
+        padding: 35px 40px 0;
+      }
+    }
+  }
 }
 @media (max-width: 1024px) {
   #hero {
@@ -164,13 +171,44 @@
     }
   }
   #levels-section {
+    h2 {
+      font-size: 28px;
+    }
     .levels-container {
+      border-bottom: none;
+      margin: 0 20px;
       #level {
         display: none;
         &.active {
           display: block;
+          margin: 0 auto;
+          background: none;
+          svg {
+            display: none;
+          }
         }
       }
+    }
+    .redeem {
+      padding-top: 35px;
+      .redeem-cards-container {
+        display: initial;
+      }
+      .redeem-card {
+        width: 100%;
+        margin: 20px 0;
+      }
+    }
+  }
+  #more-points {
+    .row:after {
+      height: 1px;
+      width: 87%;
+      background-color: #9C99FC;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -636,6 +674,24 @@
         font-size: 16px;
         line-height: 22px;
       }
+    }
+  }
+  #levels-section {
+    h2 {
+      font-size: 20px;
+      margin-bottom: 0;
+    }
+    h4 {
+      font-size: 23px;
+      line-height: 26px;
+    }
+    h5 {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }

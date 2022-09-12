@@ -3366,9 +3366,6 @@ footer {
         padding: 35px 30px 0;
         background: linear-gradient(0deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 50%);
         opacity: 1;
-        /* border: 1px solid;
-        border-image-source: linear-gradient(180deg, rgba(67, 67, 67, 0.3) 0%, rgba(0, 0, 0, 0) 75%);
- */
         .level-box-img {
           background: linear-gradient(180deg, #5E5BD0 18.93%, #F16348 100%);
           box-shadow: inset 0px 10.8667px 3.26px rgb(0 0 0 / 25%);
@@ -3394,7 +3391,7 @@ footer {
     }
   }
   .redeem {
-    padding: 65px 0 0;
+    padding-top: 65px;
     p {
       text-align: center;
     }
@@ -3418,8 +3415,8 @@ footer {
         position: absolute;
         top: 0; right: 0; bottom: 0; left: 0;
         z-index: -1;
-        margin: -$border; /* !importanté */
-        border-radius: inherit; /* !importanté */
+        margin: -$border;
+        border-radius: inherit;
         background: linear-gradient(to bottom, #5E5BD0 18.93%, #F16348 100%);
       }
       p {
@@ -3437,7 +3434,7 @@ footer {
         color: #fff;
         background-color: #fa4919;
         border-color: #fa4919;
-    }
+      }
       .redeem-card-link {
         text-decoration: underline;
         p {
@@ -3445,6 +3442,43 @@ footer {
         }
       }
     }
+  }
+  &.rewards-state {
+    display: none;
+    h2 {
+      border-bottom: 1px solid $orange;
+      padding-bottom: 20px;
+    }
+    h4 {
+      span {
+        color: $orange;
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 16px;
+      margin-top: 30px;
+    }
+    .opss {
+      max-width: 170px;
+      margin: 0 auto 22px;
+      img {
+
+      }
+    }
+    .h4-error {
+      border-top: 1px solid $orange;
+      padding-top: 40px;
+    }
+  }
+  &.success {
+    display: block;
+  }
+  &.store {
+    display: block;
+  }
+  &.error {
+    display: block;
   }
 }
 
@@ -3484,10 +3518,15 @@ footer {
     right: 50%;
     transform: translateY(-50%);
   }
-  .button.outline {
+  .outline {
     color: #fff;
     border: 2px solid #fff;
     background: transparent;
+  }
+  .outline:hover {
+    color: #fff;
+    background-color: #fa4919;
+    border-color: #fa4919;
   }
 }
 
