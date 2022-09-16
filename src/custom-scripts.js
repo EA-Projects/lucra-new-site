@@ -54,6 +54,12 @@ function handleIntersection(entries, observer) {
   });
 }
 
+$(document).ready(function () {
+  setTimeout(function () {
+    $('#app-modal').modal('show');
+  }, 5000);
+});
+
 window.addEventListener('load', function () {
   $('#header').addClass('animated');
 

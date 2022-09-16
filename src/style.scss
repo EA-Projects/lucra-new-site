@@ -155,6 +155,21 @@ a {
       border-color: $orange;
     }
   }
+  &.outline.with-apple {
+    border-color: #fff;
+    background: rgba(0, 27, 96, 0.3);
+    color: #fff;
+    img {
+      width: 16px;
+      margin-right: 8px;
+      margin-top: -7px;
+    }
+    &:hover {
+      background: $orange;
+      background-color: $orange;
+      border-color: $orange;
+    }
+  }
 }
 
 h1,
@@ -3364,10 +3379,14 @@ footer {
       }
       &.active {
         padding: 35px 30px 0;
-        background: linear-gradient(0deg, #F4F4F4 0%, rgba(244, 244, 244, 0) 50%);
+        background: linear-gradient(
+          0deg,
+          #f4f4f4 0%,
+          rgba(244, 244, 244, 0) 50%
+        );
         opacity: 1;
         .level-box-img {
-          background: linear-gradient(180deg, #5E5BD0 18.93%, #F16348 100%);
+          background: linear-gradient(180deg, #5e5bd0 18.93%, #f16348 100%);
           box-shadow: inset 0px 10.8667px 3.26px rgb(0 0 0 / 25%);
           border-radius: 200px;
           width: 163px;
@@ -3382,10 +3401,10 @@ footer {
           }
         }
         h6 {
-          color: $orange
+          color: $orange;
         }
         svg {
-          color: $orange
+          color: $orange;
         }
       }
     }
@@ -3397,7 +3416,7 @@ footer {
     }
     .redeem-cards-container {
       margin-top: 65px;
-      justify-content: space-between; 
+      justify-content: space-between;
     }
     .redeem-card {
       width: 43%;
@@ -3406,18 +3425,21 @@ footer {
       padding: 46px 35px;
       box-sizing: border-box;
       $border: 1px;
-      color: #FFF;
-      background: #F4F4F4;
-      background-clip: padding-box; 
-      border: solid $border transparent; 
+      color: #fff;
+      background: #f4f4f4;
+      background-clip: padding-box;
+      border: solid $border transparent;
       &:before {
         content: '';
         position: absolute;
-        top: 0; right: 0; bottom: 0; left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         z-index: -1;
         margin: -$border;
         border-radius: inherit;
-        background: linear-gradient(to bottom, #5E5BD0 18.93%, #F16348 100%);
+        background: linear-gradient(to bottom, #5e5bd0 18.93%, #f16348 100%);
       }
       p {
         text-align: center;
@@ -3463,7 +3485,6 @@ footer {
       max-width: 170px;
       margin: 0 auto 22px;
       img {
-
       }
     }
     .h4-error {
@@ -3509,10 +3530,10 @@ footer {
     position: relative;
   }
   .row:after {
-    content: "";
+    content: '';
     width: 1px;
     height: 70%;
-    background-color: #9C99FC;
+    background-color: #9c99fc;
     position: absolute;
     top: 50%;
     right: 50%;
@@ -3527,6 +3548,62 @@ footer {
     color: #fff;
     background-color: #fa4919;
     border-color: #fa4919;
+  }
+}
+
+////////// MODAL HOMEPAGE
+.modal-backdrop.show {
+  display: none;
+}
+#app-modal {
+  background: linear-gradient(0deg, rgba(0, 27, 96, 0.7), rgba(0, 27, 96, 0.7));
+  padding: 0 15px;
+  .modal-dialog {
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 335px;
+    margin: 0 auto;
+    text-align: center;
+    .modal-content {
+      background-image: url(../images/homepage/popup-bg.jpg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: initial;
+      border: 0;
+      border-radius: 0;
+      .modal-header {
+        border: 0;
+        .close {
+          opacity: 1;
+          margin: -1rem auto -1rem -1rem;
+          &:focus,
+          &:focus-visible {
+            box-shadow: none;
+            outline: 0;
+            border: 0;
+          }
+        }
+      }
+      .modal-body {
+        padding-bottom: 0;
+        padding-top: 0;
+        .lucra-logo {
+          max-width: 133px;
+        }
+        h5 {
+          font-family: 'Bauziet', sans-serif;
+          font-size: 18px;
+          line-height: 26px;
+          font-weight: 500;
+          max-width: 300px;
+          margin: 22px auto 30px;
+        }
+        .mobile-image {
+          max-width: 331px;
+        }
+      }
+    }
   }
 }
 
