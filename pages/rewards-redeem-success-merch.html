@@ -80,6 +80,9 @@
                       >shop apparel</a
                     >
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="loyaltyprogram.html">Rewards</a>
+                  </li>
                   <li class="d-block d-lg-none nav-item">
                     <a
                       class="button outline m-0"
@@ -131,12 +134,13 @@
       <section id="levels-section" class="rewards-state store">
         <div class="container">
           <h2>YOU CHOSE STORE CREDIT!</h2>
-          <h4>Check your email for your <span id="reward_label" style="color: #42409d;">$10</span> store credit coupon code</h4>
+          <h4>
+            Check your email for your
+            <span id="reward_label" style="color: #42409d">$10</span> store
+            credit coupon code
+          </h4>
           <p>Enter the code when checking out in the Lucra store.</p>
-          <a
-            class="button outline"
-            href="https://shoplucra.com"
-            target="_blank"
+          <a class="button outline" href="https://shoplucra.com" target="_blank"
             >Shop the Lucra Store</a
           >
         </div>
@@ -248,33 +252,32 @@
         }
       }
 
-      ready(function() {
+      ready(function () {
         const queryString = window.location.search;
 
         const urlParams = new URLSearchParams(queryString);
         let userTier = parseInt(urlParams.get('t'));
         // guard against tier value being unset or higher or lower than acceptable levels
-        if(userTier === undefined || userTier === null || isNaN(userTier)) {
+        if (userTier === undefined || userTier === null || isNaN(userTier)) {
           userTier = 1;
         }
-        if(userTier < 1) {
+        if (userTier < 1) {
           userTier = 1;
         }
-        if(userTier > 5) {
+        if (userTier > 5) {
           userTier = 5;
         }
 
         const rewardsMap = {
-          1: "$10",
-          2: "$20",
-          3: "$30",
-          4: "$50",
-          5: "$100"
+          1: '$10',
+          2: '$20',
+          3: '$30',
+          4: '$50',
+          5: '$100',
         };
 
-        const rewardLabel = document.getElementById("reward_label");
+        const rewardLabel = document.getElementById('reward_label');
         rewardLabel.textContent = rewardsMap[userTier];
-
       });
     </script>
   </body>

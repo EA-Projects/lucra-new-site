@@ -3551,6 +3551,226 @@ footer {
   }
 }
 
+////////// LOYALTY PROGRAM
+#getting-started {
+  padding: 100px 0 70px;
+  .top-content {
+    text-align: center;
+    margin-bottom: 80px;
+    h2 {
+      color: $new-darkblue;
+      text-transform: uppercase;
+    }
+    hr {
+      border-color: $orange;
+      margin-bottom: 2rem;
+    }
+    p {
+      color: #000;
+      font-family: 'Bauziet', sans-serif;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+  .steps-box {
+    background-color: $new-blue;
+    text-align: center;
+    min-height: 370px;
+    max-height: 370px;
+    margin-bottom: 35px;
+    padding: 50px 50px;
+    img {
+      max-width: 100px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+  @media (max-width: 991px) {
+    .steps-box {
+      min-height: 440px;
+      max-height: 440px;
+      padding: 50px 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    .steps-box {
+      min-height: auto;
+      max-height: initial;
+      padding: 50px 30px;
+    }
+  }
+}
+
+#lucra-clubhouse {
+  .top-tabs {
+    background: #f9f9ff;
+    padding-top: 40px;
+    h3 {
+      color: $new-blue;
+      margin-bottom: 30px;
+    }
+    .nav-pills {
+      justify-content: center;
+      .nav-item {
+        margin: 0 10px;
+        a {
+          font-family: 'Bauziet', sans-serif;
+          color: #000;
+          font-size: 24px;
+          line-height: 31px;
+          padding-bottom: 20px;
+          border-bottom: 5px solid #f9f9ff;
+          border-radius: 0;
+          transition: all 0.3s ease;
+          &.active {
+            background-color: initial;
+            border-color: $new-blue;
+          }
+          &:hover {
+            border-color: $new-blue;
+          }
+        }
+      }
+    }
+  }
+  .bottom-tabs {
+    background: #eaeaff;
+    padding: 40px 0;
+    .tab-content {
+      min-height: 190px;
+      display: flex;
+      align-items: center;
+      .tab-pane {
+        img {
+          max-width: 246px;
+        }
+        h3 {
+          color: $new-blue;
+          text-align: left;
+        }
+        p {
+          color: #000000;
+          font-size: 18px;
+          line-height: 30px;
+          margin: 0;
+          a {
+            color: $new-darkblue;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .top-tabs {
+      .nav-pills {
+        .nav-item {
+          margin: 0 8px;
+          a {
+            font-size: 17px;
+            line-height: 23px;
+            padding-bottom: 10px;
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    .bottom-tabs {
+      .tab-content {
+        text-align: center;
+        .tab-pane {
+          h3 {
+            margin-top: 40px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    .top-tabs {
+      .nav-pills {
+        justify-content: space-between;
+        .nav-item {
+          margin: 0 5px;
+          a {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .bottom-tabs {
+      .tab-content {
+        .tab-pane {
+          img {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
+#more-points.loyalty-program {
+  background-image: url(../images/rewards/how-to-earn-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 20px;
+  .row::after {
+    background-color: #ffffff;
+  }
+  .more-points-column {
+    margin: 40px 0 70px;
+    h5 {
+      font-family: 'Bauziet', sans-serif;
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: 300;
+      max-width: 330px;
+      margin: 15px auto 0;
+    }
+  }
+}
+
+#shop.rewards {
+  .slider-container {
+    width: calc(550px * 12);
+    .slide-item {
+      animation: translateInfiniteRewards 30s linear infinite;
+    }
+  }
+  &::after {
+    display: none;
+  }
+  @media (max-width: 991px) {
+    .slider-container {
+      .slide-item {
+        animation: translateinfiniteRewardsMobile 20s linear infinite;
+      }
+    }
+    @keyframes translateinfiniteRewardsMobile {
+      to {
+        transform: translateX(calc(-250px * 6));
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    padding: 50px 0 50px;
+  }
+}
+
+@keyframes translateInfiniteRewards {
+  to {
+    transform: translateX(calc(-550px * 6));
+  }
+}
 ////////// MODAL HOMEPAGE
 .modal-backdrop.show {
   display: none;

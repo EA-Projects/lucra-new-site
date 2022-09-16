@@ -54,10 +54,11 @@ function handleIntersection(entries, observer) {
   });
 }
 
+// Show popup on Homepage
 $(document).ready(function () {
   setTimeout(function () {
     $('#app-modal').modal('show');
-  }, 5000);
+  }, 100);
 });
 
 window.addEventListener('load', function () {

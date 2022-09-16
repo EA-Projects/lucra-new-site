@@ -80,6 +80,9 @@
                       >shop apparel</a
                     >
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="loyaltyprogram.html">Rewards</a>
+                  </li>
                   <li class="d-block d-lg-none nav-item">
                     <a
                       class="button outline m-0"
@@ -243,8 +246,11 @@
               <h5>$10 store credit for Lucra apparel</h5>
               <p>Get some sweet Lucra apparel to make your friends jelly :)</p>
               <section id="redeem-lucra-merch"></section>
-              <a class="redeem-card-link" href="https://shoplucra.com"
-                target="_blank"><p>View the Lucra Store</p></a
+              <a
+                class="redeem-card-link"
+                href="https://shoplucra.com"
+                target="_blank"
+                ><p>View the Lucra Store</p></a
               >
             </div>
           </div>
@@ -277,7 +283,7 @@
               </div>
             </div>
           </div>
-<!--          <a class="button outline" href="">Learn More About Rewards</a>-->
+          <!--          <a class="button outline" href="">Learn More About Rewards</a>-->
         </div>
       </section>
       <!-- FOOTER -->
@@ -387,9 +393,9 @@
         }
       }
 
-      ready(function() {
+      ready(function () {
         const queryString = window.location.search;
-        
+
         const urlParams = new URLSearchParams(queryString);
         const promotionUserId = urlParams.get('puid');
         const lucraBucksRewardDetailId = urlParams.get('ruid-lb');
@@ -399,31 +405,33 @@
         createRedeemButtonElement('redeem-lucra-bucks', {
           rewardId: lucraBucksRewardDetailId,
           promotionUserId,
-          type: "LUCRA_BUCKS",
+          type: 'LUCRA_BUCKS',
         });
 
         createRedeemButtonElement('redeem-lucra-merch', {
           rewardId: lucraMerchRewardDetailid,
           promotionUserId,
-          type: "LUCRA_MERCH",
+          type: 'LUCRA_MERCH',
         });
 
         // guard against tier value being unset or higher or lower than acceptable levels
-        if(userTier === undefined || userTier === null || isNaN(userTier)) {
+        if (userTier === undefined || userTier === null || isNaN(userTier)) {
           userTier = 1;
         }
-        if(userTier < 1) {
+        if (userTier < 1) {
           userTier = 1;
         }
-        if(userTier > 5) {
+        if (userTier > 5) {
           userTier = 5;
         }
-        const levelBadges = document.querySelectorAll('.levels-container .level');
-        for(let tierIndex = 0; tierIndex <= userTier; tierIndex++) {
-          if(tierIndex < userTier - 1) {
+        const levelBadges = document.querySelectorAll(
+          '.levels-container .level'
+        );
+        for (let tierIndex = 0; tierIndex <= userTier; tierIndex++) {
+          if (tierIndex < userTier - 1) {
             levelBadges[tierIndex].classList.add('complete');
           }
-          if(tierIndex === userTier - 1) {
+          if (tierIndex === userTier - 1) {
             levelBadges[tierIndex].classList.add('active');
           }
         }
@@ -432,52 +440,49 @@
       function createRedeemButtonElement(elementId, params) {
         const container = document.getElementById(elementId);
 
-        const button = document.createElement("button");
-        button.innerHTML = "Select this Reward";
+        const button = document.createElement('button');
+        button.innerHTML = 'Select this Reward';
         button.classList.add('button');
         button.classList.add('outline');
         button.disabled = !params.rewardId;
 
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
           redeemPromotion(params);
-        })
+        });
 
         container.append(button);
-
       }
 
       function redeemPromotion(data) {
-        const {
-          promotionUserId,
-          rewardId: rewardDetailId,
-          type
-        } = data;
+        const { promotionUserId, rewardId: rewardDetailId, type } = data;
 
         const headers = {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
         };
 
         const payload = {
           promotionUserId: promotionUserId,
-          rewardDetailId: rewardDetailId
+          rewardDetailId: rewardDetailId,
         };
-        
+
         $.ajax({
           contentType: 'application/json',
           url: 'https://d1ben11o81za8v.cloudfront.net/api/rest/promotions/rewards',
-          method: "POST",
-          dataType: "json",
+          method: 'POST',
+          dataType: 'json',
           headers,
           data: JSON.stringify(payload),
-          success: function(data) {
-            location.href = type === 'lUCRA_BUCKS' ? `/pages/rewards-redeem-success-bucks.html?t=${userTier}` : `/pages/rewards-redeem-success-merch.html?t=${userTier}`;
+          success: function (data) {
+            location.href =
+              type === 'lUCRA_BUCKS'
+                ? `/pages/rewards-redeem-success-bucks.html?t=${userTier}`
+                : `/pages/rewards-redeem-success-merch.html?t=${userTier}`;
           },
           error: function (error) {
             location.href = '/pages/rewards-redeem-error.html';
-          }
+          },
         });
       }
-
     </script>
   </body>
 </html>
