@@ -259,7 +259,7 @@ var pinIntroSceneAbout = new ScrollMagic.Scene({
   duration: 1500,
 })
   .setPin('#hero.hero-about')
-  .addIndicators()
+  // .addIndicators()
   .addTo(controllerAbout);
 
 //Create a scene
@@ -270,7 +270,7 @@ var ourScene3 = new ScrollMagic.Scene({
   offset: 1400,
 })
   .setClassToggle('.container-screens.col-one.about', 'move-up')
-  .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
+  // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
   .addTo(controllerAbout);
 
 //Create a scene 2
@@ -281,7 +281,7 @@ var ourScene4 = new ScrollMagic.Scene({
   offset: 1400,
 })
   .setClassToggle('.container-screens.col-two.about', 'move-down')
-  .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
+  // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
   .addTo(controllerAbout);
 
 // Fix navbar when scroll
