@@ -521,7 +521,7 @@ a {
   }
   &.hero-homepage {
     h1 {
-      margin-top: 200px;
+      margin-top: 35vh;
       font-size: 100px;
       line-height: 86px;
       font-weight: 800;
@@ -655,10 +655,16 @@ a {
           @media (max-width: 991px) {
             order: 2;
           }
+          @media (max-width: 575px) {
+            background-image: url(../images/homepage/fair-game-screen.jpg);
+          }
         }
         &.screen-three {
           background-image: url(../images/homepage/fair-game-screen.jpg);
           justify-content: flex-end;
+          @media (max-width: 575px) {
+            background-image: url(../images/homepage/the-game-screen.jpg);
+          }
         }
         &.screen-four {
           background-image: url(../images/homepage/lucra-screen-two.jpg);
@@ -700,10 +706,13 @@ a {
         }
       }
       &.col-one {
-        transform: translateY(700px);
-        transition: all 1s ease-in-out;
+        transform: translateY(1000px);
+        transition: all 0.5s linear;
         &.move-up {
-          transform: translateY(-150px);
+          transform: translateY(500px);
+          @media (min-width: 1441px) {
+            transform: translateY(600px);
+          }
         }
         @media (max-width: 991px) {
           transform: translateY(0px);
@@ -713,10 +722,13 @@ a {
         }
       }
       &.col-two {
-        transform: translateY(550px);
-        transition: all 1s ease-in-out;
+        transform: translateY(850px);
+        transition: all 0.5s linear;
         &.move-down {
-          transform: translateY(-150px);
+          transform: translateY(500px);
+          @media (min-width: 1441px) {
+            transform: translateY(600px);
+          }
         }
         @media (max-width: 991px) {
           transform: translateY(0px);
@@ -758,9 +770,15 @@ a {
             @media (max-width: 991px) {
               order: 0;
             }
+            @media (max-width: 575px) {
+              background-image: url(../images/about/building-communities.jpg);
+            }
           }
           &.screen-three {
             background-image: url(../images/about/building-communities.jpg);
+            @media (max-width: 575px) {
+              background-image: url(../images/about/placeholder-one.jpg);
+            }
           }
           &.screen-four {
             background-image: none;
@@ -776,14 +794,14 @@ a {
         }
         &.col-one {
           transform: translateY(300px);
-          transition: all 1s ease-in-out;
+          transition: all 0.5s linear;
           &.move-up {
-            transform: translateY(-800px);
+            transform: translateY(100px);
             @media (min-width: 1441px) {
-              transform: translateY(-700px);
+              transform: translateY(100px);
             }
             @media (min-width: 1921px) {
-              transform: translateY(-250px);
+              transform: translateY(250px);
             }
           }
           @media (max-width: 991px) {
@@ -795,14 +813,14 @@ a {
         }
         &.col-two {
           transform: translateY(150px);
-          transition: all 1s ease-in-out;
+          transition: all 0.5s linear;
           &.move-down {
-            transform: translateY(-800px);
+            transform: translateY(100px);
             @media (min-width: 1441px) {
-              transform: translateY(-700px);
+              transform: translateY(100px);
             }
             @media (min-width: 1921px) {
-              transform: translateY(-250px);
+              transform: translateY(250px);
             }
           }
           @media (max-width: 991px) {
@@ -896,7 +914,7 @@ a {
     }
     &.about-screens {
       padding: 100px 0;
-      background-image: url(../images/about/about-hero.jpg);
+      background-image: url(../images/about/about-hero-mobile.jpg);
     }
   }
   @media (max-width: 575px) {
@@ -1202,7 +1220,8 @@ a {
                 h2 {
                   text-align: center;
                 }
-                p {
+                .description {
+                  font-size: 15px;
                   margin: 0 auto;
                 }
                 .button.outline {
@@ -1262,6 +1281,9 @@ a {
           .carousel-item {
             .box-content-slide {
               .content-left {
+                .top-title {
+                  display: none;
+                }
                 h2 {
                   font-size: 36px;
                   line-height: 33px;
@@ -1613,12 +1635,12 @@ a {
         rgba(0, 27, 96, 0.6)
       );
       position: absolute;
-      top: -100%;
       height: 100%;
       width: 100%;
       display: flex;
       align-items: center;
-      transition: all 0.3s ease-in-out;
+      justify-content: center;
+      transition: all 0.4s ease-in-out;
       .description-block {
         color: #fff;
         font-size: 26px;
@@ -1654,8 +1676,7 @@ a {
       min-height: 400px;
       .content-hidde {
         .description-block {
-          font-size: 18px;
-          line-height: 36px;
+          line-height: 43px;
           letter-spacing: 5px;
         }
       }
@@ -1683,15 +1704,7 @@ a {
   @media (max-width: 425px) {
     padding: 50px 0 80px;
     .block {
-      min-height: 300px;
       padding: 20px;
-      .content-hidde {
-        .description-block {
-          font-size: 17px;
-          line-height: 26px;
-          letter-spacing: 3px;
-        }
-      }
     }
   }
 }
@@ -2576,8 +2589,13 @@ footer {
       }
     }
   }
-  @media (max-width: 1400px) {
+  @media (max-width: 1440px) {
     .content-top {
+      .lucra-outline {
+        max-width: 390px;
+        top: -200px;
+        right: 180px;
+      }
       .team-title {
         margin-left: 0;
       }
@@ -2586,7 +2604,7 @@ footer {
       .slick-list {
         .team-item {
           img {
-            max-width: 400px;
+            max-width: 450px;
           }
         }
       }
@@ -2905,6 +2923,13 @@ footer {
             }
             @media (max-width: 575px) {
               font-size: 16px;
+              max-width: 90%;
+              &:before {
+                right: -10%;
+              }
+              &:after {
+                width: 110%;
+              }
             }
           }
           &.the-active {

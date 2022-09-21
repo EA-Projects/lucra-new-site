@@ -218,7 +218,7 @@ var controller = new ScrollMagic.Controller();
 var pinIntroScene = new ScrollMagic.Scene({
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  duration: 600,
+  duration: 1200,
 })
   .setPin('#hero.hero-homepage')
   // .addIndicators()
@@ -229,9 +229,9 @@ var ourScene = new ScrollMagic.Scene({
   duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 500,
+  offset: 1100,
 })
-  .setClassToggle('.container-screens.col-one', 'move-up')
+  .setClassToggle('.container-screens.col-one.home', 'move-up')
   // .addIndicators({ name: 'Start home', colorEnd: '#000' })
   .addTo(controller);
 
@@ -240,9 +240,9 @@ var ourScene2 = new ScrollMagic.Scene({
   duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 500,
+  offset: 1100,
 })
-  .setClassToggle('.container-screens.col-two', 'move-down')
+  .setClassToggle('.container-screens.col-two.home', 'move-down')
   // .addIndicators()
   .addTo(controller);
 
@@ -256,32 +256,32 @@ var controllerAbout = new ScrollMagic.Controller();
 var pinIntroSceneAbout = new ScrollMagic.Scene({
   triggerElement: '#hero.hero-about',
   triggerHook: 0,
-  duration: 600,
+  duration: 1500,
 })
   .setPin('#hero.hero-about')
-  // .addIndicators()
+  .addIndicators()
   .addTo(controllerAbout);
 
 //Create a scene
 var ourScene3 = new ScrollMagic.Scene({
-  duration: 2500,
+  duration: 3500,
   triggerElement: '#hero.hero-about',
   triggerHook: 0,
-  offset: 200,
+  offset: 1400,
 })
   .setClassToggle('.container-screens.col-one.about', 'move-up')
-  // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
+  .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
   .addTo(controllerAbout);
 
 //Create a scene 2
 var ourScene4 = new ScrollMagic.Scene({
-  duration: 2500,
+  duration: 3500,
   triggerElement: '#hero.hero-about',
   triggerHook: 0,
-  offset: 200,
+  offset: 1400,
 })
   .setClassToggle('.container-screens.col-two.about', 'move-down')
-  // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
+  .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
   .addTo(controllerAbout);
 
 // Fix navbar when scroll
@@ -355,3 +355,11 @@ $('.team-slider').on(
 
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
+
+if ($('#slider-app').visible(true)) {
+  // do something
+  console.log('on screen');
+} else {
+  // do something else
+  console.log('out of screen');
+}
