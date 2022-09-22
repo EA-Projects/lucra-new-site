@@ -418,7 +418,13 @@ a {
         }
       }
     }
-    // .navbar-collapse.collapse,
+    .collapse:not(.show) {
+    }
+    .collapsing {
+      height: 100vh;
+      opacity: 0;
+      transition: none;
+    }
     .navbar-collapse.collapsing,
     .navbar-collapse.show {
       background-image: url(../images/mobile-bg.jpg);
@@ -430,6 +436,7 @@ a {
       width: 100%;
       height: 100vh;
       padding: 60px 30px 30px;
+      opacity: 1;
       // margin-top: 10px;
       z-index: 9;
       > div {
@@ -447,6 +454,26 @@ a {
         width: 100%;
         .nav-item {
           margin: 10px 0;
+          opacity: 0;
+          transition: all 0.4s ease-in;
+          &.lucra {
+            opacity: 1;
+          }
+          &:nth-child(1) {
+            transition-delay: 0.1s;
+          }
+          &:nth-child(2) {
+            transition-delay: 0.3s;
+          }
+          &:nth-child(3) {
+            transition-delay: 0.5s;
+          }
+          &:nth-child(4) {
+            transition-delay: 0.7s;
+          }
+          &:nth-child(5) {
+            transition-delay: 0.9s;
+          }
           .nav-link {
             text-align: center;
             font-family: 'Bauziet';
@@ -467,6 +494,11 @@ a {
             margin: 10px auto !important;
           }
         }
+      }
+    }
+    .navbar-collapse.show {
+      .navbar-nav .nav-item {
+        opacity: 1;
       }
     }
   }
@@ -573,9 +605,9 @@ a {
       position: absolute !important;
       background-image: none;
       h1 {
-        margin-top: 100px;
-        font-size: 45px;
-        line-height: 45px;
+        margin-top: 180px;
+        font-size: 52px;
+        line-height: 52px;
       }
     }
   }
@@ -841,11 +873,9 @@ a {
             }
             &.screen-four,
             &.screen-five {
-              background-color: #fff;
-              min-height: 300px;
-              h3 {
-                color: $new-darkblue;
-              }
+              min-height: 320px;
+              padding-right: 0;
+              padding-left: 0;
             }
           }
         }
@@ -899,7 +929,7 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0;
+    padding: 500px 0 100px;
     .box-container {
       flex-direction: column;
       align-items: center;
@@ -919,7 +949,7 @@ a {
   }
   @media (max-width: 575px) {
     background-attachment: initial;
-    padding: 400px 0 100px;
+    padding: 550px 0 100px;
     .box-container {
       .container-screens {
         width: 90%;
@@ -1365,6 +1395,13 @@ a {
     }
   }
 }
+#video {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $new-darkblue;
+}
 
 #shop {
   padding: 100px 0;
@@ -1561,11 +1598,11 @@ a {
 
 #mission-blocks {
   background-color: #fff;
-  padding: 100px 0;
+  padding: 80px 0 100px;
   overflow: hidden;
   .block {
-    min-height: 600px;
-    background-color: #000;
+    min-height: 350px;
+    background-color: #fff;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1575,16 +1612,14 @@ a {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    margin-bottom: 20px;
     &.transparency {
       background-image: url(../images/homepage/transparency.jpg);
-      margin-bottom: 20px;
     }
     &.mission {
       background-image: url(../images/homepage/mission-and-values.jpg);
-      margin-bottom: 20px;
     }
     &.were-hiring {
-      margin-top: 50px;
       background-image: url(../images/homepage/were-hiring.jpg);
       position: relative;
       h3 {
@@ -1592,18 +1627,22 @@ a {
         text-align: center;
         color: #fff;
         font-weight: 700;
-        font-size: 70px;
-        line-height: 78px;
+        font-size: 40px;
+        line-height: 48px;
         letter-spacing: 15px;
-        margin-bottom: 65px;
+        margin-bottom: 100px;
         position: relative;
         z-index: 1;
       }
       p {
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
         color: #fff;
         margin: 0;
         position: relative;
         z-index: 1;
+        max-width: 200px;
       }
       &::after {
         content: '';
@@ -1643,8 +1682,8 @@ a {
       transition: all 0.4s ease-in-out;
       .description-block {
         color: #fff;
-        font-size: 26px;
-        line-height: 76px;
+        font-size: 23px;
+        line-height: 40px;
         font-weight: 400;
         letter-spacing: 10px;
         text-transform: uppercase;
@@ -1680,6 +1719,9 @@ a {
           letter-spacing: 5px;
         }
       }
+    }
+    .block-title {
+      margin-bottom: 50px;
     }
   }
   @media (max-width: 767px) {

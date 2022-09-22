@@ -356,10 +356,20 @@ $('.team-slider').on(
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
 
-if ($('#slider-app').visible(true)) {
-  // do something
-  console.log('on screen');
-} else {
-  // do something else
-  console.log('out of screen');
-}
+// Check when slider is visible
+$(document).ready(function () {
+  var inner = $('#slider-app');
+  var elementPosTop = inner.position().top;
+  var viewportHeight = $(window).height();
+  $(window).on('scroll', function () {
+    var scrollPos = $(window).scrollTop();
+    var elementFromTop = elementPosTop - scrollPos;
+
+    if (elementFromTop > 0 && elementFromTop < elementPosTop + viewportHeight) {
+      // $('#carouselExampleIndicators').attr('data-interval', '100');
+      //console.log('visible');
+    } else {
+      //console.log('no visible');
+    }
+  });
+});
