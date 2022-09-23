@@ -649,6 +649,7 @@ a {
     }
   }
 }
+
 #animation-container {
   overflow: hidden;
   .box-container {
@@ -1395,14 +1396,33 @@ a {
     }
   }
 }
+// Video
 #video {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $new-darkblue;
+  background-color: $new-darkblue;
+  position: relative;
+  line-height: 0;
+  .placeholder {
+    width: 100%;
+    // opacity: 0.5;
+    position: relative;
+  }
+  .volume {
+    position: absolute;
+    cursor: pointer;
+    bottom: 50px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(../images/volume.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &.muted {
+      background-image: url(../images/mute.svg);
+    }
+  }
 }
-
 #shop {
   padding: 100px 0;
   background-color: #fff;
@@ -1734,6 +1754,9 @@ a {
       }
       &.were-hiring {
         margin-top: 40px;
+        &::after {
+          opacity: 1;
+        }
         h3 {
           font-size: 50px;
           line-height: 58px;

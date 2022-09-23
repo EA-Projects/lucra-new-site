@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WZZ4975');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/favicon.ico" />
@@ -41,6 +55,16 @@
   </head>
 
   <body class="loading">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WZZ4975"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="sb-site">
       <!-- HERO -->
       <header id="header-nav">
@@ -182,6 +206,7 @@
           </div>
         </div>
       </section>
+
       <section id="animation-container">
         <div class="box-container">
           <div class="container-screens col-one home">
@@ -239,7 +264,7 @@
             class="carousel slide carousel-fade"
             data-pause="false"
             data-ride="carousel"
-            data-interval="false"
+            data-interval="12000"
           >
             <div class="arrows-navigation">
               <a
@@ -612,13 +637,18 @@
         </div>
       </section>
       <section id="video">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h3>VIDEO WILL GO HERE</h3>
-            </div>
-          </div>
-        </div>
+        <video
+          id="video-lucra"
+          class="placeholder"
+          autoplay
+          muted
+          playsinline
+          preload
+          loop
+        >
+          <source src="images/lucra_video.mp4" />
+        </video>
+        <div class="volume muted"></div>
       </section>
 
       <section id="shop">
@@ -803,6 +833,7 @@
           <div class="row">
             <div class="col-12 col-lg-4">
               <div class="block transparency animate fadeInUp">
+                <a class="link" href="pages/responsible-gaming.html"></a>
                 <div class="content-hidde">
                   <p class="description-block">
                     Lucra is committed to transparency, integrity, and fairness

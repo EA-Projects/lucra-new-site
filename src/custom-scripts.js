@@ -229,7 +229,7 @@ var ourScene = new ScrollMagic.Scene({
   duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 1100,
+  offset: 300,
 })
   .setClassToggle('.container-screens.col-one.home', 'move-up')
   // .addIndicators({ name: 'Start home', colorEnd: '#000' })
@@ -240,7 +240,7 @@ var ourScene2 = new ScrollMagic.Scene({
   duration: 3000,
   triggerElement: '#hero.hero-homepage',
   triggerHook: 0,
-  offset: 1100,
+  offset: 300,
 })
   .setClassToggle('.container-screens.col-two.home', 'move-down')
   // .addIndicators()
@@ -267,7 +267,7 @@ var ourScene3 = new ScrollMagic.Scene({
   duration: 3500,
   triggerElement: '#hero.hero-about',
   triggerHook: 0,
-  offset: 1400,
+  offset: 300,
 })
   .setClassToggle('.container-screens.col-one.about', 'move-up')
   // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
@@ -278,7 +278,7 @@ var ourScene4 = new ScrollMagic.Scene({
   duration: 3500,
   triggerElement: '#hero.hero-about',
   triggerHook: 0,
-  offset: 1400,
+  offset: 300,
 })
   .setClassToggle('.container-screens.col-two.about', 'move-down')
   // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
