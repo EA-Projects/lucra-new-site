@@ -1015,6 +1015,7 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  padding-top: 50px;
   .container-slider {
     max-width: 1300px;
     padding: 0 20px;
@@ -1029,13 +1030,13 @@ a {
           .box-content-slide {
             display: flex;
             .content-left {
-              min-height: 700px;
+              min-height: 750px;
               width: 50%;
               text-align: left;
               align-self: stretch;
               display: flex;
               flex-direction: column;
-              padding-top: 80px;
+              justify-content: center;
               .top-title {
                 margin-bottom: 70px;
               }
@@ -1053,6 +1054,7 @@ a {
                 font-size: 16px;
                 line-height: 24px;
                 margin-top: 15px;
+                min-height: 100px;
               }
               .button.outline {
                 border-color: #fff;
@@ -1072,9 +1074,8 @@ a {
               }
             }
             .image-slider {
-              min-height: 650px;
+              min-height: 750px;
               width: 50%;
-              // padding-top: 80px;
               display: flex;
               justify-content: center;
               align-items: flex-end;
@@ -1102,10 +1103,10 @@ a {
                   left: 60%;
                   bottom: 0;
                   transform: translateX(-50%);
-                  width: 800px;
+                  width: 840px;
                 }
                 &.five {
-                  max-width: 550px;
+                  max-width: 500px;
                 }
                 &.six {
                   position: absolute;
@@ -1140,7 +1141,7 @@ a {
         position: relative;
         max-width: 90px;
         bottom: 100px;
-        left: 65px;
+        left: 75px;
         .carousel-control-next,
         .carousel-control-prev {
           opacity: 1;
@@ -1156,10 +1157,10 @@ a {
           }
         }
         .carousel-control-next {
-          right: -25px;
+          right: -35px;
         }
         .carousel-control-prev {
-          left: -25px;
+          left: -35px;
         }
         .carousel-indicators {
           padding: 0;
@@ -1233,6 +1234,7 @@ a {
     }
   }
   @media (max-width: 991px) {
+    padding-top: 180px;
     .container-slider {
       .carousel {
         .carousel-inner {
@@ -1254,6 +1256,7 @@ a {
                 .description {
                   font-size: 15px;
                   margin: 0 auto;
+                  min-height: auto;
                 }
                 .button.outline {
                   margin: 30px auto 0;
@@ -1292,7 +1295,7 @@ a {
           position: absolute;
           bottom: inherit;
           left: 50%;
-          top: 4%;
+          top: -4%;
           transform: translate(-50%, -50%);
           z-index: 8;
           .carousel-control-prev {
@@ -1346,16 +1349,17 @@ a {
     }
   }
   @media (max-width: 425px) {
+    padding-top: 100px;
     .container-slider {
       .carousel {
         .carousel-inner {
           .carousel-item {
             .box-content-slide {
               .content-left {
-                min-height: 450px;
+                min-height: 400px;
               }
               .image-slider {
-                min-height: 350px;
+                min-height: 300px;
                 img {
                   &.one,
                   &.two,
@@ -1370,7 +1374,7 @@ a {
                     bottom: 0;
                     left: 50%;
                     transform: translateX(-50%);
-                    max-width: 380px;
+                    max-width: 340px;
                   }
                   &.three,
                   &.two {
@@ -1391,6 +1395,9 @@ a {
               }
             }
           }
+        }
+        .arrows-navigation {
+          top: 0;
         }
       }
     }
