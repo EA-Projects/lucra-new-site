@@ -258,7 +258,7 @@
           </p>
           <div class="row jus redeem-cards-container">
             <div class="redeem-card" id="redeem-lucra-bucks">
-              <h5>$10 in Lucra Bucks</h5>
+              <h5><span id="bucks-value"></span> in Lucra Bucks</h5>
               <p>Lucra Bucks work just like cash in the app!</p>
             </div>
 
@@ -267,7 +267,9 @@
             </div>
 
             <div class="redeem-card">
-              <h5>$10 store credit for Lucra apparel</h5>
+              <h5>
+                <span id="merch-value"></span> store credit for Lucra apparel
+              </h5>
               <p>Get some sweet Lucra apparel to make your friends jelly :)</p>
               <section id="redeem-lucra-merch"></section>
               <a
@@ -307,7 +309,9 @@
               </div>
             </div>
           </div>
-          <!--          <a class="button outline" href="">Learn More About Rewards</a>-->
+          <a class="button outline" href="/pages/loyaltyprogram.html"
+            >Learn More About Rewards</a
+          >
         </div>
       </section>
       <!-- FOOTER -->
@@ -353,6 +357,8 @@
             </div>
             <div class="col-12 col-lg-4">
               <div class="up-your-game">
+                <h4>Up Your Game</h4>
+                <p>Be the first to learn about promotions and updates.</p>
                 <h6>Follow us on social media</h6>
                 <div class="social-box">
                   <a
@@ -457,6 +463,24 @@
             levelBadges[tierIndex].classList.add('active');
           }
         }
+
+        const rewardsMap = {
+          1: { bucks: '$10', merch: '$25' },
+          2: { bucks: '$20', merch: '$30' },
+          3: { bucks: '$30', merch: '$50' },
+          4: { bucks: '$50', merch: '$50' },
+          5: { bucks: '$100', merch: '$100' },
+        };
+
+        // set reward values dynamically
+        const bucksValue = document.getElementById('bucks-value');
+        if (bucksValue) {
+          bucksValue.innerText = rewardsMap[userTier]['bucks'];
+        }
+        const merchValue = document.getElementById('merch-value');
+        if (merchValue) {
+          merchValue.innerText = rewardsMap[userTier]['merch'];
+        }
       });
 
       function createRedeemButtonElement(elementId, params) {
@@ -466,7 +490,6 @@
         button.innerHTML = 'Select this Reward';
         button.classList.add('button');
         button.classList.add('outline');
-        button.disabled = !params.rewardId;
 
         button.addEventListener('click', function () {
           redeemPromotion(params);
@@ -481,29 +504,35 @@
         const headers = {
           'content-type': 'application/json',
         };
-
         const payload = {
           promotionUserId: promotionUserId,
           rewardDetailId: rewardDetailId,
         };
 
-        $.ajax({
-          contentType: 'application/json',
-          url: 'https://d1ben11o81za8v.cloudfront.net/api/rest/promotions/rewards',
-          method: 'POST',
-          dataType: 'json',
-          headers,
-          data: JSON.stringify(payload),
-          success: function (data) {
-            location.href =
-              type === 'lUCRA_BUCKS'
-                ? `/pages/rewards-redeem-success-bucks.html?t=${userTier}`
-                : `/pages/rewards-redeem-success-merch.html?t=${userTier}`;
-          },
-          error: function (error) {
-            location.href = '/pages/rewards-redeem-error.html';
-          },
-        });
+        // 'https://d1ben11o81za8v.cloudfront.net/api/rest/promotions/rewards',
+        fetch(
+          'https://d1ben11o81za8v.cloudfront.net/api/rest/promotions/rewards',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          }
+        )
+          .then((data) => {
+            if (!data.ok) {
+              location.href = '/pages/rewards-redeem-error.html';
+            } else {
+              location.href =
+                type === 'LUCRA_BUCKS'
+                  ? `/pages/rewards-redeem-success-bucks.html?t=${userTier}`
+                  : `/pages/rewards-redeem-success-merch.html?t=${userTier}`;
+            }
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       }
     </script>
   </body>
