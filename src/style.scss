@@ -1309,6 +1309,7 @@ a {
     }
   }
   @media (max-width: 575px) {
+    padding-top: 50px;
     .container-slider {
       .carousel {
         .carousel-inner {
@@ -1345,11 +1346,13 @@ a {
             }
           }
         }
+        .arrows-navigation {
+          display: none;
+        }
       }
     }
   }
   @media (max-width: 425px) {
-    padding-top: 100px;
     .container-slider {
       .carousel {
         .carousel-inner {
