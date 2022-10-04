@@ -2961,8 +2961,13 @@ footer {
   &.faqs {
     background-color: #fff;
     #faqs-container {
+      padding-top: 100px;
+      h3 {
+        text-align: left;
+        color: $dark-blue;
+      }
       .faqs {
-        padding: 80px 0 100px;
+        padding: 0 0 80px;
         &.margin {
           @media (min-width: 767px) {
             margin-left: 40px;
@@ -3018,12 +3023,25 @@ footer {
               }
             }
           }
-          p {
+          .faq-text {
             color: #000;
             font-size: 14px;
             line-height: 24px;
             display: none;
             font-weight: 200;
+            ::marker {
+              font-weight: 600;
+            }
+            ul,
+            ol {
+              li {
+                color: #000;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: 200;
+                font-family: 'Roboto', sans-serif;
+              }
+            }
             a {
               color: $light-blue;
             }
