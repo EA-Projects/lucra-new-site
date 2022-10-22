@@ -108,6 +108,108 @@ window.addEventListener('load', function () {
       } // end .field--name-field-video
     });
   })(jQuery);
+
+  // Ambassadors University and Games
+  const gamesLogos = anime.timeline({
+    direction: 'normal',
+    autoplay: true,
+    loop: true,
+  });
+
+  gamesLogos
+    .add({
+      targets: '#games .container-blocks .blocks',
+      translateY: [0, 30],
+      opacity: [0, 1],
+      easing: 'easeInQuad',
+      duration: 400,
+      delay: anime.stagger(50),
+    })
+    .add({
+      targets: '#games .container-blocks .blocks',
+      translateY: 30,
+      opacity: 1,
+      easing: 'easeInQuad',
+      duration: 2500,
+      changeComplete: () => {
+        $('#games .container-blocks.first').addClass('hide');
+        $('#games .container-blocks.second').removeClass('hide');
+      },
+    })
+    .add({
+      targets: '#games .container-blocks .blocks',
+      translateY: [0, 30],
+      opacity: [0, 1],
+      easing: 'easeInQuad',
+      duration: 400,
+      delay: anime.stagger(50),
+    })
+    .add({
+      targets: '#games .container-blocks .blocks',
+      translateY: 30,
+      opacity: 1,
+      easing: 'easeInQuad',
+      duration: 2500,
+      changeComplete: () => {
+        $('#games .container-blocks.first').removeClass('hide');
+        $('#games .container-blocks.second').addClass('hide');
+      },
+    });
+
+  // Ambassadors State Select
+  $('#states-select').change(function () {
+    if ($(this).val() == 'select') {
+      $('#submit-state').prop('disabled', true);
+      $('.option-display.games').addClass('hide');
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.full').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+    } else if (
+      $(this).val() == 'WA' ||
+      $(this).val() == 'NV' ||
+      $(this).val() == 'CO' ||
+      $(this).val() == 'IA' ||
+      $(this).val() == 'MI' ||
+      $(this).val() == 'OH' ||
+      $(this).val() == 'VA' ||
+      $(this).val() == 'MD' ||
+      $(this).val() == 'NJ' ||
+      $(this).val() == 'NH' ||
+      $(this).val() == 'VT'
+    ) {
+      $('.option-display.games').removeClass('hide');
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.full').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+      $('#submit-state').prop('disabled', false);
+    } else if ($(this).val() == 'SD' || $(this).val() == 'DE') {
+      $('.option-display.sports').removeClass('hide');
+      $('.option-display.games').addClass('hide');
+      $('.option-display.full').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+      $('#submit-state').prop('disabled', false);
+    } else if (
+      $(this).val() == 'AZ' ||
+      $(this).val() == 'MT' ||
+      $(this).val() == 'AR' ||
+      $(this).val() == 'LA' ||
+      $(this).val() == 'TN' ||
+      $(this).val() == 'SC' ||
+      $(this).val() == 'CT'
+    ) {
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.games').addClass('hide');
+      $('.option-display.full').addClass('hide');
+      $('.option-display.not-offered').removeClass('hide');
+      $('#submit-state').prop('disabled', true);
+    } else {
+      $('.option-display.full').removeClass('hide');
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.games').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+      $('#submit-state').prop('disabled', false);
+    }
+  });
 });
 
 // FAQs collapsible

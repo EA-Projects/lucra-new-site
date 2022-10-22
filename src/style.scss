@@ -154,6 +154,15 @@ a {
       background-color: $orange;
       border-color: $orange;
     }
+    &.white {
+      color: #ffffff;
+      border-color: #ffffff;
+      background-color: transparent;
+      &:hover {
+        background-color: $orange;
+        border-color: $orange;
+      }
+    }
   }
   &.outline.with-apple {
     border-color: #fff;
@@ -281,6 +290,14 @@ p {
   font-weight: 200;
   color: #fff;
   font-family: 'Roboto', sans-serif;
+  &.featured {
+    font-size: 18px;
+    line-height: 24px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+      line-height: 27px;
+    }
+  }
   @media (max-width: 991px) {
     font-size: 18px;
     line-height: 30px;
@@ -377,6 +394,9 @@ a {
         .navbar-nav {
           .nav-item {
             margin: 0 25px;
+            @media (max-width: 1150px) {
+              margin: 0 5px;
+            }
             .nav-link {
               color: #000;
               font-weight: 400;
@@ -481,7 +501,7 @@ a {
             line-height: 38px;
             font-weight: 600;
             color: #fff;
-            max-width: 200px;
+            max-width: 100%;
             margin: 0 auto;
           }
           &.lucra {
@@ -2176,7 +2196,7 @@ footer {
     }
   }
   @media (max-width: 425px) {
-    padding: 100px 0;
+    padding: 100px 0 60px;
     .lucra-soft {
       width: 250px;
     }
@@ -2186,6 +2206,10 @@ footer {
     h2 {
       font-size: 23px;
       line-height: 30px;
+    }
+    h3 {
+      font-size: 21px;
+      line-height: 28px;
     }
   }
 }
@@ -3889,6 +3913,367 @@ footer {
     transform: translateX(calc(-550px * 6));
   }
 }
+
+////////// AMBASSADORS PAGE
+#hero {
+  &.ambassadors {
+    background-image: url(../images/ambassadors/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 280px 0 200px;
+    h1 {
+      text-align: left;
+    }
+    p {
+      margin: 30px 0 40px;
+    }
+    a {
+      margin-left: 0;
+    }
+    @media (max-width: 991px) {
+      padding: 150px 0px 100px;
+      text-align: center;
+      h1 {
+        text-align: center;
+      }
+      a {
+        margin-left: auto;
+      }
+    }
+    @media (max-width: 575px) {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-image: url(../images/ambassadors/hero-bg-mobile.jpg);
+    }
+  }
+}
+#games {
+  padding: 100px 0 40px;
+  background-color: #00164f;
+  h6 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+    span {
+      color: $orange;
+    }
+  }
+  .container-blocks {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .blocks {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 10%;
+      opacity: 0;
+      .block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 80px;
+        img {
+          max-width: 90px;
+        }
+      }
+    }
+    &.hide {
+      display: none;
+    }
+  }
+  @media (max-width: 575px) {
+    padding: 60px 0 40px;
+    .container-blocks {
+      justify-content: space-around;
+    }
+  }
+  @media (max-width: 425px) {
+    h6 {
+      margin-bottom: 20px;
+    }
+    .container-blocks {
+      .blocks {
+        .block {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+#states {
+  padding: 100px 0;
+  background-color: #00164f;
+  .container {
+    max-width: 1320px;
+  }
+  .block-games {
+    text-align: center;
+    margin-bottom: 200px;
+    img {
+      max-width: 550px;
+      border-radius: 50%;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      span {
+        color: $orange;
+      }
+    }
+  }
+  .select-state {
+    text-align: center;
+    p {
+      margin-top: 60px;
+      margin-bottom: 25px;
+    }
+    select {
+      display: block;
+      min-width: 325px;
+      cursor: pointer;
+      border: 1px solid #9c99fc;
+      border-radius: 50px;
+      outline: 0;
+      box-shadow: none;
+      padding: 9px 15px;
+      color: #ffffff80;
+      font-size: 13px;
+      line-height: 28px;
+      font-weight: 300;
+      letter-spacing: 0.01rem;
+      background-color: #00164f;
+      font-family: 'Roboto', sans-serif;
+      margin: 0 auto 30px;
+      appearance: none;
+      background-image: url('../images/ambassadors/arrow-dropdown.svg');
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 12px;
+    }
+    #submit-state {
+      cursor: pointer;
+      min-width: 200px;
+    }
+    #submit-state:disabled {
+      opacity: 0.5;
+      cursor: auto;
+      &:hover {
+        background-color: transparent;
+        border-color: #ffffff;
+      }
+    }
+    .option-display {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        max-width: 30px;
+        margin-right: 10px;
+      }
+      h6 {
+        margin: 0;
+        text-transform: uppercase;
+      }
+      &.hide {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .block-games {
+      margin-bottom: 100px;
+      img {
+        max-width: 350px;
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    padding: 100px 10px;
+    .block-games {
+      img {
+        max-width: 250px;
+      }
+    }
+    .select-state {
+      .option-display {
+        h6 {
+          font-size: 13px;
+          text-align: left;
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+#as-an-ambassador {
+  padding: 100px 0;
+  background-color: #00164f;
+  .container {
+    max-width: 1320px;
+  }
+  h2 {
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    span {
+      color: $orange;
+    }
+  }
+  .features {
+    text-align: center;
+    margin-bottom: 120px;
+    img {
+      max-width: 180px;
+      margin-bottom: 30px;
+    }
+  }
+  img {
+    max-width: 550px;
+    margin-bottom: 70px;
+  }
+  .description-box {
+    h2 {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    ul {
+      padding: 0 0 0 35px;
+      margin: 0;
+      list-style: none;
+      li {
+        font-size: 18px;
+        line-height: 38px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        color: #ffffff;
+        position: relative;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-image: url(../images/ambassadors/check.svg);
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          left: -30px;
+          top: 10px;
+        }
+      }
+      &.star {
+        li {
+          &:after {
+            background-image: url(../images/ambassadors/star.svg);
+          }
+        }
+      }
+    }
+    a {
+      margin-left: 0;
+    }
+  }
+  .bottom-cta {
+    margin-top: 80px;
+    h2 {
+      font-size: 40px;
+      line-height: 60px;
+      font-weight: 400;
+      text-transform: none;
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    text-align: center;
+    .features {
+      margin-bottom: 50px;
+      img {
+        max-width: 100px;
+      }
+    }
+    img {
+      max-width: 350px;
+      margin-bottom: 25px;
+    }
+    .description-box {
+      margin-bottom: 90px;
+      h2 {
+        text-align: center;
+      }
+      ul {
+        li {
+          text-align: left;
+        }
+      }
+      a {
+        margin-left: auto;
+      }
+    }
+    .bottom-cta {
+      margin-top: 20px;
+      h2 {
+        font-size: 27px;
+        line-height: 33px;
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    .features {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      &.second {
+        img {
+          order: 2;
+          margin-right: 0;
+          margin-left: 20px;
+        }
+      }
+      h4 {
+        margin: 0;
+        text-align: left;
+        font-size: 19px;
+        line-height: 25px;
+      }
+      img {
+        margin: 0;
+        margin-right: 20px;
+      }
+    }
+    .description-box ul li {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 6px;
+      &:after {
+        width: 15px;
+        height: 15px;
+        left: -25px;
+        top: 5px;
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    padding: 100px 0 60px;
+    img {
+      max-width: 250px;
+    }
+    .bottom-cta {
+      margin-top: 0;
+      h2 {
+        font-size: 22px;
+        line-height: 29px;
+      }
+    }
+  }
+}
+
 ////////// MODAL HOMEPAGE
 .modal-backdrop.show {
   display: none;
