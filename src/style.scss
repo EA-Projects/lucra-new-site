@@ -1461,7 +1461,7 @@ a {
   .slider-container {
     display: flex;
     min-height: 750px;
-    width: calc(550px * 24);
+    width: calc(550px * 28);
     .slide-item {
       background: #fff;
       // height: 450px;
@@ -1527,7 +1527,7 @@ a {
     }
     @keyframes translateinfiniteMobile {
       to {
-        transform: translateX(calc(-250px * 12));
+        transform: translateX(calc(-250px * 14));
       }
     }
   }
@@ -1575,7 +1575,7 @@ a {
 //Translate infinite Shop slider
 @keyframes translateinfinite {
   to {
-    transform: translateX(calc(-550px * 12));
+    transform: translateX(calc(-550px * 14));
   }
 }
 
@@ -3883,7 +3883,7 @@ footer {
 
 #shop.rewards {
   .slider-container {
-    width: calc(550px * 12);
+    width: calc(550px * 14);
     .slide-item {
       animation: translateInfiniteRewards 30s linear infinite;
     }
@@ -3899,7 +3899,7 @@ footer {
     }
     @keyframes translateinfiniteRewardsMobile {
       to {
-        transform: translateX(calc(-250px * 6));
+        transform: translateX(calc(-250px * 7));
       }
     }
   }
@@ -3910,7 +3910,7 @@ footer {
 
 @keyframes translateInfiniteRewards {
   to {
-    transform: translateX(calc(-550px * 6));
+    transform: translateX(calc(-550px * 7));
   }
 }
 
