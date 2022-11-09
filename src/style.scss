@@ -1102,6 +1102,7 @@ a {
               justify-content: center;
               align-items: flex-end;
               position: relative;
+              z-index: -1;
               img {
                 &.one {
                   max-width: 763px;
@@ -1162,7 +1163,7 @@ a {
       .arrows-navigation {
         position: relative;
         max-width: 90px;
-        bottom: 100px;
+        bottom: 80px;
         left: 75px;
         .carousel-control-next,
         .carousel-control-prev {
@@ -1256,7 +1257,7 @@ a {
     }
   }
   @media (max-width: 991px) {
-    padding-top: 180px;
+    padding-top: 130px;
     .container-slider {
       .carousel {
         .carousel-inner {
@@ -1344,6 +1345,10 @@ a {
                 h2 {
                   font-size: 36px;
                   line-height: 33px;
+                  padding-bottom: 20px;
+                }
+                .description {
+                  padding-bottom: 20px;
                 }
               }
               .image-slider {
