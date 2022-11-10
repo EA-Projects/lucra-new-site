@@ -1038,9 +1038,9 @@ a {
 
 #slider-app {
   background: #1c1a77;
-  background-image: url(../images/homepage/gradient-orange.png);
+  background-image: url(../images/bg.png);
   background-position: bottom right;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   padding-top: 50px;
@@ -1338,7 +1338,7 @@ a {
     }
   }
   @media (max-width: 575px) {
-    
+    padding-top: 70px;
     .container-slider {
       .carousel {
         .carousel-inner {
