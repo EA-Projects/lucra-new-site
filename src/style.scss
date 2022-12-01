@@ -1082,13 +1082,55 @@ a {
                 font-size: 16px;
                 line-height: 24px;
                 margin-top: 15px;
-                min-height: 100px;
+                min-height: 75px;
+              }
+              form{
+                padding: 0 !important;
+                max-width: 560px;
+                > div > div > div:first-child{
+                  padding: 0 !important;
+                }
+                label{
+                  opacity: 0.7;
+                  font-size: 14px !important;
+                  padding-bottom: 10px !important;
+                }
+                //Input Form
+                .needsclick.go3469849916,
+                .needsclick.go2705469195{
+                  background-color: rgb(255 255 255 / 16%)!important;
+                  border: 0 !important;
+                  border-radius: 50px !important;
+                  padding: 0 10px !important;
+                  color: #FFFFFF80 !important;
+                  input[type="tel"]{
+                    color: #FFFFFF !important;
+                    &::placeholder{
+                      color: #FFFFFF80 !important;
+                    }
+                  }
+                }
+                // Button submit form
+                .needsclick.kl-private-reset-css-Xuajs1{
+                  button.go2297812714{
+                    margin-left: -120%; 
+                    font-size: 14px !important;
+                    padding: 8px 16px !important;
+                    height: auto !important;
+                    margin-bottom: -2px;
+                    &:hover{
+                      border-color: $orange !important;
+                    }
+                  }
+                }
               }
               .button.outline {
                 border-color: #fff;
                 background-color: inherit;
                 color: #fff;
-                margin: 30px 0 0;
+                margin: 20px 0 0;
+                position: relative;
+                z-index: -1;
                 img {
                   width: 16px;
                   margin-right: 8px;
