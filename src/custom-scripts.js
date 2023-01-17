@@ -156,7 +156,13 @@ window.addEventListener('load', function () {
       },
     });
 
-  // Ambassadors State Select
+    
+    // Form Variables, like Actions to the form
+    var greenhouseAction = 'https://boards.greenhouse.io/lucrasports/jobs/4744909004';
+    var californiaAction = 'https://www.linkedin.com/jobs/view/3430512566/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=3IpRdQFPy%2F6P4iAy1VswyQ%3D%3D&trk=flagship3_search_srp_jobs';
+    var pennsylvaniaAction = 'https://www.linkedin.com/jobs/view/3431737768/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=chJhbG4eDtQgGGABW2PVsQ%3D%3D&trk=flagship3_search_srp_jobs';
+    
+    // Ambassadors States Select
   $('#states-select').change(function () {
     if ($(this).val() == 'select') {
       $('#submit-state').prop('disabled', true);
@@ -164,6 +170,9 @@ window.addEventListener('load', function () {
       $('.option-display.sports').addClass('hide');
       $('.option-display.full').addClass('hide');
       $('.option-display.not-offered').addClass('hide');
+      $(".contact-mail").addClass("hide");
+      $('#states-form').attr('action', greenhouseAction);
+      $(".disclaimer").removeClass("show");
     } else if (
       $(this).val() == 'WA' ||
       $(this).val() == 'NV' ||
@@ -182,12 +191,18 @@ window.addEventListener('load', function () {
       $('.option-display.full').addClass('hide');
       $('.option-display.not-offered').addClass('hide');
       $('#submit-state').prop('disabled', false);
+      $(".contact-mail").addClass("hide");
+      $('#states-form').attr('action', greenhouseAction);
+      $(".disclaimer").removeClass("show");
     } else if ($(this).val() == 'SD' || $(this).val() == 'DE') {
       $('.option-display.sports').removeClass('hide');
       $('.option-display.games').addClass('hide');
       $('.option-display.full').addClass('hide');
       $('.option-display.not-offered').addClass('hide');
       $('#submit-state').prop('disabled', false);
+      $(".contact-mail").addClass("hide");
+      $('#states-form').attr('action', greenhouseAction);
+      $(".disclaimer").removeClass("show");
     } else if (
       $(this).val() == 'AZ' ||
       $(this).val() == 'MT' ||
@@ -202,12 +217,46 @@ window.addEventListener('load', function () {
       $('.option-display.full').addClass('hide');
       $('.option-display.not-offered').removeClass('hide');
       $('#submit-state').prop('disabled', true);
+      $(".contact-mail").addClass("hide");
+      $('#states-form').attr('action', greenhouseAction);
+      $(".disclaimer").removeClass("show");
+    }
+    // California Option
+    else if (
+      $(this).val() == 'CA'
+    ) {
+      $('.option-display.full').removeClass('hide');
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.games').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+      $('#submit-state').prop('disabled', false);
+      $('#states-form').attr('action', californiaAction);
+      $(".contact-mail").addClass("hide");
+      $(".disclaimer").addClass("show");
+      $(".contact-mail.california").removeClass("hide");
+    }
+    // Pennsylvania Option
+    else if (
+      $(this).val() == 'PA'
+    ) {
+      $('.option-display.full').removeClass('hide');
+      $('.option-display.sports').addClass('hide');
+      $('.option-display.games').addClass('hide');
+      $('.option-display.not-offered').addClass('hide');
+      $('#submit-state').prop('disabled', false);
+      $('#states-form').attr('action', pennsylvaniaAction);
+      $(".contact-mail").addClass("hide");
+      $(".disclaimer").addClass("show");
+      $(".contact-mail.pennsylvania").removeClass("hide");
     } else {
       $('.option-display.full').removeClass('hide');
       $('.option-display.sports').addClass('hide');
       $('.option-display.games').addClass('hide');
       $('.option-display.not-offered').addClass('hide');
       $('#submit-state').prop('disabled', false);
+      $(".contact-mail").addClass("hide");
+      $('#states-form').attr('action', greenhouseAction);
+      $(".disclaimer").removeClass("show");
     }
   });
 });

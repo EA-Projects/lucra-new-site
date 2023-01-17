@@ -4147,6 +4147,30 @@ footer {
         display: none;
       }
     }
+    .disclaimer{
+      font-size: 14px;
+      line-height: 22px;
+      margin: 15px auto 0;
+      display: none;
+      &.show{
+        display: block;
+      }
+    }
+    .contact-mail{
+      font-size: 14px;
+      line-height: 22px;
+      margin: 0 auto 30px;
+      a{
+        color: #ffffff;
+        text-decoration: underline;
+        &:hover{
+          color: $orange;
+        }
+      }
+      &.hide{
+        display: none;
+      }
+    }
   }
   @media (max-width: 767px) {
     .block-games {
