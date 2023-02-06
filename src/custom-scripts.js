@@ -158,7 +158,7 @@ window.addEventListener('load', function () {
 
     
     // Form Variables, like Actions to the form
-    var greenhouseAction = 'https://boards.greenhouse.io/lucrasports/jobs/4744909004';
+    var greenhouseAction = 'https://www.linkedin.com/jobs/view/3472080133/';
     var californiaAction = 'https://www.linkedin.com/jobs/view/3430512566/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=3IpRdQFPy%2F6P4iAy1VswyQ%3D%3D&trk=flagship3_search_srp_jobs';
     var pennsylvaniaAction = 'https://www.linkedin.com/jobs/view/3431737768/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=chJhbG4eDtQgGGABW2PVsQ%3D%3D&trk=flagship3_search_srp_jobs';
     
