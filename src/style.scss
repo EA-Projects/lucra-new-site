@@ -1171,7 +1171,7 @@ a {
                   left: 50%;
                   bottom: 0;
                   transform: translateX(-50%);
-                  width: 900px;
+                  width: 950px;
                 }
                 &.four {
                   position: absolute;
@@ -1412,7 +1412,7 @@ a {
                   &.six,
                   &.seven,
                   &.nine {
-                    max-width: 350px;
+                    max-width: 450px;
                   }
                   &.five {
                     max-width: 350px;
@@ -1439,7 +1439,8 @@ a {
           .carousel-item {
             .box-content-slide {
               .content-left {
-                min-height: 400px;
+                min-height: 350px;
+                padding-top: 50px;
               }
               .image-slider {
                 min-height: 370px;
@@ -1464,12 +1465,17 @@ a {
                     max-width: 450px;
                     width: 450px;
                   }
+                  &.three{
+                    left: 46%;
+                  }
                   &.four {
                     max-width: 420px;
                     width: 400px;
                   }
                   &.five {
                     max-width: 250px;
+                    position: static;
+                    transform: none;
                   }
                   &.eight {
                     max-width: 220px;
