@@ -352,45 +352,6 @@ $(function () {
 });
 
 //////////////////////////////////////////////////
-////////// Homepage page animation scene ////////////
-//////////////////////////////////////////////////
-
-//Init Scrollmagic
-var controller = new ScrollMagic.Controller();
-
-// Pin the intro
-var pinIntroScene = new ScrollMagic.Scene({
-  triggerElement: '#hero.hero-homepage',
-  triggerHook: 0,
-  duration: 1200,
-})
-  .setPin('#hero.hero-homepage')
-  // .addIndicators()
-  .addTo(controller);
-
-//Create a scene
-var ourScene = new ScrollMagic.Scene({
-  duration: 3000,
-  triggerElement: '#hero.hero-homepage',
-  triggerHook: 0,
-  offset: 300,
-})
-  .setClassToggle('.container-screens.col-one.home', 'move-up')
-  // .addIndicators({ name: 'Start home', colorEnd: '#000' })
-  .addTo(controller);
-
-//Create a scene 2
-var ourScene2 = new ScrollMagic.Scene({
-  duration: 3000,
-  triggerElement: '#hero.hero-homepage',
-  triggerHook: 0,
-  offset: 300,
-})
-  .setClassToggle('.container-screens.col-two.home', 'move-down')
-  // .addIndicators()
-  .addTo(controller);
-
-//////////////////////////////////////////////////
 ////////// About page animation scene ////////////
 //////////////////////////////////////////////////
 //Init Scrollmagic
@@ -499,21 +460,3 @@ $('.team-slider').on(
 
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
-
-// Check when slider is visible
-$(document).ready(function () {
-  var inner = $('#slider-app');
-  var elementPosTop = inner.position().top;
-  var viewportHeight = $(window).height();
-  $(window).on('scroll', function () {
-    var scrollPos = $(window).scrollTop();
-    var elementFromTop = elementPosTop - scrollPos;
-
-    if (elementFromTop > 0 && elementFromTop < elementPosTop + viewportHeight) {
-      // $('#carouselExampleIndicators').attr('data-interval', '100');
-      //console.log('visible');
-    } else {
-      //console.log('no visible');
-    }
-  });
-});
