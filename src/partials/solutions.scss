@@ -1,0 +1,262 @@
+#hero-solutions{
+    .blue-hero{
+        padding: 150px 0 0;
+        background-color: $new-darkblue;
+        background-image: url(../../images/solutions/solutions_hero_bg.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 1440px;
+        position: relative;
+        min-height: 600px;
+        display: flex;
+        align-items: flex-end;
+        .title-hero{
+            max-width: 650px;
+            margin-bottom: -10px;
+        }
+        .phones-image{
+            img{
+                position: absolute;
+                top: -60%;
+                max-width: 500px;
+            }
+        }
+    }
+    .white-hero{
+        padding: 100px 0 200px;
+        p{
+            color: $new-darkblue;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 40px;
+            margin-bottom: 35px;
+        }
+    }
+    @media (min-width: 1441px){
+        .blue-hero{
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    @media (max-width: 991px){
+        .blue-hero{
+            background-image: url(../../images/solutions/solutions_hero_mobile_bg.jpg);
+            background-size: 100% auto;
+            .title-hero{
+                max-width: 500px;
+            }
+            .phones-image{
+                text-align: center;
+                img{
+                    position: static;
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .blue-hero{
+            padding: 80px 0 0;
+            .title-area{
+                margin-top: 20px;
+                text-align: center;
+            }
+            .title-hero{
+                max-width: 320px;
+                margin-bottom: -5px;
+            }
+            .phones-image{
+                img{
+                    max-width: 250px;
+                }
+            }
+        }
+        .white-hero{
+            padding: 50px 0 100px;
+            p{
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+#powerful-features{
+    padding: 0 0 50px;
+    background: #38338f; 
+    .title-section{
+        max-width: 600px;
+        margin-top: -79px;
+        margin-bottom: 20px;
+    }
+    .feature-graphic{
+        img{
+            max-width: 683px;
+        }
+    }
+    .feature-content{
+        h3{
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 15px 0 20px;
+        }
+    }
+    @media (max-width: 991px){
+        padding: 0 0 150px;
+        .feature-graphic{
+            text-align: center;
+            img{
+                max-width: 450px;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 0 0 100px;
+        .title-section{
+            max-width: 300px;
+            margin-top: -38px;
+        }
+        .feature-graphic{
+            img{
+                max-width: 300px;
+                margin-bottom: 15px;
+            }
+        }
+        .feature-content{
+            margin-bottom: 100px;
+        }
+    }
+}
+
+#info-cards{
+    padding: 80px 0;
+    position: relative;
+    .triangle{
+        width: 100px;
+        height: 100px;
+        background-color: #FFF;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+    }
+    .card-slide{
+        border-radius: 40px;
+        background-color: #37358F;
+        padding: 25px;
+        text-align: center;
+        min-height: 510px;
+        img{
+            max-width: 150px;
+            margin: 0 auto 25px;
+        }
+        h5{
+            text-align: left;
+            font-family: 'Bauziet';
+            text-transform: uppercase;
+            color: $yellow;
+            margin-bottom: 20px;
+            font-size: 22px;
+            line-height: 24px;
+        }
+        p{
+            text-align: left;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }   
+    .slick-item{
+        padding: 0 10px;
+        cursor: grab;
+    }
+    .progress {
+        display: block;
+        margin-top: 30px;
+        width: 100%;
+        height: 8px;
+        border-radius: 100px;
+        overflow: hidden;
+        background-color: #C1BFFF;
+        background-image: linear-gradient(to right, #37358F, #37358F);
+        background-repeat: no-repeat;
+        background-size: 15% 100%;
+        transition: background-size .4s ease-in-out;
+    }
+    @media (max-width: 575px){
+        .triangle{
+            width: 50px;
+            height: 50px;
+            top: -25px;
+        }
+        .card-slide{
+            min-height: 425px;
+            img{
+                max-width: 100px;
+            }
+        }
+        .progress{
+            display: none;
+        }
+        .slick-dots{
+            bottom: -45px;
+            li{
+                margin: 0;
+                button{
+                    &::before{
+                        color: #ABABAB;
+                        opacity: 1;
+                    }
+                }
+                &.slick-active{
+                    button{
+                        &::before{
+                            color: #37358F;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#games-options{
+    padding: 100px 0;
+    background-color: #00144d;
+    .spacer{
+        height: 80px;
+    }
+    .feature-graphic{
+        img{
+            max-width: 932px;
+        }
+    }
+    .content-area{
+        h2{
+            text-transform: uppercase;
+            text-align: left;
+            margin: 15px 0 20px;
+            strong{
+                color: $yellow;
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .feature-graphic{
+            text-align: center;
+            img{
+                max-width: 500px;
+                margin: 0 auto; 
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 50px 0;
+        .feature-graphic{
+            img{
+                max-width: 300px;
+            }
+        }
+    }
+}

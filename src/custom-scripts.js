@@ -460,3 +460,50 @@ $('.team-slider').on(
 
 $('[data-slick-index="0"]').addClass('slick-now');
 $('[data-slick-index="0"]').prev().addClass('prev-now');
+
+if ($('#info-cards').length) {
+  var $slider = $('.slider');
+  var $progressBar = $('.progress');
+  var $progressBarLabel = $('.slider__label');
+  
+  $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
+    var calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
+    
+    $progressBar
+      .css('background-size', calc + '% 100%')
+      .attr('aria-valuenow', calc );
+    
+    $progressBarLabel.text( calc + '% completed' );
+  });
+  
+  $slider.slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // infinite: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    speed: 1000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          dots: true
+        }
+      }
+    ]
+  });  
+}

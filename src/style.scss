@@ -40,6 +40,7 @@ $button-gradient: linear-gradient(
 @import './lib/animate.scss';
 @import './lib/slidebars.scss';
 @import './partials/homepage.scss';
+@import './partials/solutions.scss';
 // @import './lib/owl.carousel.min.scss';
 
 /*** RESET & BUTTONS ***/
@@ -110,14 +111,15 @@ a {
   border-radius: 50px;
   color: #2D2B81;
   background: $yellow;
-  border: 2px solid #FFFFFF00;
+  border: 2px solid $yellow;
   position: relative;
   z-index: 1;
   overflow: hidden;
   transition: 0.35s all ease-in-out;
   &:hover {
-    color: #2D2B81;
-    background: $light;
+    color: $yellow;
+    background: #2D2B81;
+    border-color: #2D2B81;
   }
   &:focus {
     outline: none;
