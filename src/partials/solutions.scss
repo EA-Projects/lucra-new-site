@@ -254,6 +254,11 @@
     }
     @media (max-width: 575px){
         padding: 50px 0;
+        .content-area{
+            h2{
+                line-height: 34px;
+            }
+        }
         .feature-graphic{
             img{
                 max-width: 300px;
