@@ -110,53 +110,53 @@ window.addEventListener('load', function () {
   })(jQuery);
 
   // Ambassadors University and Games
-  const gamesLogos = anime.timeline({
-    direction: 'normal',
-    autoplay: true,
-    loop: true,
-  });
-
-  gamesLogos
-    .add({
-      targets: '#games .container-blocks .blocks',
-      translateY: [0, 30],
-      opacity: [0, 1],
-      easing: 'easeInQuad',
-      duration: 400,
-      delay: anime.stagger(50),
-    })
-    .add({
-      targets: '#games .container-blocks .blocks',
-      translateY: 30,
-      opacity: 1,
-      easing: 'easeInQuad',
-      duration: 2500,
-      changeComplete: () => {
-        $('#games .container-blocks.first').addClass('hide');
-        $('#games .container-blocks.second').removeClass('hide');
-      },
-    })
-    .add({
-      targets: '#games .container-blocks .blocks',
-      translateY: [0, 30],
-      opacity: [0, 1],
-      easing: 'easeInQuad',
-      duration: 400,
-      delay: anime.stagger(50),
-    })
-    .add({
-      targets: '#games .container-blocks .blocks',
-      translateY: 30,
-      opacity: 1,
-      easing: 'easeInQuad',
-      duration: 2500,
-      changeComplete: () => {
-        $('#games .container-blocks.first').removeClass('hide');
-        $('#games .container-blocks.second').addClass('hide');
-      },
+  if ($('#games').length) {
+    const gamesLogos = anime.timeline({
+      direction: 'normal',
+      autoplay: true,
+      loop: true,
     });
 
-    
+    gamesLogos
+      .add({
+        targets: '#games .container-blocks .blocks',
+        translateY: [0, 30],
+        opacity: [0, 1],
+        easing: 'easeInQuad',
+        duration: 400,
+        delay: anime.stagger(50),
+      })
+      .add({
+        targets: '#games .container-blocks .blocks',
+        translateY: 30,
+        opacity: 1,
+        easing: 'easeInQuad',
+        duration: 2500,
+        changeComplete: () => {
+          $('#games .container-blocks.first').addClass('hide');
+          $('#games .container-blocks.second').removeClass('hide');
+        },
+      })
+      .add({
+        targets: '#games .container-blocks .blocks',
+        translateY: [0, 30],
+        opacity: [0, 1],
+        easing: 'easeInQuad',
+        duration: 400,
+        delay: anime.stagger(50),
+      })
+      .add({
+        targets: '#games .container-blocks .blocks',
+        translateY: 30,
+        opacity: 1,
+        easing: 'easeInQuad',
+        duration: 2500,
+        changeComplete: () => {
+          $('#games .container-blocks.first').removeClass('hide');
+          $('#games .container-blocks.second').addClass('hide');
+        },
+      });
+    }
     // Form Variables, like Actions to the form
     var greenhouseAction = 'https://www.linkedin.com/jobs/view/3566908844/';
     var californiaAction = 'https://www.linkedin.com/jobs/view/3430512566/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=3IpRdQFPy%2F6P4iAy1VswyQ%3D%3D&trk=flagship3_search_srp_jobs';
@@ -400,49 +400,53 @@ $(window).scroll(function () {
 });
 
 // Values Slider on About page
-$('.slider-nav').slick({
-  slidesToShow: 2,
-  slidesToScroll: 1,
-  dots: false,
-  centerMode: false,
-  focusOnSelect: false,
-  arrows: true,
-  autoplay: false,
-  autoplaySpeed: 6000,
-  pauseOnHover: false,
-  draggable: false,
-  responsive: [
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
+if ($('.slider-nav').length) {
+  $('.slider-nav').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: false,
+    focusOnSelect: false,
+    arrows: true,
+    autoplay: false,
+    autoplaySpeed: 6000,
+    pauseOnHover: false,
+    draggable: true,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        },
       },
-    },
-  ],
-});
+    ],
+  });
+}
 
 // Team Slider on About page
-$('.team-slider').slick({
-  centerMode: true,
-  centerPadding: '50px',
-  slidesToShow: 2,
-  speed: 500,
-  autoplay: true,
-  autoplaySpeed: 5000,
-  pauseOnHover: false,
-  arrows: true,
-  draggable: false,
-  responsive: [
-    {
-      breakpoint: 991,
-      settings: {
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1,
+if ($('.team-slider').length) {
+  $('.team-slider').slick({
+    centerMode: true,
+    centerPadding: '50px',
+    slidesToShow: 2,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: false,
+    arrows: true,
+    draggable: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1,
+        },
       },
-    },
-  ],
-});
+    ],
+  });
+}
 
 // Add class to de prev and next Team Slider for move position
 $('.team-slider').on(

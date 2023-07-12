@@ -708,7 +708,7 @@ a {
   h1,
   h2 {
     span {
-      color: $orange;
+      color: $yellow;
     }
   }
 }
@@ -777,6 +777,9 @@ a {
           letter-spacing: -0.03em;
           text-align: left;
           max-width: 300px;
+          strong{
+            color: $yellow;
+          }
           &.full-width {
             max-width: 100%;
           }
@@ -845,7 +848,7 @@ a {
             margin-bottom: 50px;
             text-align: left;
             font-family: 'Roboto', sans-serif;
-            color: #fff;
+            color: $light-blue;
           }
           h2 {
             font-size: 63px;
@@ -856,6 +859,9 @@ a {
             line-height: 40px;
             font-weight: 600;
             // color: $new-darkblue;
+            strong{
+              color: $yellow;
+            }
           }
           &.screen-one {
             background-image: none;
@@ -2048,7 +2054,7 @@ footer {
           line-height: 16px;
           color: #4d4d4d;
           &:hover {
-            color: $orange;
+            color: $new-blue;
           }
         }
       }
@@ -2070,7 +2076,7 @@ footer {
       color: #001035;
       margin-right: 25px;
       &:hover {
-        color: $orange;
+        color: $new-blue;
       }
     }
   }
@@ -2189,7 +2195,7 @@ footer {
           padding-bottom: 20px;
           margin-bottom: 20px;
           margin-top: 50px;
-          border-bottom: 1px solid $orange;
+          border-bottom: 1px solid $new-blue;
         }
         h3 {
           text-transform: uppercase;
@@ -2326,7 +2332,7 @@ footer {
     margin-bottom: 20px;
     padding-bottom: 20px;
     color: $new-darkblue;
-    border-bottom: 1px solid $orange;
+    border-bottom: 1px solid $new-blue;
   }
   #carouselInvestors {
     .carousel-inner {
@@ -2695,7 +2701,7 @@ footer {
 }
 
 #our-team {
-  background-color: $new-darkblue;
+  background-color: #37358F;
   position: relative;
   .content-top {
     width: 80%;
@@ -2738,7 +2744,7 @@ footer {
           text-transform: uppercase;
         }
         p {
-          color: $orange;
+          color: $yellow;
           font-size: 16px;
           line-height: 19px;
         }
@@ -3118,7 +3124,7 @@ footer {
               margin: 15px 0;
               width: 100%;
               height: 2px;
-              background-color: $orange;
+              background-color: $new-blue;
             }
             &:before {
               content: '+';
@@ -3129,7 +3135,7 @@ footer {
               top: 5px;
               font-family: 'Roboto', sans-serif;
               font-weight: 200;
-              color: $new-darkblue;
+              color: $new-blue;
             }
             @media (max-width: 575px) {
               font-size: 16px;
@@ -3144,10 +3150,10 @@ footer {
           }
           &.the-active {
             .faq-heading {
-              color: $orange;
+              color: $new-blue;
               &::before {
                 content: '-';
-                color: $orange;
+                color: $new-blue;
                 top: 6px;
                 right: 16px;
               }
@@ -3220,7 +3226,7 @@ footer {
         margin-top: 50px;
         text-transform: uppercase;
         color: $new-darkblue;
-        border-bottom: 1px solid $orange;
+        border-bottom: 1px solid $new-blue;
       }
       h4 {
         color: $orange;
@@ -3516,7 +3522,7 @@ footer {
       color: $new-darkblue;
       padding-bottom: 20px;
       margin-bottom: 20px;
-      border-bottom: 1px solid $orange;
+      border-bottom: 1px solid $new-blue;
     }
     p {
       color: #000;
@@ -3548,7 +3554,7 @@ footer {
         margin-bottom: 5px;
       }
       .view {
-        color: $orange;
+        color: $yellow;
         &:hover {
           color: #fff;
         }
