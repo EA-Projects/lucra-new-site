@@ -1,0 +1,412 @@
+#hero-homepage{
+    padding: 200px 0 100px;
+    background-color: $new-darkblue;
+    // background-image: url(../../images/homepage/powered-by/hero_image.jpg);
+    background-position: center 100px;
+    background-repeat: no-repeat;
+    background-size: 1440px;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(196deg,$yellow -10%,rgba(14,241,105,0) 50%);
+    }
+    .hero-content{
+        text-align: left;
+        position: relative;
+        z-index: 1;
+        h1{
+            text-align: left;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            strong{
+                color: $yellow;
+            }
+        }
+        p{
+            margin-bottom: 40px;
+        }
+    }
+    .graphics-content{
+        position: relative;
+        min-height: 500px;
+        .green-light{
+            mix-blend-mode: lighten;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1400px;
+        }
+        .phones{
+            .phone-image{
+                position: absolute;
+                top: 50%;
+                left: 55%;
+                transform: translate(-50%, -50%);
+                width: 1000px;
+                z-index: 1;
+            }
+            .electricity{
+                max-width: 500px;
+                position: absolute;
+                bottom: -22%;
+                left: 13%;
+                z-index: 2;
+                mix-blend-mode: lighten;
+            }
+            .powered-by{
+                max-width: 182px;
+                position: absolute;
+                left: 30%;
+                bottom: -4%;
+                transform: translateX(-50%);
+                z-index: 1;
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        .graphics-content{
+            .phones{
+                .phone-image{
+                    width: 800px;
+                }
+                .electricity{
+                    max-width: 400px;
+                    bottom: -10%;
+                    left: 10%;
+                }
+            }
+        }
+    }
+    @media (max-width: 991px){
+        padding: 100px 0 100px;
+        .hero-content{
+            padding-top: 50px;
+        }
+        .graphics-content{
+            .green-light{
+                width: 1200px;
+            }
+            .phones{
+                .electricity{
+                    max-width: 340px;
+                    bottom: -3%;
+                    left: 20%;
+                }
+                .powered-by{
+                    max-width: 120px;
+                    left: 34%;
+                    bottom: 10%;
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 50px 0 100px;
+        .graphics-content{
+            .green-light{
+                width: 1200px;
+            }
+            .phones{
+                .phone-image{
+                    width: 650px;
+                }
+                .electricity{
+                    display: none;
+                }
+                .powered-by{
+                    max-width: 120px;
+                    left: 34%;
+                    bottom: 10%;
+                }
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 20px 0 70px;
+        &::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, #021b60 45%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-content{
+            padding-top: 20px;
+        }
+        .graphics-content{
+            .green-light{
+                width: 800px;
+            }
+            .phones{
+                .phone-image{
+                    width: 550px;
+                    left: 55%;
+                }
+                .electricity{
+                    display: block;
+                    max-width: 300px;
+                    left: 42%;
+                    bottom: 10%;
+                    transform: translateX(-50%);
+                }
+                .powered-by{
+                    left: 30%;
+                    bottom: 15%;
+                }
+            }
+        }
+    }
+}
+
+#case-study-block{
+    padding: 130px 0;
+    background-color: #37358F;
+    background-image: url(../../images/homepage/powered-by/bg_bold.png);
+    background-repeat: repeat;
+    background-size: 180px;
+    .case-study-content{
+        text-align: center;
+        img{
+            max-width: 187px;
+        }
+        h3{
+            max-width: 930px;
+            margin: 25px auto 35px;
+        }
+    }
+    @media (max-width: 991px){
+        padding: 100px 0;
+    }
+    @media (max-width: 767px){
+        .case-study-content{
+            text-align: center;
+            img{
+                max-width: 120px;
+            }
+        } 
+    }
+    @media (max-width: 575px){
+        padding: 50px 0;
+        background-size: 100px;
+    }
+}
+
+#product-features{
+    padding: 100px 0;
+    background-color: $new-darkblue;
+    .feature-content{
+        h2{
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 40px;
+            line-height: 40px;
+            margin: 20px 0;
+            strong{
+                color: $yellow;
+            }
+        }
+    }
+    .feature-graphic{
+        img{
+            max-width: 572px;
+        }
+    }
+    @media (max-width: 991px){
+        .feature-content{
+            max-width: 540px;
+            margin: 0 auto;
+        }
+        .feature-graphic{
+            text-align: center;
+            img{
+                max-width: 470px;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .feature-content{
+            h2{
+                font-size: 34px;
+                line-height: 40px;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .feature-graphic{
+            img{
+                max-width: 400px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+#lucra-for-you{
+    padding: 100px 0;
+    background-color: $new-darkblue;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(345deg,$yellow -10%,rgba(14,241,105,0) 50%);
+    }
+    .content-area{
+        position: relative;
+        z-index: 1;
+        h2{
+            text-transform: uppercase;
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            strong{
+                color: $yellow;
+            }
+        }
+        .store-buttons{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            margin-bottom: 40px;
+        }
+    }
+    .graphics-content{
+        position: relative;
+        min-height: 500px;
+        .green-energy{
+            mix-blend-mode: lighten;
+            position: absolute;
+            bottom: -75%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1400px;
+        }
+        .phones{
+            .electricity{
+                mix-blend-mode: lighten;
+                position: absolute;
+                max-width: 670px;
+                z-index: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -35%;
+                z-index: 1;
+            }
+            .phones-image{
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 612px;
+                z-index: 1;
+                filter: drop-shadow(0px 20px 50px 0px rgba(0, 0, 0, 0.50));
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        .graphics-content{
+            .green-energy{
+                width: 1200px;
+                bottom: -45%;
+            }
+            .phones{
+                .phones-image{
+                    max-width: 500px;
+                }
+                .electricity{
+                    max-width: 550px;
+                    bottom: -20%;
+                }
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .content-area{
+            max-width: 540px;
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 575px){
+        .content-area{
+            margin: 0 auto 40px;
+            .store-buttons{
+                justify-content: flex-start;
+                margin-bottom: 25px;
+                img{
+                    max-height: 44px;
+                }
+            }
+        }
+        .graphics-content{
+            .phones{
+                .electricity{
+                    bottom: -15%;
+                }
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 50px 0 80px;
+        .graphics-content{
+            min-height: 350px;
+            .green-energy{
+                width: 800px;
+                bottom: -35%;
+            }
+            .phones{
+                .electricity{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+#get-in-touch{
+    padding: 150px 0;
+    background-color: #37358F;
+    background-image: url(../../images/homepage/powered-by/bg_bold.png);
+    background-repeat: repeat;
+    background-size: 180px;
+    .content-area{
+        max-width: 525px;
+        margin: 0 auto;
+        text-align: center;
+        h2{
+            max-width: 450px;
+            margin: 0 auto;
+            text-transform: uppercase;
+            text-align: center;
+            strong{
+                color: $yellow;
+            }
+        }
+        p{
+            margin: 20px 0 25px;
+        }
+    }
+    @media (max-width: 991px){
+        padding: 100px 0;
+    }
+    @media (max-width: 575px){
+        padding: 50px 0;
+        background-size: 100px;
+    }
+}
