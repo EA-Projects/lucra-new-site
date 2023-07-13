@@ -2199,7 +2199,7 @@ footer {
         }
         h3 {
           text-transform: uppercase;
-          color: $orange;
+          color: $new-blue;
           font-weight: 600;
           margin: 60px 0 30px;
           text-align: left;
@@ -2228,13 +2228,13 @@ footer {
           line-height: 28px;
           font-weight: 200;
           a {
-            color: $orange;
+            color: $new-blue;
             text-decoration: underline;
             font-size: 16px;
             line-height: 28px;
             font-weight: 200;
             &:hover {
-              color: $new-blue;
+              color: $dark-blue
             }
           }
         }
