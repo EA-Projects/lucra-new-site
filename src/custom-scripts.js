@@ -273,9 +273,9 @@ window.addEventListener('load', function () {
       duration: 1,
       ease: "none",
       opacity: 0,
-   })
+   }, "-=.5")
 
-  const featOneTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-one');
+  const featOneTrigger = document.querySelectorAll('#product-features .feature-one .trigger');
   const observerFeatOne = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -290,8 +290,6 @@ window.addEventListener('load', function () {
   featOneTrigger.forEach((animation) => {
     observerFeatOne.observe(animation);
   });
-
-  // Feature two || MONETIZATION
 
   // Feature three || USER EXPERIENCE
   var featThree = gsap.timeline({  
@@ -310,9 +308,9 @@ window.addEventListener('load', function () {
       onComplete: function(){
         $(".feature-graphic.feature-three .vs-image").addClass("floating");
       }
-   })
+   }, "-=.5")
 
-  const featThreeTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-three');
+  const featThreeTrigger = document.querySelectorAll('#product-features .feature-three .trigger');
   const observerFeatThree = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -328,13 +326,13 @@ window.addEventListener('load', function () {
     observerFeatThree.observe(animation);
   });
 
-// Feature four || RISK MANAGEMENT
-var featFour = gsap.timeline({  
-  duration: 1,
-  ease: "power2.out",
-  delay: 0,
-  paused: true,
-});
+  // Feature four || RISK MANAGEMENT
+  var featFour = gsap.timeline({  
+    duration: 1,
+    ease: "power2.out",
+    delay: 0,
+    paused: true,
+  });
 
  featFour
   .from(".feature-graphic.feature-four .card-feature", {
@@ -345,68 +343,69 @@ var featFour = gsap.timeline({
       onComplete: function(){
         $(".feature-graphic.feature-four .card-feature").addClass("floating");
       }
-  })
+  }, "-=.5")
 
-const featFourTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-four');
-const observerFeatFour = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      featFour.play();
-    }
-    // Unobserve trigger
-    if (entry.intersectionRatio > 0) {
-      observerFeatFour.unobserve(entry.target);
-    }
+  const featFourTrigger = document.querySelectorAll('#product-features .feature-four .trigger');
+  const observerFeatFour = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        featFour.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerFeatFour.unobserve(entry.target);
+      }
+    });
   });
-});
-featFourTrigger.forEach((animation) => {
-  observerFeatFour.observe(animation);
-});
-
-
-// Animation the background image for Case Study and Get in Touch blocks
-// When the user hovers on the button, we trigger the animation
-let buttonHover = gsap.timeline({repeat: -1, paused: true});
-buttonHover
-.from("#get-in-touch, #case-study-block", {
-  backgroundPosition: "200% 0",
-  duration: 25,
-  ease: Linear.easeNone
-});
-
-$("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
-  console.log("mouse-enter");
-  buttonHover.play();
-});
-$("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
-  buttonHover.pause();
-});
-
-let prefooterAnimation = gsap.timeline({paused: true});
-prefooterAnimation
-.from("#prefooter p span", {
-  duration: .7,
-  opacity: 0,
-  y: 30,
-  stagger: .3,
-  ease: "power2.out",
-});
-
-const prefooterTrigger = document.querySelectorAll('#prefooter p span');
-const observerPrefooter = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      prefooterAnimation.play();
-    }
-    // Unobserve trigger
-    if (entry.intersectionRatio > 0) {
-      observerPrefooter.unobserve(entry.target);
-    }
+  featFourTrigger.forEach((animation) => {
+    observerFeatFour.observe(animation);
   });
-});
-prefooterTrigger.forEach((animation) => {
-  observerPrefooter.observe(animation);
-});
+
+
+  // Animation the background image for Case Study and Get in Touch blocks
+  // When the user hovers on the button, we trigger the animation
+  let buttonHover = gsap.timeline({repeat: -1, paused: true});
+  buttonHover
+  .from("#get-in-touch, #case-study-block", {
+    backgroundPosition: "200% 0",
+    duration: 25,
+    ease: Linear.easeNone
+  });
+
+  // Hover event
+  $("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
+    buttonHover.play();
+  });
+  $("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
+    buttonHover.pause();
+  });
+
+  //Prefooter animation, stagger words
+  let prefooterAnimation = gsap.timeline({paused: true});
+  prefooterAnimation
+  .from("#prefooter p span", {
+    duration: .7,
+    opacity: 0,
+    y: 30,
+    stagger: .3,
+    ease: "power2.out",
+  });
+
+  const prefooterTrigger = document.querySelectorAll('#prefooter p span');
+  const observerPrefooter = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        prefooterAnimation.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerPrefooter.unobserve(entry.target);
+      }
+    });
+  });
+  prefooterTrigger.forEach((animation) => {
+    observerPrefooter.observe(animation);
+  });
 
 //  end window onload
 });
@@ -660,4 +659,16 @@ if ($('#info-cards').length) {
       }
     ]
   });  
+}
+
+// Check Browsers
+var ua = navigator.userAgent.toLowerCase(); 
+if (ua.indexOf('safari') != -1) { 
+  if (ua.indexOf('chrome') > -1) {
+    // Chrome
+  } else {
+    // Safari
+    // Fix tilt on safari browsers
+    $(".tilt").addClass("safari").removeAttr("data-tilt");
+  }
 }
