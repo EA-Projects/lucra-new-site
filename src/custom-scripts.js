@@ -8,7 +8,6 @@ if (
   $('.animate').removeClass('animate'); // to remove transition
 }
 
-// estas variables deberían estar dentro de un objeto para poder trackear de varios elementos observados
 let previousY = {};
 let previousRatio = {};
 
@@ -259,6 +258,157 @@ window.addEventListener('load', function () {
       $(".disclaimer").removeClass("show");
     }
   });
+
+// Homepage animations, features section
+// Feature one || COMMUNITY BUILDING
+   var featOne = gsap.timeline({  
+    duration: 1,
+    ease: "power2.out",
+    delay: 0,
+    paused: true,
+  });
+
+   featOne
+   .from(".feature-graphic.feature-one .world-image", {
+      duration: 1,
+      ease: "none",
+      opacity: 0,
+   })
+
+  const featOneTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-one');
+  const observerFeatOne = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        featOne.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerFeatOne.unobserve(entry.target);
+      }
+    });
+  });
+  featOneTrigger.forEach((animation) => {
+    observerFeatOne.observe(animation);
+  });
+
+  // Feature two || MONETIZATION
+
+  // Feature three || USER EXPERIENCE
+  var featThree = gsap.timeline({  
+    duration: 1,
+    ease: "power2.out",
+    delay: 0,
+    paused: true,
+  });
+
+   featThree
+   .from(".feature-graphic.feature-three .vs-image", {
+      duration: .6,
+      ease: "back",
+      y: 120,
+      opacity: 0,
+      onComplete: function(){
+        $(".feature-graphic.feature-three .vs-image").addClass("floating");
+      }
+   })
+
+  const featThreeTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-three');
+  const observerFeatThree = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        featThree.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerFeatThree.unobserve(entry.target);
+      }
+    });
+  });
+  featThreeTrigger.forEach((animation) => {
+    observerFeatThree.observe(animation);
+  });
+
+// Feature four || RISK MANAGEMENT
+var featFour = gsap.timeline({  
+  duration: 1,
+  ease: "power2.out",
+  delay: 0,
+  paused: true,
+});
+
+ featFour
+  .from(".feature-graphic.feature-four .card-feature", {
+      duration: .6,
+      ease: "back",
+      y: 120,
+      opacity: 0,
+      onComplete: function(){
+        $(".feature-graphic.feature-four .card-feature").addClass("floating");
+      }
+  })
+
+const featFourTrigger = document.querySelectorAll('#product-features .feature-graphic.feature-four');
+const observerFeatFour = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      featFour.play();
+    }
+    // Unobserve trigger
+    if (entry.intersectionRatio > 0) {
+      observerFeatFour.unobserve(entry.target);
+    }
+  });
+});
+featFourTrigger.forEach((animation) => {
+  observerFeatFour.observe(animation);
+});
+
+
+// Animation the background image for Case Study and Get in Touch blocks
+// When the user hovers on the button, we trigger the animation
+let buttonHover = gsap.timeline({repeat: -1, paused: true});
+buttonHover
+.from("#get-in-touch, #case-study-block", {
+  backgroundPosition: "200% 0",
+  duration: 25,
+  ease: Linear.easeNone
+});
+
+$("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
+  console.log("mouse-enter");
+  buttonHover.play();
+});
+$("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
+  buttonHover.pause();
+});
+
+let prefooterAnimation = gsap.timeline({paused: true});
+prefooterAnimation
+.from("#prefooter p span", {
+  duration: .7,
+  opacity: 0,
+  y: 30,
+  stagger: .3,
+  ease: "power2.out",
+});
+
+const prefooterTrigger = document.querySelectorAll('#prefooter p span');
+const observerPrefooter = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      prefooterAnimation.play();
+    }
+    // Unobserve trigger
+    if (entry.intersectionRatio > 0) {
+      observerPrefooter.unobserve(entry.target);
+    }
+  });
+});
+prefooterTrigger.forEach((animation) => {
+  observerPrefooter.observe(animation);
+});
+
+//  end window onload
 });
 
 // FAQs collapsible
