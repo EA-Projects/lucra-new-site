@@ -208,6 +208,15 @@
     background: #000F33;
     .intro-partner{
         margin-bottom: 80px;
+        h2{
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            margin-top: 80px;
+            &:first-child{
+                margin-top: 0;
+            }
+        }
     }
     .content-about{
         h2{
@@ -232,11 +241,9 @@
     }
     @media (max-width: 575px){
         padding: 60px 0;
-        .intro-partner,
-        .content-about{
-            p{
-                // font-size: 13px;
-                // line-height: 18px;
+        .intro-partner{
+            h2{
+                margin-top: 40px;
             }
         }
     }
