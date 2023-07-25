@@ -31,6 +31,21 @@
             line-height: 40px;
             margin-bottom: 35px;
         }
+        .watch-area{
+            display: inline-block;
+            position: relative;
+            .video-play{
+                position: absolute;
+                width: 300px;
+                border-radius: 8px;
+                aspect-ratio: 16 / 9;
+                transform: translate(70%, -100%);
+                overflow: hidden;
+                video{
+                    width: 100%;
+                }
+            }
+        }
     }
     @media (min-width: 1441px){
         .blue-hero{
@@ -76,6 +91,11 @@
             p{
                 font-size: 18px;
                 line-height: 28px;
+            }
+            .watch-area{
+                .video-play{
+                    display: none;
+                }
             }
         }
     }
@@ -169,6 +189,11 @@
     .slick-item{
         padding: 0 10px;
         cursor: grab;
+        &:focus-visible{
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+        }
     }
     .progress {
         display: block;

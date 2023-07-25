@@ -261,151 +261,182 @@ window.addEventListener('load', function () {
 
 // Homepage animations, features section
 // Feature one || COMMUNITY BUILDING
-   var featOne = gsap.timeline({  
-    duration: 1,
-    ease: "power2.out",
-    delay: 0,
-    paused: true,
-  });
-
-   featOne
-   .from(".feature-graphic.feature-one .world-image", {
+  if ($('.feature-one').length) {
+    var featOne = gsap.timeline({  
       duration: 1,
-      ease: "none",
-      opacity: 0,
-   }, "-=.5")
-
-  const featOneTrigger = document.querySelectorAll('#product-features .feature-one .trigger');
-  const observerFeatOne = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        featOne.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerFeatOne.unobserve(entry.target);
-      }
+      ease: "power2.out",
+      delay: 0,
+      paused: true,
     });
-  });
-  featOneTrigger.forEach((animation) => {
-    observerFeatOne.observe(animation);
-  });
+
+    featOne
+    .from(".feature-graphic.feature-one .world-image", {
+        duration: 1,
+        ease: "none",
+        opacity: 0,
+    }, "-=.5")
+
+    const featOneTrigger = document.querySelectorAll('#product-features .feature-one .trigger');
+    const observerFeatOne = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          featOne.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerFeatOne.unobserve(entry.target);
+        }
+      });
+    });
+    featOneTrigger.forEach((animation) => {
+      observerFeatOne.observe(animation);
+    });
+  }
 
   // Feature three || USER EXPERIENCE
-  var featThree = gsap.timeline({  
-    duration: 1,
-    ease: "power2.out",
-    delay: 0,
-    paused: true,
-  });
-
-   featThree
-   .from(".feature-graphic.feature-three .vs-image", {
-      duration: .6,
-      ease: "back",
-      y: 120,
-      opacity: 0,
-      onComplete: function(){
-        $(".feature-graphic.feature-three .vs-image").addClass("floating");
-      }
-   }, "-=.5")
-
-  const featThreeTrigger = document.querySelectorAll('#product-features .feature-three .trigger');
-  const observerFeatThree = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        featThree.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerFeatThree.unobserve(entry.target);
-      }
+  if ($('.feature-three').length) {
+    var featThree = gsap.timeline({  
+      duration: 1,
+      ease: "power2.out",
+      delay: 0,
+      paused: true,
     });
-  });
-  featThreeTrigger.forEach((animation) => {
-    observerFeatThree.observe(animation);
-  });
+
+    featThree
+    .from(".feature-graphic.feature-three .vs-image", {
+        duration: .6,
+        ease: "back",
+        y: 120,
+        opacity: 0,
+        onComplete: function(){
+          $(".feature-graphic.feature-three .vs-image").addClass("floating");
+        }
+    }, "-=.5")
+
+    const featThreeTrigger = document.querySelectorAll('#product-features .feature-three .trigger');
+    const observerFeatThree = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          featThree.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerFeatThree.unobserve(entry.target);
+        }
+      });
+    });
+    featThreeTrigger.forEach((animation) => {
+      observerFeatThree.observe(animation);
+    });
+  }
 
   // Feature four || RISK MANAGEMENT
-  var featFour = gsap.timeline({  
-    duration: 1,
-    ease: "power2.out",
-    delay: 0,
-    paused: true,
-  });
-
- featFour
-  .from(".feature-graphic.feature-four .card-feature", {
-      duration: .6,
-      ease: "back",
-      y: 120,
-      opacity: 0,
-      onComplete: function(){
-        $(".feature-graphic.feature-four .card-feature").addClass("floating");
-      }
-  }, "-=.5")
-
-  const featFourTrigger = document.querySelectorAll('#product-features .feature-four .trigger');
-  const observerFeatFour = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        featFour.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerFeatFour.unobserve(entry.target);
-      }
+  if ($('.feature-four').length) {
+    var featFour = gsap.timeline({  
+      duration: 1,
+      ease: "power2.out",
+      delay: 0,
+      paused: true,
     });
-  });
-  featFourTrigger.forEach((animation) => {
-    observerFeatFour.observe(animation);
-  });
+
+  featFour
+    .from(".feature-graphic.feature-four .card-feature", {
+        duration: .6,
+        ease: "back",
+        y: 120,
+        opacity: 0,
+        onComplete: function(){
+          $(".feature-graphic.feature-four .card-feature").addClass("floating");
+        }
+    }, "-=.5")
+
+    const featFourTrigger = document.querySelectorAll('#product-features .feature-four .trigger');
+    const observerFeatFour = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          featFour.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerFeatFour.unobserve(entry.target);
+        }
+      });
+    });
+    featFourTrigger.forEach((animation) => {
+      observerFeatFour.observe(animation);
+    });
+  }
 
 
   // Animation the background image for Case Study and Get in Touch blocks
   // When the user hovers on the button, we trigger the animation
-  let buttonHover = gsap.timeline({repeat: -1, paused: true});
-  buttonHover
-  .from("#get-in-touch, #case-study-block", {
-    backgroundPosition: "200% 0",
-    duration: 25,
-    ease: Linear.easeNone
-  });
+  if ($('.animated-background').length) {
+    let buttonHover = gsap.timeline({repeat: -1, paused: true});
+    buttonHover
+    .from("#get-in-touch, #case-study-block", {
+      backgroundPosition: "200% 0",
+      duration: 25,
+      ease: Linear.easeNone
+    });
 
-  // Hover event
-  $("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
-    buttonHover.play();
-  });
-  $("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
-    buttonHover.pause();
-  });
+    // Hover event to trigger background image
+    $("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
+      buttonHover.play();
+    });
+    $("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
+      buttonHover.pause();
+    });
+  }
 
   //Prefooter animation, stagger words
-  let prefooterAnimation = gsap.timeline({paused: true});
-  prefooterAnimation
-  .from("#prefooter p span", {
-    duration: .7,
-    opacity: 0,
-    y: 30,
-    stagger: .3,
-    ease: "power2.out",
-  });
-
-  const prefooterTrigger = document.querySelectorAll('#prefooter p span');
-  const observerPrefooter = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        prefooterAnimation.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerPrefooter.unobserve(entry.target);
-      }
+  if ($('#prefooter').length) {
+    let prefooterAnimation = gsap.timeline({paused: true});
+    prefooterAnimation
+    .from("#prefooter p span", {
+      duration: .7,
+      opacity: 0,
+      y: 30,
+      stagger: .3,
+      ease: "power2.out",
     });
-  });
-  prefooterTrigger.forEach((animation) => {
-    observerPrefooter.observe(animation);
-  });
+
+    const prefooterTrigger = document.querySelectorAll('#prefooter p span');
+    const observerPrefooter = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          prefooterAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerPrefooter.unobserve(entry.target);
+        }
+      });
+    });
+    prefooterTrigger.forEach((animation) => {
+      observerPrefooter.observe(animation);
+    });
+  }
+
+  if ($('.watch-area').length) {
+    let buttonVideoHover = gsap.timeline({paused: true});
+    buttonVideoHover
+    .from(".watch-area .video-play", {
+      duration: .4,
+      ease: "power1.out",
+      scale: .2,
+      opacity: 0,
+      xPercent: -85,
+      yPercent: 65
+    })
+
+    // Hover event to trigger video preview
+    $(".watch-area .button").on("mouseenter", function() {
+      buttonVideoHover.play();
+    });
+    $(".watch-area .button").on("mouseleave", function() {
+      buttonVideoHover.reverse();
+    });
+  }
 
 //  end window onload
 });
