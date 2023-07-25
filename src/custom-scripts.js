@@ -420,13 +420,19 @@ window.addEventListener('load', function () {
   if ($('.watch-area').length) {
     let buttonVideoHover = gsap.timeline({paused: true});
     buttonVideoHover
-    .from(".watch-area .video-play", {
+    .fromTo(".watch-area .video-play", {
       duration: .4,
       ease: "power1.out",
       scale: .2,
       opacity: 0,
-      xPercent: -85,
-      yPercent: 65
+      xPercent: -17,
+      yPercent: -35
+    }, {
+      duration: .4,
+      scale: 1,
+      opacity: 1,
+      xPercent: 70,
+      yPercent: -100
     })
 
     // Hover event to trigger video preview

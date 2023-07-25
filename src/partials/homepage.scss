@@ -461,8 +461,9 @@
                 width: 300px;
                 border-radius: 8px;
                 aspect-ratio: 16 / 9;
-                transform: translate(70%, -100%);
                 overflow: hidden;
+                opacity: 0;
+                pointer-events: none;
                 video{
                     width: 100%;
                 }
