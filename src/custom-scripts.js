@@ -444,6 +444,77 @@ window.addEventListener('load', function () {
     });
   }
 
+  // Hero Case Studies
+  if ($('#hero-case-studies').length) {
+    let heroCaseStudiesAnimation = gsap.timeline();
+    heroCaseStudiesAnimation
+    // Show phones
+    .fromTo(".animation-graphic .phones .phone-left",{
+      opacity: 0,
+      duration: 1,
+      yPercent: -25
+    },{
+      opacity: 1,
+      yPercent: -32,
+    })
+    .fromTo(".animation-graphic .phones .phone-right",{
+      opacity: 0,
+      duration: 1,
+      yPercent: -50,
+    },{
+      opacity: 1,
+      yPercent: -59,
+    }, "<.2")
+    // Move phones
+    .fromTo(".animation-graphic .phones .phone-left", {
+      xPercent: -70,
+      yPercent: -32,
+    },
+    {
+      xPercent: -80,
+      yPercent: -40,
+    }
+    )
+    .fromTo(".animation-graphic .phones .phone-right", {
+      xPercent: -37,
+      yPercent: -59,
+    },
+    {
+      xPercent: -24,
+      yPercent: -45,
+    }, '<')
+    .fromTo(".animation-graphic .ball", {
+      opacity: 0,
+      yPercent: 15
+    },{
+      opacity: 1,
+      yPercent: 0,
+    }, "<.2")
+    .fromTo(".animation-graphic .dupr-x-lucra", {
+      opacity: 0,
+    },{
+      opacity: 1,
+    }, "<.2");
+  }
+
+// Hover on ball (Case Studies)
+if ($('#hero-case-studies .animation-graphic .ball').length) {
+  let hoverBall = gsap.timeline({paused: true, duration: 1});
+  hoverBall.to("#hero-case-studies .animation-graphic .ball", {
+    rotate: 55,
+    xPercent: 20,
+    yPercent: 20,
+  }, "-=.4");
+
+  $("#hero-case-studies .animation-graphic .ball").on("mouseenter", function() {
+    hoverBall.play();
+  });
+  $("#hero-case-studies .animation-graphic .ball").on("mouseleave", function() {
+    hoverBall.reverse();
+  });
+}
+
+
 //  end window onload
 });
 
