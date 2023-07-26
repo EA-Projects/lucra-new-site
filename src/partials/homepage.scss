@@ -61,6 +61,7 @@
                 left: 13%;
                 z-index: 2;
                 mix-blend-mode: lighten;
+                animation: electricityBlink 4s ease-in-out infinite;
             }
             .powered-by{
                 max-width: 182px;
@@ -180,10 +181,10 @@
     .case-study-content{
         text-align: center;
         img{
-            max-width: 140px;
+            max-width: 340px;
         }
         h3{
-            max-width: 930px;
+            max-width: 1000px;
             margin: 25px auto 35px;
         }
     }
@@ -464,6 +465,7 @@
                 overflow: hidden;
                 opacity: 0;
                 pointer-events: none;
+                line-height: 0;
                 video{
                     width: 100%;
                 }
@@ -484,6 +486,7 @@
         .phones{
             .electricity{
                 mix-blend-mode: lighten;
+                filter: drop-shadow(0 0 5px $yellow);
                 position: absolute;
                 max-width: 670px;
                 z-index: 0;
@@ -491,6 +494,7 @@
                 transform: translateX(-50%);
                 bottom: -35%;
                 z-index: 1;
+                animation: electricityBlink 4s ease-in-out infinite;
             }
             .phones-image{
                 position: absolute;

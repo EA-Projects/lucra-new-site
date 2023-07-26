@@ -29,6 +29,39 @@
             max-width: 440px;
         }
     }
+    .animation-graphic{
+        position: relative;
+        min-height: 400px;
+        z-index: 1;
+        .dupr-x-lucra{
+            max-width: 400px;
+        }
+        .ball{
+            max-width: 230px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        .phones{
+            // position: relative;
+            img{
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .phone-left{
+                max-width: 501px;
+                top: 62%;
+                left: 25%;
+                z-index: 1;
+            }
+            .phone-right{
+                max-width: 494px;
+                left: 67%;
+            }
+        }
+    }
     .graphic-hero{
         position: relative;
         z-index: 1;
@@ -69,6 +102,11 @@
         padding: 120px 0 30px;
         &::after{
             background: linear-gradient(345deg,#137FE6 -5%,rgba(14,241,105,0) 65%);
+        }
+        .content-hero{
+            h1{
+                line-height: 33px;
+            }
         }
         .graphic-hero{
             display: flex;

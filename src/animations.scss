@@ -251,17 +251,78 @@
   }
 }
 
+@-webkit-keyframes floating {
+  0% {
+    transform: translate(0, 0px) translateZ(0);
+  }
+  50% {
+    transform: translate(0, 15px) translateZ(0);
+  }
+  100% {
+    transform: translate(0, 0) translateZ(0);
+  }
+}
+
 @keyframes energyBlink {
   0% {
     opacity: .7;
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
   }
   50% {
     opacity: 1;
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
   }
   70%{
     opacity: .4;
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
   }
   100%{
     opacity: .7;
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+  }
+}
+
+@-webkit-keyframes energyBlink {
+  0% {
+    opacity: .7;
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2);
+    -webkit-filter: brightness(1.2);
+  }
+  70%{
+    opacity: .4;
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+  }
+  100%{
+    opacity: .7;
+    filter: brightness(1);
+    -webkit-filter: brightness(1);
+  }
+}
+
+@keyframes electricityBlink {
+  0%, 100%{
+    filter: drop-shadow(0 0 10px $yellow) brightness(1) contrast(1) saturate(1);
+  }
+  50%{
+    filter: drop-shadow(0 0 5px $yellow) brightness(2) contrast(1.5) saturate(2);
+  }
+}
+
+@-webkit-keyframes electricityBlink{
+  0%, 100%{
+    filter: drop-shadow(0 0 10px $yellow) brightness(1) contrast(1) saturate(1);
+  }
+  50%{
+    filter: drop-shadow(0 0 5px $yellow) brightness(2) contrast(1.5) saturate(2);
   }
 }
