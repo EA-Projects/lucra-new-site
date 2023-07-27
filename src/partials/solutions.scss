@@ -48,23 +48,6 @@
             line-height: 40px;
             margin-bottom: 35px;
         }
-        .watch-area{
-            display: inline-block;
-            position: relative;
-            .video-play{
-                position: absolute;
-                width: 300px;
-                border-radius: 8px;
-                aspect-ratio: 16 / 9;
-                overflow: hidden;
-                opacity: 0;
-                pointer-events: none;
-                line-height: 0;
-                video{
-                    width: 100%;
-                }
-            }
-        }
     }
     @media (min-width: 1441px){
         .blue-hero{
@@ -138,11 +121,6 @@
             p{
                 font-size: 18px;
                 line-height: 28px;
-            }
-            .watch-area{
-                .video-play{
-                    display: none;
-                }
             }
         }
     }

@@ -431,8 +431,8 @@ window.addEventListener('load', function () {
       duration: .4,
       scale: 1,
       opacity: 1,
-      xPercent: 70,
-      yPercent: -100
+      xPercent: -17,
+      yPercent: -115
     })
 
     // Hover event to trigger video preview

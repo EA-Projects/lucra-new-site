@@ -353,6 +353,32 @@ a {
   }
 }
 
+// Watch area is a block which appear 
+// when you do hover on buttons with videos
+.watch-area{
+  display: inline-block;
+  position: relative;
+  .video-play{
+      position: absolute;
+      width: 300px;
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      line-height: 0;
+      filter: drop-shadow(0 0 50px #0ef1699d);
+      video{
+          width: 100%;
+      }
+  }
+  @media (max-width: 575px){
+    .video-play{
+      display: none;
+    }
+  }
+}
+
 /****************** CONTENTS ******************/
 //Header
 #header-nav {

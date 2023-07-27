@@ -454,23 +454,6 @@
             margin-top: 25px;
             margin-bottom: 40px;
         }
-        .watch-area{
-            display: inline-block;
-            position: relative;
-            .video-play{
-                position: absolute;
-                width: 300px;
-                border-radius: 8px;
-                aspect-ratio: 16 / 9;
-                overflow: hidden;
-                opacity: 0;
-                pointer-events: none;
-                line-height: 0;
-                video{
-                    width: 100%;
-                }
-            }
-        }
     }
     .graphics-content{
         position: relative;
@@ -538,11 +521,6 @@
                 margin-bottom: 25px;
                 img{
                     max-height: 44px;
-                }
-            }
-            .watch-area{
-                .video-play{
-                    display: none;
                 }
             }
         }
