@@ -1,0 +1,317 @@
+#hero-case-studies{
+    padding: 170px 0 100px;
+    background-color: $dark;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background: linear-gradient(325deg, #137FE6 -10%,rgba(14,241,105,0) 50%);
+    }
+    .content-hero{
+        h6{
+            margin-bottom: 25px;
+            color: #A1C8FF;
+        }
+        h1{
+            max-width: 440px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 45px;
+        }
+        p{
+            margin: 20px 0 30px;
+            max-width: 440px;
+        }
+    }
+    .animation-graphic{
+        position: relative;
+        min-height: 400px;
+        z-index: 1;
+        .dupr-x-lucra{
+            max-width: 400px;
+            opacity: 0;
+        }
+        .ball{
+            max-width: 230px;
+            position: absolute;
+            top: -15px;
+            right: -10px;
+            opacity: 0;
+            filter: drop-shadow(drop-shadow(0px 60px 10px rgba(0,0,0,0.2)));
+        }
+        .phones{
+            // position: relative;
+            img{
+                position: absolute;
+                top: 60%;
+                left: 50%;
+                // transform: translate(-50%, -50%);
+                filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.40));
+                opacity: 0;
+                pointer-events: none;
+            }
+            .phone-left{
+                max-width: 501px;
+                // transform: translate(-70%, -32%);
+                z-index: 1;
+            }
+            .phone-right{
+                max-width: 494px;
+                // transform: translate(-37%, -59%);
+            }
+        }
+    }
+    .graphic-hero{
+        position: relative;
+        z-index: 1;
+        display: none;
+        img{
+            width: 830px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    @media (max-width: 1200px){
+        .graphic-hero{
+            img{
+                width: 700px;
+            }
+        }
+        .animation-graphic{
+            .dupr-x-lucra{
+                max-width: 300px;
+            }
+            .ball{
+                top: 30px;
+                max-width: 180px;
+            }
+            .phones{
+                .phone-left{
+                    max-width: 450px;
+                }
+                .phone-right{
+                    max-width: 440px;
+                }
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .content-hero{
+            margin-bottom: 30px;
+            h1,
+            h6,
+            p{
+                max-width: 100%;
+            }
+        }
+        .animation-graphic{
+            display: none;
+        }
+        .graphic-hero{
+            display: block;
+            img{
+                position: static;
+                width: 100%;
+                max-width: 600px;
+                transform: none;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 120px 0 30px;
+        &::after{
+            background: linear-gradient(345deg,#137FE6 -5%,rgba(14,241,105,0) 65%);
+        }
+        .content-hero{
+            h1{
+                line-height: 33px;
+            }
+        }
+        .graphic-hero{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 130%;
+            }
+        }
+    }
+}
+
+#partner-block{
+    padding: 100px 0;
+    background-color: $dark;
+    background-image: url(../../images/case-studies/partner-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    .content-area{
+        text-align: center;
+        max-width: 950px;
+        margin: 0 auto;
+        hr{
+            border-color: #A1C8FF;
+            margin: 40px auto 30px;
+            max-width: 920px;
+        }
+        h2,h4{
+            color: #FFFFFF;
+        }
+        h2{
+            font-size: 80px;
+        }
+    }
+    @media (max-width: 1200px){
+        .content-area{
+            h2{
+                font-size: 65px;
+                line-height: 65px;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        min-height: 500px;
+        padding: 60px 0;
+        background-attachment: initial;
+        .content-area{
+            hr{
+                margin: 20px auto 15px;
+            }
+            h2{
+                font-size: 45px;
+                line-height: 52px;
+            }
+        }
+    }
+}
+
+#game-changing{
+    padding: 10px 0 20px;
+    background: #000F33;
+    .feature-content{
+        h3{
+            text-align: left;
+            text-transform: uppercase;
+            line-height: 40px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    @media (max-width: 991px){
+        padding: 10px 0 100px;
+        .feature-graphic{
+            text-align: center;
+            img{
+                max-width: 500px;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 10px 0 60px;
+        .feature-content{
+            h3{
+                line-height: 28px;
+            }
+        }
+    }
+}
+
+#testimonial{
+    padding: 100px 0;
+    background-color: #052A5F;
+    &.dark{
+        padding-top: 0;
+        background: #000F33;
+    }
+    .testimonial-area{
+        .description-testimonial{
+            text-align: center;
+            font-family: 'Bauziet';
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 44px;
+        }
+        .author{
+            color: #A1C8FF;
+            text-align: center;
+            font-family: 'Bauziet';
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 25px; 
+            margin-top: 35px;
+            margin-bottom: 0;
+        }
+    }
+    @media (max-width: 991px){
+        .testimonial-area{
+            .description-testimonial{
+                font-size: 16px;
+                line-height: 28px;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 60px 0;
+    }
+}
+
+#about-partner{
+    padding: 100px 0;
+    background: #000F33;
+    .intro-partner{
+        margin-bottom: 80px;
+        h2{
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            margin-top: 80px;
+            &:first-child{
+                margin-top: 0;
+            }
+        }
+    }
+    .content-about{
+        h2{
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    .about-image{
+        text-align: right;
+        img{
+            max-width: 650px;
+        }
+    }
+    @media (max-width: 991px){
+        .content-about{
+            margin-top: 70px;
+        }
+    }
+    @media (max-width: 575px){
+        padding: 60px 0;
+        .intro-partner{
+            h2{
+                margin-top: 40px;
+            }
+        }
+    }
+}

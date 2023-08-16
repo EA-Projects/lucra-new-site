@@ -113,6 +113,9 @@
                     <a class="nav-link" href="solutions.html">SOLUTIONS</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="case-studies.html">CASE STUDIES</a>
+                  </li>
+                  <li class="nav-item">
                     <a
                       class="nav-link"
                       href="about.html"
@@ -157,16 +160,20 @@
       <section id="hero-solutions">
         <div class="blue-hero">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-end">
                     <div class="col-12 col-lg-7 order-2 order-lg-0">
                       <div class="title-area">
                         <img class="title-hero" src="../images/solutions/discover-the-lucra-sdk.svg" alt="Discover the Lucra SDK">
                       </div>
                     </div>
                     <div class="col-12 col-lg-5">
-                        <div class="phones-image">
-                            <img src="../images/solutions/phones_hero.png" alt="">
-                        </div>
+                      <div class="float-phones">
+                        <img src="../images/solutions/top-phone.png" alt="" class="top-phone">
+                        <img src="../images/solutions/bottom-phone.png" alt="" class="bottom-phone">
+                      </div>
+                      <!-- <div class="phones-image">
+                          <img src="../images/solutions/phones_hero.png" alt="">
+                      </div> -->
                     </div>
                 </div>
             </div>
@@ -176,7 +183,20 @@
                 <div class="row">
                     <div class="col-12 col-lg-7">
                         <p>Lucra's groundbreaking SDK offers a comprehensive, turnkey solution for operating a peer-to-peer real-money gaming platform. With our SDK, you gain instant access to all the essential elements, including legal and compliance frameworks, robust risk management tools, secure payment facilitation, and a suite of engaging contest features.</p>
-                        <a href="https://www.youtube.com/watch?v=qnAwzjrU_z4" target="_blank" rel="noopener noreferrer" class="button">Watch Video</a>
+                        <div class="watch-area">
+                          <div class="video-play">
+                            <video
+                            autoplay
+                            muted
+                            playsinline
+                            preload
+                            loop
+                          >
+                            <source src="../images/homepage/lucra_preview.mov" />
+                          </video>
+                          </div>
+                          <a href="https://www.youtube.com/watch?v=qnAwzjrU_z4" target="_blank" rel="noopener noreferrer" class="button">Watch Video</a>
+                        </div>
                     </div>
                     <div class="col-12 col-lg-5"></div>
                 </div>
@@ -391,7 +411,7 @@
         </div>
       </section>
 
-      <section id="get-in-touch">
+      <section id="get-in-touch" class="animated-background">
         <div class="container">
           <div class="row">
               <div class="col-12">
@@ -411,10 +431,56 @@
         <div class="container">
           <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-8">
-              <div class="content-prefooter animate fadeInUp">
+              <div class="content-prefooter">
                 <p>
-                  WE’RE BUILDING COMMUNITIES OF FANS & FRIENDS THROUGH shared
-                  experiences that connect people in friendly competition
+                  <span>
+                    WE’RE
+                  </span>
+                  <span>
+                    BUILDING
+                  </span>
+                  <span>
+                    COMMUNITIES
+                  </span>
+                  <span>
+                    OF
+                  </span>
+                  <span>
+                    FANS
+                  </span>
+                  <span>
+                    &
+                  </span>
+                  <span>
+                    FRIENDS
+                  </span>
+                  <span>
+                    THROUGH
+                  </span>
+                  <span>
+                    shared
+                  </span>
+                  <span>
+                    experiences
+                  </span>
+                  <span>
+                    that
+                  </span>
+                  <span>
+                    connect
+                  </span>
+                  <span>
+                    people
+                  </span>
+                  <span>
+                    in
+                  </span>
+                  <span>
+                    friendly
+                  </span>
+                  <span>
+                    competition
+                  </span>
                 </p>
               </div>
             </div>
@@ -435,8 +501,8 @@
                   />
                   <div class="contact">
                     <p>Contact Us</p>
-                    <a href="mailto:info@lucrasports.com"
-                      >info@lucrasports.com</a
+                    <a href="mailto:team@lucrasports.com"
+                      >team@lucrasports.com</a
                     >
                   </div>
                 </div>
@@ -514,6 +580,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+    <!-- TILT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" integrity="sha512-u1L7Dp3BKUP3gijgSRoMTNxmDl/5o+XOHupwwa7jsI1rMzHrllSLKsGOfqjYl8vrEG+8ghnRPNA/SCltmJCZpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Scroll Magic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>

@@ -42,6 +42,7 @@ $button-gradient: linear-gradient(
 @import './partials/homepage.scss';
 @import './partials/solutions.scss';
 @import './partials/contact.scss';
+@import './partials/case-studies.scss';
 // @import './lib/owl.carousel.min.scss';
 
 /*** RESET & BUTTONS ***/
@@ -126,16 +127,13 @@ a {
     outline: none;
   }
   &.secondary {
-    box-shadow: none;
-    background: linear-gradient(
-        180deg,
-        rgba(20, 174, 243, 0.2) 0%,
-        rgba(16, 37, 81, 0.5) 100%
-      ),
-      #01102d;
-    border-radius: $border-btn;
+    background-color: #3978E0;
+    color: #FFFFFF;
+    border-color: #3978E0;
     &:hover {
-      background: rgb(16, 37, 81);
+      background-color: $yellow;
+      border-color: $yellow;
+      color: #2D2B81;
     }
   }
   @media (max-width: 575px) {
@@ -190,7 +188,7 @@ h6 {
   color: $light;
 }
 
-h1 {
+h1, .h1 {
   font-size: 54px;
   line-height: 58px;
   font-weight: 600;
@@ -208,7 +206,7 @@ h1 {
   }
 }
 
-h2 {
+h2, .h2 {
   font-size: 46px;
   line-height: 53px;
   font-weight: 600;
@@ -226,7 +224,7 @@ h2 {
   }
 }
 
-h3 {
+h3, .h3 {
   font-size: 36px;
   line-height: 44px;
   font-weight: 400;
@@ -244,13 +242,13 @@ h3 {
   }
 }
 
-h4 {
+h4, .h4 {
   font-size: 30px;
   font-weight: 400;
   line-height: 40px;
   @media (max-width: 991px) {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 28px;
+    line-height: 33px;
   }
   @media (max-width: 767px) {
     font-size: 25px;
@@ -262,7 +260,7 @@ h4 {
   }
 }
 
-h5 {
+h5, .h5 {
   font-weight: 400;
   font-size: 24px;
   line-height: 31px;
@@ -273,7 +271,7 @@ h5 {
   }
 }
 
-h6 {
+h6, .h6 {
   font-size: 18px;
   line-height: 32px;
   &.pretitle{
@@ -303,6 +301,10 @@ p {
     font-size: 16px;
     font-weight: 300;
     line-height: 24px;
+    @media (max-width: 575px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
   &.featured {
     font-size: 18px;
@@ -347,6 +349,32 @@ a {
     }
     &.instagram {
       margin-left: 0;
+    }
+  }
+}
+
+// Watch area is a block which appear 
+// when you do hover on buttons with videos
+.watch-area{
+  display: inline-block;
+  position: relative;
+  .video-play{
+      position: absolute;
+      width: 300px;
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      line-height: 0;
+      filter: drop-shadow(0 0 50px #0ef1699d);
+      video{
+          width: 100%;
+      }
+  }
+  @media (max-width: 575px){
+    .video-play{
+      display: none;
     }
   }
 }
@@ -2008,6 +2036,10 @@ a {
       letter-spacing: 10px;
       font-weight: 400;
       text-transform: uppercase;
+      span{
+        display: inline-block;
+        opacity: 1;
+      }
     }
   }
   @media (max-width: 767px) {
