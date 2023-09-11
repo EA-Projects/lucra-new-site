@@ -184,6 +184,7 @@ window.addEventListener('load', function () {
       $(this).val() == 'MD' ||
       $(this).val() == 'NJ' ||
       $(this).val() == 'NH' ||
+      $(this).val() == 'SC' ||
       $(this).val() == 'VT'
     ) {
       $('.option-display.games').removeClass('hide');
@@ -208,7 +209,6 @@ window.addEventListener('load', function () {
       $(this).val() == 'AR' ||
       $(this).val() == 'LA' ||
       $(this).val() == 'TN' ||
-      $(this).val() == 'SC' ||
       $(this).val() == 'CT'
     ) {
       $('.option-display.sports').addClass('hide');
