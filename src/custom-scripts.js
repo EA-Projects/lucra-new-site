@@ -114,16 +114,18 @@ window.addEventListener('load', function () {
         $(this).removeClass("active");
       });
 
-      if ($('.team-card').length) {
-        $('.team-card').tilt({
-          glare: true,
-          maxTilt: 3,
-          speed: 700,
-          transition: true,
-          maxGlare: 0.1
-        });
+      // Tilt effect to Team Cards only on Desktop 
+      if (window.matchMedia('(min-width: 575px)').matches) {
+        if ($('.team-card').length) {
+          $('.team-card').tilt({
+            glare: true,
+            maxTilt: 3,
+            speed: 700,
+            transition: true,
+            maxGlare: 0.1
+          });
+        }
       }
-
     });
   })(jQuery);
 
