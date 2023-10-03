@@ -105,6 +105,25 @@ window.addEventListener('load', function () {
           });
         }); // video to play when is on viewport
       } // end .field--name-field-video
+
+      $(".team-card").on("click", function() {
+        $(this).addClass("active");
+      });
+
+      $(".team-card").on("mouseleave", function() {
+        $(this).removeClass("active");
+      });
+
+      if ($('.team-card').length) {
+        $('.team-card').tilt({
+          glare: true,
+          maxTilt: 3,
+          speed: 700,
+          transition: true,
+          maxGlare: 0.1
+        });
+      }
+
     });
   })(jQuery);
 
@@ -651,9 +670,27 @@ $(window).scroll(function () {
   var scroll = $(window).scrollTop();
   if (scroll >= 60) {
     $('#header-nav').addClass('fixed');
-  } else {
+    $('#about-nav').addClass('fixed');
+  } 
+  else {
     $('#header-nav').removeClass('fixed');
+    $('#about-nav').removeClass('fixed');
   }
+
+  // About Navigation , to trigger active class between sections
+  var cutoff = $(window).scrollTop();
+  $('.about-body section').each(function () {
+      if ($(this).offset().top + $(this).height() > cutoff) {
+          // $('.about-body section').removeClass('current');
+          // $(this).addClass('current');
+
+          var currSection = $(this).attr('id');
+
+          $('#about-nav a').removeClass('active');
+          $('#about-nav a[data-id=' + currSection + ']').addClass('active');
+          return false;
+      }
+  });
 });
 
 // Values Slider on About page
@@ -677,6 +714,23 @@ if ($('.slider-nav').length) {
         },
       },
     ],
+  });
+}
+
+// About Team Slider
+if ($('.slider-team').length) {
+  $('.slider-team').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    autoplaySpeed: 6000,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
   });
 }
 

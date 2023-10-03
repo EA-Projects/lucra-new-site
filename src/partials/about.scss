@@ -1,0 +1,724 @@
+#about-nav{
+    width: 100%;
+    background-color: #001035;
+    padding: 10px 0;
+    transition: all 0.2s ease-in-out;
+    position: fixed;
+    top: 103px;
+    z-index: 9;
+    .about-nav-items{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        a{
+            color: #FFF;
+            font-family: 'Bauziet';
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            opacity: .3;
+            .flag{
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-image: url(../../images/about/images/flag-nav.svg);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-right: 5px;
+                transition: all .3s ease-in-out;
+                opacity: 0;
+            }
+            &:hover,
+            &.active{
+                opacity: 1;
+                .flag{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &.fixed{
+        top: 59px;
+    }
+    @media (max-width: 991px){
+        top: 58px;
+        .about-nav-items{
+            gap: 10px;
+            a{
+                font-size: 12px;
+                .flag{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+        &.fixed{
+            top: 58px;
+        }
+    }
+    @media (max-width: 575px){
+        top: 52px;
+        .about-nav-items{
+            gap: 5px;
+            justify-content: space-between;
+            a{
+                font-size: 11px;
+                .flag{
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+        }
+        &.fixed{
+            top: 52px;
+        }
+    }
+    @media (max-width: 425px){
+        .about-nav-items{
+            a{
+                font-size: 9px;
+            }
+        }
+    }
+}
+#hero-about{
+    padding: 150px 0 0px;
+    background-color: #01154c;
+    .hero-about-content{
+        position: relative;
+        min-height: 820px;
+        max-width: 750px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        h1,
+        h6{
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        h1{
+            font-weight: 500;
+            color: #FFFFFF;
+        }
+        img{
+            max-width: 1045px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    @media (max-width: 991px){
+        padding: 100px 0 0px;
+    }
+    @media (max-width: 767px){
+        .hero-about-content{
+            min-height: 600px;
+        }
+    }
+    @media (max-width: 575px){
+        .hero-about-content{
+            min-height: 500px;
+        }
+    }
+    @media (max-width: 425px){
+        .hero-about-content{
+            min-height: 350px;
+        }
+    }
+}
+
+#values{
+    padding: 150px 0 50px;
+    background: linear-gradient(180deg, #01154c 0%, #37358F 100%);
+    .top-area{
+        margin-bottom: 80px;
+        h6{
+            text-align: center;
+        }
+    }
+    .our-values-cards{
+        position: relative;
+        .image-our-values{
+            max-width: 973px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                filter: drop-shadow(8px 20px 14px rgba(0, 0, 0, 0.20));
+            }
+            h5{
+                font-family: "Bauziet";
+                position: absolute;
+            }
+        }
+        .cards-container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            .card-col{
+                width: 50%;
+                max-width: 300px;
+                .card-values{
+                    min-height: 140px;
+                    padding: 25px;
+                    margin: 30px 0;
+                    position: relative;
+                    border-radius: 6px;
+                    background: #FFF;
+                    box-shadow: 8px 20px 14px 0px rgba(0, 0, 0, 0.20);
+                    overflow: hidden;
+                    h5{
+                        font-family: "Bauziet";
+                        text-align: left;
+                        color: #001B60;
+                    }
+                    .number-values{
+                        background-color: $yellow;
+                        color: #FFFFFF;
+                        font-family: "Bauziet";
+                        font-size: 25px;
+                        position: absolute;
+                        bottom: -80px;
+                        right: -80px;
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding-right: 60px;
+                        padding-bottom: 60px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .our-values-cards{
+            .image-our-values{
+                position: static;
+                transform: none;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            .cards-container{
+                margin-top: -100px;
+                justify-content: center;
+                gap: 15px;
+                .card-col{
+                    max-width: 250px;
+                    .card-values{
+                        min-height: 135px;
+                        padding: 20px;
+                        margin: 15px 0;
+                        .number-values{
+                            bottom: -60px;
+                            right: -60px;
+                            width: 120px;
+                            height: 120px;
+                            padding-right: 40px;
+                            padding-bottom: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .our-values-cards{
+            .cards-container{
+                .card-col{
+                    .card-values{
+                        padding: 15px;
+                        min-height: 90px;
+                        .number-values{
+                            bottom: -50px;
+                            right: -50px;
+                            width: 100px;
+                            height: 100px;
+                            padding-right: 30px;
+                            padding-bottom: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 80px 0 50px;
+        .our-values-cards{
+            .cards-container{
+                gap: 10px;
+                .card-col{
+                    .card-values{
+                        min-height: 105px;
+                        margin: 10px 0;
+                        .number-values{
+                            font-size: 20px;
+                            bottom: -40px;
+                            right: -40px;
+                            width: 80px;
+                            height: 80px;
+                            padding-right: 25px;
+                            padding-bottom: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#the-team{
+    padding: 150px 0 50px;
+    background-color: #37358f;
+    .top-area{
+        margin-bottom: 50px;
+        h6{
+            text-align: center;
+        }
+        img{
+            max-width: 157px;
+            position: absolute;
+            left: -45px;
+            bottom: -60px;
+            z-index: 1;
+        }
+    }
+    .mobile-slide{
+        display: none;
+    }
+    .team-card{
+        position: relative;
+        min-height: 483px;
+        max-width: 345px;
+        margin-bottom: 50px;
+        cursor: pointer;
+        box-shadow: none;
+        border-radius: 15px;
+        overflow: hidden;
+        // filter: drop-shadow(5px 15px 8px rgba(0,0,0,0.2));
+        .front-card,
+        .back-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+        }
+        .back-card{
+            transform: rotateY(180deg);
+            border-radius: 15px;
+        }
+        &.active{
+            .front-card{
+                transform: rotateY(180deg);
+            }
+            .back-card{
+                transform: rotateY(360deg);
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        .team-card{
+            min-height: 405px;
+        }
+    }
+    @media (max-width: 991px){
+        .team-card{
+            min-height: 294px;
+            margin-bottom: 25px;
+        }
+    }
+    @media (max-width: 767px){
+        .team-grid-desktop{
+            display: none;
+        }
+        .mobile-slide{
+            display: block;
+        }
+        .top-area{
+            img{
+                left: 0px;
+            }
+        }
+        .team-card{
+            min-height: 483px;
+        }
+    }
+    @media (max-width: 575px){
+        .team-card{
+            min-height: 430px;
+            margin: 0 10px;
+        }
+    }
+    @media (max-width: 425px){
+        padding: 80px 0 50px;
+        .top-area{
+            img{
+                max-width: 100px;
+                left: 20px;
+                bottom: -40px;
+            }
+        }
+        .mobile-slide{
+            .col-12{
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+        .team-card{
+            min-height: 300px;
+        }
+    }
+}
+
+#investors{
+    padding: 150px 0 50px;
+    background-color: #37358f;
+    .top-area{
+        margin-bottom: 50px;
+        h6{
+            text-align: center;
+        }
+    }
+    .investors-grid{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2px;
+        .investor-item{
+            max-width: 292px;
+            position: relative;
+            .investor-data{
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                padding: 8px 0;
+                background: rgba(0, 0, 0, 0.70);
+                p{
+                    color: #FFFFFF;
+                    font-family: "Bauziet";
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 34px;
+                    margin: 0;
+                    text-align: center;
+                    span{
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        .investors-grid{
+            .investor-item{
+                max-width: 230px;
+                .investor-data{
+                    p{
+                        font-size: 12px;
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .investors-grid{
+            .investor-item{
+                max-width: 171px;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .investors-grid{
+            justify-content: center;
+            .investor-item{
+                width: 49%;
+                max-width: 49%;
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 60px 0 50px;
+        .investors-grid{
+            .investor-item{
+                .investor-data{
+                    p{
+                        max-width: 120px;
+                        line-height: 14px;
+                        margin: 0 auto; 
+                    }
+                }
+            }
+        }
+    }
+}
+
+#our-advisors{
+    padding: 150px 0 0;
+    background-color: #37358f;
+    position: relative;
+    .top-area{
+        h6{
+            text-align: center;
+        }
+    }
+    .carousel{
+        .carousel-inner{
+            overflow: initial;
+            .carousel-item{
+                .box-content-slide{
+                    display: flex;
+                    align-items: center;
+                    min-height: 580px;
+                    .content-left{
+                        width: 40%;
+                        text-align: left;
+                        h3{
+                            text-align: left;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .image-slider{
+                        position: relative;
+                        overflow: hidden;
+                        width: 60%;
+                        min-height: 575px;
+                        img{
+                            width: 900px;
+                            position: absolute;
+                            top: 50%;
+                            right: 0;
+                            transform: translateY(-50%);
+                        }
+                        &::before,
+                        &::after{
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            background: linear-gradient(270deg, rgba(55,53,143,1) 0%, rgba(55,53,143,0) 20%, rgba(55,53,143,0) 80%, rgba(55,53,143,1) 100%);
+                            z-index: 1;
+                        }
+                        &::before{
+                            background: linear-gradient(0deg, rgba(55,53,143,1) 0%, rgba(55,53,143,0) 10%, rgba(55,53,143,0) 90%, rgba(55,53,143,1) 100%);
+                        }
+                    }
+                }
+            }
+        }
+        .arrows-navigation{
+            .carousel-indicators{
+                justify-content: flex-start;
+                bottom: 90px;
+                margin: 0;
+                z-index: 1;
+                li{
+                    text-indent: 0;
+                    transition: all .2s ease-in-out;
+                    opacity: .5;
+                    width: 80px;
+                    height: auto;
+                    margin-right: 15px;
+                    &::after{
+                        height: 3px;
+                        width: 100%;
+                        background-color: $yellow;
+                        transition: all .2s ease-in-out;
+                        opacity: 0;
+                    }
+                    &:hover,
+                    &.active{
+                        opacity: 1;
+                        &::after{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .carousel{
+            .carousel-inner{
+                .carousel-item{
+                    .box-content-slide{
+                        flex-wrap: wrap;
+                        .content-left{
+                            width: 100%;
+                        }
+                        .image-slider{
+                            width: 100%;
+                            order: -1;
+                        }
+                    }
+                }
+            }
+            .arrows-navigation{
+                .carousel-indicators{
+                    margin-top: 20px;
+                    position: static;
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .carousel{
+            .carousel-inner{
+                .carousel-item{
+                    .box-content-slide{
+                        .image-slider{
+                            img{
+                                width: 600px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 80px 0 50px;
+        .carousel{
+            .carousel-inner{
+                .carousel-item{
+                    .box-content-slide{
+                        .image-slider{
+                            min-height: 400px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#careers{
+    padding: 150px 0 50px;
+    background-color: #37358f;
+    .top-area{
+        text-align: center;
+        margin-bottom: 50px;
+        h6{
+            text-align: center;
+            margin-bottom: 40px;
+        }
+    }
+    .careers-card{
+        padding: 25px;
+        margin: 15px 0;
+        position: relative;
+        border-radius: 6px;
+        background: #FFF;
+        box-shadow: 8px 20px 14px 0px rgba(0, 0, 0, 0.20);
+        overflow: hidden;
+        .data-career{
+            position: relative;
+            z-index: 1;
+            h5{
+                font-family: "Bauziet";
+                text-align: left;
+                color: #001B60;
+            }
+            p{
+                color: #42409D;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+        .number-values{
+            background-color: $yellow;
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            transition: all .2s ease-in-out;
+            img{
+               width: 30px;
+               position: absolute;
+               top: 35px;
+               right: 95px;
+            }
+        }
+        &:hover{
+            .number-values{
+                height: 100%;
+                width: 100%;
+                bottom: 0;
+                right: 0;
+                border-radius: 0;
+                img{
+                    top: initial;
+                    left: initial;
+                    top: 30px;
+                    right: 17.5px;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .careers-card{
+            margin: 5px 0;
+        }
+    }
+    @media (max-width: 425px){
+        padding: 80px 0 50px;
+        .careers-card{
+            padding: 20px;
+            .number-values{
+                bottom: -70px;
+                right: -70px;
+                width: 140px;
+                height: 140px;
+                img{
+                    top: 25px;
+                    right: 80px;
+                }
+            }
+        }
+    }
+}
+
+#join-us{
+    padding: 150px 0 150px;
+    background-color: #37358f;
+    background-image: url(../../images/about/images/energy-bottom.jpg);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .content-cta{
+        text-align: center;
+        img{
+            max-width: 80px;
+            margin-bottom: 30px;
+        }
+        h4{
+            margin-bottom: 30px;
+        }
+    }
+    @media (max-width: 575px){
+        padding: 100px 0 150px;
+        background-size: cover;
+    }
+}
