@@ -64,7 +64,6 @@
             gap: 5px;
             justify-content: space-between;
             a{
-                font-size: 11px;
                 .flag{
                     display: block;
                     margin: 0 auto;
@@ -78,7 +77,7 @@
     @media (max-width: 425px){
         .about-nav-items{
             a{
-                font-size: 9px;
+                font-size: 10px;
             }
         }
     }
@@ -259,6 +258,9 @@
     }
     @media (max-width: 425px){
         padding: 80px 0 50px;
+        .top-area{
+            margin-bottom: 40px;
+        }
         .our-values-cards{
             .cards-container{
                 gap: 10px;
@@ -300,6 +302,27 @@
     }
     .mobile-slide{
         display: none;
+        .custom_paging{
+            padding: 0;
+            margin: 30px 0 0;
+            list-style-type: none;
+            li{
+                display: none;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.40);
+                font-family: "Bauziet";
+                font-size: 14px;
+                font-weight: 800;
+                line-height: 34px;
+                text-transform: uppercase;
+                span{
+                    color: $yellow;
+                }
+                &.slick-active{
+                    display: block;
+                }
+            }
+        }
     }
     .team-card{
         position: relative;
@@ -382,7 +405,7 @@
             }
         }
         .team-card{
-            min-height: 300px;
+            min-height: 100vw;
         }
     }
 }

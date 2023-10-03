@@ -722,7 +722,6 @@ if ($('.slider-team').length) {
   $('.slider-team').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: false,
     centerMode: true,
     focusOnSelect: false,
     arrows: false,
@@ -731,6 +730,11 @@ if ($('.slider-team').length) {
     pauseOnHover: false,
     draggable: true,
     infinite: false,
+    dots: true,
+    dotsClass: 'custom_paging',
+    customPaging: function (slider, i) {
+        return  '<span>' + (i + 1)+ '</span>' + ' of ' + slider.slideCount;
+    }
   });
 }
 

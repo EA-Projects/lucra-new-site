@@ -2172,6 +2172,14 @@ footer {
         }
       }
     }
+    .badge-vendor{
+      margin-top: 45px;
+      a{
+        img{
+          max-width: 160px;
+        }
+      }
+    }
   }
   @media (max-width: 991px) {
     .top-contact {
