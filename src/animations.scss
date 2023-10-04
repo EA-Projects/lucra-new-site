@@ -263,6 +263,54 @@
   }
 }
 
+@keyframes Smallfloating {
+  0% {
+    transform: translate(0, 0px) translateZ(0);
+  }
+  50% {
+    transform: translate(0, 8px) translateZ(0);
+  }
+  100% {
+    transform: translate(0, 0) translateZ(0);
+  }
+}
+
+@-webkit-keyframes Smallfloating {
+  0% {
+    transform: translate(0, 0px) translateZ(0);
+  }
+  50% {
+    transform: translate(0, 8px) translateZ(0);
+  }
+  100% {
+    transform: translate(0, 0) translateZ(0);
+  }
+}
+
+@keyframes pulseCard {
+  0% {
+
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(#0EF169, 0);
+  }
+    100% {
+    box-shadow: 0 0 20px 0 rgba(#0EF169, 0);
+  }
+}
+
+@-webkit-keyframes pulseCard {
+  0% {
+
+  }
+  70% {
+    box-shadow: 0 0 0 25px rgba(#0EF169, 0);
+  }
+    100% {
+    box-shadow: 0 0 20px 0 rgba(#0EF169, 0);
+  }
+}
+
 @keyframes energyBlink {
   0% {
     opacity: .7;
