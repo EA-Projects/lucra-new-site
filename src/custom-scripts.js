@@ -648,7 +648,7 @@ if ($('#the-team').length) {
   });
 }
 
-// THE TEAM section
+// INVESTORS section
 if ($('#investors').length) {
   let investorsAnimation = gsap.timeline({paused: true, delay: .4});
   investorsAnimation
@@ -679,6 +679,45 @@ if ($('#investors').length) {
   });
   investorsTrigger.forEach((animation) => {
     observerInvestors.observe(animation);
+  });
+}
+
+// CAREERS section
+if ($('#careers').length) {
+  let careersAnimation = gsap.timeline({paused: true, delay: .4});
+  careersAnimation
+  // Show main image and cards
+  .from("#careers .top-area h6",{
+    opacity: 0,
+    duration: .5,
+    y: -50
+  })
+  .from("#careers .top-area p",{
+    opacity: 0,
+    duration: .4,
+    y: -30
+  }, "-=.2")
+  .from("#careers .careers-card",{
+    opacity: 0,
+    duration: .3,
+    stagger: .2,
+    y: 50
+  }, "-=.5")
+
+  const careersTrigger = document.querySelectorAll('#careers .careers-card');
+  const observerCareers = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        careersAnimation.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerCareers.unobserve(entry.target);
+      }
+    });
+  });
+  careersTrigger.forEach((animation) => {
+    observerCareers.observe(animation);
   });
 }
 
