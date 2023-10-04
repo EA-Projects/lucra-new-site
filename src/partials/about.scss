@@ -351,6 +351,10 @@
         box-shadow: none;
         border-radius: 15px;
         overflow: hidden;
+        pointer-events: none;
+        &.visible-card{
+            pointer-events: auto;
+        }
         .front-card,
         .back-card {
             position: absolute;

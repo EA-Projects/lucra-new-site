@@ -618,7 +618,10 @@ if ($('#the-team').length) {
     opacity: 0,
     duration: .3,
     stagger: .2,
-    y: 50
+    y: 50,
+    onComplete: function(){
+      $("#the-team .team-grid-desktop .team-card").addClass("visible-card");
+    }
   }, "-=.5")
   .from("#the-team .team-grid-desktop .pulse-card",{
     duration: 1,
