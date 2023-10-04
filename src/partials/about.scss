@@ -411,6 +411,7 @@
         }
         .team-card{
             min-height: 483px;
+            pointer-events: auto;
         }
     }
     @media (max-width: 575px){

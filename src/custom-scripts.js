@@ -561,7 +561,7 @@ if ($('#hero-about').length) {
 
 // VALUES Section
 if ($('.card-values').length) {
-  let valuesAnimation = gsap.timeline({paused: true, delay: .4});
+  let valuesAnimation = gsap.timeline({paused: true, delay: .2});
   valuesAnimation
   // Show main image and cards
   .from("#values .top-area h6",{
