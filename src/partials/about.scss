@@ -549,6 +549,9 @@
                             text-align: left;
                             text-transform: uppercase;
                         }
+                        p{
+                            min-height: 120px;
+                        }
                     }
                     .image-slider{
                         position: relative;
@@ -678,7 +681,7 @@
         }
     }
     .careers-card{
-        padding: 25px;
+        padding: 30px 25px;
         margin: 15px 0;
         position: relative;
         border-radius: 6px;
@@ -697,38 +700,47 @@
                 color: #42409D;
                 font-size: 16px;
                 font-weight: 600;
+                margin: 0;
             }
         }
         .number-values{
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            transition: all .25s ease-in-out;
+            img{
+                width: 30px;
+                position: relative;
+                transition: all .25s ease-in-out;
+                z-index: 1;
+            }
+        }
+        &::after{
+            content: "";
             background-color: $yellow;
+            width: 160px;
+            height: 160px;
             position: absolute;
             bottom: -80px;
             right: -80px;
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            transition: all .2s ease-in-out;
-            img{
-               width: 30px;
-               position: absolute;
-               top: 35px;
-               right: 95px;
-            }
+            transition: all .25s ease-in-out;
         }
         &:hover{
             .number-values{
+                bottom: 70px;
+                img{
+                    transform: rotate(-45deg);
+                }
+            }
+            &::after{
                 height: 100%;
                 width: 100%;
                 bottom: 0;
                 right: 0;
                 border-radius: 0;
-                img{
-                    top: initial;
-                    left: initial;
-                    top: 30px;
-                    right: 17.5px;
-                    transform: rotate(-45deg);
-                }
             }
         }
     }
@@ -741,16 +753,6 @@
         padding: 80px 0 50px;
         .careers-card{
             padding: 20px;
-            .number-values{
-                bottom: -70px;
-                right: -70px;
-                width: 140px;
-                height: 140px;
-                img{
-                    top: 25px;
-                    right: 80px;
-                }
-            }
         }
     }
 }

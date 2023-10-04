@@ -107,7 +107,7 @@ window.addEventListener('load', function () {
       } // end .field--name-field-video
 
       $(".team-card").on("click", function() {
-        $(this).addClass("active");
+        $(this).toggleClass("active");
       });
 
       $(".team-card").on("mouseleave", function() {
