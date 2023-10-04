@@ -105,6 +105,7 @@
             font-weight: 500;
             color: #FFFFFF;
             span{
+                line-height: 58px;
                 display: inline-block;
             }
             .hidden{
@@ -124,6 +125,9 @@
         .hero-about-content{
             min-height: 600px;
             h1{
+                span{
+                    line-height: 40px;
+                }
                 div{
                     display: inline;
                 }
@@ -133,6 +137,11 @@
     @media (max-width: 575px){
         .hero-about-content{
             min-height: 500px;
+            h1{
+                span{
+                    line-height: 32px;
+                }
+            }
         }
     }
     @media (max-width: 425px){
