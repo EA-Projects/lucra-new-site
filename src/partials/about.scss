@@ -751,12 +751,22 @@
     @media (max-width: 575px){
         .careers-card{
             margin: 5px 0;
+            &:hover{
+                .number-values{
+                    bottom: 60px;
+                }
+            }
         }
     }
     @media (max-width: 425px){
         padding: 80px 0 50px;
         .careers-card{
             padding: 20px;
+            &:hover{
+                .number-values{
+                    bottom: 45px;
+                }
+            }
         }
     }
 }
