@@ -536,190 +536,195 @@ if ($('#hero-case-studies .animation-graphic .ball').length) {
 }
 
 // About page animations
+// Only trigger the animation on Tablet and Desktop
+if (window.matchMedia('(min-width: 575px)').matches) {
 // HERO Section
-if ($('#hero-about').length) {
-  let slideElements = gsap.timeline();
-  slideElements
-  // Show main image and cards
-  .from("#hero-about .hero-about-content img",{
-    opacity: 0,
-    duration: 1,
-  })
-  .from("#hero-about .hero-about-content h6",{
-    opacity: 0,
-    duration: .5,
-    y: -50
-  }, "-=.3")
-  .from("#hero-about .hero-about-content h1 span",{
-    duration: .6,
-    yPercent: 110,
-    opacity: 0,
-    stagger:  0.06,
-    rotationZ: 5,
-  }, "-=.6")
-}
+  if ($('#hero-about').length) {
+    let slideElements = gsap.timeline();
+    slideElements
+    // Show main image and cards
+    .from("#hero-about .hero-about-content img",{
+      opacity: 0,
+      duration: 1,
+    })
+    .from("#hero-about .hero-about-content h6",{
+      opacity: 0,
+      duration: .5,
+      y: -50
+    }, "-=.3")
+    .from("#hero-about .hero-about-content h1 span",{
+      duration: .6,
+      yPercent: 110,
+      opacity: 0,
+      stagger:  0.06,
+      rotationZ: 5,
+    }, "-=.6")
+  }
 
-// VALUES Section
-if ($('.card-values').length) {
-  let valuesAnimation = gsap.timeline({paused: true, delay: .2});
-  valuesAnimation
-  // Show main image and cards
-  .from("#values .top-area h6",{
-    opacity: 0,
-    duration: .5,
-    y: -50
-  })
-  .from(".image-our-values",{
-    opacity: 0,
-    duration: 1
-  }, "-=.3")
-  .from(".card-values",{
-    opacity: 0,
-    duration: .3,
-    stagger: .2,
-    y: 50
-  }, "-=.5")
+  // VALUES Section
+  if ($('.card-values').length) {
+    let valuesAnimation = gsap.timeline({paused: true, delay: .2});
+    valuesAnimation
+    // Show main image and cards
+    .from("#values .top-area h6",{
+      opacity: 0,
+      duration: .5,
+      y: -50
+    })
+    .from(".image-our-values",{
+      opacity: 0,
+      duration: 1
+    }, "-=.3")
+    .from(".card-values",{
+      opacity: 0,
+      duration: .3,
+      stagger: .2,
+      y: 50
+    }, "-=.5")
 
-  const cardValuesTrigger = document.querySelectorAll('.card-values');
-  const observerCardValues = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        valuesAnimation.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerCardValues.unobserve(entry.target);
-      }
+    const cardValuesTrigger = document.querySelectorAll('.card-values');
+    const observerCardValues = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          valuesAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerCardValues.unobserve(entry.target);
+        }
+      });
     });
-  });
-  cardValuesTrigger.forEach((animation) => {
-    observerCardValues.observe(animation);
-  });
-}
-
-// THE TEAM section
-if ($('#the-team').length) {
-  let theTeamAnimation = gsap.timeline({paused: true, delay: .4});
-  theTeamAnimation
-  // Show main image and cards
-  .from("#the-team .top-area h6",{
-    onStart: function(){
-      $("#the-team .team-grid-desktop .pulse-card").addClass("active");
-    },
-    opacity: 0,
-    duration: .5,
-    y: -50
-  })
-  .from("#the-team .top-area img",{
-    opacity: 0,
-    duration: .3,
-  })
-  .from("#the-team .team-grid-desktop .team-card",{
-    opacity: 0,
-    duration: .3,
-    stagger: .2,
-    y: 50,
-    onComplete: function(){
-      $("#the-team .team-grid-desktop .team-card").addClass("visible-card");
-    }
-  }, "-=.5")
-  .from("#the-team .team-grid-desktop .pulse-card",{
-    duration: 1,
-    onComplete: function(){
-      $(this).removeClass("active");
-    }
-  })
-
-
-  const theTeamTrigger = document.querySelectorAll('#the-team .team-grid-desktop');
-  const observerTheTeam = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        theTeamAnimation.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerTheTeam.unobserve(entry.target);
-      }
+    cardValuesTrigger.forEach((animation) => {
+      observerCardValues.observe(animation);
     });
-  });
-  theTeamTrigger.forEach((animation) => {
-    observerTheTeam.observe(animation);
-  });
-}
+  }
 
-// INVESTORS section
-if ($('#investors').length) {
-  let investorsAnimation = gsap.timeline({paused: true, delay: .4});
-  investorsAnimation
-  // Show main image and cards
-  .from("#investors .top-area h6",{
-    opacity: 0,
-    duration: .5,
-    y: -50
-  })
-  .from("#investors .investor-item",{
-    opacity: 0,
-    duration: .3,
-    stagger: .2,
-    y: 50
-  }, "-=.5")
+  // THE TEAM section
+  if ($('#the-team').length) {
+    let theTeamAnimation = gsap.timeline({paused: true, delay: .4});
+    theTeamAnimation
+    // Show main image and cards
+    .from("#the-team .top-area h6",{
+      onStart: function(){
+        $("#the-team .team-grid-desktop .pulse-card").addClass("active");
+      },
+      opacity: 0,
+      duration: .5,
+      y: -50
+    })
+    .from("#the-team .top-area img",{
+      opacity: 0,
+      duration: .3,
+    })
+    .from("#the-team .team-grid-desktop .team-card",{
+      opacity: 0,
+      duration: .3,
+      stagger: .2,
+      y: 50,
+      onComplete: function(){
+        $("#the-team .team-grid-desktop .team-card").addClass("visible-card");
+      }
+    }, "-=.5")
+    .from("#the-team .team-grid-desktop .pulse-card",{
+      duration: 1,
+      onComplete: function(){
+        $(this).removeClass("active");
+      }
+    })
 
-  const investorsTrigger = document.querySelectorAll('#investors .investor-item');
-  const observerInvestors = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        investorsAnimation.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerInvestors.unobserve(entry.target);
-      }
+
+    const theTeamTrigger = document.querySelectorAll('#the-team .team-grid-desktop');
+    const observerTheTeam = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          theTeamAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerTheTeam.unobserve(entry.target);
+        }
+      });
     });
-  });
-  investorsTrigger.forEach((animation) => {
-    observerInvestors.observe(animation);
-  });
-}
-
-// CAREERS section
-if ($('#careers').length) {
-  let careersAnimation = gsap.timeline({paused: true, delay: .4});
-  careersAnimation
-  // Show main image and cards
-  .from("#careers .top-area h6",{
-    opacity: 0,
-    duration: .5,
-    y: -50
-  })
-  .from("#careers .top-area p",{
-    opacity: 0,
-    duration: .4,
-    y: -30
-  }, "-=.2")
-  .from("#careers .careers-card",{
-    opacity: 0,
-    duration: .3,
-    stagger: .2,
-    y: 50
-  }, "-=.5")
-
-  const careersTrigger = document.querySelectorAll('#careers .careers-card');
-  const observerCareers = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        careersAnimation.play();
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerCareers.unobserve(entry.target);
-      }
+    theTeamTrigger.forEach((animation) => {
+      observerTheTeam.observe(animation);
     });
-  });
-  careersTrigger.forEach((animation) => {
-    observerCareers.observe(animation);
-  });
+  }
+
+  // INVESTORS section
+  if ($('#investors').length) {
+    let investorsAnimation = gsap.timeline({paused: true, delay: .4});
+    investorsAnimation
+    // Show main image and cards
+    .from("#investors .top-area h6",{
+      opacity: 0,
+      duration: .5,
+      y: -50
+    })
+    .from("#investors .investor-item",{
+      opacity: 0,
+      duration: .3,
+      stagger: .2,
+      y: 50
+    }, "-=.5")
+
+    const investorsTrigger = document.querySelectorAll('#investors .investor-item');
+    const observerInvestors = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          investorsAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerInvestors.unobserve(entry.target);
+        }
+      });
+    });
+    investorsTrigger.forEach((animation) => {
+      observerInvestors.observe(animation);
+    });
+  }
+
+  // CAREERS section
+  if ($('#careers').length) {
+    let careersAnimation = gsap.timeline({paused: true, delay: .4});
+    careersAnimation
+    // Show main image and cards
+    .from("#careers .top-area h6",{
+      opacity: 0,
+      duration: .5,
+      y: -50
+    })
+    .from("#careers .top-area p",{
+      opacity: 0,
+      duration: .4,
+      y: -30
+    }, "-=.2")
+    .from("#careers .careers-card",{
+      opacity: 0,
+      duration: .3,
+      stagger: .2,
+      y: 50
+    }, "-=.5")
+  
+    const careersTrigger = document.querySelectorAll('#careers .careers-card');
+    const observerCareers = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          careersAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerCareers.unobserve(entry.target);
+        }
+      });
+    });
+    careersTrigger.forEach((animation) => {
+      observerCareers.observe(animation);
+    });
+  }
+  // END conditional query
 }
+
 
 
 //  end window onload
