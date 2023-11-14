@@ -1159,15 +1159,15 @@ if ($('.product-page').length) {
       trigger: '#our-value-proposition',
       start: '-20% 50%',
       end: '-20% 50%',
-      scrub: 1,
-      markers: true,
+      scrub: 2,
+      // markers: true,
       onEnter: () => flipPhone(),
       onEnterBack: () => flipPhone(),
     }
   });
 
   movePhoneDown
-  .fromTo("#lucra-technology .tabs-content",{
+  .fromTo("#lucra-technology .tabs-content, #lucra-technology .energy-bg",{
     opacity: 1,
   },{
     opacity: 0,
@@ -1267,15 +1267,18 @@ if ($('.product-page').length) {
       // markers: true,
     }
   });
-
-  bestInClass.to("#best-in-class .grid-boxs .inner-box",{
-    y: 0,
-    x: 0,
-    rotate: 0,
-    duration: .3,
-    stagger: {
-      amount: 4,
-      from: "random"
-    }
+  // Prevent animation on mobile
+  let mediaQuery = gsap.matchMedia();
+  mediaQuery.add("(min-width: 991px)", () => {
+      bestInClass.to("#best-in-class .grid-boxs .inner-box",{
+        y: 0,
+        x: 0,
+        rotate: 0,
+        duration: .3,
+        stagger: {
+          amount: 4,
+          from: "random"
+        }
+      });
   });
 }

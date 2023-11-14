@@ -255,12 +255,12 @@ h4, .h4 {
     line-height: 33px;
   }
   @media (max-width: 767px) {
-    font-size: 25px;
-    line-height: 32px;
+    font-size: 22px;
+    line-height: 25px;
   }
   @media (max-width: 575px) {
-    font-size: 22px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 25px;
   }
 }
 
@@ -269,6 +269,10 @@ h5, .h5 {
   font-size: 24px;
   line-height: 31px;
   font-family: 'Roboto', sans-serif;
+  @media (max-width: 767px) {
+    font-size: 20px;
+    line-height: 25px;
+  }
   @media (max-width: 575px) {
     font-size: 18px;
     line-height: 22px;
@@ -619,6 +623,20 @@ a {
     }
   }
   @media (max-width: 991px) {
+    &.transparent{
+      .container-nav{
+        .mobile-top{
+          background-color: $darkblue;
+        }
+        nav{
+          .navbar-toggler{
+            span{
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
     padding: 0;
     .container-nav {
       padding-left: 0;
@@ -652,7 +670,7 @@ a {
 }
 @media (max-width: 991px) {
   .klaviyo-form-UkuPaY {
- display: none;
+    display: none;
   }
   
 }
