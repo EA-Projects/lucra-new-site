@@ -9,6 +9,7 @@ $red: #d02100;
 $blue: #2d3c5b;
 $new-blue: #42409d;
 $new-darkblue: #001b60;
+$darkblue: #001035;
 $yellow: #0EF169;
 $sky-blue: #AA9CFF;
 
@@ -44,6 +45,7 @@ $button-gradient: linear-gradient(
 @import './partials/contact.scss';
 @import './partials/case-studies.scss';
 @import './partials/about.scss';
+@import './partials/product.scss';
 // @import './lib/owl.carousel.min.scss';
 
 /*** RESET & BUTTONS ***/ 
@@ -158,6 +160,7 @@ a {
       &:hover {
         background-color: $yellow;
         border-color: $yellow;
+        color: $darkblue;
       }
     }
   }
@@ -246,7 +249,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 30px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 33px;
   @media (max-width: 991px) {
     font-size: 28px;
     line-height: 33px;
@@ -412,6 +415,28 @@ a {
           font-size: 14px;
         }
       }
+    }
+  }
+  &.transparent{
+    background-color: #ffffff00;
+    .container-nav{
+      nav{
+        .navbar-collapse{
+          .navbar-nav{
+            .nav-item{
+              .nav-link{
+                color: #FFFFFF;
+                &:hover{
+                  color: $yellow;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.fixed{
+      background-color: $darkblue;
     }
   }
   .container-nav {
@@ -2068,7 +2093,7 @@ footer {
   position: relative;
   .top-contact {
     padding-bottom: 25px;
-    border-bottom: 1px solid #001035;
+    border-bottom: 1px solid $darkblue;
     display: flex;
     align-items: center;
     .contact-us {
@@ -2083,7 +2108,7 @@ footer {
           font-weight: 400;
           font-size: 22px;
           line-height: 30px;
-          color: #001035;
+          color: $darkblue;
           margin-bottom: 0;
         }
         a {
@@ -2111,7 +2136,7 @@ footer {
       line-height: 14px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #001035;
+      color: $darkblue;
       margin-right: 25px;
       &:hover {
         color: $new-blue;
@@ -2129,7 +2154,7 @@ footer {
   }
   .up-your-game {
     h4 {
-      color: #001035;
+      color: $darkblue;
       text-align: left;
     }
     p {
@@ -2139,7 +2164,7 @@ footer {
     }
     h6 {
       text-align: left;
-      color: #001035;
+      color: $darkblue;
     }
     .form {
       margin: 10px 0 25px;
@@ -2148,7 +2173,7 @@ footer {
         font-weight: 200;
         font-size: 13px;
         line-height: 15px;
-        color: #001035;
+        color: $darkblue;
         padding: 12px 15px;
         border-radius: 50px 0px 0px 50px;
         border: 0;
@@ -2156,7 +2181,7 @@ footer {
         box-shadow: none;
         background-color: #fff;
         &::placeholder {
-          color: #001035;
+          color: $darkblue;
         }
       }
       input[type='submit'] {
@@ -4519,3 +4544,24 @@ footer {
 /****************** RESPONSIVE ******************/
 
 @import './responsive.scss';
+
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

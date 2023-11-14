@@ -571,18 +571,18 @@ if (window.matchMedia('(min-width: 575px)').matches) {
       duration: .5,
       y: -50
     })
-    .from(".image-our-values",{
+    .from("#values .image-our-values",{
       opacity: 0,
       duration: 1
     }, "-=.3")
-    .from(".card-values",{
+    .from("#values .card-values",{
       opacity: 0,
       duration: .3,
       stagger: .2,
       y: 50
     }, "-=.5")
 
-    const cardValuesTrigger = document.querySelectorAll('.card-values');
+    const cardValuesTrigger = document.querySelectorAll('#values .card-values');
     const observerCardValues = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -820,44 +820,6 @@ $(function () {
   });
 });
 
-//////////////////////////////////////////////////
-////////// About page animation scene ////////////
-//////////////////////////////////////////////////
-//Init Scrollmagic
-var controllerAbout = new ScrollMagic.Controller();
-
-// Pin the intro
-var pinIntroSceneAbout = new ScrollMagic.Scene({
-  triggerElement: '#hero.hero-about',
-  triggerHook: 0,
-  duration: 1500,
-})
-  .setPin('#hero.hero-about')
-  // .addIndicators()
-  .addTo(controllerAbout);
-
-//Create a scene
-var ourScene3 = new ScrollMagic.Scene({
-  duration: 3500,
-  triggerElement: '#hero.hero-about',
-  triggerHook: 0,
-  offset: 300,
-})
-  .setClassToggle('.container-screens.col-one.about', 'move-up')
-  // .addIndicators({ name: 'Trigger About Col 1', colorEnd: '#000' })
-  .addTo(controllerAbout);
-
-//Create a scene 2
-var ourScene4 = new ScrollMagic.Scene({
-  duration: 3500,
-  triggerElement: '#hero.hero-about',
-  triggerHook: 0,
-  offset: 300,
-})
-  .setClassToggle('.container-screens.col-two.about', 'move-down')
-  // .addIndicators({ name: 'Trigger About Col 2', colorEnd: '#000' })
-  .addTo(controllerAbout);
-
 // Fix navbar when scroll
 $(window).scroll(function () {
   var scroll = $(window).scrollTop();
@@ -1030,4 +992,290 @@ if (ua.indexOf('safari') != -1) {
     // Fix tilt on safari browsers
     $(".tilt").addClass("safari").removeAttr("data-tilt");
   }
+}
+
+if ($('.product-page').length) {
+  // Tilt effect to Product Cards only on Desktop 
+  if (window.matchMedia('(min-width: 575px)').matches) {
+    if ($('.product-card').length) {
+      $('.product-card').tilt({
+        glare: true,
+        maxTilt: 3,
+        speed: 700,
+        transition: true,
+        maxGlare: 0.1
+      });
+    }
+  }
+
+  // HERO Product on scroll 
+  let heroProduct = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#hero-product',
+      start: '25% 0%',
+      end: '100% 40%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  })
+
+  heroProduct.fromTo('#hero-product .hero-images .product-card', {
+    y: 0,
+    opacity: 1,
+  },{
+    y: -100,
+    opacity: 0,
+    stagger: {
+      amount: 2,
+      from: "random"
+    }
+  }).to('#hero-product .hero-images .hero-phone',{
+    y: -100,
+    opacity: 0,
+  })
+
+  // WHAT MAKES marquee boxs animation 
+  let innerBoxBlue = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#what-makes',
+      start: '10% 50%',
+      end: '65% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+
+  innerBoxBlue.fromTo('#what-makes .outline-boxes .inner-box', {
+    y: 100,
+    opacity: 0,
+  },{
+    y: 0,
+    opacity: 1,
+    stagger: .1
+  });
+
+  // KEY PRODUCT marquee boxs animation 
+  let innerBoxGreen = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#key-product',
+      start: '10% 50%',
+      end: '65% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+
+  innerBoxGreen.fromTo('#key-product .outline-boxes .inner-box', {
+    y: 100,
+    opacity: 0,
+  },{
+    y: 0,
+    opacity: 1,
+    stagger: .1
+  });
+
+  // LUCRA’S WHITE-LABEL WAGERING TECHNOLOGY section change tabs on scroll
+  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    return gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#lucra-technology",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active viewed");
+            $(`.screen-tab.${stepClass}`).addClass("active");
+          },
+          onEnterBack: function () {
+            element.addClass("active");
+            $(`.screen-tab.${stepClass}`).addClass("active");
+          },
+          onLeave: function () {
+            element.removeClass("active");
+            if(onLeave != true){
+              $(`.screen-tab.${stepClass}`).removeClass("active");
+            } 
+          },
+          onLeaveBack: function () {
+            element.removeClass("active");
+            if(onLeaveBack != true){
+              $(`.screen-tab.${stepClass}`).removeClass("active");
+            }
+          },
+        },
+      }
+    );
+  }
+
+  // Functions to trigger tabs animation on LUCRA’S WHITE-LABEL WAGERING TECHNOLOGY section
+  $(".tab-content-inner.top-left").each(function (index, element) {
+    createTabAnimation($(element), index, 0, 15, "first-step", false, true);
+  });
+
+  $(".tab-content-inner.top-right").each(function (index, element) {
+    createTabAnimation($(element), index, 15, 30, "second-step", false, false);
+  });
+
+  $(".tab-content-inner.bottom-left").each(function (index, element) {
+    createTabAnimation($(element), index, 30, 45, "third-step", false, false);
+  });
+
+  $(".tab-content-inner.bottom-right").each(function (index, element) {
+    createTabAnimation($(element), index, 45, 65, "fourth-step", true, false);
+  });
+
+
+  gsap.registerPlugin(Flip);
+
+  const container1 = document.querySelector("#lucra-technology .phone-top-area");
+  const container2 = document.querySelector("#our-value-proposition .phone-bottom-area");
+  const box = document.querySelector(".phone-screens");
+
+
+  flipPhone = function (){
+
+    const state = Flip.getState(box);
+
+    if (box.parentElement === container1) {
+    container2.appendChild(box);
+    } else {
+    container1.appendChild(box);
+    }
+
+    Flip.from(state, {
+    duration: 1, ease: "power1.in",
+    });
+
+  };
+
+  // Trigger to move phone to the next section [OUR VALUE PROPOSITION]
+  let movePhoneDown = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#our-value-proposition',
+      start: '-20% 50%',
+      end: '-20% 50%',
+      scrub: 1,
+      markers: true,
+      onEnter: () => flipPhone(),
+      onEnterBack: () => flipPhone(),
+    }
+  });
+
+  movePhoneDown
+  .fromTo("#lucra-technology .tabs-content",{
+    opacity: 1,
+  },{
+    opacity: 0,
+  }, '<');
+
+
+  // OUR VALUE PROPOSITION section change accordions on scroll
+  function createAccordionAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    return gsap.from(
+      element,
+      {
+        scrollTrigger: {
+          trigger: "#our-value-proposition",
+          start: `${startPercentage}% 50%`,
+          end: `${endPercentage}% 50%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active");
+            $(`.apps-accordion.${stepClass}`).addClass("active");
+          },
+          onEnterBack: function () {
+            element.addClass("active");
+            $(`.apps-accordion.${stepClass}`).addClass("active");
+          },
+          onLeave: function () {
+            if(onLeave != true){
+              element.removeClass("active");
+              $(`.apps-accordion.${stepClass}`).removeClass("active");
+            }
+          },
+          onLeaveBack: function () {
+            if(onLeaveBack != true){
+              element.removeClass("active");
+            $(`.apps-accordion.${stepClass}`).removeClass("active");
+            }
+          },
+        },
+      }
+    );
+  }
+
+  // Functions to trigger accordions animation on OUR VALUE PROPOSITION section
+  $(".accordion-single.accordion-one").each(function (index, element) {
+    createAccordionAnimation($(element), index, 15, 25, "first-step", false, true);
+  });
+
+  $(".accordion-single.accordion-two").each(function (index, element) {
+    createAccordionAnimation($(element), index, 25, 35, "second-step", false, false);
+  });
+
+  $(".accordion-single.accordion-three").each(function (index, element) {
+    createAccordionAnimation($(element), index, 35, 45, "third-step", false, false);
+  });
+
+  $(".accordion-single.accordion-four").each(function (index, element) {
+    createAccordionAnimation($(element), index, 45, 55, "fourth-step", false, false);
+  });
+
+  $(".accordion-single.accordion-five").each(function (index, element) {
+    createAccordionAnimation($(element), index, 55, 65, "fifth-step", false, false);
+  });
+
+  $(".accordion-single.accordion-six").each(function (index, element) {
+    createAccordionAnimation($(element), index, 65, 75, "sixth-step", true, false);
+  });
+
+  // FLEXIBLE SOFTWARE section animation 
+  let flexibleSoftware = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#flexible-software',
+      start: '0% 50%',
+      end: '35% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+
+  flexibleSoftware.fromTo("#flexible-software .card-software",{
+    opacity: 0,
+    y: 50,
+  },{
+    opacity: 1,
+    y: 0,
+    duration: .3,
+    stagger: .2
+  });
+
+
+  // BEST IN CLASS section animation 
+  let bestInClass = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#best-in-class',
+      start: '5% 50%',
+      end: '15% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+
+  bestInClass.to("#best-in-class .grid-boxs .inner-box",{
+    y: 0,
+    x: 0,
+    rotate: 0,
+    duration: .3,
+    stagger: {
+      amount: 4,
+      from: "random"
+    }
+  });
 }
