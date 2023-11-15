@@ -27,6 +27,27 @@ body{
         margin-top: 50px;
         position: relative;
         gap: 20px;
+        .hero-screen{
+            position: relative;
+            &::after{
+                content: "";
+                width: 80%;
+                height: 80%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) translate3d(0, 0, 0);
+                background-color: $yellow;
+                filter: blur(100px);
+                opacity: 0;
+                transition: all .5s ease-in-out;
+            }
+            &:hover{
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
         .left-images,
         .right-images,
         .center-images{
@@ -35,10 +56,10 @@ body{
             align-items: center;
             flex-wrap: wrap;
             img{
+                transform: translateZ(0);
                 filter: drop-shadow(0px 25px 35px rgba(2, 13, 39, 0.65));
-                &:hover{
-                    filter: drop-shadow(0px 0px 100px rgba(14, 241, 105, 0.30));
-                }
+                position: relative;
+                z-index: 1;
             }
         }
         .left-images{
@@ -223,7 +244,7 @@ body{
             justify-content: space-between;
             align-items: flex-start;
             padding: 20px;
-            border-radius: 7.798px;
+            border-radius: 8px;
             border: 1px solid #A68EFF;
             background: rgba(0, 16, 53, 0.20);
             box-shadow: 0px 0px 25px 0px rgba(170, 156, 255, 0.30);
@@ -323,6 +344,7 @@ body{
         }
         .outline-boxes{
             .inner-box{
+                border-radius: 4px;
                 min-height: 140px;
                 img{
                     max-width: 45px;
@@ -331,6 +353,11 @@ body{
                     font-size: 15px;
                     line-height: 18px;
                     margin: 0;
+                }
+                &:last-child{
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 100px;
                 }
             }
         }
@@ -1087,7 +1114,11 @@ body{
             .cards-container{
                 .card-col{
                     .card-software{
-                        min-height: 120px;
+                        min-height: 110px;
+                        h4{
+                            font-size: 18px;
+                            line-height: 19px;
+                        }
                     }
                 }
             }

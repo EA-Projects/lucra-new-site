@@ -1019,20 +1019,24 @@ if ($('.product-page').length) {
     }
   })
 
-  heroProduct.fromTo('#hero-product .hero-images .product-card', {
-    y: 0,
-    opacity: 1,
-  },{
-    y: -100,
-    opacity: 0,
-    stagger: {
-      amount: 2,
-      from: "random"
-    }
-  }).to('#hero-product .hero-images .hero-phone',{
-    y: -100,
-    opacity: 0,
-  })
+    // Prevent animation on mobile
+    let mediaQueryHeroProduct = gsap.matchMedia();
+    mediaQueryHeroProduct.add("(min-width: 991px)", () => {
+      heroProduct.fromTo('#hero-product .hero-images .product-card', {
+        y: 0,
+        opacity: 1,
+      },{
+        y: -100,
+        opacity: 0,
+        stagger: {
+          amount: 2,
+          from: "random"
+        }
+      }).to('#hero-product .hero-images .hero-phone',{
+        y: -100,
+        opacity: 0,
+      })
+    })
 
   // WHAT MAKES marquee boxs animation 
   let innerBoxBlue = gsap.timeline({
@@ -1132,25 +1136,22 @@ if ($('.product-page').length) {
 
   gsap.registerPlugin(Flip);
 
-  const container1 = document.querySelector("#lucra-technology .phone-top-area");
-  const container2 = document.querySelector("#our-value-proposition .phone-bottom-area");
-  const box = document.querySelector(".phone-screens");
+  const phoneTopArea = document.querySelector("#lucra-technology .phone-top-area");
+  const phoneBottomArea = document.querySelector("#our-value-proposition .phone-bottom-area");
+  const phoneScreen = document.querySelector(".phone-screens");
 
 
   flipPhone = function (){
-
-    const state = Flip.getState(box);
-
-    if (box.parentElement === container1) {
-    container2.appendChild(box);
+    const state = Flip.getState(phoneScreen);
+    if (phoneScreen.parentElement === phoneTopArea) {
+      phoneBottomArea.appendChild(phoneScreen);
     } else {
-    container1.appendChild(box);
+      phoneTopArea.appendChild(phoneScreen);
     }
 
     Flip.from(state, {
     duration: 1, ease: "power1.in",
     });
-
   };
 
   // Trigger to move phone to the next section [OUR VALUE PROPOSITION]
@@ -1246,15 +1247,19 @@ if ($('.product-page').length) {
     }
   });
 
-  flexibleSoftware.fromTo("#flexible-software .card-software",{
-    opacity: 0,
-    y: 50,
-  },{
-    opacity: 1,
-    y: 0,
-    duration: .3,
-    stagger: .2
-  });
+  // Prevent animation on mobile
+  let mediaQueryFlexibleSoftware = gsap.matchMedia();
+  mediaQueryFlexibleSoftware.add("(min-width: 991px)", () => {
+    flexibleSoftware.fromTo("#flexible-software .card-software",{
+      opacity: 0,
+      y: 50,
+    },{
+      opacity: 1,
+      y: 0,
+      duration: .3,
+      stagger: .2
+    });
+  })
 
 
   // BEST IN CLASS section animation 
@@ -1268,8 +1273,8 @@ if ($('.product-page').length) {
     }
   });
   // Prevent animation on mobile
-  let mediaQuery = gsap.matchMedia();
-  mediaQuery.add("(min-width: 991px)", () => {
+  let mediaQueryBestInClass = gsap.matchMedia();
+  mediaQueryBestInClass.add("(min-width: 991px)", () => {
       bestInClass.to("#best-in-class .grid-boxs .inner-box",{
         y: 0,
         x: 0,
@@ -1282,68 +1287,3 @@ if ($('.product-page').length) {
       });
   });
 }
-
-// function stopOverscroll(element) {
-//   element = gsap.utils.toArray(element)[0] || window;
-//   (element === document.body || element === document.documentElement) &&
-//     (element = window);
-//   let lastScroll = 0,
-//     lastTouch,
-//     forcing,
-//     forward = true,
-//     isRoot = element === window,
-//     scroller = isRoot ? document.scrollingElement : element,
-//     ua = window.navigator.userAgent + "",
-//     getMax = isRoot
-//       ? () => scroller.scrollHeight - window.innerHeight
-//       : () => scroller.scrollHeight - scroller.clientHeight,
-//     addListener = (type, func) =>
-//       element.addEventListener(type, func, { passive: false }),
-//     revert = () => {
-//       scroller.style.overflowY = "auto";
-//       forcing = false;
-//     },
-//     kill = () => {
-//       forcing = true;
-//       scroller.style.overflowY = "hidden";
-//       !forward && scroller.scrollTop < 1
-//         ? (scroller.scrollTop = 1)
-//         : (scroller.scrollTop = getMax() - 1);
-//       setTimeout(revert, 1);
-//     },
-//     handleTouch = (e) => {
-//       let evt = e.changedTouches ? e.changedTouches[0] : e,
-//         forward = evt.pageY <= lastTouch;
-//       if (
-//         ((!forward && scroller.scrollTop <= 1) ||
-//           (forward && scroller.scrollTop >= getMax() - 1)) &&
-//         e.type === "touchmove"
-//       ) {
-//         e.preventDefault();
-//       } else {
-//         lastTouch = evt.pageY;
-//       }
-//     },
-//     handleScroll = (e) => {
-//       if (!forcing) {
-//         let scrollTop = scroller.scrollTop;
-//         forward = scrollTop > lastScroll;
-//         if (
-//           (!forward && scrollTop < 1) ||
-//           (forward && scrollTop >= getMax() - 1)
-//         ) {
-//           e.preventDefault();
-//           kill();
-//         }
-//         lastScroll = scrollTop;
-//       }
-//     };
-//   if ("ontouchend" in document && !!ua.match(/Version\/[\d\.]+.*Safari/)) {
-//     addListener("scroll", handleScroll);
-//     addListener("touchstart", handleTouch);
-//     addListener("touchmove", handleTouch);
-//   }
-//   scroller.style.overscrollBehavior = "none";
-// }
-
-// stopOverscroll(); 
