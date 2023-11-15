@@ -425,6 +425,22 @@ body{
                                 width: 46vh;
                                 max-width: 350px;
                             }
+                            .energy{
+                                width: 100%;
+                                max-width: 126px;
+                                position: absolute;
+                                bottom: 30px;
+                                right: -45px;
+                                opacity: .9;
+                                filter: drop-shadow(0 0 0 $yellow) drop-shadow(0 0 3px $yellow);
+                                &.is-left{
+                                    max-width: 129px;
+                                    right: initial;
+                                    bottom: initial;
+                                    top: 30px;
+                                    left: -55px;
+                                }
+                            }
                         }
                         .inner-screens{
                             background-color: #17212c;
@@ -674,6 +690,20 @@ body{
                         .energy-bg{
                             top: 0;
                         }
+                        .phone-top-area{
+                            .phone-screens{
+                                .main-portrait{
+                                    .energy{
+                                        max-width: 90px;
+                                        right: -35px;
+                                        &.is-left{
+                                            max-width: 80px;
+                                            left: -30px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                     .tabs-content{
                         order: -1;
@@ -813,6 +843,10 @@ body{
                 img{
                     width: 46vh;
                     max-width: 350px;
+                }
+                .energy{
+                    display: none;
+                    opacity: 0;
                 }
             }
             .inner-screens{
