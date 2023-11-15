@@ -408,11 +408,6 @@ a {
     padding: 2px 0;
     .container-nav{
       nav{
-        .navbar-brand{
-          img{
-            max-width: 100px;
-          }
-        }
         .nav-link.button{
           padding: 7px 20px 8px;
           min-width: auto;
@@ -656,13 +651,13 @@ a {
         .navbar-brand {
           position: relative;
           z-index: 99;
-          left: 40px;
+          left: 15px;
           margin: 0;
         }
         .navbar-toggler {
           position: relative;
           z-index: 99;
-          right: 40px;
+          right: 15px;
         }
       }
     }
