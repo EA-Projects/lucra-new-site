@@ -787,12 +787,8 @@
       });
       wow.init();
 
-      const lenis = new Lenis()
-
       // Smooth scroll
-      // lenis.on('scroll', (e) => {
-      //   console.log(e)
-      // })
+      const lenis = new Lenis()
       function raf(time) {
         lenis.raf(time)
         requestAnimationFrame(raf)
