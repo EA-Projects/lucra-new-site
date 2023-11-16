@@ -825,24 +825,21 @@ $(window).scroll(function () {
   var scroll = $(window).scrollTop();
   if (scroll >= 60) {
     $('#header-nav').addClass('fixed');
-    $('#about-nav').addClass('fixed');
+    $('#anchors-nav').addClass('fixed');
   } 
   else {
     $('#header-nav').removeClass('fixed');
-    $('#about-nav').removeClass('fixed');
+    $('#anchors-nav').removeClass('fixed');
   }
 
-  // About Navigation , to trigger active class between sections
+  // Anchors Navigation , to trigger active class between sections
   var cutoff = $(window).scrollTop();
-  $('.about-body section').each(function () {
+  $('.with-sticky-anchors section').each(function () {
       if ($(this).offset().top + $(this).height() > cutoff) {
-          // $('.about-body section').removeClass('current');
-          // $(this).addClass('current');
-
           var currSection = $(this).attr('id');
 
-          $('#about-nav a').removeClass('active');
-          $('#about-nav a[data-id=' + currSection + ']').addClass('active');
+          $('#anchors-nav a').removeClass('active');
+          $('#anchors-nav a[data-id=' + currSection + ']').addClass('active');
           return false;
       }
   });

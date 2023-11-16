@@ -1,4 +1,4 @@
-#about-nav{
+#anchors-nav{
     width: 100%;
     background-color: $darkblue;
     padding: 10px 0;
@@ -6,6 +6,10 @@
     position: fixed;
     top: 103px;
     z-index: 9;
+    &.is-product,
+    &.is-product.fixed{
+        top: 0;
+    }
     .about-nav-items{
         display: flex;
         align-items: center;
