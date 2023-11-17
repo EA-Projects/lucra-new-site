@@ -1210,27 +1210,23 @@ if ($('.product-page').length) {
 
   // Functions to trigger accordions animation on OUR VALUE PROPOSITION section
   $(".accordion-single.accordion-one").each(function (index, element) {
-    createAccordionAnimation($(element), index, 15, 25, "first-step", false, true);
+    createAccordionAnimation($(element), index, 15, 30, "first-step", false, true);
   });
 
   $(".accordion-single.accordion-two").each(function (index, element) {
-    createAccordionAnimation($(element), index, 25, 35, "second-step", false, false);
+    createAccordionAnimation($(element), index, 30, 40, "second-step", false, false);
   });
 
   $(".accordion-single.accordion-three").each(function (index, element) {
-    createAccordionAnimation($(element), index, 35, 45, "third-step", false, false);
+    createAccordionAnimation($(element), index, 40, 50, "third-step", false, false);
   });
 
   $(".accordion-single.accordion-four").each(function (index, element) {
-    createAccordionAnimation($(element), index, 45, 55, "fourth-step", false, false);
+    createAccordionAnimation($(element), index, 50, 60, "fourth-step", false, false);
   });
 
   $(".accordion-single.accordion-five").each(function (index, element) {
-    createAccordionAnimation($(element), index, 55, 65, "fifth-step", false, false);
-  });
-
-  $(".accordion-single.accordion-six").each(function (index, element) {
-    createAccordionAnimation($(element), index, 65, 75, "sixth-step", true, false);
+    createAccordionAnimation($(element), index, 60, 75, "fifth-step", false, false);
   });
 
   // FLEXIBLE SOFTWARE section animation 
@@ -1259,10 +1255,10 @@ if ($('.product-page').length) {
   })
 
 
-  // BEST IN CLASS section animation 
-  let bestInClass = gsap.timeline({
+  // RISK AND COMPLIANCE section animation 
+  let riskCompliance = gsap.timeline({
     scrollTrigger: {
-      trigger: '#best-in-class',
+      trigger: '#risk-and-compliance',
       start: '5% 50%',
       end: '15% 50%',
       scrub: 0.5,
@@ -1270,9 +1266,9 @@ if ($('.product-page').length) {
     }
   });
   // Prevent animation on mobile
-  let mediaQueryBestInClass = gsap.matchMedia();
-  mediaQueryBestInClass.add("(min-width: 991px)", () => {
-      bestInClass.to("#best-in-class .grid-boxs .inner-box",{
+  let mediaQueryRiskCompliance = gsap.matchMedia();
+  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
+      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
         y: 0,
         x: 0,
         rotate: 0,
@@ -1282,5 +1278,307 @@ if ($('.product-page').length) {
           from: "random"
         }
       });
+  });
+}
+////////////////////////////
+////// SOLUTIONS PAGE //////
+////////////////////////////
+
+if ($('.solutions-page').length) {
+  // PROFESSIONAL SPORTS SDK section change tabs on scroll
+  function createTabAnimationProSports(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack, haveIconStep) {
+    return gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#pro-sports",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active viewed");
+            $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
+            if(haveIconStep != false){
+              $("#pro-sports .icons-step").addClass("active");
+            }
+          },
+          onEnterBack: function () {
+            element.addClass("active");
+            $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
+            if(haveIconStep != false){
+              $("#pro-sports .icons-step").addClass("active");
+            }
+          },
+          onLeave: function () {
+            element.removeClass("active");
+            $("#pro-sports .icons-step").removeClass("active");
+            if(onLeave != true){
+              $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
+            } 
+          },
+          onLeaveBack: function () {
+            element.removeClass("active");
+            $("#pro-sports .icons-step").removeClass("active");
+            if(onLeaveBack != true){
+              $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
+            }
+          },
+        },
+      }
+    );
+  }
+  
+  // Functions to trigger tabs animation on PROFESSIONAL SPORTS SDK section
+  $("#pro-sports .tab-content-inner.first-tab").each(function (index, element) {
+    createTabAnimationProSports($(element), index, 0, 25, "first-step", false, true, false);
+  });
+  
+  $("#pro-sports .tab-content-inner.second-tab").each(function (index, element) {
+    createTabAnimationProSports($(element), index, 25, 50, "second-step", false, false, true);
+  });
+  
+  $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
+    createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
+  });
+  
+  
+  // RECREATIONAL GAMES SDK section change tabs on scroll
+  function createTabAnimationRecGames(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    return gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#rec-games",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active viewed");
+            $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
+          },
+          onEnterBack: function () {
+            element.addClass("active");
+            $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
+          },
+          onLeave: function () {
+            element.removeClass("active");
+            if(onLeave != true){
+              $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
+            } 
+          },
+          onLeaveBack: function () {
+            element.removeClass("active");
+            if(onLeaveBack != true){
+              $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
+            }
+          },
+        },
+      }
+    );
+  }
+  
+  // Functions to trigger tabs animation on RECREATIONAL GAMES SDK section
+  $("#rec-games .tab-content-inner.first-tab").each(function (index, element) {
+    createTabAnimationRecGames($(element), index, 0, 25, "first-step", false, true);
+  });
+  
+  $("#rec-games .tab-content-inner.second-tab").each(function (index, element) {
+    createTabAnimationRecGames($(element), index, 25, 50, "second-step", false, false);
+  });
+  
+  $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
+    createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
+  });
+
+  // RISK AND COMPLIANCE section animation 
+  let riskCompliance = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#risk-and-compliance',
+      start: '10% 50%',
+      end: '20% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+  // Prevent animation on mobile
+  let mediaQueryRiskCompliance = gsap.matchMedia();
+  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
+      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
+        y: 0,
+        x: 0,
+        rotate: 0,
+        duration: .3,
+        stagger: {
+          amount: 4,
+          from: "random"
+        }
+      });
+  });
+
+  // TIMELINE section change steps on scroll
+  function createTabAnimationTimeLine(element, index, startPercentage, endPercentage, onEnterBack) {
+    return gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#timeline",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active viewed");
+          },
+          onEnterBack: function () {
+            element.addClass("active viewed");
+            if(onEnterBack != true){
+              element.removeClass("active");
+            }
+          },
+          onLeave: function(){
+            element.removeClass("viewed");
+          },
+          onLeaveBack: function(){
+            element.removeClass("viewed");
+          }
+        },
+      }
+    );
+  }
+  
+  // Functions to trigger steps animation on TIMELINE section
+  $("#timeline .timeline-block.week .timeline-row.row-one").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 0, 20, true);
+  });
+  
+  $("#timeline .timeline-block.week .timeline-row.row-two").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 20, 35, false);
+  });
+  
+  $("#timeline .timeline-block.week .timeline-row.row-three").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 35, 50, false);
+  });
+    
+  $("#timeline .timeline-block.week .timeline-row.row-four").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 50, 55, false);
+  });
+
+
+  // TIMELINE section change steps on scroll
+  function createTabAnimationTimeLine(element, index, startPercentage, endPercentage, onEnterBack) {
+    return gsap.fromTo(
+      element,
+      { opacity: 1 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#timeline",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          // markers: true,
+          onEnter: function () {
+            element.addClass("active viewed");
+          },
+          onEnterBack: function () {
+            element.addClass("active viewed");
+            if(onEnterBack != true){
+              element.removeClass("active");
+            }
+          },
+          onLeave: function(){
+            element.removeClass("viewed");
+          },
+          onLeaveBack: function(){
+            element.removeClass("viewed");
+          }
+        },
+      }
+    );
+  }
+  
+  // Functions to trigger steps animation on TIMELINE section
+  $("#timeline .timeline-block.month .timeline-row.row-one").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 0, 30, true);
+  });
+  
+  $("#timeline .timeline-block.month .timeline-row.row-two").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 30, 50, false);
+  });
+  
+  $("#timeline .timeline-block.month .timeline-row.row-three").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 50, 70, false);
+  });
+    
+  $("#timeline .timeline-block.month .timeline-row.row-four").each(function (index, element) {
+    createTabAnimationTimeLine($(element), index, 70, 75, false);
+  });
+
+  const solutionsDashboard = document.querySelectorAll('#dashboard .dashboard-area');
+  const observerSolutionsDashboard = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        $("#dashboard .dashboard-area").addClass("animated");
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerSolutionsDashboard.unobserve(entry.target);
+      }
+    });
+  });
+  solutionsDashboard.forEach((animation) => {
+    observerSolutionsDashboard.observe(animation);
+  });
+
+  // End Solutions Conditional
+}
+
+if ($('#particles-dashboard').length) {
+  particlesJS("particles-dashboard", {
+      particles: {
+        number: { value: 1500, density: { enable: true, value_area: 2000 } },
+        color: { value: "#0EF169" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 3 },
+        },
+        opacity: {
+          value: 1,
+          random: true,
+          anim: { enable: false, speed: 3, opacity_min: 0.1, sync: false },
+        },
+        size: {
+          value: 1,
+          random: true,
+          anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
+        },
+        line_linked: {
+          enable: false,
+          distance: 50,
+          color: "#ffffff",
+          opacity: 0.6,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 0.7,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+          attract: { enable: false, rotateX: 600, rotateY: 1200 },
+        },
+      },
+      retina_detect: true,
   });
 }

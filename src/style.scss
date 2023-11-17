@@ -12,6 +12,7 @@ $new-darkblue: #001b60;
 $darkblue: #001035;
 $yellow: #0EF169;
 $sky-blue: #AA9CFF;
+$middle-blue: #A68EFF;
 
 /*** Socondary Colors***/
 $light-blue: #50a0ff;
@@ -208,6 +209,22 @@ h1, .h1 {
     font-size: 37px;
     line-height: 42px;
   }
+  &.large{
+    font-size: 75px;
+    line-height: 80px;
+    @media (max-width: 1200px) {
+      font-size: 45px;
+      line-height: 50px;
+    }
+    @media (max-width: 991px) {
+      font-size: 48px;
+      line-height: 52px;
+    }
+    @media (max-width: 767px) {
+      font-size: 37px;
+      line-height: 42px;
+    }
+  }
 }
 
 h2, .h2 {
@@ -306,7 +323,7 @@ h6, .h6 {
 
 p {
   font-size: 20px;
-  line-height: 23px;
+  line-height: 25px;
   font-weight: 200;
   color: #fff;
   font-family: 'Roboto', sans-serif;
@@ -399,7 +416,7 @@ a {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 20px 0;
+  padding: 10px 0;
   z-index: 999;
   background-color: #fff;
   transition: all 0.2s ease-in-out;
