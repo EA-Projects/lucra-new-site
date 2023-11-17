@@ -365,7 +365,7 @@
                         }
                         p{
                             min-height: 100px;
-                            margin-bottom: 0;
+                            margin-bottom: 20px;
                             color: #A1C8FF;
                         }
                         ul{
@@ -420,7 +420,7 @@
                     transition: all .2s ease-in-out;
                     opacity: .2;
                     width: 55px;
-                    height: 1px;
+                    height: 2px;
                     border-radius: 5px;
                     margin-right: 15px;
                     &:hover,
@@ -589,12 +589,12 @@
                 justify-content: space-between;
 
                 .logo{
-                    width: 130px;
-                    height: 120px;
+                    width: 120px;
+                    height: 110px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 10px 0;
+                    margin: 14px 0;
                     border-radius: 16px;
                     border: 1px solid $yellow;
                     background: rgba(0, 19, 65, 0.80);
@@ -612,28 +612,28 @@
                     img{
                         width: 100%;
                         &.nfl{
-                            max-width: 55px;
+                            max-width: 35px;
                         }
                         &.flh{
-                            max-width: 74px;
+                            max-width: 54px;
                         } 
                         &.atp{
-                            max-width: 88px;
+                            max-width: 68px;
                         } 
                         &.mls{
-                            max-width: 66px;
+                            max-width: 46px;
                         } 
                         &.nba{
-                            max-width: 51px;
+                            max-width: 31px;
                         } 
                         &.usga{
-                            max-width: 100px;
+                            max-width: 80px;
                         } 
                         &.mlb{
-                            max-width: 90px;
+                            max-width: 70px;
                         } 
                         &.nascar{
-                            max-width: 114px;
+                            max-width: 94px;
                         } 
                     }
                 }
@@ -775,7 +775,7 @@
                     .energy-tab{
                         width: 100px;
                         height: 1px;
-                        background: linear-gradient(-90deg, #0EF169 0%, transparent 100%);
+                        background: linear-gradient(-90deg, #B28EFF 0%, transparent 100%);
                         position: absolute;
                         top: 1px;
                         right: -10%;
@@ -1098,7 +1098,7 @@
         top: 16%;
         z-index: 1;
         .timeline-block{
-            max-width: 520px;
+            max-width: 490px;
             margin: 0 auto;
             .timeline-top{
                 border-radius: 16px;
@@ -1107,7 +1107,7 @@
                 box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
                 backdrop-filter: blur(5px);
                 text-align: center;
-                padding: 18px 30px;
+                padding: 22px 30px;
                 margin-bottom: 20px;
                 // Top Line fixed all the time
                 &::after{
@@ -1220,11 +1220,10 @@
                             opacity: 0;
                             transition: all .5s ease-in-out;
                         }
-                        h5{
+                        h6{
                             text-align: left;
                             margin: 0;
                             text-transform: uppercase;
-                            line-height: 25px;
                             font-weight: 600;
                         }
                     }
