@@ -654,8 +654,8 @@
                     position: relative;
                     z-index: 2;
                     img{
-                        width: 44vh;
-                        max-width: 330px;
+                        width: 50vh;
+                        max-width: 355px;
                     }
                     .energy{
                         width: 100%;
@@ -679,10 +679,10 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    height: 80vh;
-                    max-height: 635px;
-                    width: 37vh;
-                    max-width: 300px;
+                    height: 100vw;
+                    max-height: 640px;
+                    width: 100vw;
+                    max-width: 303px;
                     transform: translate(-50%, -50%);
                     overflow: hidden;
                     border-radius: 40px;
@@ -692,7 +692,7 @@
                         left: 100%;
                         width: 100%;
                         height: 100%;
-                        width: 37vh;
+                        width: 100%;
                         max-width: 315px;
                         opacity: 0;
                         z-index: 1;
@@ -712,6 +712,11 @@
                     }
                 }
             }
+        }
+    }
+    @media (min-width: 1441px){
+        .sticky-area{
+            top: -8%;
         }
     }
 }
@@ -868,8 +873,8 @@
                     position: relative;
                     z-index: 2;
                     img{
-                        width: 44vh;
-                        max-width: 330px;
+                        width: 50vh;
+                        max-width: 355px;
                     }
                 }
                 .inner-screens{
@@ -877,10 +882,10 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    height: 80vh;
-                    max-height: 635px;
-                    width: 37vh;
-                    max-width: 300px;
+                    height: 100vw;
+                    max-height: 640px;
+                    width: 100vw;
+                    max-width: 303px;
                     transform: translate(-50%, -50%);
                     overflow: hidden;
                     border-radius: 40px;
@@ -890,7 +895,7 @@
                         left: 100%;
                         width: 100%;
                         height: 100%;
-                        width: 37vh;
+                        width: 100%;
                         max-width: 315px;
                         opacity: 0;
                         z-index: 1;
@@ -910,6 +915,11 @@
                     }
                 }
             }
+        }
+    }
+    @media (min-width: 1441px){
+        .sticky-area{
+            top: -8%;
         }
     }
 }
