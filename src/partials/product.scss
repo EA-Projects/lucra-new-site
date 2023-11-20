@@ -774,7 +774,7 @@ body{
             border-radius: 50%;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%) translate3d(0,0,0);
+            transform: translate(-50%,-50%) translate3d(0,0,0) translateZ(0);
             width: 50%;
             height: 50%;
             border-radius: 316.994px;
@@ -1028,7 +1028,7 @@ body{
 #risk-and-compliance{
     padding: 150px 0 100px;
     background-color: #01123F;
-    background-image: url(../../images/product/risk-management-bg.png);
+    // background-image: url(../../images/product/risk-management-bg.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1252,10 +1252,11 @@ body{
                     box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.30);
                 }
                 h5{
+                    font-family: "Bauziet", sans-serif;
                     text-transform: uppercase;
                     color: #FFFFFF;
                     margin: 0;
-                    padding: 30px 0;
+                    padding: 30px 5px;
                 }
                 &.top-left{
                     max-width: 375px;
@@ -1283,11 +1284,16 @@ body{
                 }
             }
         }
-        .categories-top{
-
-        }
         .categories-bottom{
             align-items: flex-start;
+        }
+    }
+    @media (max-width: 1200px){
+        .cards-area{
+            .categories-top,
+            .categories-bottom{
+                gap: 2%;
+            }
         }
     }
 }
@@ -1305,7 +1311,7 @@ body{
             position: absolute;
             top: 0;
             left: 0;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, #37358F 100%);
+            background: linear-gradient(0deg, #37358F00 0%, #37358F 100%);
         }
     }
 }
