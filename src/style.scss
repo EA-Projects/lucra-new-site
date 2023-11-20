@@ -132,7 +132,7 @@ a {
   }
   &.secondary {
     background-color: #3978E0;
-    color: #FFFFFF;
+    color: #FFFFFF; 
     border-color: #3978E0;
     &:hover {
       background-color: $yellow;
@@ -453,6 +453,23 @@ a {
     }
     &.fixed{
       background-color: $darkblue;
+    }
+  }
+  &.anchors-nav{
+      .container-nav{
+        nav{
+          .navbar-collapse{
+            .navbar-nav{
+              .nav-item{
+                .nav-link{
+                  &.active{
+                    color: $yellow;
+                  }
+                }
+              }
+          }
+        }
+      }
     }
   }
   .container-nav {

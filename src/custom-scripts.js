@@ -838,8 +838,8 @@ $(window).scroll(function () {
       if ($(this).offset().top + $(this).height() > cutoff) {
           var currSection = $(this).attr('id');
 
-          $('#anchors-nav a').removeClass('active');
-          $('#anchors-nav a[data-id=' + currSection + ']').addClass('active');
+          $('.anchors-nav a').removeClass('active');
+          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
           return false;
       }
   });
@@ -1130,48 +1130,6 @@ if ($('.product-page').length) {
     createTabAnimation($(element), index, 45, 65, "fourth-step", true, false);
   });
 
-
-  gsap.registerPlugin(Flip);
-
-  const phoneTopArea = document.querySelector("#lucra-technology .phone-top-area");
-  const phoneBottomArea = document.querySelector("#our-value-proposition .phone-bottom-area");
-  const phoneScreen = document.querySelector(".phone-screens");
-
-
-  flipPhone = function (){
-    const state = Flip.getState(phoneScreen);
-    if (phoneScreen.parentElement === phoneTopArea) {
-      phoneBottomArea.appendChild(phoneScreen);
-    } else {
-      phoneTopArea.appendChild(phoneScreen);
-    }
-
-    Flip.from(state, {
-    duration: 1, ease: "power1.in",
-    });
-  };
-
-  // Trigger to move phone to the next section [OUR VALUE PROPOSITION]
-  let movePhoneDown = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#our-value-proposition',
-      start: '-20% 50%',
-      end: '-20% 50%',
-      scrub: 2,
-      // markers: true,
-      onEnter: () => flipPhone(),
-      onEnterBack: () => flipPhone(),
-    }
-  });
-
-  movePhoneDown
-  .fromTo("#lucra-technology .tabs-content, #lucra-technology .energy-bg",{
-    opacity: 1,
-  },{
-    opacity: 0,
-  }, '<');
-
-
   // OUR VALUE PROPOSITION section change accordions on scroll
   function createAccordionAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
     return gsap.from(
@@ -1185,22 +1143,22 @@ if ($('.product-page').length) {
           // markers: true,
           onEnter: function () {
             element.addClass("active");
-            $(`.apps-accordion.${stepClass}`).addClass("active");
+            // $(`.apps-accordion.${stepClass}`).addClass("active");
           },
           onEnterBack: function () {
             element.addClass("active");
-            $(`.apps-accordion.${stepClass}`).addClass("active");
+            // $(`.apps-accordion.${stepClass}`).addClass("active");
           },
           onLeave: function () {
             if(onLeave != true){
               element.removeClass("active");
-              $(`.apps-accordion.${stepClass}`).removeClass("active");
+              // $(`.apps-accordion.${stepClass}`).removeClass("active");
             }
           },
           onLeaveBack: function () {
             if(onLeaveBack != true){
               element.removeClass("active");
-            $(`.apps-accordion.${stepClass}`).removeClass("active");
+            // $(`.apps-accordion.${stepClass}`).removeClass("active");
             }
           },
         },
@@ -1209,50 +1167,77 @@ if ($('.product-page').length) {
   }
 
   // Functions to trigger accordions animation on OUR VALUE PROPOSITION section
-  $(".accordion-single.accordion-one").each(function (index, element) {
-    createAccordionAnimation($(element), index, 15, 30, "first-step", false, true);
+  $(".apps-phone.first-step").each(function (index, element) {
+    createAccordionAnimation($(element), index, 15, 25, "first-step", false, true);
   });
 
-  $(".accordion-single.accordion-two").each(function (index, element) {
-    createAccordionAnimation($(element), index, 30, 40, "second-step", false, false);
+  $(".apps-phone.second-step").each(function (index, element) {
+    createAccordionAnimation($(element), index, 25, 40, "second-step", false, false);
   });
 
-  $(".accordion-single.accordion-three").each(function (index, element) {
+  $(".apps-phone.third-step").each(function (index, element) {
     createAccordionAnimation($(element), index, 40, 50, "third-step", false, false);
   });
 
-  $(".accordion-single.accordion-four").each(function (index, element) {
-    createAccordionAnimation($(element), index, 50, 60, "fourth-step", false, false);
+  $(".apps-phone.fourth-step").each(function (index, element) {
+    createAccordionAnimation($(element), index, 50, 70, "fourth-step", false, false);
   });
 
-  $(".accordion-single.accordion-five").each(function (index, element) {
-    createAccordionAnimation($(element), index, 60, 75, "fifth-step", false, false);
+  $(".apps-phone.fifth-step").each(function (index, element) {
+    createAccordionAnimation($(element), index, 70, 90, "fifth-step", true, false);
   });
 
-  // FLEXIBLE SOFTWARE section animation 
-  let flexibleSoftware = gsap.timeline({
+  // CLIENT CATEGORIES section animation 
+  let clientCategories = gsap.timeline({
     scrollTrigger: {
-      trigger: '#flexible-software',
+      trigger: '#client-categories',
       start: '0% 50%',
       end: '35% 50%',
       scrub: 0.5,
-      // markers: true,
+      markers: true,
     }
   });
 
   // Prevent animation on mobile
-  let mediaQueryFlexibleSoftware = gsap.matchMedia();
-  mediaQueryFlexibleSoftware.add("(min-width: 991px)", () => {
-    flexibleSoftware.fromTo("#flexible-software .card-software",{
-      opacity: 0,
-      y: 50,
+  let mediaQueryClientCategories = gsap.matchMedia();
+  mediaQueryClientCategories.add("(min-width: 991px)", () => {
+    clientCategories.fromTo("#client-categories .category-card",{
+      scale: .95,
     },{
-      opacity: 1,
-      y: 0,
-      duration: .3,
-      stagger: .2
-    });
+      scale: 1,
+      duration: 1,
+      stagger: {
+        amount: 1,
+        from: "random"
+      }
+    })
   })
+
+  let clientCategoriesScroll = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#client-categories',
+      start: '60% 50%',
+      end: '100% 50%',
+      scrub: 1,
+      // markers: true,
+    }
+  });
+  mediaQueryClientCategories.add("(min-width: 991px)", () => {
+  clientCategoriesScroll.to("#client-categories .category-card:not(.delay)",{
+    y: 50,
+    stagger: {
+      amount: 1,
+      from: "random"
+    }
+  })
+  .to("#client-categories .category-card.delay",{
+    y: 70,
+    stagger: {
+      amount: 1,
+      from: "random"
+    }
+  }, "<");
+})
 
 
   // RISK AND COMPLIANCE section animation 
