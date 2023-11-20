@@ -1194,7 +1194,7 @@ if ($('.product-page').length) {
       start: '0% 50%',
       end: '35% 50%',
       scrub: 0.5,
-      markers: true,
+      // markers: true,
     }
   });
 
