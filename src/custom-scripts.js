@@ -1019,7 +1019,7 @@ if ($('.product-page').length) {
     // Prevent animation on mobile
     let mediaQueryHeroProduct = gsap.matchMedia();
     mediaQueryHeroProduct.add("(min-width: 991px)", () => {
-      heroProduct.fromTo('#hero-product .hero-images .product-card', {
+      heroProduct.fromTo('#hero-product .hero-images .hero-screen:not(.center-images)', {
         y: 0,
         opacity: 1,
       },{
@@ -1130,6 +1130,40 @@ if ($('.product-page').length) {
     createTabAnimation($(element), index, 45, 65, "fourth-step", true, false);
   });
 
+
+$(".tab-content-inner").on("click", function() {
+  var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
+
+  console.log(tabClass);
+
+  // Realizar la animación correspondiente al bloque clicado
+  switch (tabClass) {
+    case "top-left":
+      $('html, body').animate({
+        scrollTop: $("#lucra-technology").offset().top + 250
+      }, 100);
+      break;
+
+    case "top-right":
+      $('html, body').animate({
+        scrollTop: $("#lucra-technology").offset().top + 400
+      }, 100);
+      break;
+
+    case "bottom-left":
+      $('html, body').animate({
+        scrollTop: $("#lucra-technology").offset().top + 900
+      }, 100);
+      break;
+
+    case "bottom-right":
+      $('html, body').animate({
+        scrollTop: $("#lucra-technology").offset().top + 1400
+      }, 100);
+      break;
+  }
+});
+
   // OUR VALUE PROPOSITION section change accordions on scroll
   function createAccordionAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
     return gsap.from(
@@ -1202,7 +1236,7 @@ if ($('.product-page').length) {
   let mediaQueryClientCategories = gsap.matchMedia();
   mediaQueryClientCategories.add("(min-width: 991px)", () => {
     clientCategories.fromTo("#client-categories .category-card",{
-      scale: .95,
+      scale: .90,
     },{
       scale: 1,
       duration: 1,
@@ -1216,27 +1250,27 @@ if ($('.product-page').length) {
   let clientCategoriesScroll = gsap.timeline({
     scrollTrigger: {
       trigger: '#client-categories',
-      start: '60% 50%',
-      end: '100% 50%',
+      start: '40% 50%',
+      end: '90% 50%',
       scrub: 1,
       // markers: true,
     }
   });
   mediaQueryClientCategories.add("(min-width: 991px)", () => {
-  clientCategoriesScroll.to("#client-categories .category-card:not(.delay)",{
-    y: 50,
-    stagger: {
-      amount: 1,
-      from: "random"
-    }
-  })
-  .to("#client-categories .category-card.delay",{
+  clientCategoriesScroll.to("#client-categories .category-card.rotate",{
     y: 70,
     stagger: {
       amount: 1,
       from: "random"
     }
-  }, "<");
+  }, "<")
+  .to("#client-categories .category-card.rotate-right",{
+    y: 70,
+    stagger: {
+      amount: 1,
+      from: "random"
+    }
+  }, "<")
 })
 
 
@@ -1441,19 +1475,19 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger steps animation on TIMELINE section
   $("#timeline .timeline-block.week .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 20, true);
+    createTabAnimationTimeLine($(element), index, 0, 30, true);
   });
   
   $("#timeline .timeline-block.week .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 20, 35, false);
+    createTabAnimationTimeLine($(element), index, 30, 45, false);
   });
   
   $("#timeline .timeline-block.week .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 35, 50, false);
+    createTabAnimationTimeLine($(element), index, 45, 60, false);
   });
     
   $("#timeline .timeline-block.week .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 50, 55, false);
+    createTabAnimationTimeLine($(element), index, 60, 75, false);
   });
 
 
@@ -1492,19 +1526,19 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger steps animation on TIMELINE section
   $("#timeline .timeline-block.month .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 30, true);
+    createTabAnimationTimeLine($(element), index, 0, 20, true);
   });
   
   $("#timeline .timeline-block.month .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 30, 50, false);
+    createTabAnimationTimeLine($(element), index, 20, 35, false);
   });
   
   $("#timeline .timeline-block.month .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 50, 70, false);
+    createTabAnimationTimeLine($(element), index, 35, 50, false);
   });
     
   $("#timeline .timeline-block.month .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 70, 75, false);
+    createTabAnimationTimeLine($(element), index, 50, 55, false);
   });
 
   const solutionsDashboard = document.querySelectorAll('#dashboard .dashboard-area');

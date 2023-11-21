@@ -1315,6 +1315,9 @@
         &::before{
             display: none;
         }
+        &::after{
+            background: linear-gradient(0deg,#011035 0%,rgba(1,18,63,0) 100%);
+        }
         .top-area{
             margin-bottom: 50px;
             h2{
@@ -1440,6 +1443,7 @@
             text-align: center;
             position: relative;
             perspective: 1000px;
+            z-index: 1;
             &::before{
                 content: "";
                 position: absolute;

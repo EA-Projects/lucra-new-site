@@ -104,10 +104,10 @@ body{
                 max-width: 255px;
             }
             .hero-screen-7{
-                max-width: 374px;
+                max-width: 283px;
                 position: absolute;
                 position: absolute;
-                right: -260px;
+                right: -170px;
                 bottom: 200px;
             }
             .hero-screen-8{
@@ -455,7 +455,7 @@ body{
                                 max-width: 315px;
                                 opacity: 0;
                                 z-index: 1;
-                                transition: all .5s ease-in-out;
+                                transition: all .4s ease-in-out;
                                 img{
                                     position: absolute;
                                     top: 0;
@@ -492,6 +492,7 @@ body{
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: flex-end;
+                    cursor: pointer;
                     .line-tab{
                         width: 425px;
                         margin-bottom: 20px;
@@ -541,20 +542,26 @@ body{
                         text-transform: uppercase;
                         font-weight: 800;
                         opacity: 0.1;
-                        transition: all .5s ease-in-out;
+                        transition: all .4s ease-in-out;
                     }
                     p{
                         opacity: 0;
                         margin-bottom: 0;
                         position: relative;
                         bottom: -30px;
-                        transition: all .5s ease-in-out;
+                        transition: all .4s ease-in-out;
                     }
                     &.viewed{
                         .line-tab{
                             .dot-line{
                                 background-color: #FFFFFF;
                             }
+                        }
+                    }
+                    &:hover{
+                        h4{
+                            color: $yellow;
+                            opacity: 1;
                         }
                     }
                     &.active,
@@ -739,6 +746,22 @@ body{
     }
     @media (max-width: 425px){
         padding: 100px 0 150px;
+        .tabs-area{
+            .tabs-inner-area{
+                .tab-holder-area{
+                    .tabs-content{
+                        .left-content,
+                        .right-content{
+                            .tab-content-inner{
+                                p{
+                                    max-width: 250px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -880,8 +903,11 @@ body{
                     transform: scale(.9);
                     transition: all .3s ease-in-out;
                     &.is-link{
+                        transition: all .5s ease-in-out;
                         &:hover{
-                            box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.30);
+                            border: 1px solid rgba(14, 241, 105, 0.80);
+                            background: rgb(0, 20, 65);
+                            box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.40);
                         }
                     }
                     &.delay-5{
@@ -1175,6 +1201,7 @@ body{
         background: linear-gradient(0deg, #011240 0%, rgba(1, 18, 63, 0.00) 100%);
     }
     .top-area{
+        margin-bottom: 100px;
         h2{
             text-align: left;
             text-transform: uppercase;
@@ -1189,7 +1216,7 @@ body{
     }
     .grid-boxs{
         max-width: 1050px;
-        margin: 40px auto 0;
+        margin: 0 auto;
         position: relative;
         z-index: 1;
         .inner-box{
@@ -1226,34 +1253,34 @@ body{
                 line-height: 20px;
             }
             &.stack-left{
-                transform: translate(90%, -14%) rotate(-10deg);
+                transform: translate(90%, -4%) rotate(-10deg);
                 z-index: 2;
                 &.is-middle{
-                    transform: translate(72%,-118%) rotate(-15deg);
+                    transform: translate(72%,-108%) rotate(-15deg);
                     z-index: 1;
                 }
                 &.is-bottom{
-                    transform: translate(55%,-220%) rotate(-20deg);
+                    transform: translate(55%,-210%) rotate(-20deg);
                     z-index: 0;
                 }
             }
             &.stack-center{
              &.is-middle{
-                transform: translate(0%,-107%);
+                transform: translate(0%,-97%);
              }
              &.is-bottom{
-                transform: translate(0%,-208%);
+                transform: translate(0%,-198%);
              }
             }
             &.stack-right{
-                transform: translate(-90%, -14%) rotate(10deg);
+                transform: translate(-90%, -4%) rotate(10deg);
                 z-index: 2;
                 &.is-middle{
-                    transform: translate(-72%,-119%) rotate(15deg);
+                    transform: translate(-72%,-109%) rotate(15deg);
                     z-index: 1;
                 }
                 &.is-bottom{
-                    transform: translate(-55%,-221%) rotate(20deg);
+                    transform: translate(-55%,-211%) rotate(20deg);
                     z-index: 0;
                 }
             }
@@ -1389,6 +1416,7 @@ body{
                 }
                 &.top-middle{
                     width: 393px;
+                    top: 60px;
                     align-self: flex-start;
                 }
                 &.top-right{
@@ -1477,6 +1505,22 @@ body{
             }
         }
     }
+    @media (max-width: 425px){
+        .cards-area{
+            .categories-top{
+                .category-card{
+                    &.top-left,
+                    &.top-middle,
+                    &.top-right,
+                    &.bottom-left,
+                    &.bottom-middle,
+                    &.bottom-right{
+                        max-width: 49%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 #get-in-touch{
@@ -1495,4 +1539,4 @@ body{
             background: linear-gradient(0deg, #37358F00 0%, #37358F 100%);
         }
     }
-}
+} 

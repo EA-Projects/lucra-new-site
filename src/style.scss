@@ -209,6 +209,10 @@ h1, .h1 {
     font-size: 37px;
     line-height: 42px;
   }
+  @media (max-width: 575px) {
+    font-size: 33px;
+    line-height: 38px;
+  }
   &.large{
     font-size: 75px;
     line-height: 80px;
@@ -224,11 +228,15 @@ h1, .h1 {
       font-size: 37px;
       line-height: 42px;
     }
+    @media (max-width: 575px) {
+      font-size: 33px;
+      line-height: 38px;
+    }
   }
 }
 
 h2, .h2 {
-  font-size: 46px;
+  font-size: 46px; 
   line-height: 53px;
   font-weight: 600;
   @media (max-width: 991px) {
