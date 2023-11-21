@@ -587,6 +587,7 @@
                 align-items: flex-start;
                 justify-content: flex-end;
                 margin: 30px 0;
+                cursor: pointer;
                 .line-tab{
                     width: 600px;
                     position: relative;
@@ -739,6 +740,9 @@
                         } 
                         &.usga{
                             max-width: 80px;
+                        } 
+                        &.pga{
+                            max-width: 45px;
                         } 
                         &.mlb{
                             max-width: 70px;
@@ -994,6 +998,9 @@
         .tabs-area .right-area .icons-step .logo img.usga {
             max-width: 58px;
         }
+        .tabs-area .right-area .icons-step .logo img.pga {
+            max-width: 42px;
+        }
         .tabs-area .right-area .icons-step .logo img.mlb {
             max-width: 51px;
         }
@@ -1048,6 +1055,7 @@
                 align-items: flex-end;
                 justify-content: flex-end;
                 margin: 30px 0;
+                cursor: pointer;
                 .line-tab{
                     width: 600px;
                     position: relative;
@@ -1315,9 +1323,6 @@
         &::before{
             display: none;
         }
-        &::after{
-            background: linear-gradient(0deg,#011035 0%,rgba(1,18,63,0) 100%);
-        }
         .top-area{
             margin-bottom: 50px;
             h2{
@@ -1443,7 +1448,6 @@
             text-align: center;
             position: relative;
             perspective: 1000px;
-            z-index: 1;
             &::before{
                 content: "";
                 position: absolute;
@@ -1511,6 +1515,19 @@
                 }
             }
         }
+    }
+    @media (max-width: 500px) {
+        #inner-dashboard .top-area .dashboard-items .inner-item span {
+            font-family: "Roboto",sans-serif;
+            color: #A1C8FF;
+            font-size: 14px;
+            line-height: 18px;
+            font-weight: 300;
+            }
+          
+            #inner-dashboard .top-area .dashboard-items {
+                gap: 15px 25px;
+            }
     }
 }
 
@@ -1769,6 +1786,13 @@
         #inner-timeline .timeline-block.month{
             margin-top: 65px;
         }
+        #inner-timeline .timeline-block .timeline-top {
+            position: relative;
+        }
+        #inner-timeline .timeline-block .timeline-bottom .timeline-row .timeline-counter .time {
+            flex-shrink: 0;
+        }
+        
     }
 }
 .solutions-page {

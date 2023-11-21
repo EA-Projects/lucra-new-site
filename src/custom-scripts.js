@@ -1601,3 +1601,57 @@ if ($('#particles-dashboard').length) {
       retina_detect: true,
   });
 }
+
+// Clickable solution tabs
+const proSportsContainer = document.getElementById('pro-sports');
+const recGamesContainer = document.getElementById('rec-games');
+
+if (proSportsContainer) {
+  const proSportsTabContentInner = proSportsContainer.querySelectorAll('.tab-content-inner');
+
+  proSportsTabContentInner.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      proSportsTabContentInner.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      tab.classList.add('active');
+
+      const proSportsScreenTabs = proSportsContainer.querySelectorAll('.screen-tab');
+
+      proSportsScreenTabs.forEach((screenTab) => {
+        screenTab.classList.remove('active');
+      });
+
+      const selectedProSportsScreenTab = proSportsContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
+      if (selectedProSportsScreenTab) {
+        selectedProSportsScreenTab.classList.add('active');
+      }
+    });
+  });
+}
+
+if (recGamesContainer) {
+  const recGamesTabContentInner = recGamesContainer.querySelectorAll('.tab-content-inner');
+
+  recGamesTabContentInner.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      recGamesTabContentInner.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+
+      tab.classList.add('active');
+
+      const recGamesScreenTabs = recGamesContainer.querySelectorAll('.screen-tab');
+
+      recGamesScreenTabs.forEach((screenTab) => {
+        screenTab.classList.remove('active');
+      });
+
+      const selectedRecGamesScreenTab = recGamesContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
+      if (selectedRecGamesScreenTab) {
+        selectedRecGamesScreenTab.classList.add('active');
+      }
+    });
+  });
+}
