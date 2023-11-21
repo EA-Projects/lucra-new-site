@@ -632,19 +632,15 @@ body{
                         .phone-screens{
                             .main-portrait{
                                 img{
-                                    width: 35vh;
-                                    max-width: 300px;
+                                    width: 36vh;
                                 }
                             }
                             .inner-screens{
-                                height: 65vh;
-                                max-height: 532px;
-                                width: 31vh;
+                                height: 100%;
+                                max-height: 92%;
+                                width: 30vh;
                                 max-width: 300px;
-                                .screen-tab{
-                                    width: 30vh;
-                                    max-width: 250px;
-                                }
+                                border-radius: 30px;
                             }
                         }
                     }
@@ -816,7 +812,6 @@ body{
             height: 100%;
             z-index: 5;
             text-align: center;
-            perspective: 1000px;
             .data-phone{
                 border-radius: 12px;
                 border: 1px solid $yellow;
@@ -844,18 +839,18 @@ body{
                 }
                 &.is-first{
                     top: 100px;
-                    left: -15px;
+                    left: 1vh;
                 }
                 &.is-second{
                     top: 150px;
-                    right: -15px;
+                    right: 1vh;
                 }
                 &.is-third{
                     bottom: 150px;
-                    left: -15px;
+                    left: 1vh;
                 }
                 &.is-fourth{
-                    bottom: 10px;
+                    bottom: 0;
                     right: -50px;
                 }
                 &:hover{
@@ -865,14 +860,13 @@ body{
             //Phones or Dasboard image
             > img{
                 opacity: 0;
-                // transform: scale(.95);
                 transition: all .3s ease-in-out;
                 &.is-phone{
                     width: 389px;
                     max-width: 45vh;
                 }
                 &.is-dashboard{
-                    transform: rotateX(20deg);
+                    transform: scale(.9);
                     max-width: 991px;
                     border-radius: 6px;
                     box-shadow: 0px 13.50026px 29.70057px 0px rgba(0, 0, 0, 0.22), 0px 54.90104px 54.90104px 0px rgba(0, 0, 0, 0.19), 0px 122.40233px 73.80141px 0px rgba(0, 0, 0, 0.11), 0px 217.80414px 87.30167px 0px rgba(0, 0, 0, 0.03), 0px 341.10648px 95.40182px 0px rgba(0, 0, 0, 0.00);
@@ -971,7 +965,7 @@ body{
                     opacity: 1;
                     transform: scale(1);
                     &.is-dashboard{
-                        transform: rotateX(0);
+                        transform: scale(1);
                     }
                 }
                 .data-phone{
@@ -982,6 +976,17 @@ body{
                     .logos{
                         opacity: 1;
                         transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1440px){
+        .phone-bottom-area{
+            .apps-phone{
+                .data-phone{
+                    &.is-fourth{
+                        bottom: 50px;
                     }
                 }
             }

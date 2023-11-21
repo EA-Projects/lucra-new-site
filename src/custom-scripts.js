@@ -1140,25 +1140,25 @@ $(".tab-content-inner").on("click", function() {
   switch (tabClass) {
     case "top-left":
       $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + 250
+        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.30
       }, 100);
       break;
 
     case "top-right":
       $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + 400
+        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
       }, 100);
       break;
 
     case "bottom-left":
       $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + 900
+        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
       }, 100);
       break;
 
     case "bottom-right":
       $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + 1400
+        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
       }, 100);
       break;
   }
