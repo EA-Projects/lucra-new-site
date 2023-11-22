@@ -921,7 +921,7 @@
     }
     @media (max-width: 500px){ 
         .sticky-area{
-            top: -14%;
+            top: -12%;
         }
         .tabs-area .right-area {
             width: 100%;
@@ -1265,7 +1265,7 @@
     }
     @media (max-width: 500px) {
         .sticky-area{
-            top: -21%;
+            top: -19%;
         }
         .tabs-area .right-area {
             width: 100%;
@@ -1832,8 +1832,9 @@
         #anchors-nav .about-nav-items a {
             font-size: 12px;
             width: 25%;
-            text-wrap: nowrap;
             text-align: center;
+            text-wrap: nowrap;
+            white-space: nowrap;
         }
         .about-nav-items a p {
             font-size: 12px;
