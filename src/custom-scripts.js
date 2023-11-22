@@ -1608,6 +1608,7 @@ const recGamesContainer = document.getElementById('rec-games');
 
 if (proSportsContainer) {
   const proSportsTabContentInner = proSportsContainer.querySelectorAll('.tab-content-inner');
+  const iconsStep = document.querySelector('.icons-step');
 
   proSportsTabContentInner.forEach((tab, index) => {
     tab.addEventListener('click', () => {
@@ -1618,7 +1619,6 @@ if (proSportsContainer) {
       tab.classList.add('active');
 
       const proSportsScreenTabs = proSportsContainer.querySelectorAll('.screen-tab');
-
       proSportsScreenTabs.forEach((screenTab) => {
         screenTab.classList.remove('active');
       });
@@ -1626,6 +1626,12 @@ if (proSportsContainer) {
       const selectedProSportsScreenTab = proSportsContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
       if (selectedProSportsScreenTab) {
         selectedProSportsScreenTab.classList.add('active');
+      }
+
+      if (index === 1) {
+        iconsStep.classList.add('active');
+      } else {
+        iconsStep.classList.remove('active');
       }
     });
   });

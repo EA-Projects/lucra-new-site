@@ -555,7 +555,7 @@
     overflow-x: clip;
     .sticky-area{
         position: sticky;
-        top: -13%;
+        top: -9%;
     }
     .top-area{
         margin-bottom: 50px;
@@ -593,7 +593,7 @@
                 margin: 30px 0;
                 cursor: pointer;
                 .line-tab{
-                    width: 600px;
+                    width: 650px;
                     position: relative;
                     margin-bottom: 10px;
                     .dot-line{
@@ -685,13 +685,16 @@
         .right-area{
             width: 40%;
             position: relative;
+            @media (min-width:500px){
+                margin-top: -35px;
+            }
             .energy-bg{
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 mix-blend-mode: lighten;
-                width: 650px;
+                width: 600px;
             }
             .icons-step{
                 position: absolute;
@@ -774,22 +777,22 @@
                     z-index: 2;
                     img{
                         width: 50vh;
-                        max-width: 355px;
+                        max-width: 255px;
                     }
                     .energy{
                         width: 100%;
-                        max-width: 126px;
+                        max-width: 100px;
                         position: absolute;
                         bottom: 30px;
-                        right: -45px;
+                        right: -35px;
                         opacity: .9;
                         filter: drop-shadow(0 0 0 $yellow) drop-shadow(0 0 3px $yellow);
                         &.is-left{
-                            max-width: 129px;
+                            max-width: 98px;
                             right: initial;
                             bottom: initial;
                             top: 30px;
-                            left: -55px;
+                            left: -34px;
                         }
                     }
                 }
@@ -799,9 +802,9 @@
                     top: 50%;
                     left: 50%;
                     height: 100vw;
-                    max-height: 640px;
+                    max-height: 475px;
                     width: 100vw;
-                    max-width: 303px;
+                    max-width: 216px;
                     transform: translate(-50%, -50%);
                     overflow: hidden;
                     border-radius: 40px;
@@ -835,14 +838,10 @@
     }
     @media (min-width: 1441px){
         .sticky-area{
-            top: -8%;
+            top: -9%;
         }
     }
-    @media (max-width: 1200px){
-        .sticky-area{
-            top: 0;
-        }
-    }
+   
     @media (max-width: 991px){
         padding: 70px 0;
         .tabs-area .left-area .tab-content-inner h4 {
@@ -922,7 +921,7 @@
     }
     @media (max-width: 500px){ 
         .sticky-area{
-            top: -7%;
+            top: -16%;
         }
         .tabs-area .right-area {
             width: 100%;
@@ -938,13 +937,13 @@
             justify-content: center;
         }
         .tabs-area .right-area .phone-screens .main-portrait img {
-            width: 300px;
+            width: 252px;
             max-width: 300px;
         }
         .tabs-area .right-area .phone-screens .inner-screens {
-            max-height: 545px;
-            height: 545px;
-            max-width: 249px;
+            max-height: 459px;
+            height: 459px;
+            max-width: 210px;
             border-radius: 25px;
         }
         .tabs-area .right-area .energy-bg {
@@ -1024,7 +1023,7 @@
     overflow-x: clip;
     .sticky-area{
         position: sticky;
-        top: -16%;
+        top: -13%;
     }
     .top-area{
         margin-bottom: 50px;
@@ -1062,7 +1061,7 @@
                 margin: 30px 0;
                 cursor: pointer;
                 .line-tab{
-                    width: 600px;
+                    width: 630px;
                     position: relative;
                     margin-bottom: 10px;
                     .dot-line{
@@ -1158,7 +1157,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 mix-blend-mode: lighten;
-                width: 570px;
+                width: 466px;
             }
             .phone-screens{
                 display: flex;
@@ -1171,7 +1170,7 @@
                     z-index: 2;
                     img{
                         width: 50vh;
-                        max-width: 355px;
+                        max-width: 255px;
                     }
                 }
                 .inner-screens{
@@ -1180,9 +1179,9 @@
                     top: 50%;
                     left: 50%;
                     height: 100vw;
-                    max-height: 640px;
+                    max-height: 475px;
                     width: 100vw;
-                    max-width: 303px;
+                    max-width: 216px;
                     transform: translate(-50%, -50%);
                     overflow: hidden;
                     border-radius: 40px;
@@ -1216,7 +1215,7 @@
     }
     @media (min-width: 1441px){
         .sticky-area{
-            top: -8%;
+            top: -13%;
         }
     }
    
@@ -1260,6 +1259,9 @@
 
     }
     @media (max-width: 500px) {
+        .sticky-area{
+            top: -23%;
+        }
         .tabs-area .right-area {
             width: 100%;
             position: relative;
@@ -1274,13 +1276,13 @@
             justify-content: center;
         }
         .tabs-area .right-area .phone-screens .main-portrait img {
-            width: 300px;
+            width: 252px;
             max-width: 300px;
         }
         .tabs-area .right-area .phone-screens .inner-screens {
-            max-height: 545px;
-            height: 545px;
-            max-width: 249px;
+            max-height: 459px;
+            height: 459px;
+            max-width: 210px;
             border-radius: 25px;
         }
         .tabs-area .right-area .energy-bg {
@@ -1498,7 +1500,7 @@
                 transform: rotateX(30deg) scale(.8);
                 position: relative;
                 z-index: 2;
-                max-width: 1100px;
+                max-width: 800px;
                 border-radius: 10px;
                 transition-delay: .2s;
                 transition: all .5s ease-in-out;
