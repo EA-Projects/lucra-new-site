@@ -67,7 +67,7 @@
     <link rel="stylesheet" href="../dist/style.css" />
   </head>
 
-  <body class="loading">
+  <body class="loading no-hidden with-sticky-anchors">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -78,7 +78,7 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="sb-site">
+    <div id="sb-site" class="solutions-page">
       <!-- HEADER -->
       <header id="header-nav">
         <div class="container-nav">
@@ -155,259 +155,550 @@
           </nav>
         </div>
       </header>
+      <div id="anchors-nav" class="anchors-nav">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="about-nav-items">
+                <a href="#overview" data-id="overview" class="active"><span class="flag active"></span><p>Overview</p></a>
+                <a href="#rec-games" data-id="rec-games" ><span class="flag"></span><p>Rec. Games</p></a>
+                <a href="#pro-sports" data-id="pro-sports" ><span class="flag"></span><p>Pro Sports</p></a>
+                <a href="#risk-and-compliance" data-id="risk-and-compliance" ><span class="flag"></span><p>Risk & Compliance</p></a>
+                <a href="#dashboard" data-id="dashboard" ><span class="flag"></span><p>Analytics</p></a>
+                <a href="#timeline" data-id="timeline" ><span class="flag"></span><p>Timeline</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- HERO -->
-      <section id="hero-solutions">
-        <div class="blue-hero">
-            <div class="container">
-                <div class="row align-items-end">
-                    <div class="col-12 col-lg-7 order-2 order-lg-0">
-                      <div class="title-area">
-                        <img class="title-hero" src="../images/solutions/discover-the-lucra-sdk.svg" alt="Discover the Lucra SDK">
-                      </div>
+
+      <section id="overview">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <img src="../images/solutions/energy-slider-bg.png" alt="" class="energy-slide">
+              <div
+              id="carouselAdvisors"
+              class="carousel slide carousel-fade"
+              data-ride="carousel"
+              data-pause="false"
+              data-interval="15000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Real-Money</span> Gamification Software</h2>
+                      <p>
+                        We provide a native, real-money gamification layer to brands searching for a differentiated way for their users to engage, interact, and compete.
+                      </p>
+                      <ul>
+                        <li>Native Platform Integration</li>
+                        <li>Real-Money Contests</li>
+                        <li>Cash Alternative Contests</li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-lg-5">
-                      <div class="float-phones">
-                        <img src="../images/solutions/top-phone.png" alt="" class="top-phone">
-                        <img src="../images/solutions/bottom-phone.png" alt="" class="bottom-phone">
-                      </div>
-                      <!-- <div class="phones-image">
-                          <img src="../images/solutions/phones_hero.png" alt="">
-                      </div> -->
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/solutions/phone-slide-1v3.png"
+                        class="phones"
+                        alt=""
+                      />
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-        <div class="white-hero">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-lg-7">
-                        <p>Lucra's groundbreaking SDK offers a comprehensive, turnkey solution for operating a peer-to-peer real-money gaming platform. With our SDK, you gain instant access to all the essential elements, including legal and compliance frameworks, robust risk management tools, secure payment facilitation, and a suite of engaging contest features.</p>
-                        <div class="watch-area">
-                          <div class="video-play">
-                            <video
-                            autoplay
-                            muted
-                            playsinline
-                            preload
-                            loop
-                          >
-                            <source src="../images/homepage/lucra_preview.mov" />
-                          </video>
-                          </div>
-                          <a href="https://www.youtube.com/watch?v=qnAwzjrU_z4" target="_blank" rel="noopener noreferrer" class="button">Watch Video</a>
-                        </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Quick and Easy</span> Payment Facilitation</h2>
+                      <p>
+                        Save your business time, resources, and money without ever having to sacrifice a seamless customer experience.
+                      </p>
+                      <ul>
+                        <li>In-App Wallet</li>
+                        <li>Integrations with Credit Card, Paypal/Venmo, ACH</li>
+                        <li>User Profile</li>
+                      </ul>
                     </div>
-                    <div class="col-12 col-lg-5"></div>
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/solutions/phones-slide-2.png"
+                        class="phones"
+                        alt=""
+                      />
+                    </div>
+                  </div>
                 </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Connectivity</span> for Your Community</h2>
+                      <p>
+                        Social interaction is at the heart of what we do because competing with friends is much more fun than playing against the house or a sportsbook.
+                      </p>
+                      <ul>
+                        <li>Leaderboards, Head-to-Head Statistics, and Groups</li>
+                        <li>Text & Social Sharing</li>
+                        <li>Push & In-App Notifications</li>
+                      </ul>
+                    </div>
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/solutions/phones-slide-3.png"
+                        class="phones"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="arrows-navigation">
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="#carouselAdvisors"
+                    data-slide-to="0"
+                    class="active"
+                  >
+                  </li>
+                  <li data-target="#carouselAdvisors" data-slide-to="1">
+                  </li>
+                  <li data-target="#carouselAdvisors" data-slide-to="2">
+                  </li>
+                </ol>
+              </div>
             </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="powerful-features">
-        <div class="container">
-            <img src="../images/solutions/poweful-features.svg" alt="" class="title-section">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6">
-                  <div class="feature-graphic">
-                    <img src="../images/solutions/feature_1.jpg" alt="">
-                  </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                  <div class="feature-content">
-                      <h3>Facilitate Real Money Peer-to-Peer Contests Straight in Your App</h3>
-                      <p class="description">
-                        With the Lucra SDK, your users can seamlessly challenge their friends to contests for real money, right within your app. Foster friendly competition, enhance user engagement, and create unforgettable experiences by enabling direct peer-to-peer matchups on your platform.
-                      </p>
-                  </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6 order-2 order-lg-0">
-                  <div class="feature-content">
-                      <h3>Streamlined Payment Infrastructure</h3>
-                      <p class="description">
-                        Effortlessly enable your users to deposit and withdraw funds within your app for their contest gameplay. Our robust payment infrastructure handles all the necessary processes, ensuring secure transactions and compliance, providing a seamless and hassle-free gaming experience to your users.
-                      </p>
-                  </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="feature-graphic">
-                      <img src="../images/solutions/feature_2.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6">
-                    <div class="feature-graphic">
-                      <img src="../images/solutions/feature_3.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                  <div class="feature-content">
-                      <h3>Flexible Integration Options</h3>
-                      <p class="description">
-                        Lucra offers two seamless integration options to match your preferences. Choose the Lucra design with customizable colors and modifications, or leverage our API to craft a fully customized, branded experience within your app. Enjoy the flexibility to tailor the Lucra platform to align perfectly with your app's unique look and feel, providing a cohesive user experience for your audience.
-                      </p>
-                  </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6 order-2 order-lg-0">
-                  <div class="feature-content">
-                      <h3>Exciting User Features, <br class="d-none d-lg-block"> Now in Your App!</h3>
-                      <p class="description">
-                        Bring the full suite of exhilarating features from the Lucra app directly into your own platform. From social tabs to leaderboard tracking, head-to-head stats, and even engaging 2v2 gameplay, offer your users an unparalleled and interactive experience, powered by Lucra's feature-packed SDK.
-                      </p>
-                  </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="feature-graphic">
-                      <img src="../images/solutions/feature_4.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6">
-                    <div class="feature-graphic">
-                      <img src="../images/solutions/feature_5.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                  <div class="feature-content">
-                      <h3>Robust Risk Management Toolkit</h3>
-                      <p class="description">
-                        Safeguard your business and users with our best-in-class risk management toolkit. Benefit from fraud prevention measures, anti-money laundering protocols with pattern recognition, real-time transaction monitoring, KYC (Know Your Customer) compliance, secure authentication, precise geolocation services, and dedicated customer support.
-                      </p>
-                  </div>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      <section id="info-cards">
-        <div class="triangle"></div>
-        <div class="container">
+      <section id="rec-games">
+        <div class="sticky-area">
+          <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="slider">
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/payment_services.png" alt="">
-                                <h5>Payment Services Integration</h5>
-                                <p>Our certifications and established partnerships with accredited payment service providers enables us to seamlessly process credit card and bank account transactions</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/fraud_prevention.png" alt="">
-                                <h5>Fraud Prevention and Monitoring</h5>
-                                <p>Our fraud prevention and monitoring system utilizes best-practice rules, automatically blocking and suspending users who trigger any suspicious activities.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/anti_money.png" alt="">
-                                <h5>Anti-Money Laundering (Pattern Recognition)</h5>
-                                <p>
-                                    We have implemented stringent controls and limits to effectively mitigate and monitor risks associated with the movement of funds in and out of the platform, ensuring the utmost security and compliance.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/transaction_monitoring.png" alt="">
-                                <h5>Transaction Monitoring</h5>
-                                <p>We have established a seamless integration with a renowned industry leader in fraud and anti-money laundering (AML) identification. This partnership enables us to receive real-time feedback on every financial transaction within the system, enhancing our ability to detect and prevent fraudulent activities.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/know_your_customer.png" alt="">
-                                <h5>KYC (Know Your Customer)</h5>
-                                <p>Prior to engaging in any contests or other money-related activities, all users undergo thorough Know Your Customer (KYC) processes. These measures are in place to verify the legal age and status of users, ensuring compliance and creating a safe environment for participation.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/secure_authentication.png" alt="">
-                                <h5>Authentication</h5>
-                                <p>Users are securely authenticated across all partner apps and managed as unique individuals, utilizing industry-accepted mechanisms. This ensures a seamless and protected user experience, while maintaining the integrity and security of their accounts and activities.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/geolocation.png" alt="">
-                                <h5>GEOLOCATION</h5>
-                                <p>User location is verified during registration and whenever they engage in a contest or money-related activity to ensure compliance with local laws and regulations. This information is crucial for detecting and preventing fraudulent behavior, ensuring a safe and compliant environment for all users.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/monthly_anual_audits.png" alt="">
-                                <h5>MONTHLY 3RD PARTY REVIEWS & ANNUAL AUDITS</h5>
-                                <p>We have established a strategic partnership with a specialized third-party that focuses on financial compliance and monitoring. This independent entity conducts monthly reviews ensuring adherence to regulatory standards. We also undergo a comprehensive annual audit, and the results are submitted to our banking partners.</p>
-                            </div>
-                        </div>
-
-                        <div class="slick-item">
-                            <div class="card-slide">
-                                <img src="../images/solutions/customer_support.png" alt="">
-                                <h5>CUSTOMER SUPPORT</h5>
-                                <p>We provide customer support for you and have a dedicated team answering questions straight integrated into our app.</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                        <span class="slider__label sr-only">
-                    </div>
+              <div class="col-12">
+                <div class="top-area">
+                  <h2 class="h1 large"><span>Recreational</span> Games SDK</h2>
+                  <p>No more just watching the game to get in on the action. No more talk without backing it up. With our Recreational Games SDK, you get in the game yourself, competing with or against friends in an activity of your choosing on a platform you already use.</p>
                 </div>
+              </div>
+              <div class="col-12">
+                <div class="tabs-area">
+                  <div class="right-area">
+                    <img src="../images/solutions/energy-blue.jpg" class="energy-bg">
+                    <div class="phone-screens">
+                      <div class="main-portrait"> 
+                        <img src="../images/product/phone-portrait.png" alt="">
+                      </div>
+                      <div class="inner-screens">
+                        <div class="screen-tab first-step active">
+                          <img src="../images/solutions/screen-1v1.png" alt="">
+                        </div>
+                        <div class="screen-tab second-step">
+                          <img src="../images/solutions/screen-multiplayer-v2.png" alt="">
+                        </div>
+                        <div class="screen-tab third-step">
+                          <img src="../images/solutions/screen-recreational.png" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="left-area">
+                    <div class="tab-content-inner first-tab active viewed">
+                      <div class="line-tab">
+                        <img src="../images/solutions/right-line-large.svg">
+                        <div class="dot-line right"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>1v1 Real-Money Recreational Contests</h4>
+                    </div>
+                    <div class="tab-content-inner second-tab">
+                      <div class="line-tab">
+                        <img src="../images/solutions/right-line-large.svg">
+                        <div class="dot-line right"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>Multiplayer Real-Money Recreational Contests</h4>
+                    </div>
+                    <div class="tab-content-inner third-tab">
+                      <div class="line-tab">
+                        <img src="../images/solutions/right-line-large.svg">
+                        <div class="dot-line right"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>150+ Recreational Games Supported</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </section>
 
-      <section id="games-options">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-5 order-2 order-lg-0">
-                    <div class="content-area">
-                        <h6 class="pretitle">RECREATIONAL GAMES</h6>
-                        <h2>THE ULTIMATE SOLUTION FOR <strong>RECREATIONAL GAME PROVIDERS</strong></h2>
-                        <p class="description">
-                            Level up the fun with Lucra’s Innovative Solution for Recreational Games. Whether you're a sports league organization, an entertainment venue, or any other recreational game provider, Lucra empowers you to offer a unique and engaging experience to your customers. With our innovative technology, seamless integration, and unmatched features, Lucra transforms friendly competition into a captivating journey that keeps players coming back for more.
-                        </p>
-                    </div>
+      <section id="pro-sports">
+        <div class="sticky-area">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="top-area">
+                  <h2 class="h1 large"><span>Professional</span> Sports SDK</h2>
+                  <p>With our Professional Sports SDK, you can challenge your friends to real-money contests by predicting player performances in over 8 professional sports.</p>
                 </div>
-                <div class="col-12 col-lg-7">
-                    <div class="feature-graphic">
-                      <img src="../images/solutions/recreational-games.jpg" alt="">
+              </div>
+              <div class="col-12">
+                <div class="tabs-area">
+                  <div class="left-area">
+                    <div class="tab-content-inner first-tab active viewed">
+                      <div class="line-tab">
+                        <img src="../images/solutions/left-line-large.svg">
+                        <div class="dot-line"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>1v1 Real-Money Sports Contests</h4>
                     </div>
-                </div>
-            </div>
-            <div class="spacer"></div>
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-7">
-                  <div class="feature-graphic">
-                    <img src="../images/solutions/professional-sports.jpg" alt="">
+                    <div class="tab-content-inner second-tab">
+                      <div class="line-tab">
+                        <img src="../images/solutions/left-line-large.svg">
+                        <div class="dot-line"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>8 Professional Sports Supported</h4>
+                    </div>
+                    <div class="tab-content-inner third-tab">
+                      <div class="line-tab">
+                        <img src="../images/solutions/left-line-large.svg">
+                        <div class="dot-line"></div>
+                        <div class="energy-tab"></div>
+                      </div>
+                      <h4>Ability to Share to a public marketplace, group, or individual</h4>
+                    </div>
+                  </div>
+                  <div class="right-area">
+                    <img src="../images/product/energy-phone-bg.jpg" alt="" class="energy-bg">
+                    <div class="icons-step">
+                      <div class="logos-col">
+                        <div class="logo">
+                          <img src="../images/solutions/nfl-logo.png" class="nfl" alt="">
+                        </div>
+                        <div class="logo is-delay-5">
+                          <img src="../images/solutions/nhl-logo.png" class="flh" alt="">
+                        </div>
+                        <div class="logo is-delay-10">
+                          <img src="../images/solutions/atp-logo.png" class="atp" alt="">
+                        </div>
+                        <div class="logo is-delay-5">
+                          <img src="../images/solutions/mls-logo.png" class="mls" alt="">
+                        </div>
+                      </div>
+                      <div class="logos-col">
+                        <div class="logo">
+                          <img src="../images/solutions/nba-logo.png" class="nba" alt="">
+                        </div>
+                        <div class="logo is-delay-10">
+                          <img src="../images/solutions/pga.png" class="pga" alt="">
+                        </div>
+                        <div class="logo is-delay-5">
+                          <img src="../images/solutions/mlb-logo.png" class="mlb" alt="">
+                        </div>
+                        <div class="logo is-delay-10">
+                          <img src="../images/solutions/nascar-logo.png" class="nascar" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="phone-screens">
+                      <div class="main-portrait">
+                        <img src="../images/product/energy-right.png" alt="" class="energy is-right">
+                        <img src="../images/product/energy-left.png" alt="" class="energy is-left">
+                        <img src="../images/product/phone-portrait.png" alt="">
+                      </div>
+                      <div class="inner-screens">
+                        <div class="screen-tab first-step active">
+                          <img src="../images/solutions/screen-1v1-sports.png" alt="">
+                        </div>
+                        <div class="screen-tab second-step">
+                          <img src="../images/solutions/screen-supported.png" alt="">
+                        </div>
+                        <div class="screen-tab third-step">
+                          <img src="../images/solutions/screen-marketplace.png" alt="">
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-lg-5">
-                    <div class="content-area">
-                        <h6 class="pretitle">PROFESSIONAL SPORTS</h6>
-                        <h2>Elevate Fan Engagement <strong><br class="d-none d-lg-block">WITH Real-Money Sports Contests</strong></h2>
-                        <p class="description">
-                            Lucra brings the excitement of real-money sports contests to your app, enhancing the fan experience and fostering friendly competition. Trust the leading peer-to-peer sports contest provider in the US to deliver a seamless and secure platform for users to compete based on the sports they watch.
-                        </p>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="risk-and-compliance" class="is-solutions">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="top-area">
+                <h2 class="h1 large">
+                  Risk Management & Compliance
+                </h2>
+                <p>We handle all the legal, regulatory, and compliance work, so you don’t have to.</p>
+              </div>
+            </div>
+          </div>
+          <div class="grid-boxs">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="inner-box left-column stack-left">
+                  <img src="../images/product/fraud-prevention.svg" alt="Fraud Prevention and Monitoring">
+                  <h5>Fraud Prevention and Monitoring</h5>
+                </div>
+                <div class="inner-box stack-left is-middle">
+                  <img src="../images/product/kyc.svg" alt="KYC (Know Your Customer)">
+                  <h5>KYC</h5>
+                </div>
+                <div class="inner-box stack-left is-bottom">
+                  <img src="../images/product/customer-support.svg" alt="Customer Support">
+                  <h5>Customer Support</h5>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="inner-box center-column">
+                  <img src="../images/product/anti-money.svg" alt="Anti-Money Laundering">
+                  <h5>Anti-Money Laundering</h5>
+                </div>
+                <div class="inner-box stack-center is-middle">
+                  <img src="../images/product/authentication.svg" alt="Authentication">
+                  <h5>Authentication</h5>
+                </div>
+                <div class="inner-box stack-center is-bottom">
+                  <img src="../images/product/monthly-3rd-party.svg" alt="Monthly 3rd party reviews & annual audits">
+                  <h5>Monthly 3rd party reviews & annual audits</h5>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 lone-col">
+                <div class="inner-box right-column stack-right">
+                  <img src="../images/product/payment-services.svg" alt="Payment Services Integration">
+                  <h5>Payment Services Integration</h5>
+                </div>
+                <div class="inner-box stack-right is-middle">
+                  <img src="../images/product/geolocation.svg" alt="Geolocation">
+                  <h5>Geolocation</h5>
+                </div>
+                <div class="inner-box stack-right is-bottom">
+                  <img src="../images/product/transaction-monitoring.svg" alt="Transaction Monitoring">
+                  <h5>Transaction Monitoring</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboard">
+        <div id="inner-dashboard">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <div class="top-area">
+                  <h2 class="h1 large">Client Performance
+                    Dashboard</h2>
+                  <p>
+                    Uncover actionable insights with our Performance Dashboards.
+                    <br>
+                    Leverage our Dashboard Data to routinely hit and exceed your strategic KPIs.</p>
+                  <hr>
+                  <div class="dashboard-items">
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="Revenue Data">
+                      <span>Revenue Data</span>
+                    </div>
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="Demographic Data">
+                      <span>Demographic Data</span>
+                    </div>
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="Geographic Data">
+                      <span>Geographic Data</span>
+                    </div>
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="Transaction Volume">
+                      <span>Transaction Volume</span>
+                    </div>
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="Retention Data">
+                      <span>Retention Data</span>
+                    </div>
+                    <div class="inner-item">
+                      <img src="../images/solutions/yellow-check.svg" alt="...and more!">
+                      <span>...and more!</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="dashboard-area">
+                  <div id="particles-dashboard"></div>
+                  <img src="../images/solutions/dashboard-image.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="top-area">
+                <h2 class="h1 large">Integration Timeline</h2>
+                <p>
+                  Uncover actionable insights with our Performance Dashboards.
+                  <br>
+                  Leverage our Dashboard Data to routinely hit and exceed your strategic KPIs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="inner-timeline">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-6">
+                <div class="timeline-block week green">
+                  <div class="timeline-top">
+                      <span class="option">Option 1</span>
+                      <h4>API + Custom-Branded UI</h4>
+                      <hr>
+                      <div class="complete-time">
+                        <img src="../images/solutions/timer-yellow.svg">
+                        <span>Complete in <strong>3 weeks</strong></span>
+                      </div>
+                  </div>
+                  <div class="timeline-bottom">
+                    <div class="timeline-row row-one active viewed">
+                      <div class="timeline-counter">
+                        <span class="time">week</span>
+                        <div class="number">1</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                        <h6>Brand integrates Lucra SDK into existing platform</h6>
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-two">
+                      <div class="timeline-counter">
+                        <span class="time">week</span>
+                        <div class="number">2</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                        <h6>Lucra tests integration for compliance and legal purposes</h6>
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-three">
+                      <div class="timeline-counter">
+                        <span class="time">week</span>
+                        <div class="number">3</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                        <h6>Lucra x Brand publicly launch partnership</h6>
+                        <div class="spacer-block">
+                          <img src="../images/solutions/spacer-lines.svg" class="spacer-lines">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-four last-step">
+                      <div class="timeline-counter">
+                        <span class="time" style="opacity: 0;">week</span>
+                        <div class="number">
+                          <img src="../images/solutions/white-check.svg"></div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <h6>Implementation Completed</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="timeline-block month">
+                  <div class="timeline-top">
+                      <span class="option">Option 2</span>
+                      <h4>API Only</h4>
+                      <hr>
+                      <div class="complete-time">
+                        <img src="../images/solutions/timer-blue.svg">
+                        <span>Complete in <strong>2-3 months</strong></span>
+                      </div>
+                  </div>
+                  <div class="timeline-bottom right">
+                    <div class="timeline-row row-one active">
+                      <div class="timeline-counter">
+                        <span class="time">month</span>
+                        <div class="number">1</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <h6>Brand integrates Lucra SDK into existing platform</h6>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-two">
+                      <div class="timeline-counter">
+                        <span class="time">month</span>
+                        <div class="number">2</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <h6>Lucra tests integration for compliance and legal purposes</h6>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-three">
+                      <div class="timeline-counter">
+                        <span class="time">month</span>
+                        <div class="number">3</div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <h6>Lucra x Brand publicly launch partnership</h6>
+                      </div>
+                    </div>
+                    <div class="timeline-row row-four last-step">
+                      <div class="timeline-counter">
+                        <span class="time" style="opacity: 0;">month</span>
+                        <div class="number">
+                          <img src="../images/solutions/white-check.svg"></div>
+                      </div>
+                      <div class="timeline-line"></div>
+                      <div class="timeline-content">
+                        <h6>Implementation Completed</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -421,69 +712,6 @@
                   <a href="contact-us.html" class="button">Contact Us</a>
                 </div>
               </div>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- PRE-FOOTER -->
-      <section id="prefooter">
-        <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-8">
-              <div class="content-prefooter">
-                <p>
-                  <span>
-                    WE’RE
-                  </span>
-                  <span>
-                    BUILDING
-                  </span>
-                  <span>
-                    COMMUNITIES
-                  </span>
-                  <span>
-                    OF
-                  </span>
-                  <span>
-                    FANS
-                  </span>
-                  <span>
-                    &
-                  </span>
-                  <span>
-                    FRIENDS
-                  </span>
-                  <span>
-                    THROUGH
-                  </span>
-                  <span>
-                    shared
-                  </span>
-                  <span>
-                    experiences
-                  </span>
-                  <span>
-                    that
-                  </span>
-                  <span>
-                    connect
-                  </span>
-                  <span>
-                    people
-                  </span>
-                  <span>
-                    in
-                  </span>
-                  <span>
-                    friendly
-                  </span>
-                  <span>
-                    competition
-                  </span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -588,7 +816,10 @@
     <!-- TILT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" integrity="sha512-u1L7Dp3BKUP3gijgSRoMTNxmDl/5o+XOHupwwa7jsI1rMzHrllSLKsGOfqjYl8vrEG+8ghnRPNA/SCltmJCZpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP Flip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <!-- Scroll Magic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -609,6 +840,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- Particles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
       wow = new WOW({
         boxClass: 'animate',
