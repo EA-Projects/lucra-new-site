@@ -897,7 +897,7 @@
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
             justify-content: space-between;
-            gap: 30px;
+            gap: 70px;
         }
         .tabs-area .right-area .icons-step .logo {
             width: 90px;
@@ -921,7 +921,7 @@
     }
     @media (max-width: 500px){ 
         .sticky-area{
-            top: -16%;
+            top: -14%;
         }
         .tabs-area .right-area {
             width: 100%;
@@ -1215,6 +1215,11 @@
     }
     @media (min-width: 1441px){
         .sticky-area{
+            top: 0%;
+        }
+    }
+    @media (max-width: 1440px){
+        .sticky-area{
             top: -13%;
         }
     }
@@ -1260,7 +1265,7 @@
     }
     @media (max-width: 500px) {
         .sticky-area{
-            top: -23%;
+            top: -21%;
         }
         .tabs-area .right-area {
             width: 100%;
@@ -1807,9 +1812,52 @@
     }
 }
 .solutions-page {
-    @media (max-width: 425px) {
+    .about-nav-items a p {
+        color: #FFF;
+        font-family: "Bauziet";
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        opacity: 0.3;
+        margin: 0;
+        display: inline-block;
+        line-height: 27px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+    }
+    .about-nav-items a.active p, .about-nav-items a.active p:hover {
+        opacity: 1;
+    }
+    @media (max-width: 575px) {
         #anchors-nav .about-nav-items a {
+            font-size: 12px;
+            width: 25%;
+            text-wrap: nowrap;
             text-align: center;
+        }
+        .about-nav-items a p {
+            font-size: 12px;
+            line-height: 19px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .about-nav-items a.active p, .about-nav-items a.active p:hover {
+            border-bottom: 2px solid #0EF169;
+        }
+        #anchors-nav .about-nav-items a .flag {
+            display: none;
+        }
+        #anchors-nav .about-nav-items {
+            gap: 5px;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    @media (max-width: 380px) {
+        .about-nav-items a p {
+            font-size: 10px;
         }
     }
 }
