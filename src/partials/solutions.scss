@@ -1773,6 +1773,15 @@
                     }
                 }
             }
+            &.month{
+                .timeline-bottom{
+                    .timeline-row.viewed:last-child{
+                        .timeline-line{
+                            height: 20%;
+                        }
+                    } 
+                } 
+            }
         }
     }
     @media (max-width: 991px) {

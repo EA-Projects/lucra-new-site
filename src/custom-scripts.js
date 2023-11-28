@@ -1475,19 +1475,19 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger steps animation on TIMELINE section
   $("#timeline .timeline-block.week .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 30, true);
+    createTabAnimationTimeLine($(element), index, 0, 0, true);
   });
   
   $("#timeline .timeline-block.week .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 30, 45, false);
+    createTabAnimationTimeLine($(element), index, 30, 30, false);
   });
   
   $("#timeline .timeline-block.week .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 45, 60, false);
+    createTabAnimationTimeLine($(element), index, 45, 45, false);
   });
     
   $("#timeline .timeline-block.week .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 60, 75, false);
+    createTabAnimationTimeLine($(element), index, 55, 55, false);
   });
 
 
@@ -1526,19 +1526,19 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger steps animation on TIMELINE section
   $("#timeline .timeline-block.month .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 20, true);
+    createTabAnimationTimeLine($(element), index, 0, 10, true);
   });
   
   $("#timeline .timeline-block.month .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 20, 35, false);
+    createTabAnimationTimeLine($(element), index, 40, 50, false);
   });
   
   $("#timeline .timeline-block.month .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 35, 50, false);
+    createTabAnimationTimeLine($(element), index, 50, 60, false);
   });
     
   $("#timeline .timeline-block.month .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 50, 55, false);
+    createTabAnimationTimeLine($(element), index, 60, 60, false);
   });
 
   const solutionsDashboard = document.querySelectorAll('#dashboard .dashboard-area');
