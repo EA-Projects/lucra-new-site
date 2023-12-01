@@ -648,6 +648,7 @@ background-position: 0 0;
             }
             .top-area{
                 margin-bottom: 50px;
+                position: relative;
                 @media (max-width: 767px) {
                     margin-bottom: 20px;
                 }
@@ -668,7 +669,7 @@ background-position: 0 0;
             }
             .grid-boxs{
                 max-width: 100%;
-                margin-top: 30px;
+                margin-top: 110px;
                 .inner-box{
                     border: 1px solid rgba(14,241,105,0.8);
                     min-height: 232px;
@@ -737,7 +738,77 @@ background-position: 0 0;
             }
         }
         
-        
+        .circle-whole {
+            position: absolute;
+            width: 100%;
+            margin-top: 10px;
+            
+        }
+        .thunder-wrapper {
+            background-color:#0EF169 ;
+            border-radius: 50%;
+            filter: blur(20px);
+            width: 86px;
+            height: 86px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            opacity: .5;
+        }
+        img.thunder {
+            width: 86px;
+            height: 86px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            &.energy {
+                width: 261px;
+                mix-blend-mode: lighten;
+                z-index: 2;
+                height: 100px;
+                margin-top: -8px;
+            }
+        }
+        .circle-flex {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 40px;
+            border-top: 2px solid #001b60;
+            height: 400px;
+            overflow: hidden;
+
+        }
+        .circles-holder {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .circle {
+            position: absolute;
+            width: 195px;
+            height: 195px;
+            border-radius: 50%;
+            background-color: #0EF169;
+            opacity: 0.13;
+            flex-shrink: 0;
+        }
+        .circle.one {
+            width: 602px;
+            height: 602px;
+            opacity: 0.04;
+            @media (max-width: 500px) {
+                opacity: 0;
+            }
+        }
+        .circle.two {
+            width: 384px;
+            height: 384px;
+            opacity: 0.07;
+        }
         
     }
 

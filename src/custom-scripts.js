@@ -1323,6 +1323,23 @@ gridLogos.fromTo('#brands-grid .grid-logos .logos', {
   opacity: 1,
   stagger: .1
 });
+ let greenCircles = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#risk-and-compliance',
+    start: '0% 10%%',
+    end: '65% 50%',
+    scrub: 0.5,
+    // markers: true,
+  }
+});
+
+greenCircles.fromTo('#risk-and-compliance .circle', {
+
+  opacity: 0,
+},{
+  opacity: .1,
+  stagger: .1
+});
 
   // RISK AND COMPLIANCE section animation 
   let riskCompliance = gsap.timeline({
