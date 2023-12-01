@@ -583,6 +583,7 @@ background-position: 0 0;
 
 .home-new-page {
     #overview {
+        padding-top: 170px;
         position: relative;
         padding-bottom: 280px;
         &::after {
@@ -594,6 +595,23 @@ background-position: 0 0;
             left: 0;
             background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
             background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
+        }
+        @media (min-width:1200px) {
+            .carousel .arrows-navigation .carousel-indicators {
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+                bottom: -30px;
+                right: 253px;
+                margin: 0;
+                z-index: 1;
+                left: unset;
+            }
+        }
+       
+        @media (max-width:991px) {
+            padding-top: 90px;
+            padding-bottom: 170px;
         }
     }
     #risk-and-compliance{
@@ -609,6 +627,9 @@ background-position: 0 0;
             }
             .top-area{
                 margin-bottom: 50px;
+                @media (max-width: 767px) {
+                    margin-bottom: 20px;
+                }
                 h2{
                     color: #FFFFFF;
                     font-size: 70px;
@@ -630,6 +651,10 @@ background-position: 0 0;
                 .inner-box{
                     border: 1px solid rgba(14,241,105,0.8);
                     min-height: 232px;
+                    @media (max-width:991px) {
+                        min-height: 253px;
+                    }
+                    text-align: left;
                     h5{
                         margin: 0;
                     }
@@ -645,11 +670,7 @@ background-position: 0 0;
                         font-weight: 600;
                     }
                 }
-                .col-12.col-md-6.col-lg-4 {
-                    &.shifted {
-                        margin-top: 68px;
-                    }
-                }
+               
                 .inner-flex {
                     display: flex;
                     gap: 15px;
@@ -668,10 +689,7 @@ background-position: 0 0;
             @media (max-width: 768px) {
                 .inner-box {
                     min-height: 0!important;
-                    text-align: center;
-                    h5 {
-                        text-align: center!important;
-                    }
+                    text-align: left;
                 }
                 .top-area h2 {
                     font-size: 34px;
@@ -704,7 +722,8 @@ background-position: 0 0;
 
     #brands-grid{
     padding: 130px 0 170px;
-    background: linear-gradient(180deg,#011035 0%,#001b60 100%);
+    background: linear-gradient(180deg,#011035 0%,#101a50 100%);
+    overflow: hidden;
     .top-area{
         margin-bottom: 50px;
         h2{
@@ -731,6 +750,32 @@ background-position: 0 0;
         justify-content: center;
         max-width: 1070px;
         margin: 0 auto;
+        img.brands-bg {
+            position: absolute;
+            pointer-events: none;
+            top: 50%;
+            bottom: 0;
+            left: 20px;
+            width: 921px;
+            mix-blend-mode: lighten;
+            transform: translateY(-50%) rotate(-90deg);
+            @media (max-width: 991px) {
+                    
+                    margin-left: -90px;
+                    top: 50%;
+                    bottom: 0;
+                    left: unset;
+                    width: 200%;
+                    height: 100%;
+                    mix-blend-mode: lighten;
+                    transform: translateY(-50%) rotate(-90deg);
+                
+            }
+            @media (max-width: 767px) {
+                    margin-left: -60px;
+                
+            }
+        }
         &::after,
         &::before{
             content: "";
@@ -796,6 +841,30 @@ background-position: 0 0;
                     img{
                         &.aeropay{
                             max-width: 186px;
+                        }
+                        &.morris{
+                            max-width: 186px;
+                        }
+                        &.geocomply{
+                            max-width: 166px;
+                        }
+                        &.gli{
+                            max-width: 111px;
+                        }
+                        &.ifrah{
+                            max-width: 154px;
+                        }
+                        &.megaplanit{
+                            max-width: 187px;
+                        }
+                        &.premier{
+                            max-width: 128px;
+                        }
+                        &.sardine{
+                            max-width: 160px;
+                        }
+                        &.sportsdata{
+                            max-width: 165px;
                         }
                         &.ankura{
                             max-width: 170px;
@@ -909,6 +978,30 @@ background-position: 0 0;
                             &.ankura{
                                 max-width: 130px;
                             }
+                            &.morris{
+                                max-width: 130px;
+                            }
+                            &.geocomply{
+                                max-width: 130px;
+                            }
+                            &.gli{
+                                max-width: 83px;
+                            }
+                            &.ifrah{
+                                max-width: 120px;
+                            }
+                            &.megaplanit{
+                                max-width: 140px;
+                            }
+                            &.premier{
+                                max-width: 97px;
+                            }
+                            &.sardine{
+                                max-width: 100px;
+                            }
+                            &.sportsdata{
+                                max-width: 105px;
+                            }
                             &.aws{
                                 max-width: 80px;
                             }
@@ -936,6 +1029,7 @@ background-position: 0 0;
         }
     }
     @media (max-width: 767px){
+        padding: 90px 0 100px;
         .top-area h2 {
             font-size: 34px;
             line-height: 40px;
@@ -943,9 +1037,11 @@ background-position: 0 0;
         .phone-bottom-area{
             .apps-phone{
                 .grid-logos{
+                    gap: 5px;
                     .logos{
                         min-height: 85px;
                         border-radius: 6px;
+                        border: 1px solid rgba(170,156,255,1);
                         img{
                             &.aeropay{
                                 max-width: 100px;

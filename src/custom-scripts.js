@@ -1304,7 +1304,26 @@ $(".tab-content-inner").on("click", function() {
 ////////////////////////////
 
 if ($('.home-new-page').length) {
- 
+ //Logos Grid
+ let gridLogos = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#brands-grid',
+    start: '10% 50%',
+    end: '65% 50%',
+    scrub: 0.5,
+    // markers: true,
+  }
+});
+
+gridLogos.fromTo('#brands-grid .grid-logos .logos', {
+  y: 100,
+  opacity: 0,
+},{
+  y: 0,
+  opacity: 1,
+  stagger: .1
+});
+
   // RISK AND COMPLIANCE section animation 
   let riskCompliance = gsap.timeline({
     scrollTrigger: {
