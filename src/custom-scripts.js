@@ -1300,6 +1300,38 @@ $(".tab-content-inner").on("click", function() {
   });
 }
 ////////////////////////////
+////// HOME-NEW PAGE //////
+////////////////////////////
+
+if ($('.home-new-page').length) {
+ 
+  // RISK AND COMPLIANCE section animation 
+  let riskCompliance = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#risk-and-compliance',
+      start: '10% 50%',
+      end: '20% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+  // Prevent animation on mobile
+  let mediaQueryRiskCompliance = gsap.matchMedia();
+  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
+      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
+        y: 0,
+        x: 0,
+        rotate: 0,
+        duration: .3,
+        stagger: {
+          amount: 4,
+          from: "random"
+        }
+      });
+  });
+
+}
+////////////////////////////
 ////// SOLUTIONS PAGE //////
 ////////////////////////////
 
