@@ -608,7 +608,28 @@ background-position: 0 0;
                 left: unset;
             }
         }
-       
+       .buttons-holder {
+        margin-top: 60px;
+        a {
+            padding: 12px 30px;
+        }
+        
+        .explore {
+            margin-left: 25px!important;
+        }
+        @media (max-width: 991px) {
+            margin-top:30px;
+        }
+        @media (max-width: 425px) {
+            .explore {
+                margin-left: 0!important;
+                margin-top: 10px!important;
+            }
+            a {
+                width: 200px;
+            }
+        }
+       }
         @media (max-width:991px) {
             padding-top: 90px;
             padding-bottom: 170px;
