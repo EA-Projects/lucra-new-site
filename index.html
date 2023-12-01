@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>
+     <!-- Google Tag Manager -->
+     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
@@ -46,16 +46,32 @@
     <meta property="twitter:description" content="" />
     <meta property="twitter:image" content="" />
 
+    <!-- Slick Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css"
       integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="dist/style.css" />
+    <link rel="stylesheet" href="../dist/style.css" />
   </head>
 
-  <body class="loading">
+  <body class="loading no-hidden with-sticky-anchors">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -66,15 +82,15 @@
       ></iframe
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div id="sb-site">
+    <div id="sb-site" class="home-new-page">
       <!-- HEADER -->
-      <header id="header-nav">
+      <header id="header-nav" class="transparent anchors-nav">
         <div class="container-nav">
           <nav class="navbar navbar-expand-lg navbar-light">
             <div class="mobile-top">
               <a class="navbar-brand" href="/">
                 <img
-                  src="images/lucra-blue.svg"
+                  src="../images/lucra-white.svg"
                   class="logo d-inline-block align-top"
                   alt="Lucra Sports"
                 />
@@ -98,31 +114,20 @@
               <div class="d-flex align-items-center">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/solutions.html">SOLUTIONS</a>
+                    <a class="nav-link" href="/pages/solutions.html" data-id="solutions">Solutions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="pages/case-studies.html">CASE STUDIES</a>
+                    <a class="nav-link" href="/pages/case-studies.html" data-id="case-studies">Case Studies</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="pages/about.html"
-                      >ABOUT US</a
-                    >
+                    <a class="nav-link" href="/pages/about.html" data-id="about">About us</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/contact-us.html"
-                      >CONTACT US</a
-                    >
-                  </li>
-
                   </li>
                   <li class="d-block d-lg-none nav-item">
                     <a
-                      class="button outline m-0"
-                      href="https://m.lucrasports.com/jLpm/tjdvvvor"
-                      target="_blank"
-                      >Download the App</a
+                      class="button outline white m-0"
+                      href="../pages/contact-us.html"
+                      >Contact Sales</a
                     >
                   </li>
                 </ul>
@@ -132,10 +137,9 @@
               <ul class="p-0 m-0 list-unstyled">
                 <li>
                   <a
-                    class="nav-link button outline m-0"
-                    href="https://m.lucrasports.com/jLpm/tjdvvvor"
-                    target="_blank"
-                    >Download the App</a
+                    class="nav-link button outline white m-0"
+                    href="../pages/contact-us.html"
+                    >Contact Sales</a
                   >
                 </li>
               </ul>
@@ -145,191 +149,275 @@
       </header>
 
       <!-- HERO -->
-      <section id="hero-homepage">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-4 order-2 order-lg-0">
-              <div class="hero-content">
-                <h6 class="pretitle">LUCRA FOR BUSINESS</h6>
-                <h1>Unleash the Power of
-                  <strong>Friendly Competition.</strong>
-                </h1>
-                <p class="description">Lucra is the ultimate solution for powering engagement through friendly competition. Our innovative technology brings communities together, enabling businesses to create thrilling and interactive experiences for their audiences. With Lucra, you can ignite the competitive spirit and drive meaningful connections among your users.</p>
-                <a href="pages/solutions.html" class="button">Explore Our Solutions</a>
-              </div>
-            </div>
-            <div class="col-12 col-lg-8">
-              <div class="graphics-content">
-                <img class="green-light" src="images/homepage/powered-by/green-energy.png" alt="">
 
-                <div class="phones">
-                  <img src="images/homepage/powered-by/phones.png" alt="" class="phone-image">
-                  <img src="images/homepage/powered-by/electricity-bg.png" alt="" class="electricity">
-
-                  <img src="images/homepage/powered-by/powered-by-lucra.svg" alt="" class="powered-by">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="case-study-block" class="animated-background">
+      <section id="overview">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div class="case-study-content">
-                <img src="images/homepage/powered-by/dupr-x-lucra.png" alt="DUPR x Lucra">
-                <h3>Lucra Signs Landmark Deal with Major League Pickleball ratings system, DUPR, to Launch B2B Product.</h3>
-                <a href="pages/case-studies.html" class="button">Read the Case Study</a>
+              <img src="../images/solutions/energy-slider-bg.png" alt="" class="energy-slide">
+              <div
+              id="carouselAdvisors"
+              class="carousel slide carousel-fade"
+              data-ride="carousel"
+              data-pause="false"
+              data-interval="8000"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Real-Money</span> Gamification Software</h2>
+                      <p>
+                        We provide a native, real-money gamification layer to brands searching for a differentiated way for their users to engage, interact, and compete.
+                      </p>
+                      <ul>
+                        <li>Native Platform Integration</li>
+                        <li>Real-Money Contests</li>
+                        <li>Cash Alternative Contests</li>
+                      </ul>
+                      <div class="buttons-holder">
+                        <a href="contact-us.html" class="button">Contact Sales</a>
+                        <a class="button outline white m-0 explore" href="../pages/solutions.html">Explore Solutions</a>
+                      </div>
+                      
+                    </div>
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/slide1.png"
+                        class="phones"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Connectivity</span> for Your Community</h2>
+                      <p>
+                        Social interaction is at the heart of what we do because competing with friends is much more fun than playing against the house or a sportsbook.
+                      </p>
+                      <ul>
+                        <li>Leaderboards, Head-to-Head Statistics, and Groups</li>
+                        <li>Text & Social Sharing</li>
+                        <li>Push & In-App Notifications</li>
+                      </ul>
+                      <div class="buttons-holder">
+                        <a href="contact-us.html" class="button">Contact Sales</a>
+                        <a class="button outline white m-0 explore" href="../pages/solutions.html">Explore Solutions</a>
+                      </div>
+                    </div>
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/solutions/phones-slide-3.png"
+                        class="phones"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="box-content-slide">
+                    <div class="content-left">
+                      <h2 class="h1"><span>Risk Management </span> and Payment Facilitation</h2>
+                      <p>
+                        Save your business time, resources, and money without ever having to sacrifice security or a seamless customer experience.
+                      </p>
+                      <ul>
+                        <li>Security Measures</li>
+                        <li>User Profile</li>
+                        <li>In-app Wallet</li>
+                      </ul>
+                      <div class="buttons-holder">
+                        <a href="contact-us.html" class="button">Contact Sales</a>
+                        <a class="button outline white m-0 explore" href="../pages/solutions.html">Explore Solutions</a>
+                      </div>
+                    </div>
+                    <div class="image-slider">
+                      <img src="../images/solutions/energy-slide.png" alt="" class="energy-slide">
+                      <img
+                        src="../images/slide2.png"
+                        class="phones"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                
               </div>
+              <div class="arrows-navigation">
+                <ol class="carousel-indicators">
+                  <li
+                    data-target="#carouselAdvisors"
+                    data-slide-to="0"
+                    class="active"
+                  >
+                  </li>
+                  <li data-target="#carouselAdvisors" data-slide-to="1">
+                  </li>
+                  <li data-target="#carouselAdvisors" data-slide-to="2">
+                  </li>
+                </ol>
+              </div>
+            </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="product-features">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-              <div class="feature-graphic feature-one">
-                <div class="tilt" data-tilt>
-                  <img src="images/homepage/animation-partials/world-feature-one.png" class="world-image" alt="">
-                </div>
-                <img src="images/homepage/animation-partials/energy.png" class="energy-base" alt="">
-                <img src="images/homepage/animation-partials/base-mobile-feature-one.jpg" class="base-mobile" alt="">
-                <!-- Mobile Feature image -->
-                <img src="images/homepage/powered-by/community_building.jpg" class="mobile-img" alt="">
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="feature-content feature-one">
-                  <h6 class="pretitle">COMMUNITY BUILDING</h6>
-                  <h2>Increase Engagement and Retention through <strong>Shared Experiences</strong></h2>
-                  <p class="description">
-                    Lucra's cutting-edge technology empowers your users to dive into thrilling and friendly contests, creating unforgettable shared experiences that ignite their competitive spirit. By seamlessly integrating Lucra's powerful SDK, you'll unlock a whole new level of connection, competition, and camaraderie, with the added excitement of winning real money, catapulting your community to new heights.
-                  </p>
-                  <div class="trigger">trigger animation</div>
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-6 order-2 order-lg-0">
-              <div class="feature-content feature-two">
-                  <h6 class="pretitle">MONETIZATION</h6>
-                  <h2>Monetize Like <br class="d-none d-lg-block"><strong>Never Before</strong></h2>
-                  <p class="description">
-                    Own the customer contest experience and unlock a world of monetization opportunities. From percentage of money played to premium subscriptions, sponsorships, and advertising, our easy platform integration empowers you to maximize earnings, while delivering an unparalleled user experience.
-                  </p>
-                  <div class="trigger">trigger animation</div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="feature-graphic feature-two">
-                <img src="images/homepage/animation-partials/energy.png" class="energy-base" alt="">
-                <img src="images/homepage/animation-partials/base-mobile-feature-two.jpg" class="base-mobile" alt="">
-                <!-- Mobile Feature image -->
-                <img src="images/homepage/powered-by/monetization.jpg" class="mobile-img" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-6">
-              <div class="feature-graphic feature-three">
-                <div class="tilt" data-tilt>
-                  <img src="images/homepage/animation-partials/vs-feature-three.png" class="vs-image" alt="">
-                </div>
-                <img src="images/homepage/animation-partials/energy.png" class="energy-base" alt="">
-                <img src="images/homepage/animation-partials/base-mobile-feature-three.jpg" class="base-mobile" alt="">
-                <!-- Mobile Feature image -->
-                <img src="images/homepage/powered-by/user_experience.jpg" class="mobile-img" alt="">
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="feature-content feature-three">
-                  <h6 class="pretitle">USER EXPERIENCE</h6>
-                  <h2>PROVIDE A SEAMLESS <br class="d-none d-lg-block"><strong>USER EXPERIENCE</strong></h2>
-                  <p class="description">
-                    Our user-friendly technology enables seamless friend-to-friend competition, eliminating the need for multiple apps and disconnected experiences. With Lucra, users can seamlessly challenge their friends, win money, and enjoy a comprehensive gaming experience, all in one place. Eliminate friction and enhance user satisfaction by integrating Lucra into your platform.
-                  </p>
-                  <div class="trigger">trigger animation</div>
-              </div>
-            </div>
-          </div>
-          <div class="row align-items-center">
-            <div class="col-12 col-lg-6 order-2 order-lg-0">
-              <div class="feature-content feature-four">
-                  <h6 class="pretitle">RISK MANAGEMENT</h6>
-                  <h2>UNLOCK <strong>RISK-FREE GAMING</strong></h2>
-                  <p class="description">
-                    Experience risk-free real money gaming with Lucra. Leverage our established vendor relationships and let us handle the complexities of fraud prevention, anti-money laundering, transaction monitoring, authentication, and geolocation. Trust in our expertise and focus on delivering an exceptional user experience, while we safeguard your business and customers.
-                  </p>
-                  <div class="trigger">trigger animation</div>
-              </div>
-            </div>
-            <div class="col-12 col-lg-6">
-              <div class="feature-graphic feature-four">
-                <div class="card-feature">
-                  <img src="images/homepage/animation-partials/card-feature-four.png" alt="">
-                </div>
-                <img src="images/homepage/animation-partials/energy.png" class="energy-base" alt="">
-                <img src="images/homepage/animation-partials/base-mobile-feature-four.jpg" class="base-mobile" alt="">
-                <!-- Mobile Feature image -->
-                <img src="images/homepage/powered-by/risk_management.jpg" class="mobile-img" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
-      <section id="lucra-for-you">
+      <section id="risk-and-compliance" class="is-home-new">
         <div class="container">
           <div class="row">
-            <div class="col-12 col-lg-4">
-              <div class="content-area">
-                <h6 class="pretitle">LUCRA FOR YOU</h6>
-                <h2>SEE THE POWER <strong>OF LUCRA IN ACTION.</strong></h2>
-                  <p class="description">
-                    Discover Lucra, the app that revolutionizes friendly competition by enabling you to challenge your friends for real money on sports and games. No bookie, no house—just pure 1v1 action against your friend, a group, or anyone in our public marketplace. Join the community of over 50,000 users who are already cashing in on their skills and download the Lucra App on iOS and Android today. Get ready to level up your competition and start winning with Lucra.
-                  </p>
-                  <div class="store-buttons">
-                    <a href="https://apps.apple.com/US/app/id1563098618" target="_blank" rel="noopener noreferrer">
-                      <img src="images/homepage/powered-by/appstore.svg" alt="AppStore">
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.lucrasports&hl=en_US" target="_blank" rel="noopener noreferrer">
-                      <img src="images/homepage/powered-by/googleplay.svg" alt="Google Play">
-                    </a>
+            <div class="col-12">
+              <div class="top-area">
+                <h2 class="h1 large">
+                  Gamify your consumer experience
+                </h2>
+                <p>Reduce friction for your operations and for your customers with a seamless, unified experience built to elevate your brand’s relationship with your audience.</p>
+                <div class="circle-whole">
+                  <div class="thunder-wrapper">
                   </div>
-                  <div class="watch-area">
-                    <div class="video-play">
-                      <video
-                      autoplay
-                      muted
-                      playsinline
-                      preload
-                      loop
-                    >
-                      <source src="images/homepage/lucra_preview.mov" />
-                    </video>
-                    </div>
-                    <a href="https://www.youtube.com/watch?v=qnAwzjrU_z4" target="_blank" rel="noopener noreferrer" class="button">Watch Video</a>
+                  <img class="thunder" src="../images/thunder.svg" alt="">
+                  
+                  <img class="thunder energy" src="../images/energy-whole.png" alt="">
+                  <div class="circle-flex">
+                      <div class="circles-holder">
+                          <div class="circle one"></div>
+                          <div class="circle two"></div>
+                          <div class="circle three"></div>
+                      </div>
                   </div>
               </div>
+              </div>
+              
             </div>
-            <div class="col-12 col-lg-8">
-              <div class="graphics-content">
-                <img src="images/homepage/powered-by/lucra_for_you_energy.png" alt="" class="green-energy">
-                <div class="phones">
-                  <img src="images/homepage/powered-by/lucra_for_you_phones.png" alt="" class="phones-image">
-                  <img src="images/homepage/powered-by/lucra_for_you_electricity-bg.png" alt="" class="electricity">
+          </div>
+          <div class="grid-boxs">
+            <div class="row">
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="inner-box left-column stack-left">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Speedy Market Access</h5>
+                  </div>
+                  <p><strong>Integrate Lucra in weeks. </strong>Service 18+ audience in 43 states that cover 90%+ of the US population</p>
+                </div>
+                <div class="inner-box stack-left is-middle">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Data and Marketing Optimization</h5>
+                  </div>
+                  <p>Lucra provides <strong>dashboard insights</strong> to help you better understand your customers</p>
                 </div>
               </div>
-
+              <div class="col-12 col-md-6 col-lg-4 shifted">
+                <div class="inner-box center-column">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Stronger Engagement</h5>
+                  </div>
+                  <p>Keep customers <strong>engaged with your brand around the clock</strong> using an interactive social gaming solution</p>
+                </div>
+                <div class="inner-box stack-center is-middle">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Diversified Revenue</h5>
+                  </div>
+                  <p>Lucra offers <strong>multiple ways</strong> to generate incremental revenue</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-4 lone-col">
+                <div class="inner-box right-column stack-right">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Audience Growth</h5>
+                  </div>
+                  <p>Lucra creates social interactivity producing <strong>organic customer acquisition</strong></p>
+                </div>
+                <div class="inner-box stack-right is-middle">
+                  <div class="inner-flex">
+                    <img src="../images/greencheck.svg" alt="Green checkmark icon">
+                    <h5>Risk Management and Compliance</h5>
+                  </div>
+                  <p><strong>We handle it,</strong> so you don’t have to</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
+      <section id="brands-grid">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="top-area">
+                <h2 class="h1 large">
+                  Why brands can trust LUCRA
+                </h2>
+                <p>Our legal, risk, and compliance partners</p>
+              </div>
+              <div class="phone-bottom-area">
+                <!-- Apps Steps -->
+                <div class="apps-phone fifth-step active">
+                  <div class="grid-logos">
+                    <a href="https://www.aeropay.com/" target="_blank" class="logos is-link">
+                      <img src="../images/product/aeropay.png" class="aeropay" alt="">
+                    </a>
+                    <a href="https://ankura.com/" target="_blank" class="logos is-link ">
+                      <img src="../images/product/ankura.png" class="ankura" alt="">
+                    </a>
+                    <a href="https://aws.amazon.com/" target="_blank" class="logos is-link">
+                      <img src="../images/product/aws.png" class="aws" alt="">
+                    </a>
+                    <a href="https://duanemorris.com/" target="_blank" class="logos is-link">
+                      <img src="../images/morris.png" class="morris" alt="">
+                    </a>
+                    <a href="https://geocomply.com/" target="_blank" class="logos is-link">
+                      <img src="../images/geocomply.png" class="geocomply" alt="">
+                    </a>
+                    <a href="https://gaminglabs.com/" target="_blank" class="logos is-link">
+                      <img src="../images/gli.png" class="gli" alt="">
+                    </a>
+                    <a href="https://ifrahlaw.com/" target="_blank" class="logos is-link">
+                      <img src="../images/ifrah.png" class="ifrah" alt="">
+                    </a>
+                    <a href="https://megaplanit.com/" target="_blank" class="logos is-link">
+                      <img src="../images/megaplanit.png" class="megaplanit" alt="">
+                    </a>
+                    <a href="https://www.okta.com/" target="_blank" class="logos is-link ">
+                      <img src="../images/product/okta.png" class="okta" alt="">
+                    </a>
+                    <a href="https://www.paypal.com/" target="_blank" class="logos is-link">
+                      <img src="../images/product/paypal.png" class="paypal" alt="">
+                    </a>
+                    <a href="https://www.premierpaymentsolutions.net/" target="_blank" class="logos is-link">
+                      <img src="../images/premier.png" class="premier" alt="">
+                    </a>
+                    <a href="https://www.sardine.ai/" target="_blank" class="logos is-link">
+                      <img src="../images/sardine.png" class="sardine" alt="">
+                    </a>
+                    <a href="https://www.sportsdata.io/" target="_blank" class="logos is-link">
+                      <img src="../images/sportsdata.png" class="sportsdata" alt="">
+                    </a>
+                    <a href="https://www.sigmacomputing.com/" target="_blank" class="logos is-link">
+                      <img src="../images/product/sigma.png" class="sigma" alt="">
+                    </a>
+                    
+                    <a href="https://venmo.com/" target="_blank" class="logos is-link">
+                      <img src="../images/product/venmo.png" class="venmo" alt="">
+                    </a>
+                  </div>
+                </div>
+                <img class="brands-bg" src="../images/solutions/energy-blue.jpg" alt="Branding Background">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="get-in-touch" class="animated-background">
         <div class="container">
           <div class="row">
@@ -337,70 +425,9 @@
                 <div class="content-area">
                   <h2>GET IN TOUCH <strong>WITH OUR TEAM!</strong></h2>
                   <p class="description">Learn more about how our technology can transform your business by extending your reach and increasing your engagement in record time!</p>
-                  <a href="pages/contact-us.html" class="button">Contact Us</a>
+                  <a href="contact-us.html" class="button">Contact Sales</a>
                 </div>
               </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="prefooter">
-        <div class="container">
-          <div class="row justify-content-center align-items-center">
-            <div class="col-12 col-md-8">
-              <div class="content-prefooter">
-                <p>
-                  <span>
-                    WE’RE
-                  </span>
-                  <span>
-                    BUILDING
-                  </span>
-                  <span>
-                    COMMUNITIES
-                  </span>
-                  <span>
-                    OF
-                  </span>
-                  <span>
-                    FANS
-                  </span>
-                  <span>
-                    &
-                  </span>
-                  <span>
-                    FRIENDS
-                  </span>
-                  <span>
-                    THROUGH
-                  </span>
-                  <span>
-                    shared
-                  </span>
-                  <span>
-                    experiences
-                  </span>
-                  <span>
-                    that
-                  </span>
-                  <span>
-                    connect
-                  </span>
-                  <span>
-                    people
-                  </span>
-                  <span>
-                    in
-                  </span>
-                  <span>
-                    friendly
-                  </span>
-                  <span>
-                    competition
-                  </span>
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -412,7 +439,10 @@
             <div class="col-12 col-lg-8">
               <div class="top-contact">
                 <div class="contact-us">
-                  <img src="images/homepage/lucra-l.svg" alt="Lucra Sports" />
+                  <img
+                    src="../images/homepage/lucra-l.svg"
+                    alt="Lucra Sports"
+                  />
                   <div class="contact">
                     <p>Contact Us</p>
                     <a href="mailto:team@lucrasports.com"
@@ -423,18 +453,17 @@
                 <div class="download">
                   <a
                   class="button outline m-0"
-                  href="https://m.lucrasports.com/jLpm/tjdvvvor"
-                  target="_blank"
-                  >Download the App</a
+                  href="/pages/contact-us.html"
+                  >Contact Sales</a
                 >
                 </div>
               </div>
               <div class="navigation-links">
-                <a href="pages/careers.html">careers</a>
-                <a href="pages/faqs.html">faqs</a>
-                <a href="pages/responsible-gaming.html">responsible gaming</a>
-                <a href="pages/terms-of-service.html">terms of service</a>
-                <a href="pages/privacy-policy.html">privacy policy</a>
+                <a href="careers.html">careers</a>
+                <a href="faqs.html">faqs</a>
+                <a href="responsible-gaming.html">responsible gaming</a>
+                <a href="terms-of-service.html">terms of service</a>
+                <a href="privacy-policy.html">privacy policy</a>
               </div>
               <div class="copyright">
                 <p>Copyright © <script>document.write(new Date().getFullYear());</script> Lucra Sports</p>
@@ -449,7 +478,7 @@
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/homepage/instagram.svg"
+                      src="../images/homepage/instagram.svg"
                       class="instagram"
                       alt="Instagram"
                   /></a>
@@ -458,7 +487,7 @@
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/homepage/facebook.svg"
+                      src="../images/homepage/facebook.svg"
                       class="facebook"
                       alt="Facebook"
                   /></a>
@@ -467,7 +496,7 @@
                     target="_blank"
                     rel="noopener"
                     ><img
-                      src="images/homepage/twitter.svg"
+                      src="../images/homepage/twitter.svg"
                       class="twitter"
                       alt="Twitter"
                   /></a>
@@ -477,7 +506,7 @@
                     rel="noopener"
                   >
                     <img
-                      src="images/homepage/youtube.svg"
+                      src="../images/homepage/youtube.svg"
                       class="youtube"
                       alt="YouTube"
                     />
@@ -495,14 +524,17 @@
       </footer>
     </div>
 
-    <script src="dist/jquery.min.js" type="text/javascript"></script>
+    <script src="../dist/jquery.min.js" type="text/javascript"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/wow/0.1.12/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
     <!-- TILT -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" integrity="sha512-u1L7Dp3BKUP3gijgSRoMTNxmDl/5o+XOHupwwa7jsI1rMzHrllSLKsGOfqjYl8vrEG+8ghnRPNA/SCltmJCZpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP Flip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
     <!-- Scroll Magic -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -523,6 +555,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <!-- Particles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script>
       wow = new WOW({
         boxClass: 'animate',
@@ -532,6 +566,6 @@
       });
       wow.init();
     </script>
-    <script src="dist/scripts.js" type="text/javascript"></script>
+    <script src="../dist/scripts.js" type="text/javascript"></script>
   </body>
 </html>
