@@ -1300,6 +1300,63 @@ $(".tab-content-inner").on("click", function() {
   });
 }
 ////////////////////////////
+////// CATEGORIES PAGE //////
+////////////////////////////
+if ($('.categories-page').length) {
+ 
+  // CLIENT CATEGORIES section animation 
+  let clientCategories = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#client-categories',
+      start: '0% 50%',
+      end: '35% 50%',
+      scrub: 0.5,
+      // markers: true,
+    }
+  });
+
+  // Prevent animation on mobile
+  let mediaQueryClientCategories = gsap.matchMedia();
+  mediaQueryClientCategories.add("(min-width: 991px)", () => {
+    clientCategories.fromTo("#client-categories .category-card",{
+      scale: .90,
+    },{
+      scale: 1,
+      duration: 1,
+      stagger: {
+        amount: 1,
+        from: "random"
+      }
+    })
+  })
+
+  let clientCategoriesScroll = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#client-categories',
+      start: '40% 50%',
+      end: '90% 50%',
+      scrub: 1,
+      // markers: true,
+    }
+  });
+  mediaQueryClientCategories.add("(min-width: 991px)", () => {
+  clientCategoriesScroll.to("#client-categories .category-card.rotate",{
+    y: 70,
+    stagger: {
+      amount: 1,
+      from: "random"
+    }
+  }, "<")
+  .to("#client-categories .category-card.rotate-right",{
+    y: 70,
+    stagger: {
+      amount: 1,
+      from: "random"
+    }
+  }, "<")
+})
+}
+////////////////////////////
 ////// HOME-NEW PAGE //////
 ////////////////////////////
 
