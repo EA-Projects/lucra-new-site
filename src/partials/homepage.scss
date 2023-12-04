@@ -596,6 +596,9 @@ background-position: 0 0;
             background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
             background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
         }
+        .carousel-inner {
+            z-index: 3;
+        }
         @media (min-width:1200px) {
             .carousel .arrows-navigation .carousel-indicators {
                 -webkit-box-pack: start;
