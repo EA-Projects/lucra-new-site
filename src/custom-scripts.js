@@ -1012,7 +1012,6 @@ if ($('.product-page').length) {
       start: '25% 0%',
       end: '100% 40%',
       scrub: 0.5,
-      // markers: true,
     }
   })
 
@@ -1042,7 +1041,6 @@ if ($('.product-page').length) {
       start: '10% 50%',
       end: '65% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
 
@@ -1062,7 +1060,6 @@ if ($('.product-page').length) {
       start: '10% 50%',
       end: '65% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
 
@@ -1087,7 +1084,6 @@ if ($('.product-page').length) {
           start: `${startPercentage}% 20%`,
           end: `${endPercentage}% 20%`,
           scrub: 0.5,
-          // markers: true,
           onEnter: function () {
             element.addClass("active viewed");
             $(`.screen-tab.${stepClass}`).addClass("active");
@@ -1228,7 +1224,6 @@ $(".tab-content-inner").on("click", function() {
       start: '0% 50%',
       end: '35% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
 
@@ -1253,7 +1248,6 @@ $(".tab-content-inner").on("click", function() {
       start: '40% 50%',
       end: '90% 50%',
       scrub: 1,
-      // markers: true,
     }
   });
   mediaQueryClientCategories.add("(min-width: 991px)", () => {
@@ -1281,7 +1275,6 @@ $(".tab-content-inner").on("click", function() {
       start: '5% 50%',
       end: '15% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
   // Prevent animation on mobile
@@ -1311,7 +1304,6 @@ if ($('.categories-page').length) {
       start: '0% 50%',
       end: '35% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
 
@@ -1336,7 +1328,6 @@ if ($('.categories-page').length) {
       start: '40% 50%',
       end: '90% 50%',
       scrub: 1,
-      // markers: true,
     }
   });
   mediaQueryClientCategories.add("(min-width: 991px)", () => {
@@ -1361,42 +1352,39 @@ if ($('.categories-page').length) {
 ////////////////////////////
 
 if ($('.home-new-page').length) {
- //Logos Grid
- let gridLogos = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#brands-grid',
-    start: '10% 50%',
-    end: '65% 50%',
-    scrub: 0.5,
-    // markers: true,
-  }
-});
+  //Logos Grid
+  let gridLogos = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#brands-grid',
+      start: '10% 50%',
+      end: '65% 50%',
+      scrub: 0.5,
+    }
+  });
 
-gridLogos.fromTo('#brands-grid .grid-logos .logos', {
-  y: 100,
-  opacity: 0,
-},{
-  y: 0,
-  opacity: 1,
-  stagger: .1
-});
- let greenCircles = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#risk-and-compliance',
-    start: '0% 10%%',
-    end: '65% 50%',
-    scrub: 0.5,
-    // markers: true,
-  }
-});
+  gridLogos.fromTo('#brands-grid .grid-logos .logos', {
+    y: 100,
+    opacity: 0,
+  },{
+    y: 0,
+    opacity: 1,
+    stagger: .1
+  });
+  let greenCircles = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#risk-and-compliance',
+      start: '0% 10%%',
+      end: '65% 50%',
+      scrub: 0.5,
+    }
+  });
 
-greenCircles.fromTo('#risk-and-compliance .circle', {
-
-  opacity: 0,
-},{
-  opacity: .1,
-  stagger: .1
-});
+  greenCircles.fromTo('#risk-and-compliance .circle', {
+    opacity: 0,
+  },{
+    opacity: .1,
+    stagger: .1
+  });
 
   // RISK AND COMPLIANCE section animation 
   let riskCompliance = gsap.timeline({
@@ -1405,7 +1393,6 @@ greenCircles.fromTo('#risk-and-compliance .circle', {
       start: '10% 50%',
       end: '20% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
   // Prevent animation on mobile
@@ -1441,7 +1428,6 @@ if ($('.solutions-page').length) {
           start: `${startPercentage}% 20%`,
           end: `${endPercentage}% 20%`,
           scrub: 0.5,
-          // markers: true,
           onEnter: function () {
             element.addClass("active viewed");
             $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
@@ -1547,7 +1533,6 @@ if ($('.solutions-page').length) {
       start: '10% 50%',
       end: '20% 50%',
       scrub: 0.5,
-      // markers: true,
     }
   });
   // Prevent animation on mobile
@@ -1577,7 +1562,6 @@ if ($('.solutions-page').length) {
           start: `${startPercentage}% 20%`,
           end: `${endPercentage}% 20%`,
           scrub: 0.5,
-          // markers: true,
           onEnter: function () {
             element.addClass("active viewed");
           },
@@ -1628,7 +1612,6 @@ if ($('.solutions-page').length) {
           start: `${startPercentage}% 20%`,
           end: `${endPercentage}% 20%`,
           scrub: 0.5,
-          // markers: true,
           onEnter: function () {
             element.addClass("active viewed");
           },

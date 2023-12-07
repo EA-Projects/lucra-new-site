@@ -597,11 +597,11 @@
                     position: relative;
                     margin-bottom: 10px;
                     .dot-line{
-                        width: 5px;
-                        height: 5px;
+                        width: 4px;
+                        height: 4px;
                         position: absolute;
-                        bottom: 4px;
-                        left: 4px;
+                        bottom: 5px;
+                        left: 5px;
                         border-radius: 50%;
                         background-color: #ffffff00;
                     }
@@ -1343,10 +1343,7 @@
             margin-bottom: 50px;
             h2{
                 color: #FFFFFF;
-                font-size: 54px;
-                line-height: 58px;
                 text-align: center;
-                max-width: 550px;
                 margin: 0 auto 20px;
             }
             p{
@@ -1822,52 +1819,36 @@
     }
 }
 .solutions-page {
-    .about-nav-items a p {
-        color: #FFF;
-        font-family: "Bauziet";
-        font-size: 18px;
-        font-weight: 700;
-        text-transform: uppercase;
-        opacity: 0.3;
-        margin: 0;
-        display: inline-block;
-        line-height: 27px;
-        border-bottom: 2px solid transparent;
-        transition: all 0.2s ease;
-    }
-    .about-nav-items a.active p, .about-nav-items a.active p:hover {
-        opacity: 1;
-    }
     @media (max-width: 575px) {
         #anchors-nav .about-nav-items a {
             font-size: 12px;
-            width: 25%;
+            width: auto;
             text-align: center;
             text-wrap: nowrap;
             white-space: nowrap;
         }
-        .about-nav-items a p {
+        .about-nav-items a {
             font-size: 12px;
             line-height: 19px;
             border-bottom: 2px solid transparent;
             transition: all 0.2s ease;
         }
-        .about-nav-items a.active p, .about-nav-items a.active p:hover {
+        .about-nav-items a.active, .about-nav-items a.active:hover {
             border-bottom: 2px solid #0EF169;
         }
         #anchors-nav .about-nav-items a .flag {
             display: none;
         }
         #anchors-nav .about-nav-items {
-            gap: 5px;
+            gap: 5px 15px;
             -webkit-box-pack: justify;
             -ms-flex-pack: justify;
-            justify-content: space-between;
+            justify-content: center;
             flex-wrap: wrap;
         }
     }
     @media (max-width: 380px) {
-        .about-nav-items a p {
+        .about-nav-items a {
             font-size: 10px;
         }
     }
