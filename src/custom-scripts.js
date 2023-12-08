@@ -1415,7 +1415,91 @@ if ($('.home-new-page').length) {
 ////// SOLUTIONS PAGE //////
 ////////////////////////////
 
+
 if ($('.solutions-page').length) {
+  //Why Lucra Animation
+document.addEventListener("DOMContentLoaded", function() {
+  const graphWrapper = document.querySelector('.graph-wrapper');
+  const bottomImageWrappers = document.querySelectorAll('.bottom-wrapper .image-wrapper');
+
+  function createAnimations() {
+    gsap.from(graphWrapper, {
+      opacity: 0,
+      duration: 1,
+      delay: 0,
+      ease: "power2.out"
+    });
+    gsap.from(bottomImageWrappers, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      delay: 0.2,
+      stagger: 0.2,
+      ease: "power2.out"
+    });
+  }
+
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        createAnimations();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3 
+  });
+
+  observer.observe(graphWrapper);
+});
+  //Circles Animation 
+document.addEventListener("DOMContentLoaded", function() {
+  const circles = document.querySelectorAll('.circle-flex .circle');
+
+  function animateCircles() {
+    circles.forEach((circle, index) => {
+      gsap.from(circle, {
+        opacity: 0,
+        duration: 1,
+        delay: 0.2 * index,
+        ease: "power2.out"
+      });
+    });
+  }
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCircles();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.3 
+  });
+
+  const circleFlex = document.querySelector('.circle-flex');
+  observer.observe(circleFlex);
+});
+
   // PROFESSIONAL SPORTS SDK section change tabs on scroll
   function createTabAnimationProSports(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack, haveIconStep) {
     return gsap.fromTo(
