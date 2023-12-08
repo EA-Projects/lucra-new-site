@@ -1016,7 +1016,7 @@ overflow-x: clip;
 }
 
 #rec-games{
-padding: 210px 0 200px;
+padding: 100px 0 200px;
 background-color: #011136;
 position: relative;
 height: 300vh;
@@ -1825,7 +1825,7 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
     background-position: center 91px;
     background-size: cover;
     background-repeat: no-repeat;
-    
+    overflow: clip;
     h1 {
         color: white;
         font-size: 80px;
@@ -1834,6 +1834,10 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
         text-transform: uppercase;
         text-align: left; 
         margin-bottom: 25px;
+        @media (max-width: 767px) {
+            font-size: 50px;
+            line-height: 50px;
+        }
     }
     .separator {
         height: 1px;
@@ -1846,12 +1850,24 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
         font-family: Roboto;
         font-size: 20px;
         font-style: normal;
-        font-weight: 400;
-        line-height: 31px;
+        font-weight: 200;
+        line-height: 27px;
         margin-top: 0;
         margin-bottom: 0;
+        @media (max-width: 991px) {
+        font-size: 18px;
+        line-height: 30px;
+        }
+        @media (max-width: 767px) {
+        font-size: 16px;
+        line-height: 27px;
         &.second {
-            font-size: 17px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        }
+        &.second {
+            font-size: 16px;
             line-height: 24px;
         }
         strong {
