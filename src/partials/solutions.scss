@@ -778,6 +778,9 @@ overflow-x: clip;
                 img{
                     width: 50vh;
                     max-width: 255px;
+                    @media (min-width: 1440px) {
+                        max-width: 305px;
+                    }
                 }
                 .energy{
                     width: 100%;
@@ -808,6 +811,10 @@ overflow-x: clip;
                 transform: translate(-50%, -50%);
                 overflow: hidden;
                 border-radius: 40px;
+                @media (min-width: 1440px) {
+                    max-width: 259px;
+                    max-height: 574px;
+                }
                 .screen-tab{
                     position: absolute;
                     top: 0;
@@ -838,7 +845,7 @@ overflow-x: clip;
 }
 @media (min-width: 1441px){
     .sticky-area{
-        top: -9%;
+        top: 12%;
     }
 }
 
@@ -1171,6 +1178,9 @@ overflow-x: clip;
                 img{
                     width: 50vh;
                     max-width: 255px;
+                    @media (min-width: 1440px) {
+                        max-width: 305px;
+                    }
                 }
             }
             .inner-screens{
@@ -1185,6 +1195,10 @@ overflow-x: clip;
                 transform: translate(-50%, -50%);
                 overflow: hidden;
                 border-radius: 40px;
+                @media (min-width: 1440px) {
+                    max-width: 259px;
+                    max-height: 574px;
+                }
                 .screen-tab{
                     position: absolute;
                     top: 0;
@@ -1215,7 +1229,7 @@ overflow-x: clip;
 }
 @media (min-width: 1441px){
     .sticky-area{
-        top: 0%;
+        top: 12%;
     }
 }
 @media (max-width: 1440px){
