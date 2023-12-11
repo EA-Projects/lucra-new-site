@@ -1421,17 +1421,26 @@ if ($('.solutions-page').length) {
  let whyLucra = gsap.timeline ({
 
  })
- whyLucra.from('.graph-wrapper', {
+
+ whyLucra.from('.lucra-holder', {
   opacity: 0,
-  duration: 0.5,
-  delay: 0.5,
+  y: -10,
+  duration: 0.8,
+  delay: 0.2,
   ease: "power2.out"
 });
-whyLucra.from('.bottom-wrapper .image-wrapper', {
+ whyLucra.from('.graph-wrapper', {
+  opacity: 0,
+  duration: 1,
+  delay: 0,
+  ease: "power2.out"
+});
+gsap.from('.bottom-wrapper .image-wrapper', {
   opacity: 0,
   y: 50,
   duration: 1,
   stagger: 0.2,
+  delay: 1.2,
   ease: "power2.out"
 });
 gsap.from('.bottom-wrapper-mobile .image-wrapper', {
