@@ -1448,7 +1448,7 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
   y: 50,
   duration: 1,
   stagger: 0.2,
-  delay: 0.4,
+  delay: 1.2,
   ease: "power2.out"
 });
 
