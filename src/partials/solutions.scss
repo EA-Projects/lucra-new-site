@@ -1833,7 +1833,7 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
 }
 }
 .solutions-page {
-#why-lucra {
+#overview {
     padding: 235px 0px 100px;
     background-image: url(../../images/solutions/solutions-bg-hero.jpg);
     background-position: center 91px;
@@ -1842,9 +1842,9 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
     overflow: clip;
     h1 {
         color: white;
-        font-size: 80px;
+        font-size: 71px;
         font-weight: 700;
-        line-height: 80px;
+        line-height: 75px;
         text-transform: uppercase;
         text-align: left; 
         margin-bottom: 25px;
@@ -1998,7 +1998,13 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
             margin-bottom: 15px;
             filter: drop-shadow(0px 10px 22px rgba(0, 0, 0, 0.35)) drop-shadow(0px 40px 40px rgba(0, 0, 0, 0.21));
             @media (max-width: 500px) {
-                padding: 13px;
+                padding: 17px;
+            }
+            @media (max-width: 400px) {
+                gap: 9px;
+            }
+            @media (min-width: 500px) and (max-width: 767px) {
+                margin-bottom: 30px;
             }
             img.thunder {
                 top: -29px!important;
@@ -2028,6 +2034,11 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
                 position: relative;
                 z-index: 1;
                 margin-bottom: 0;
+                @media (max-width: 767px){
+                    margin: auto;
+                    font-size: 13px;
+                    line-height: 15px;
+                }
                 
             }
         }
@@ -2095,7 +2106,7 @@ background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), 
             margin-bottom: 5px;
         }
         @media (max-width: 500px) {
-            padding: 13px;
+            padding: 17px;
         }
     }
     @media (max-width: 991px) { 
