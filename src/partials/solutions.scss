@@ -544,8 +544,6 @@ overflow: hidden;
     
     
 }
-
-
 }
 #pro-sports{
 padding: 150px 0;
@@ -845,11 +843,11 @@ overflow-x: clip;
         }
     }
 }
-@media (min-width: 1441px){
-    .sticky-area{
-        top: 12%;
-    }
-}
+// @media (min-width: 1441px){
+//     .sticky-area{
+//         top: 12%;
+//     }
+// }
 
 @media (max-width: 991px){
     padding: 70px 0;
@@ -928,15 +926,15 @@ overflow-x: clip;
     }
 
 }
-@media (min-width: 992px) and (max-height: 699px) {
-    .sticky-area{
-        top: -85px;
-    }
-  }
+// @media (min-width: 992px) and (max-height: 699px) {
+//     .sticky-area{
+//         top: -85px;
+//     }
+//   }
 @media (max-width: 500px){ 
-    .sticky-area{
-        top: -12%;
-    }
+    // .sticky-area{
+    //     top: -12%;
+    // }
     .tabs-area .right-area {
         width: 100%;
         position: relative;
@@ -1236,21 +1234,21 @@ overflow-x: clip;
         }
     }
 }
-@media (min-width: 992px) and (max-height: 699px) {
-    .sticky-area{
-        top: -108px!important;
-    }
-  }
-@media (min-width: 1441px){
-    .sticky-area{
-        top: 12%;
-    }
-}
-@media (max-width: 1440px){
-    .sticky-area{
-        top: -13%;
-    }
-}
+// @media (min-width: 992px) and (max-height: 699px) {
+//     .sticky-area{
+//         top: -108px!important;
+//     }
+//   }
+// @media (min-width: 1441px){
+//     .sticky-area{
+//         top: 12%;
+//     }
+// }
+// @media (max-width: 1440px){
+//     .sticky-area{
+//         top: -13%;
+//     }
+// }
 
 @media (max-width: 991px){
     padding:80px 0 150px;
