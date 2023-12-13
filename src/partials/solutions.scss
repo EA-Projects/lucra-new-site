@@ -1238,7 +1238,7 @@ overflow-x: clip;
 }
 @media (min-width: 992px) and (max-height: 699px) {
     .sticky-area{
-        top: -108px;
+        top: -108px!important;
     }
   }
 @media (min-width: 1441px){
