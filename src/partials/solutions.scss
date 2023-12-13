@@ -553,7 +553,7 @@ height: 300vh;
 overflow-x: clip;
 .sticky-area{
     position: sticky;
-    top: -9%;
+    top: 18%;
 }
 .top-area{
     margin-bottom: 50px;
@@ -561,6 +561,8 @@ overflow-x: clip;
         color: #FFFFFF;
         text-transform: uppercase;
         text-align: center;
+        position: relative;
+        z-index: 1;
         span{
             color: $yellow;
             text-shadow: 0 0 30px rgba($yellow, .6);
@@ -571,6 +573,8 @@ overflow-x: clip;
         color: #A1C8FF;
         max-width: 700px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 }
 .tabs-area{
@@ -1033,7 +1037,7 @@ height: 300vh;
 overflow-x: clip;
 .sticky-area{
     position: sticky;
-    top: -13%;
+    top: 15%;
 }
 .top-area{
     margin-bottom: 50px;
@@ -1041,6 +1045,8 @@ overflow-x: clip;
         color: #FFFFFF;
         text-transform: uppercase;
         text-align: center;
+        position: relative;
+        z-index: 1;
         span{
             color: #A68EFF;
             text-shadow: 0 0 30px rgba(#A68EFF, .6);
@@ -1051,6 +1057,8 @@ overflow-x: clip;
         color: #A1C8FF;
         max-width: 800px;
         margin: 0 auto;
+        position: relative;
+        z-index: 1;
     }
 }
 .tabs-area{
@@ -1287,7 +1295,7 @@ overflow-x: clip;
 }
 @media (max-width: 500px) {
     .sticky-area{
-        top: -15%;
+        top: 18%;
     }
     .tabs-area .right-area {
         width: 100%;
