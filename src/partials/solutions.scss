@@ -776,11 +776,9 @@ overflow-x: clip;
                 position: relative;
                 z-index: 2;
                 img{
-                    width: 50vh;
-                    max-width: 255px;
-                    @media (min-width: 1440px) {
-                        max-width: 305px;
-                    }
+                    width: 40vh;
+                    // max-width: 235px;
+                    max-width: 305px;
                 }
                 .energy{
                     width: 100%;
@@ -804,17 +802,17 @@ overflow-x: clip;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                height: 100vw;
-                max-height: 475px;
-                width: 100vw;
-                max-width: 216px;
+                height: 100%;
+                max-height: 92%;
+                width: 34vh;
+                max-width: 255px;
                 transform: translate(-50%, -50%);
                 overflow: hidden;
-                border-radius: 40px;
-                @media (min-width: 1440px) {
-                    max-width: 259px;
-                    max-height: 574px;
-                }
+                border-radius: 25px;
+                // @media (min-width: 1440px) {
+                //     max-width: 259px;
+                //     max-height: 574px;
+                // }
                 .screen-tab{
                     position: absolute;
                     top: 0;
@@ -1183,11 +1181,9 @@ overflow-x: clip;
                 position: relative;
                 z-index: 2;
                 img{
-                    width: 50vh;
-                    max-width: 255px;
-                    @media (min-width: 1440px) {
-                        max-width: 305px;
-                    }
+                    width: 40vh;
+                    // max-width: 235px;
+                    max-width: 305px;
                 }
             }
             .inner-screens{
@@ -1195,17 +1191,17 @@ overflow-x: clip;
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                height: 100vw;
-                max-height: 475px;
-                width: 100vw;
-                max-width: 216px;
+                height: 100%;
+                max-height: 92%;
+                width: 34vh;
+                max-width: 255px;
                 transform: translate(-50%, -50%);
                 overflow: hidden;
-                border-radius: 40px;
-                @media (min-width: 1440px) {
-                    max-width: 259px;
-                    max-height: 574px;
-                }
+                border-radius: 25px;
+                // @media (min-width: 1440px) {
+                //     max-width: 259px;
+                //     max-height: 574px;
+                // }
                 .screen-tab{
                     position: absolute;
                     top: 0;
