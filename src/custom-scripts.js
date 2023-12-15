@@ -80,31 +80,31 @@ window.addEventListener('load', function () {
         return elementBottom > viewportTop && elementTop < viewportBottom;
       }
 
-      if ($('video').length) {
-        var loadVideo;
+      // if ($('video').length) {
+      //   var loadVideo;
 
-        $('video').each(function () {
-          $(this).attr('webkit-playsinline', '');
-          $(this).attr('playsinline', '');
-          $(this).attr('muted', 'muted');
+      //   $('video').each(function () {
+      //     $(this).attr('webkit-playsinline', '');
+      //     $(this).attr('playsinline', '');
+      //     $(this).attr('muted', 'muted');
 
-          $(this).attr('id', 'loadvideo');
-          loadVideo = document.getElementById('loadvideo');
-          loadVideo.load();
-        });
+      //     $(this).attr('id', 'loadvideo');
+      //     loadVideo = document.getElementById('loadvideo');
+      //     loadVideo.load();
+      //   });
 
-        $(window).scroll(function () {
-          // video to play when is on viewport
+      //   $(window).scroll(function () {
+      //     // video to play when is on viewport
 
-          $('video').each(function () {
-            if (isScrolledIntoView(this) == true) {
-              $(this)[0].play();
-            } else {
-              $(this)[0].pause();
-            }
-          });
-        }); // video to play when is on viewport
-      } // end .field--name-field-video
+      //     $('video').each(function () {
+      //       if (isScrolledIntoView(this) == true) {
+      //         $(this)[0].play();
+      //       } else {
+      //         $(this)[0].pause();
+      //       }
+      //     });
+      //   }); // video to play when is on viewport
+      // } // end .field--name-field-video
 
       $(".team-card").on("click", function() {
         $(this).toggleClass("active");
@@ -1417,40 +1417,38 @@ if ($('.home-new-page').length) {
 
 
 if ($('.solutions-page').length) {
- //Why Lucra Animation
- let whyLucra = gsap.timeline ({
+  //Why Lucra Animation
+  let whyLucra = gsap.timeline ({})
 
- })
-
- whyLucra.from('.lucra-holder', {
-  opacity: 0,
-  y: -10,
-  duration: 0.8,
-  delay: 0.2,
-  ease: "power2.out"
-});
- whyLucra.from('.graph-wrapper', {
-  opacity: 0,
-  duration: 1,
-  delay: 0,
-  ease: "power2.out"
-});
-gsap.from('.bottom-wrapper .image-wrapper', {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.2,
-  delay: 1.2,
-  ease: "power2.out"
-});
-gsap.from('.bottom-wrapper-mobile .image-wrapper', {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.2,
-  delay: 1.2,
-  ease: "power2.out"
-});
+  whyLucra.from('.lucra-holder', {
+    opacity: 0,
+    y: -10,
+    duration: 0.8,
+    delay: 0.2,
+    ease: "power2.out"
+  });
+  whyLucra.from('.graph-wrapper', {
+    opacity: 0,
+    duration: 1,
+    delay: 0,
+    ease: "power2.out"
+  });
+  gsap.from('.bottom-wrapper .image-wrapper', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    delay: 1.2,
+    ease: "power2.out"
+  });
+  gsap.from('.bottom-wrapper-mobile .image-wrapper', {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+    delay: 1.2,
+    ease: "power2.out"
+  });
 
 //Circles Animation 
   const circles = document.querySelectorAll('.circle-flex .circle');
@@ -1465,6 +1463,7 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
   
   // PROFESSIONAL SPORTS SDK section change tabs on scroll
   function createTabAnimationProSports(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack, haveIconStep) {
+    var video =  $(`#pro-sports .screen-tab.${stepClass} video`);
     return gsap.fromTo(
       element,
       { opacity: 1 },
@@ -1481,6 +1480,10 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
             if(haveIconStep != false){
               $("#pro-sports .icons-step").addClass("active");
             }
+            // Play the video if the container has the class "active".
+            if (element.hasClass("active")) {
+              video.trigger('play');
+            }
           },
           onEnterBack: function () {
             element.addClass("active");
@@ -1488,12 +1491,20 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
             if(haveIconStep != false){
               $("#pro-sports .icons-step").addClass("active");
             }
+            // Play the video if the container has the class "active".
+            if (element.hasClass("active")) {
+              video.trigger('play');
+            }
           },
           onLeave: function () {
             element.removeClass("active");
             $("#pro-sports .icons-step").removeClass("active");
             if(onLeave != true){
               $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
+              // Play the video if the container has the class "active".
+              if (!element.hasClass("active")) {
+                video.trigger('pause');
+              }
             } 
           },
           onLeaveBack: function () {
@@ -1501,6 +1512,10 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
             $("#pro-sports .icons-step").removeClass("active");
             if(onLeaveBack != true){
               $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
+              // Play the video if the container has the class "active".
+              if (!element.hasClass("active")) {
+                video.trigger('pause');
+              }
             }
           },
         },
@@ -1524,6 +1539,8 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
   
   // RECREATIONAL GAMES SDK section change tabs on scroll
   function createTabAnimationRecGames(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    var video =  $(`#rec-games .screen-tab.${stepClass} video`);
+
     return gsap.fromTo(
       element,
       { opacity: 1 },
@@ -1538,21 +1555,37 @@ gsap.from('.bottom-wrapper-mobile .image-wrapper', {
           onEnter: function () {
             element.addClass("active viewed");
             $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
+            // Play the video if the container has the class "active".
+            if (element.hasClass("active")) {
+              video.trigger('play');
+            }
           },
           onEnterBack: function () {
             element.addClass("active");
             $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
+            // Play the video if the container has the class "active".
+            if (element.hasClass("active")) {
+              video.trigger('play');
+            }
           },
           onLeave: function () {
             element.removeClass("active");
             if(onLeave != true){
               $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
+              // Play the video if the container has the class "active".
+              if (!element.hasClass("active")) {
+                  video.trigger('pause');
+              }
             } 
           },
           onLeaveBack: function () {
             element.removeClass("active");
             if(onLeaveBack != true){
               $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
+              // Play the video if the container has the class "active".
+              if (!element.hasClass("active")) {
+                  video.trigger('pause');
+              }
             }
           },
         },
@@ -1776,11 +1809,19 @@ if (proSportsContainer) {
       const proSportsScreenTabs = proSportsContainer.querySelectorAll('.screen-tab');
       proSportsScreenTabs.forEach((screenTab) => {
         screenTab.classList.remove('active');
+        const video = screenTab.querySelector('video');
+        if (video) {
+          video.pause();
+        }
       });
 
       const selectedProSportsScreenTab = proSportsContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
       if (selectedProSportsScreenTab) {
         selectedProSportsScreenTab.classList.add('active');
+        const video = selectedProSportsScreenTab.querySelector('video');
+        if (video) {
+          video.play();
+        }
       }
 
       if (index === 1) {
@@ -1807,11 +1848,19 @@ if (recGamesContainer) {
 
       recGamesScreenTabs.forEach((screenTab) => {
         screenTab.classList.remove('active');
+        const video = screenTab.querySelector('video');
+        if (video) {
+          video.pause();
+        }
       });
 
       const selectedRecGamesScreenTab = recGamesContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
       if (selectedRecGamesScreenTab) {
         selectedRecGamesScreenTab.classList.add('active');
+        const video = selectedRecGamesScreenTab.querySelector('video');
+        if (video) {
+          video.play();
+        }
       }
     });
   });
