@@ -1477,9 +1477,6 @@ if ($('.solutions-page').length) {
           onEnter: function () {
             element.addClass("active viewed");
             $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
-            if(haveIconStep != false){
-              $("#pro-sports .icons-step").addClass("active");
-            }
             // Play the video if the container has the class "active".
             if (element.hasClass("active")) {
               video.trigger('play');
@@ -1488,9 +1485,6 @@ if ($('.solutions-page').length) {
           onEnterBack: function () {
             element.addClass("active");
             $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
-            if(haveIconStep != false){
-              $("#pro-sports .icons-step").addClass("active");
-            }
             // Play the video if the container has the class "active".
             if (element.hasClass("active")) {
               video.trigger('play');
@@ -1498,7 +1492,6 @@ if ($('.solutions-page').length) {
           },
           onLeave: function () {
             element.removeClass("active");
-            $("#pro-sports .icons-step").removeClass("active");
             if(onLeave != true){
               $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
               // Play the video if the container has the class "active".
@@ -1509,7 +1502,6 @@ if ($('.solutions-page').length) {
           },
           onLeaveBack: function () {
             element.removeClass("active");
-            $("#pro-sports .icons-step").removeClass("active");
             if(onLeaveBack != true){
               $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
               // Play the video if the container has the class "active".
@@ -1796,7 +1788,6 @@ const recGamesContainer = document.getElementById('rec-games');
 
 if (proSportsContainer) {
   const proSportsTabContentInner = proSportsContainer.querySelectorAll('.tab-content-inner');
-  const iconsStep = document.querySelector('.icons-step');
 
   proSportsTabContentInner.forEach((tab, index) => {
     tab.addEventListener('click', () => {
@@ -1822,12 +1813,6 @@ if (proSportsContainer) {
         if (video) {
           video.play();
         }
-      }
-
-      if (index === 1) {
-        iconsStep.classList.add('active');
-      } else {
-        iconsStep.classList.remove('active');
       }
     });
   });
