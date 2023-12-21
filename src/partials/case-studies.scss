@@ -460,9 +460,12 @@ body {
         }
        }
        @media (max-width: 575px) {
-        padding: 180px 0px 90px;
+        padding: 150px 0px 90px;
         
-        
+        .content-hero h1.h2 {
+            font-size: 30px;
+            line-height: 37px;
+        }
        }
     }
 
@@ -565,9 +568,11 @@ body {
 
         @media (max-width: 525px) { 
             padding: 90px 0;
+            background-attachment: initial;
             .items-wrapper .about-item {
                 padding: 25px 20px;
                 gap: 10px;
+                
                 img {
                     max-height: 43px;
                 }
@@ -775,6 +780,7 @@ body {
      }
      @media (max-width: 575px) {
         padding: 90px 0;
+        background-attachment: initial;
         .content-area {
             p.description {
                 font-size: 18px;
