@@ -1496,7 +1496,7 @@ $('.phones-slider').slick({
   initialSlide: 2,
   swipe: false,
   autoplay: true,
-  autoplaySpeed: 3000,
+  autoplaySpeed: 2000,
   pauseOnHover: false,
   responsive: [
     {
