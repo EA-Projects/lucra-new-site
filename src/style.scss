@@ -140,6 +140,17 @@ a {
       border-color: $yellow;
       color: #2D2B81;
     }
+    &.yellow {
+      background-color: #DDDF36;
+      border-color: #DDDF36;
+      color: black;
+      transition: 0.35s all ease-in-out;
+      &:hover {
+          color: #DDDF36;
+          background: transparent;
+          border-color: #DDDF36;
+      }
+  }
   }
   @media (max-width: 575px) {
     min-width: initial;
