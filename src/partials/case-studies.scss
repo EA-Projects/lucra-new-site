@@ -961,7 +961,7 @@ body {
         }
     }
     #hero-case-studies {
-        padding: 160px 0px 150px;
+        padding: 165px 0px 130px;
         background: #071332;
         display: flex;
         align-items: center;
@@ -1062,6 +1062,37 @@ body {
         }
        
        
+       @media (min-width: 991px) and (max-width: 1400px) {
+        .row {
+            &.align-items-center {
+                -ms-flex-align: start!important;
+                -webkit-box-align: start!important;
+                align-items: start!important;
+            }
+            .hero-image-wrapper { 
+                text-align: center;
+                position: relative;
+                right: -65px;
+                .paddle-wrapper {
+                    position: relative;
+                    top: -50px;
+                    img.paddle {
+                        max-width: 500px;
+                        margin: auto;
+    
+                    } 
+                    img.ball {
+                        max-width: 172px;
+                        left: 70px;
+                    }
+                    img.logo-image {
+                        max-width: 265px;
+                    }
+                }
+            }
+            
+        }
+       }
        @media (max-width: 1200px) {
         .content-hero h1.h2 {
             font-size: 34px;
