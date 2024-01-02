@@ -1499,7 +1499,7 @@ heroAnimations.fromTo('.ball', {
      
       case "top-right":
         $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
         }, 100);
         break;
   
@@ -1682,7 +1682,7 @@ heroAnimations.fromTo('.logo-image', {
      
       case "top-right":
         $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
         }, 100);
         break;
   
