@@ -357,7 +357,7 @@ body {
                 display: none;
             }
             h6.pretitle {
-                color: #DDDF36;
+                color: #E0E154;
             }
             h1.h2 {
                 font-size: 42px;
@@ -382,15 +382,15 @@ body {
                     color: #2D2B81;
                 }
                 &.yellow {
-                    background-color: #DDDF36;
-                    border-color: #DDDF36;
+                    background-color: #E0E154;
+                    border-color: #E0E154;
                     color: black;
                     margin-right: 20px;
                     transition: 0.35s all ease-in-out;
                     &:hover {
-                        color: #DDDF36;
+                        color: #E0E154;
                         background: transparent;
-                        border-color: #DDDF36;
+                        border-color: #E0E154;
                     }
                 }
             }
@@ -541,7 +541,7 @@ body {
                         }
                     }
                     p {
-                        color: #DDDF36;
+                        color: #E0E154;
                         font-family: 'Bauziet';
                         font-size: 14px;
                         line-height: 17px;
@@ -595,12 +595,12 @@ body {
                             width: 616px;
                             margin-bottom: 10px;
                             .energy-tab.right {
-                                background: -webkit-gradient(linear,right top,left top,from(#DDDF36),to(transparent));
-                                background: linear-gradient(-90deg,#DDDF36 0%,transparent 100%);
+                                background: -webkit-gradient(linear,right top,left top,from(#E0E154),to(transparent));
+                                background: linear-gradient(-90deg,#E0E154 0%,transparent 100%);
                             }
                             .energy-tab {
-                                background: -webkit-gradient(linear,left top,right top,from(transparent),to(#DDDF36));
-                                background: linear-gradient(-90deg,transparent 0%,#DDDF36 100%);
+                                background: -webkit-gradient(linear,left top,right top,from(transparent),to(#E0E154));
+                                background: linear-gradient(-90deg,transparent 0%,#E0E154 100%);
                                 height: 2px;
                                 margin-top: -1px;
                             }
@@ -621,7 +621,7 @@ body {
                         }
                         &.active.viewed {
                             .dot-line {
-                                background-color: #DDDF36!important;
+                                background-color: #E0E154!important;
                             }
                         }
                         &.top-left {
@@ -761,7 +761,7 @@ body {
                 line-height: 44px;
                 max-width: 470px;
                 &.author {
-                color: #DDDF36;
+                color: #E0E154;
                 margin-top: 15px;
                 }
             }
@@ -801,7 +801,7 @@ body {
         background-color: black;
         .content-area {
             h2 {
-                color: #DDDF36;
+                color: #E0E154;
             }
             p {
                 margin-top: 30px;
@@ -833,7 +833,7 @@ body {
                 flex-shrink: 0;
                 border-radius: 602.4px;
                 opacity: 0.04;
-                background: #DDDF36;
+                background: #E0E154;
                 position: absolute;
                 &.blur {
                     opacity: 0.4;
