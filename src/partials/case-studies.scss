@@ -590,7 +590,7 @@ body {
                 .tabs-content {
                     max-width: 1340px;
                     .tab-content-inner {
-                        cursor: default;
+                        cursor: pointer;
                         .line-tab {
                             width: 616px;
                             margin-bottom: 10px;
@@ -623,6 +623,9 @@ body {
                             .dot-line {
                                 background-color: #DDDF36!important;
                             }
+                        }
+                        &.top-left {
+                            cursor: default;
                         }
                     }
                     .right-content {
@@ -1264,7 +1267,7 @@ body {
                 .tabs-content {
                     max-width: 1340px;
                     .tab-content-inner {
-                        cursor: default;
+                        cursor: pointer;
                         .line-tab {
                             width: 616px;
                             margin-bottom: 10px;
@@ -1297,6 +1300,9 @@ body {
                             .dot-line {
                                 background-color: #A1C8FF!important;
                             }
+                        }
+                        &.top-left {
+                            cursor: default;
                         }
                     }
                     .right-content {

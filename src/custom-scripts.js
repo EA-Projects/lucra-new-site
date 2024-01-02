@@ -1494,6 +1494,28 @@ heroAnimations.fromTo('.ball', {
   $(".tab-content-inner").on("click", function () {
     var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
     console.log(tabClass);
+    // Realizar la animación correspondiente al bloque clicado
+    switch (tabClass) {
+     
+      case "top-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
+        }, 100);
+        break;
+  
+      case "mid-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
+        }, 100);
+        break;
+  
+      case "bottom-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
+        }, 100);
+        break;
+    }
+
   });
   
 
@@ -1650,7 +1672,33 @@ heroAnimations.fromTo('.logo-image', {
     console.log(tabClass);
   });
   
-
+  $(".tab-content-inner").on("click", function() {
+    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
+  
+    console.log(tabClass);
+   
+    // Realizar la animación correspondiente al bloque clicado
+    switch (tabClass) {
+     
+      case "top-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
+        }, 100);
+        break;
+  
+      case "mid-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
+        }, 100);
+        break;
+  
+      case "bottom-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
+        }, 100);
+        break;
+    }
+  });
 // Initialize Phones Slide
 $('.phones-slider').slick({
   centerMode: true,
