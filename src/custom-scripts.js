@@ -1439,6 +1439,7 @@ heroAnimations.fromTo('.ball', {
 });
 
   function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    var video =  $(`#lucra-technology .screen-tab video`);
     return gsap.fromTo(
       element,
       { opacity: 1 }, 
@@ -1452,19 +1453,23 @@ heroAnimations.fromTo('.ball', {
           onEnter: function () {
             element.addClass("active viewed");
             $(`.screen-tab.${stepClass}`).addClass("active");
+            video.trigger('play'); // Play video on entering the section
           },
           onEnterBack: function () {
             element.addClass("active");
+            video.trigger('play'); // Play video on entering the section
             $(`.screen-tab.${stepClass}`).addClass("active");
           },
           onLeave: function () {
             element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
             if (onLeave != true) {
               $(`.screen-tab.${stepClass}`).removeClass("active");
             }
           },
           onLeaveBack: function () {
             element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
             if (onLeaveBack != true) {
               $(`.screen-tab.${stepClass}`).removeClass("active");
             }
@@ -1473,7 +1478,6 @@ heroAnimations.fromTo('.ball', {
       }
     );
   }
-  
  
   $(".tab-content-inner.top-left").each(function (index, element) {
     createTabAnimation($(element), index, 0, 20, "first-step", false, true);
@@ -1615,6 +1619,7 @@ heroAnimations.fromTo('.logo-image', {
 });
 
   function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    var video =  $(`#lucra-technology .screen-tab video`);
     return gsap.fromTo(
       element,
       { opacity: 1 }, 
@@ -1627,20 +1632,24 @@ heroAnimations.fromTo('.logo-image', {
           scrub: 0.5,
           onEnter: function () {
             element.addClass("active viewed");
+            video.trigger('play'); // Play video on entering the section
             $(`.screen-tab.${stepClass}`).addClass("active");
           },
           onEnterBack: function () {
             element.addClass("active");
+            video.trigger('play'); // Play video on entering the section
             $(`.screen-tab.${stepClass}`).addClass("active");
           },
           onLeave: function () {
             element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
             if (onLeave != true) {
               $(`.screen-tab.${stepClass}`).removeClass("active");
             }
           },
           onLeaveBack: function () {
             element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
             if (onLeaveBack != true) {
               $(`.screen-tab.${stepClass}`).removeClass("active");
             }
