@@ -3275,6 +3275,16 @@ footer {
               font-weight: 200;
               color: $new-blue;
             }
+            @media (min-width: 575px) and (max-width:991px) {
+              font-size: 16px;
+              max-width: 95%;
+              &:before {
+                right: -5%;
+              }
+              &:after {
+                width: 105%;
+              }
+            }
             @media (max-width: 575px) {
               font-size: 16px;
               max-width: 90%;
