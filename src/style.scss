@@ -3320,6 +3320,13 @@ footer {
               color: $light-blue;
             }
           }
+          &#what_platforms{
+            h5 {
+              span {
+                font-size:16px;
+              }
+            }
+          }
         }
         @media (max-width: 767px) {
           margin: 50px 0 0;
