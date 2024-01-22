@@ -3242,6 +3242,7 @@ footer {
       }
       .faqs {
         padding: 0 0 80px;
+        margin-top: 0;
         &.margin {
           @media (min-width: 767px) {
             margin-left: 40px;
@@ -3330,6 +3331,12 @@ footer {
               color: $light-blue;
             }
           }
+          &#devices {
+            margin-top: 0;
+          }
+          &#responsible_gaming {
+            margin-bottom: 0;
+          }
           &#what_platforms{
             h5 {
               span {
@@ -3339,13 +3346,13 @@ footer {
           }
         }
         @media (max-width: 767px) {
-          margin: 50px 0 0;
+          margin: 0;
           &.margin {
             margin-top: 0;
             margin-bottom: 40px;
           }
           .faq-box {
-            margin: 50px 0 60px;
+            margin: 0px 0 60px;
             h4 {
               &::before {
                 top: 10px;
