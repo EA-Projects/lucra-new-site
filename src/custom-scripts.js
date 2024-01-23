@@ -1788,6 +1788,67 @@ aboutItemsAnimation.fromTo(
 }
 
 ////////////////////////////
+//////// PRESS PAGE ////////
+////////////////////////////
+if ($('.press-page').length) { 
+  
+  if (window.matchMedia('(min-width: 575px)').matches) {
+    // HERO Section
+      if ($('#hero-press').length) {
+        let slideElements = gsap.timeline();
+        slideElements
+        // Show main image and cards
+        .from("#hero-press .hero-press-content img",{
+          opacity: 0,
+          duration: 1,
+        })
+        .from("#hero-press .hero-press-content h6",{
+          opacity: 0,
+          duration: .5,
+          y: -50
+        }, "-=.3")
+        .from("#hero-press .hero-press-content h1 span",{
+          duration: .6,
+          yPercent: 110,
+          opacity: 0,
+          stagger:  0.06,
+          rotationZ: 5,
+        }, "-=.6")
+      }
+
+      const releaseItems = document.querySelectorAll('#press-releases .release');
+
+      releaseItems.forEach((release, index) => {
+        // Create a timeline for each release item
+        let riskCompliance = gsap.timeline({
+          scrollTrigger: {
+            trigger: release,
+            start: 'top bottom',
+            end: '50% 50%',
+            scrub: 0.5,
+            once: true, 
+          }
+        });
+      
+        // Prevent animation on mobile
+        let mediaQueryRiskCompliance = gsap.matchMedia();
+        mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
+          riskCompliance.from(release, {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            stagger: 0,
+          });
+        });
+      });
+
+    }
+}
+
+
+
+
+////////////////////////////
 ////// SOLUTIONS PAGE //////
 ////////////////////////////
 
