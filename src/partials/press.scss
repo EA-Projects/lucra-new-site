@@ -220,6 +220,7 @@
         .release {
             flex-direction: column;
             margin-bottom: 30px;
+           
             .article-copy {
                 max-width: 100%;
                 order: 2;
@@ -242,6 +243,9 @@
     @media(max-width: 575px) {
         .release {
             gap: 30px;
+            .article-image {
+                border-radius: 20px;
+            }
             .article-copy {
                 h3 {
                     font-size: 20px;
