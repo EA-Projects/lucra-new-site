@@ -3394,6 +3394,13 @@ footer {
       h4 {
         color: $orange;
         text-transform: uppercase;
+        &.darkblue {
+          color: $new-darkblue;
+          text-align: left;
+          font-weight: 600;
+          margin-bottom: 20px;
+          margin-top: 40px;
+        }
       }
       p {
         color: #000;
@@ -3459,6 +3466,7 @@ footer {
           font-size: 16px;
           line-height: 28px;
           margin-top: 20px;
+          margin-bottom: 40px;
           a {
             color: $new-darkblue;
             &:hover {
