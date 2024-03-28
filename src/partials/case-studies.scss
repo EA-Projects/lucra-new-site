@@ -1303,6 +1303,9 @@ body {
                             font-weight: 500;
                             bottom: -5px;
                             font-family: 'Bauziet';
+                            &.mw-335 {
+                                    max-width: 335px;
+                            }
                         }
                         &.active.viewed {
                             .dot-line {
