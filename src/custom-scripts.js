@@ -1845,7 +1845,22 @@ if ($('.press-page').length) {
     }
 }
 
+///////////////////////////////////////
+////// DAVE & BUSTERS CASE STUDY //////
+///////////////////////////////////////
 
+
+if ($('.is-dave-and-busters').length) {
+  ['.first-image', '.second-image', '.third-image', '.fourth-image'].forEach((image, index) => {
+    gsap.from(image, {
+      opacity: 0,
+      y: 10, // Adjusting y position based on index
+      duration: 1,
+      ease: "power2.out",
+      delay: index * 0.2 // Staggering the delay by 0.2s * index
+    });
+  });
+}
 
 
 ////////////////////////////
