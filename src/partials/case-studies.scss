@@ -1652,3 +1652,193 @@ body {
          }
     }
 }
+
+.is-dave-and-busters {
+    #anchors-nav {
+        background-color: #071332;
+        .about-nav-items {
+            gap: 30px;
+            @media (max-width: 575px) {
+                gap: 20px!important;
+                justify-content: center!important;
+            }
+        }
+    }
+    #hero-case-studies {
+        padding: 150px 0px 90px;
+        background: #07166E;
+        display: flex;
+        align-items: center;
+        &::after {
+            display: none;
+        }
+        .container {
+            position: relative;
+            @media (min-width: 1200px) {
+                max-width: 1340px;
+            }
+            .hero-image-holder {
+                position: relative;
+                width: 805px;
+                height: 725px;
+                transform: scale(0.9);
+                z-index: 5;
+                .first-image {
+                    position: absolute;
+                    max-width: 634px;
+                    z-index: 1;
+                    top: 0;
+                    right: 5%;
+                }
+                .second-image {
+                    position: absolute;
+                    max-width: 329px;
+                    z-index: 2;
+                    top: 30%;
+                }
+                .third-image {
+                    position: absolute;
+                    max-width: 271px;
+                     z-index: 3;
+                     right: 0;
+                     top: 40%;
+                }
+                .fourth-image {
+                    position: absolute;
+                    max-width: 403px;
+                     z-index: 4;
+                     bottom: 0;
+                     left: 24%;
+                }
+            }
+        }
+        .content-hero {
+            max-width: 520px;
+            position: relative;
+            z-index: 2;
+            h6.pretitle {
+                color: #FE6D18;
+                margin-bottom: 8px;
+            }
+            .dave-logo {
+                display: none;
+                max-width: 124px;
+                margin-bottom: 15px;
+            }
+            h1.h2 {
+                font-size: 42px;
+                text-transform: none;
+                line-height: 52px;
+                font-weight: 800;
+                color: white;
+                margin-bottom: 0;
+                max-width: 100%;
+            }
+            p {
+                max-width: 485px;
+                margin: 10px 0 20px;
+                font-weight: 500;
+            }
+            a.button.secondary {
+                background: #FE6D18;
+                border-color: #FE6D18;
+                transition: 0.35s all ease-in-out;
+                &:hover {
+                    color: #0EF169;
+                    background: #2D2B81;
+                    border-color: #2D2B81;
+                }
+                &.white {
+                    background-color: white;
+                    border-color: white;
+                    color: #000F33;
+                    margin-left: 20px;
+                    transition: 0.35s all ease-in-out;
+                    &:hover {
+                        background-color: #0EF169;
+                        border-color: #0EF169;
+                    }
+                }
+            }
+           
+            
+        }
+       
+        .orange-blur {
+                position: absolute;
+                right: -25%;
+                max-width: 1213px;
+                top: -130px;
+                z-index: 0;
+                pointer-events: none;
+
+        }
+       
+        @media (min-width: 1440px){
+            .container .hero-image-holder {
+                transform: scale(1);
+                top: 30px;
+                left: 50px;
+            }
+            .container .orange-blur {
+                right: -33%;
+            }
+           }
+       @media (max-width: 1200px) {
+        .content-hero h1.h2 {
+            font-size: 34px;
+            line-height: 45px;
+        }
+        .container .hero-image-holder {
+            transform: scale(0.65);
+            left: -17%;
+        }
+        .container .orange-blur {
+            right: -36%;
+            top: -36px;
+        }
+        
+        a.button.secondary {
+            width: 240px;
+            display: block;
+            &.white {
+                margin-left: 0px!important;
+                margin-top: 15px;
+            }
+        }
+       }
+       @media (max-width: 991px) {
+        padding: 150px 0px 90px;
+        background-image: url(../../images/case-studies/mobile-dave-hero.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .container .dave-logo {
+            display: block;
+        }
+        .container .orange-blur {
+           display: none;
+        }
+        a.button.secondary {
+            max-width: 270px;
+            width: 100%;
+        }
+        .col-lg-7.hidden-mobile {
+
+            display: none;
+        }
+        
+       
+       }
+       @media (max-width: 575px) {
+        padding: 150px 0px 90px;
+        
+        .content-hero h1.h2 {
+            font-size: 30px;
+            line-height: 37px;
+        }
+       }
+    }
+
+  
+}
