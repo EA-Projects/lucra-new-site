@@ -1851,6 +1851,18 @@ if ($('.press-page').length) {
 
 
 if ($('.is-dave-and-busters').length) {
+  let daveAnimations = gsap.timeline({});
+  daveAnimations.fromTo('.dave-logo', {
+    opacity: 0,
+  }, {
+    opacity: 1,
+    top: '12%',
+    duration: 1,
+    delay: 0.2,
+    ease: 'power2.out'
+  });
+  
+
   ['.first-image', '.second-image', '.third-image', '.fourth-image'].forEach((image, index) => {
     gsap.from(image, {
       opacity: 0,

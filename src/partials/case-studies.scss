@@ -1752,7 +1752,7 @@ body {
                     background-color: white;
                     border-color: white;
                     color: #000F33;
-                    margin-left: 20px;
+                    margin-left: 0px;
                     transition: 0.35s all ease-in-out;
                     &:hover {
                         background-color: #0EF169;
@@ -1815,6 +1815,7 @@ body {
         background-repeat: no-repeat;
         .container .dave-logo {
             display: block;
+            opacity: 0;
         }
         .container .orange-blur {
            display: none;
