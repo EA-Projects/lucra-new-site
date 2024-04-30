@@ -1665,8 +1665,11 @@ body {
         }
     }
     #hero-case-studies {
-        padding: 205px 0px 90px;
-        background: #07166E;
+        padding: 240px 0px 120px;
+        background-image: url(../../images/case-studies/dave-bg.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         display: flex;
         align-items: center;
         &::after {
@@ -1726,8 +1729,8 @@ body {
             }
             .dave-logo {
                 display: none;
-                max-width: 124px;
-                margin-bottom: 15px;
+                max-width: 112px;
+                margin-bottom: 22px;
             }
             h1.h2 {
                 font-size: 42px;
@@ -1828,7 +1831,7 @@ body {
             max-width: 270px;
             width: 100%;
         }
-        .col-lg-6.hidden-mobile {
+        .col-lg-7.hidden-mobile {
 
             display: none;
         }
