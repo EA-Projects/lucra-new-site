@@ -4724,6 +4724,13 @@ footer {
   }
 }
 
+.overlay-protect{
+  position: absolute;
+  inset: 0;
+  background-color: #FFFFFF;
+  z-index: 99999;
+}
+
 #password-page{
   padding: 100px 0;
   min-height: 100vh;

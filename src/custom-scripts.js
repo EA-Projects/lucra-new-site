@@ -154,6 +154,8 @@ window.addEventListener('load', function () {
         // If the password doesn't exist, redirect to the password page
         if(!storedPassword) {
             window.location.href = "/password.html";
+        } else{
+          $('.overlay-protect').fadeOut();
         }
       }
     });
