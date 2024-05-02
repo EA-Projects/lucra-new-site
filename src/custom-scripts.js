@@ -126,6 +126,36 @@ window.addEventListener('load', function () {
           });
         }
       }
+
+      // Password page trigger
+      $("#password-page form").submit(function(e){
+        e.preventDefault();
+        var password = $('input#password').val();
+        // Compare entered password with the correct password
+        if (password === 'lucraT&C') {
+          
+          // Save the password at localStorage
+          localStorage.setItem("password", password);
+
+          // Redirect to page
+          window.location.replace("/pages/terms-of-conditions.html");
+
+        } else {
+          // Error message when the user fail
+          $('.error-message').fadeIn();
+        }
+      });
+
+
+      // If is a protected page
+      if ($('.is-protected-page').length) {
+        // Check if the password exist in the localStorage
+        var storedPassword = localStorage.getItem("password");
+        // If the password doesn't exist, redirect to the password page
+        if(!storedPassword) {
+            window.location.href = "/password.html";
+        }
+      }
     });
   })(jQuery);
 
