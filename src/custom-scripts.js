@@ -138,7 +138,7 @@ window.addEventListener('load', function () {
           localStorage.setItem("password", password);
 
           // Redirect to page
-          window.location.replace("/pages/terms-of-conditions.html");
+          window.location.replace("/pages/terms-and-conditions.html");
 
         } else {
           // Error message when the user fail
@@ -153,7 +153,7 @@ window.addEventListener('load', function () {
         var storedPassword = localStorage.getItem("password");
         // If the password doesn't exist, redirect to the password page
         if(!storedPassword) {
-            window.location.href = "/password.html";
+            window.location.href = "/tc-access.html";
         } else{
           $('.overlay-protect').fadeOut();
         }

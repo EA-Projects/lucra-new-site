@@ -4731,6 +4731,12 @@ footer {
   z-index: 99999;
 }
 
+#hero{
+  &.is-protected-hero{
+    padding: 160px 0 160px;
+  }
+}
+
 #password-page{
   padding: 100px 0;
   min-height: 100vh;
