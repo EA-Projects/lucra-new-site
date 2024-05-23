@@ -3322,6 +3322,21 @@ footer {
 #sb-site {
   &.faqs {
     background-color: #fff;
+    #anchors-nav.is-faqs .about-nav-items{
+      @media (max-width: 575px) {
+        justify-content: center;
+        gap: 30px;
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+    #hero.hero-faqs{
+      padding: 270px 0 160px;
+      @media (max-width: 575px) {
+        padding: 180px 0 100px;
+      }
+    }
     #faqs-container {
       padding-top: 100px;
       h3 {
@@ -3342,14 +3357,16 @@ footer {
           h5 {
             font-family: 'Bauziet';
             text-align: left;
+            padding-right: 5%;
             color: $new-darkblue;
             position: relative;
             cursor: pointer;
+            transition: all .4s ease-in-out;
             &:after {
               content: '';
               display: block;
               margin: 15px 0;
-              width: 100%;
+              width: 105%;
               height: 2px;
               background-color: $new-blue;
             }
@@ -3376,13 +3393,15 @@ footer {
             }
             @media (max-width: 575px) {
               font-size: 16px;
-              max-width: 90%;
-              &:before {
-                right: -10%;
-              }
+              padding-right: 10%;
               &:after {
                 width: 110%;
               }
+            }
+          }
+          &:hover{
+            .faq-heading {
+              color: $new-blue;
             }
           }
           &.the-active {
@@ -3398,8 +3417,8 @@ footer {
           }
           .faq-text {
             color: #000;
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 16px;
+            line-height: 26px;
             display: none;
             font-weight: 200;
             ::marker {
@@ -3417,6 +3436,9 @@ footer {
             }
             a {
               color: $light-blue;
+              &:hover{
+                text-decoration: underline;
+              }
             }
           }
           &#devices {
@@ -3455,6 +3477,10 @@ footer {
                 top: 0px;
                 font-size: 25px;
               }
+            }
+            .faq-text{
+              font-size: 14px;
+              line-height: 24px;
             }
           }
         }
