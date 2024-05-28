@@ -1,1 +1,1 @@
-Redirect 301 /faqs.html /faqs/games-you-play.html
+RedirectPermanent https://angry-turing-be7728.netlify.app/pages/faqs.html https://angry-turing-be7728.netlify.app/faqs/games-you-play.html
