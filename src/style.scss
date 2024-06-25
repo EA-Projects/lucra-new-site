@@ -152,6 +152,17 @@ a {
           border-color: #E0E154;
       }
   }
+    &.purple {
+      background-color: #8E69FF;
+      border-color: #8E69FF;
+      color: white;
+      transition: 0.35s all ease-in-out;
+      &:hover {
+          color: #8E69FF;
+          background: transparent;
+          border-color: #8E69FF;
+      }
+  }
   }
   @media (max-width: 575px) {
     min-width: initial;

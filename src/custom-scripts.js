@@ -1634,6 +1634,192 @@ aboutItemsAnimation.fromTo(
 }
 
 ////////////////////////////
+/// TOUCHTUNES CASE STUDY ///
+////////////////////////////
+if ($('.is-touchtunes').length) {
+// Hero Animations
+let heroAnimations = gsap.timeline({});
+
+heroAnimations.fromTo('.logo-image', {
+  opacity: 0,
+}, {
+  opacity: 1,
+  top: '12%',
+  duration: 1,
+  delay: 0.2,
+  ease: 'power2.out'
+});
+
+  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
+    var video =  $(`#lucra-technology .screen-tab video`);
+    return gsap.fromTo(
+      element,
+      { opacity: 1 }, 
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#lucra-technology",
+          start: `${startPercentage}% 20%`,
+          end: `${endPercentage}% 20%`,
+          scrub: 0.5,
+          onEnter: function () {
+            element.addClass("active viewed");
+            video.trigger('play'); // Play video on entering the section
+            $(`.screen-tab.${stepClass}`).addClass("active");
+          },
+          onEnterBack: function () {
+            element.addClass("active");
+            video.trigger('play'); // Play video on entering the section
+            $(`.screen-tab.${stepClass}`).addClass("active");
+          },
+          onLeave: function () {
+            element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
+            if (onLeave != true) {
+              $(`.screen-tab.${stepClass}`).removeClass("active");
+            }
+          },
+          onLeaveBack: function () {
+            element.removeClass("active");
+            video.trigger('pause'); // Play video on entering the section
+            if (onLeaveBack != true) {
+              $(`.screen-tab.${stepClass}`).removeClass("active");
+            }
+          },
+        },
+      }
+    );
+  }
+  
+ 
+  $(".tab-content-inner.top-left").each(function (index, element) {
+    createTabAnimation($(element), index, 0, 20, "first-step", false, true);
+  });
+  
+  $(".tab-content-inner.top-right").each(function (index, element) {
+    createTabAnimation($(element), index, 20, 35, "second-step", false, false);
+  });
+  
+  $(".tab-content-inner.mid-right").each(function (index, element) {
+    createTabAnimation($(element), index, 35, 50, "third-step", false, false);
+  });
+  
+  $(".tab-content-inner.bottom-right").each(function (index, element) {
+    createTabAnimation($(element), index, 50, 65, "fourth-step", true, false);
+  });
+  
+  $(".tab-content-inner").on("click", function () {
+    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
+    console.log(tabClass);
+  });
+  
+  $(".tab-content-inner").on("click", function() {
+    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
+  
+    console.log(tabClass);
+   
+    // Realizar la animación correspondiente al bloque clicado
+    switch (tabClass) {
+     
+      case "top-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
+        }, 100);
+        break;
+  
+      case "mid-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
+        }, 100);
+        break;
+  
+      case "bottom-right":
+        $('html, body').animate({
+          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
+        }, 100);
+        break;
+    }
+  });
+// Initialize Phones Slide
+$('.phones-slider').slick({
+  centerMode: true,
+  centerPadding: '25vh',
+  slidesToShow: 3,
+  draggable: false,
+  initialSlide: 5,
+  swipe: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: false,
+  responsive: [
+    {
+      breakpoint: 991,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 575,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1,
+        draggable: true,
+        swipe: true
+      }
+    }
+  ]
+});
+
+let imageAnimation = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#integration',
+    start: 'top-=20vh bottom',
+    end: '65% 50%',
+    scrub: 0.5,
+  }
+});
+
+imageAnimation.fromTo('#integration .outlined.first', {
+  x: '50%',
+},{
+  x: '-50%',
+  stagger: 0.1
+});
+
+// About Section Box Items
+let aboutItemsAnimation = gsap.timeline({
+  scrollTrigger: {
+    trigger: '#about',
+    start: '10% 50%',
+    end: '65% 50%',
+    scrub: 0.5,
+    once: true,
+  }
+});
+
+const aboutItems = document.querySelectorAll('#about .items-wrapper .about-item');
+
+aboutItemsAnimation.fromTo(
+  aboutItems,
+  {
+    y: 100,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    stagger: 0.1,
+  }
+);
+
+}
+
+////////////////////////////
 /// TENNISONE CASE STUDY ///
 ////////////////////////////
 if ($('.is-tennisone').length) {
