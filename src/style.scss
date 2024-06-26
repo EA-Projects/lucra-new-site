@@ -163,6 +163,7 @@ a {
           border-color: #8E69FF;
       }
   }
+    
   }
   @media (max-width: 575px) {
     min-width: initial;
@@ -204,6 +205,22 @@ a {
       border-color: $orange;
     }
   }
+  &.gradiented{
+    padding: 2px;
+    background-image: linear-gradient(106deg, #8E69FF 0%, #BD35FC 50%, #8E69FF 100%); 
+    background-size: 200%;
+    border: none;
+    color: white;
+    transition: 0.35s all ease-in-out;
+    &:hover {
+      background-position: right;
+    }
+    div{
+      background: rgba(0, 0, 0, 0.74);
+      padding: 11px 32px 12px;
+      border-radius: 50px;
+    }
+}
 }
 
 h1,

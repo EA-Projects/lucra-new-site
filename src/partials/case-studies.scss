@@ -1680,8 +1680,7 @@ body {
         @media (min-width: 1200px) {
             max-width: 1340px;
         }
-        .hero-image-wrapper {
-        }
+        
         .hero-image-holder {
             position: relative;
             width: 805px;
@@ -1882,7 +1881,7 @@ body {
         position: relative;
         z-index: 2;
         .logo-image {
-            max-width: 130px;
+            max-width: 150px;
             margin-bottom: 10px;
             display: none;
         }
@@ -1902,10 +1901,14 @@ body {
             margin: 33px 0 50px;
             font-weight: 500;
         }
+        a.gradiented {
+            margin-right: 20px;
+        }
         a.button.secondary {
             background: #4F5AC3;
             border-color: #4F5AC3;
             transition: 0.35s all ease-in-out;
+           
             &:hover {
                 background-color: #0EF169;
                 border-color: #0EF169;
@@ -1969,6 +1972,9 @@ body {
             margin-bottom: 15px;
         }
     }
+    a.gradiented {
+        margin-bottom: 15px;
+    }
     }
     @media (max-width: 991px) {
     padding: 180px 0px 90px;
@@ -2005,7 +2011,7 @@ body {
 #about {
     padding: 200px 0;
     background-color: #000;
-    background-image: url(../../images/case-studies/about-bg.jpg);
+    background-image: url(../../images/case-studies/About-TouchTunes.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2045,7 +2051,7 @@ body {
             border-radius: 15px;
             max-width: 500px;
             width: 100%;
-            padding: 27px;
+            padding: 16px 24px;
             border: 0.9px solid #4F5AC3;
             background: rgba(0, 19, 65, 0.45);
             box-shadow: 0px 0px 31.5px 0px rgba(111, 123, 235, 0.50);
@@ -2063,6 +2069,7 @@ body {
                     font-weight: 800;
                     margin: 0;
                     text-align: left;
+                    min-width: 376px;
                     @media (max-width: 525px) { 
                             font-size: 19px;
                             line-height: 24px; 
@@ -2112,7 +2119,7 @@ body {
     }
 }
 #lucra-technology {
-    background: linear-gradient(180deg, #000 -40.72%, #1a1a1a 100%);
+    background: linear-gradient(180deg, #000 0%, #071332 100%);
     overflow: clip;
     padding: 170px 0 200px;
     .tabs-area {
@@ -2125,12 +2132,12 @@ body {
                         width: 616px;
                         margin-bottom: 10px;
                         .energy-tab.right {
-                            background: -webkit-gradient(linear,right top,left top,from(#E0E154),to(transparent));
-                            background: linear-gradient(-90deg,#E0E154 0%,transparent 100%);
+                            background: -webkit-gradient(linear,right top,left top,from(#8E69FF),to(transparent));
+                            background: linear-gradient(-90deg,#8E69FF 0%,transparent 100%);
                         }
                         .energy-tab {
-                            background: -webkit-gradient(linear,left top,right top,from(transparent),to(#E0E154));
-                            background: linear-gradient(-90deg,transparent 0%,#E0E154 100%);
+                            background: -webkit-gradient(linear,left top,right top,from(transparent),to(#8E69FF));
+                            background: linear-gradient(-90deg,transparent 0%,#8E69FF 100%);
                             height: 2px;
                             margin-top: -1px;
                         }
@@ -2151,7 +2158,7 @@ body {
                     }
                     &.active.viewed {
                         .dot-line {
-                            background-color: #E0E154!important;
+                            background-color: #8E69FF!important;
                         }
                     }
                     &.top-left {
@@ -2164,8 +2171,8 @@ body {
                 .left-content {
                     width: 31%;
                     p.description {
-                        font-size: 32px;
-                        line-height: 43px;
+                        font-size: 35px;
+                        line-height: 135%;
                         font-weight: 800;
                         opacity: 1!important;
                     }
@@ -2177,6 +2184,7 @@ body {
                     margin-top: -100px;
                     margin-left: -30px;
                     pointer-events: none;
+                    opacity: .8;
                 }
                 .screen-tab {
                     left: 0px!important;
@@ -2299,7 +2307,7 @@ body {
             line-height: 44px;
             max-width: 470px;
             &.author {
-            color: #E0E154;
+            color: #8E69FF;
             margin-top: 15px;
             }
         }
