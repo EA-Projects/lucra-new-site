@@ -1650,6 +1650,37 @@ heroAnimations.fromTo('.logo-image', {
   ease: 'power2.out'
 });
 
+let phoneAnimations = gsap.timeline({});
+
+phoneAnimations
+  .fromTo('.right-phone-wrapper', {
+    opacity: 0,
+    y: 50
+  }, {
+    opacity: 1,
+    y: 0,
+    duration: 0.66,
+    ease: 'power2.out'
+  })
+  .fromTo('.middle-phone-wrapper', {
+    opacity: 0,
+    x: 50
+  }, {
+    opacity: 1,
+    x: 0,
+    duration: 0.66,
+    ease: 'power2.out'
+  }, "-=0.33") 
+  .fromTo('.left-phone-wrapper', {
+    opacity: 0,
+    x: 50
+  }, {
+    opacity: 1,
+    x: 0,
+    duration: 0.66,
+    ease: 'power2.out'
+  }, "-=0.33"); 
+
   function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
     var video =  $(`#lucra-technology .screen-tab video`);
     return gsap.fromTo(
@@ -1746,7 +1777,7 @@ $('.phones-slider').slick({
   centerPadding: '25vh',
   slidesToShow: 3,
   draggable: false,
-  initialSlide: 5,
+  initialSlide: 0,
   swipe: false,
   autoplay: true,
   autoplaySpeed: 2000,

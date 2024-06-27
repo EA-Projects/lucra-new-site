@@ -1860,7 +1860,7 @@ body {
     }
 }
 #hero-case-studies {
-    padding: 220px 0px 150px;
+    padding: 220px 30px 150px;
     background: black;
     display: flex;
     align-items: center;
@@ -1869,12 +1869,52 @@ body {
     }
     .container {
         position: relative;
+        padding: 0;
         @media (min-width: 1200px) {
             max-width: 1340px;
         }
     }
     .col-12.col-lg-6 {
         padding: 0;
+        &.left{
+            padding-right: 30px;
+            @media (max-width: 991px) {
+                padding-right: 0px;
+            }
+        }
+    }
+    img.touchtunes-hero {
+        width: 110%;
+    }
+    .touch-wrapper {
+        position: relative;
+        min-height: 700px;
+        width: 92%;
+        margin-left: auto;
+        .left-phone-wrapper {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            max-width: 33%;
+            z-index: 2;
+            opacity: 0;
+        }
+        .middle-phone-wrapper {
+            position: absolute;
+            top: 13%;
+            left: 15%;
+            max-width: 39%;
+            z-index: 3;
+            opacity: 0;
+        }
+        .right-phone-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0%;
+            max-width: 67%;
+            z-index: 1;
+            opacity: 0;
+        }
     }
     .content-hero {
         max-width: 650px;
@@ -1965,24 +2005,40 @@ body {
         }
     }
     a.button.secondary {
-        width: 240px;
+        width: 270px;
         display: block;
         &.yellow {
             margin-right: 0px!important;
             margin-bottom: 15px;
         }
     }
+    a.button.gradiented {
+        width: 270px;
+        display: block;
+        
+    }
     a.gradiented {
         margin-bottom: 15px;
     }
     }
     @media (max-width: 991px) {
-    padding: 180px 0px 90px;
+    padding: 180px 30px 90px;
+    background-image: url(../../images/case-studies/mobile-bg-touch.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    img.touchtunes-hero {
+        display: none;
+    }
+    .touch-wrapper {
+        display: none;
+    }
     .content-hero {
         img.logo-image {
             display: block;
         }
     }
+
     .bg-wrapper {
         opacity: 0.3;
         width: 1022px;
@@ -1993,13 +2049,13 @@ body {
             display: none;
         }
     }
-    a.button.secondary {
+    a.button {
         max-width: 270px;
         width: 100%;
     }
     }
     @media (max-width: 575px) {
-    padding: 150px 0px 90px;
+    padding: 150px 30px 90px;
     
     .content-hero h1.h2 {
         font-size: 30px;
@@ -2036,6 +2092,7 @@ body {
         p.description {
             font-weight: 500;
             margin-bottom: 0;
+            max-width: 493px;
         }
 
     }
@@ -2064,7 +2121,7 @@ body {
                 max-width: 295px;
                 h4 {
                     color: white;
-                    font-size: 24px;
+                    font-size: 22px;
                     line-height: 30px;
                     font-weight: 800;
                     margin: 0;
@@ -2115,6 +2172,11 @@ body {
             img {
                 max-height: 43px;
             }
+            .copy-item {
+                h4 {
+                    min-width: 0;
+                }
+            }
         }
     }
 }
@@ -2150,11 +2212,22 @@ body {
                     }
                     p {
                         opacity: .3;
-                        font-size: 18px;
-                        line-height: 25px;
+                        font-size: 16px;
+                        line-height: 150%;
                         font-weight: 500;
                         bottom: -5px;
-                        font-family: 'Bauziet';
+                        font-family: 'Roboto';
+                        strong {
+                            &.tab-title {
+                                display: block;
+                                font-size: 26px;
+                                line-height: 135%;
+                                font-weight: 500;
+                                margin-bottom: 8px;
+                                font-family: "Bauziet";
+                            }
+                            
+                        }
                     }
                     &.active.viewed {
                         .dot-line {
@@ -2175,6 +2248,8 @@ body {
                         line-height: 135%;
                         font-weight: 800;
                         opacity: 1!important;
+                        font-family: "Bauziet";
+
                     }
                 }
             }
@@ -2248,8 +2323,8 @@ body {
             .tabs-content {
                 .tab-content-inner {
                     p {
-                        font-size: 20px;
-                        line-height: 29px;
+                        font-size: 15px;
+                        line-height: 135%;
                         max-width: none!important;
                     }
                 }
@@ -2275,11 +2350,11 @@ body {
 
 #testimonial {
     position: relative;
-    padding: 200px 0;
+    padding: 230px 0;
     background-color: #000;
-    background-image: url(../../images/case-studies/tennis-testimonial.jpg);
-    background-position: center;
-    background-size: cover;
+    background-image: url(../../images/case-studies/Testimonial-bg.webp);
+    background-position: 120px;
+    background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 600px;
@@ -2291,13 +2366,13 @@ body {
         }
     }
     .content-area {
-        max-width: 525px;
+        max-width: 557px;
         h2 {
             font-size: 42px;
             font-weight: 800;
             line-height: 45px;
             text-align: left;
-            margin-bottom: 20px;
+            margin-bottom: 32px;
         }
         p.description {
             font-weight: 500;
@@ -2305,7 +2380,6 @@ body {
             font-family: 'Bauziet';
             font-size: 24px;
             line-height: 44px;
-            max-width: 470px;
             &.author {
             color: #8E69FF;
             margin-top: 15px;
@@ -2328,6 +2402,8 @@ body {
         right: 0;
         background-color: rgba(0, 0, 0, 0.7); 
         }
+        background-size: cover;
+        background-position: center;
     }
     @media (max-width: 575px) {
     padding: 90px 0;
@@ -2355,11 +2431,17 @@ body {
             font-weight: 500;
         }
     }    
+    @media (max-width: 575px){
+       .content-area h2 {
+            max-width: 325px; 
+            margin: auto;
+        }
+    }
 }
 #integration {
     position: relative;
     padding: 122px 0px 95px;
-    background: linear-gradient(180deg, #000 -40.72%, #232323 100%);
+    background: linear-gradient(0deg, #000 0%, #232323 100%);
     h3 {
         font-weight: 800;
         position: relative;
@@ -2379,7 +2461,7 @@ body {
             flex-shrink: 0;
             border-radius: 602.4px;
             opacity: 0.04;
-            background: #E0E154;
+            background: #8079FF;
             position: absolute;
             &.blur {
                 opacity: 0.4;
@@ -2451,6 +2533,7 @@ body {
             left: 50px;
             right: unset;
             margin-top: 0;
+            opacity: .3;
         }
 
     }
