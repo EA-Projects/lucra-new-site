@@ -1860,7 +1860,7 @@ body {
     }
 }
 #hero-case-studies {
-    padding: 220px 30px 150px;
+    padding: 220px 0px 150px;
     background: black;
     display: flex;
     align-items: center;
@@ -1874,15 +1874,7 @@ body {
             max-width: 1340px;
         }
     }
-    .col-12.col-lg-6 {
-        padding: 0;
-        &.left{
-            padding-right: 30px;
-            @media (max-width: 991px) {
-                padding-right: 0px;
-            }
-        }
-    }
+   
     img.touchtunes-hero {
         width: 110%;
     }
@@ -2022,7 +2014,7 @@ body {
     }
     }
     @media (max-width: 991px) {
-    padding: 180px 30px 90px;
+    padding: 180px 0px 90px;
     background-image: url(../../images/case-studies/mobile-bg-touch.jpg);
     background-position: center;
     background-size: cover;
@@ -2055,7 +2047,7 @@ body {
     }
     }
     @media (max-width: 575px) {
-    padding: 150px 30px 90px;
+    padding: 150px 0px 90px;
     
     .content-hero h1.h2 {
         font-size: 30px;
