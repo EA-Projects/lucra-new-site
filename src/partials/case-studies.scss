@@ -1883,6 +1883,7 @@ body {
         width: 92%;
         margin-left: auto;
         .left-phone-wrapper {
+            display: none;
             position: absolute;
             top: 20%;
             left: 0;
@@ -1891,6 +1892,7 @@ body {
             opacity: 0;
         }
         .middle-phone-wrapper {
+            display: none;
             position: absolute;
             top: 13%;
             left: 15%;
@@ -1901,8 +1903,7 @@ body {
         .right-phone-wrapper {
             position: absolute;
             top: 0;
-            right: 0%;
-            max-width: 67%;
+            max-width: 80%;
             z-index: 1;
             opacity: 0;
         }
@@ -2171,6 +2172,194 @@ body {
         }
     }
 }
+#lucra-technologyv2 {
+    &.is-tunes {
+        padding: 144px 0;
+        background: linear-gradient(180deg, #071332 0%, #000000 100%);
+        position: relative;
+        overflow-x: clip;
+        .blur-circle {
+            width: 1000px;
+            height: 880px;
+            background-color: #1C69FF;
+            opacity: 0.25; 
+            filter: blur(280px);
+            position: absolute;
+            top: 0;
+            left: -500px;
+        }
+        .container {
+            @media (min-width: 1200px) {
+                max-width: 1500px;
+            }
+        }
+        .top-area{
+            margin-bottom: 80px;
+            max-width: 100%;
+            h3{
+                font-weight: 600;
+                color: white;
+                font-size: 50px;
+                line-height: 120%;
+                max-width: 1400px;
+            }
+        }
+        .grid-boxs{
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            .inner-box{
+                min-height: 346px;
+                padding: 30px;
+                border-radius: 7.798px;
+                border: 1px solid $middle-blue;
+                background: rgba(0, 19, 65, 0.70);
+                box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
+                backdrop-filter: blur(15px);
+                margin-bottom: 30px;
+                position: relative;
+                overflow: hidden;
+                transition: all .5s ease-in-out;
+                img{
+                    max-width: 100px;
+                    margin-bottom: 30px;
+                }
+                h5{
+                    text-align: left;
+                    font-family: "Bauziet";
+                    text-transform: uppercase;
+                    line-height: 25px;
+                    margin-bottom: 35px;
+                    span{
+                        font-size: 18px;
+                    }
+                }
+                p{
+                    margin-bottom: 0;
+                    color: #AFCBFF;
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 20px;
+                }
+                &.stack-left{
+                    transform: translate(90%, -4%) rotate(-10deg);
+                    z-index: 2;
+                    &.is-middle{
+                        transform: translate(72%,-108%) rotate(-15deg);
+                        z-index: 1;
+                    }
+                    &.is-bottom{
+                        transform: translate(55%,-210%) rotate(-20deg);
+                        z-index: 0;
+                    }
+                }
+                &.stack-center{
+                 &.is-middle{
+                    transform: translate(0%,-97%);
+                 }
+                 &.is-bottom{
+                    transform: translate(0%,-198%);
+                 }
+                }
+                &.stack-right{
+                    transform: translate(-90%, -4%) rotate(10deg);
+                    z-index: 2;
+                    &.is-middle{
+                        transform: translate(-72%,-109%) rotate(15deg);
+                        z-index: 1;
+                    }
+                    &.is-bottom{
+                        transform: translate(-55%,-211%) rotate(20deg);
+                        z-index: 0;
+                    }
+                }
+                &:hover{
+                    box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.40);
+                }
+            }
+        }
+        @media (max-width: 1024px){
+            .top-area{
+                h2{
+                    font-size: 55px;
+                    line-height: 60px;               
+                span{
+                        font-size: 55px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 991px){
+            .grid-boxs{
+                .inner-box{
+                    min-height: auto;
+                    &.stack-left,
+                    &.stack-center,
+                    &.stack-right{
+                        transform: none;
+                        &.is-middle,
+                        &.is-bottom{
+                            transform: none;
+                        }
+                    }
+                }
+            }   
+        }
+        @media (max-width: 767px){
+            .top-area{
+                margin-bottom: 30px;
+                h2{
+                    font-size: 34px;
+                    line-height: 40px;           
+                span{
+                        font-size: 34px;
+                    }
+                }
+            }
+            .grid-boxs{
+                .inner-box{
+                    &.left-column,
+                    &.center-column,
+                    &.right-column{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+        @media (max-width: 575px){
+            .grid-boxs{
+                .inner-box{
+                    padding: 20px;
+                    img{
+                        max-width: 60px;
+                    }
+                }
+            }
+        }
+        @media (max-width: 425px){
+            padding: 50px 0;
+            .top-area{
+                h2{
+                    font-size: 27px;
+                    line-height: 32px;  
+                    text-align: center;       
+                span{
+                        font-size: 27px;
+                    }
+                }
+            }
+            .grid-boxs{
+                .inner-box{
+                    h5{
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
 #lucra-technology {
     background: linear-gradient(180deg, #000 0%, #071332 100%);
     overflow: clip;
@@ -2338,7 +2527,6 @@ body {
         }
     }
 }
-
 #testimonial {
     position: relative;
     padding: 230px 0;

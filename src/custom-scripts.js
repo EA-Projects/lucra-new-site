@@ -1848,6 +1848,30 @@ aboutItemsAnimation.fromTo(
   }
 );
 
+  // RISK AND COMPLIANCE section animation 
+  let lucraTech = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#lucra-technology',
+      start: '5% 50%',
+      end: '15% 50%',
+      scrub: 0.2,
+    }
+  });
+  // Prevent animation on mobile
+  let mediaQueryRiskCompliance = gsap.matchMedia();
+  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
+      lucraTech.to("#lucra-technology .grid-boxs .inner-box",{
+        y: 0,
+        x: 0,
+        rotate: 0,
+        duration: .3,
+        stagger: {
+          amount: 4,
+          from: "random"
+        }
+      });
+  });
+
 }
 
 ////////////////////////////
