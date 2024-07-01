@@ -2204,6 +2204,7 @@ body {
         }
         .row {
             &.is-grid {
+                align-content: stretch;
                 @media (max-width: 991px) {
                     row-gap: 35px;
                 }
@@ -2215,7 +2216,8 @@ body {
             position: relative;
             z-index: 1;
             .inner-box{
-                min-height: 346px;
+                min-height: 345px;
+                height: 100%;
                 padding: 30px;
                 border-radius: 7.798px;
                 border: 1px solid $middle-blue;
