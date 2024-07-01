@@ -1848,11 +1848,11 @@ aboutItemsAnimation.fromTo(
   }
 );
 
-  // RISK AND COMPLIANCE section animation 
+  // Lucra Tech Tabs section animation 
   let lucraTech = gsap.timeline({
     scrollTrigger: {
       trigger: '#lucra-technology',
-      start: '5% 50%',
+      start: '15% 50%',
       end: '15% 50%',
       scrub: 0.2,
     }
