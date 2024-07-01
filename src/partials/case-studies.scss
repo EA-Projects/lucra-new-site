@@ -2193,7 +2193,8 @@ body {
             h3{
                 font-weight: 600;
                 color: white;
-                
+                margin-right: auto;
+                margin-left: auto;
                 line-height: 120%;
                 max-width: 1400px;
                 @media (min-width: 991px) {
@@ -2246,9 +2247,10 @@ body {
                 p{
                     margin-bottom: 0;
                     color: white;
-                    font-size: 16px;
+                    font-size: 17px;
                     font-weight: 500;
                     line-height: 150%;
+                    text-wrap: pretty;
                 }
                 &.stack-left{
                     transform: translate(90%, -4%) rotate(-10deg);
