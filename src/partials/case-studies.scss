@@ -2177,7 +2177,10 @@ body {
         padding: 144px 0;
         background: linear-gradient(180deg, #071332 0%, #000000 100%);
         position: relative;
-        overflow-x: clip;
+        background-image: url(../../images/case-studies/value-props-bg.webp);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         .blur-circle {
             width: 1000px;
             height: 880px;
@@ -2187,6 +2190,9 @@ body {
             position: absolute;
             top: 0;
             left: -500px;
+            &.right {
+
+            }
         }
         .container {
             @media (min-width: 1200px) {
