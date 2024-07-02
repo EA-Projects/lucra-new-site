@@ -2085,6 +2085,17 @@ body {
             font-weight: 500;
             margin-bottom: 0;
             max-width: 493px;
+            margin-top: 10px;
+            &.last  {
+                a {
+                    transition: all 0.3s ease-in-out;
+                    color: #8E69FF;
+                    border-bottom: 1px solid transparent;
+                    &:hover {
+                        border-color: #8E69FF;
+                    }
+                }
+            }
         }
 
     }
@@ -2526,7 +2537,14 @@ body {
         max-width: 2700px;
         margin: auto;
         overflow: hidden;
-        
+        p {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            font-style: italic;
+            color: white;
+            opacity: .6;
+        }
         .phones-slider {
             margin-top: 125px;
             padding-bottom: 50px;
