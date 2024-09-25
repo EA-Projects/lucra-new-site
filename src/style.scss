@@ -3864,6 +3864,10 @@ footer {
         color: #fff;
         letter-spacing: 0.01rem;
         margin-bottom: 5px;
+        text-align: left;
+        @media (min-width: 991px) and (max-width: 1200px){
+          font-size: 20px;
+        }
       }
       .view {
         color: $yellow;
