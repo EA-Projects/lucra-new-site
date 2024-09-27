@@ -2663,7 +2663,7 @@ body {
             .hero-image-wrapper{
                 display: flex;
                 align-items: center;
-                justify-content: center;
+                justify-content: flex-end;
                 gap: 40px;
                 img{
                     &.five-iron-golf{
