@@ -122,10 +122,30 @@
                 &.mb-0 {
                     margin-bottom: 0;
                 }
+                &.flex {
+                    display: flex;
+                    gap: 30px;
+                }
+            }
+            .button-holder {
+                display: flex;
+                gap: 16px;
+                flex-wrap: wrap;
+                
             }
             a.button {
                 color: black;
                 font-size: 17px;
+                &.blue {
+                    background: #1C69FF;
+                    border-color: #1C69FF;
+                    color: white;
+                    &:hover {
+                        color: #0EF169;
+                        background: #2D2B81;
+                        border-color: #2D2B81;
+                    }
+                }
             }
             a.button:hover {
                 color: #0EF169;
