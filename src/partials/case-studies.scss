@@ -1848,7 +1848,7 @@ body {
 
 }
 
-.is-touchtunes  {
+.is-touchtunes {
     #anchors-nav {
         background-color: #071332;
         .about-nav-items {
@@ -2757,6 +2757,91 @@ body {
                 h2{
                     &.is-yellow{
                         color: #BFF300;
+                    }
+                }
+            }
+        }
+    }
+    &.is-puttshack{
+        #hero-case-studies{
+            background-image: url(../../images/case-studies/puttshack-image-hero.jpg);
+            .content-hero{
+                h6.pretitle{
+                    &.is-pink{
+                        color: #9A25C3;
+                    }
+                }
+            }
+            .hero-image-wrapper{
+                img{
+                    &.puttshack{
+                        max-width: 350px;
+                    }
+                }
+            }
+        }    
+        #about{
+            background-image: url(../../images/case-studies/puttshack-about-bg.jpg);
+            .items-wrapper{
+                .about-item{
+                    border-color: #9A25C3;
+                    box-shadow: 0px 0px 35px 0px rgba(153, 37, 195, 0.2);
+                    .copy-item{
+                        p{
+                            color: #9A25C3;
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0px 0px 150px 0px rgba(153, 37, 195, 0.4);
+                    }
+                }
+            }
+        }
+        #lucra-technology{
+            &.is-puttshack{
+                background-image: url(../../images/case-studies/technology-bg-pink.jpg);
+                .grid-boxs{
+                    .inner-box{
+                        &.is-pink{
+                            border-color: #9A25C3;
+                            box-shadow: 0px 0px 35px 0px rgba(153, 37, 195, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+        #testimonial{
+            padding: 120px 0;
+            &.is-puttshack{
+                background-image: url(../../images/case-studies/puttshack-testimonial-bg.jpg);
+                background-position: bottom right;
+                background-size: cover;
+                background-repeat: no-repeat;
+                img{
+                    filter: drop-shadow(0 0 100px rgba(153, 37, 195, 0.4));
+                }
+            }
+            .content-area{
+                p.description.author{
+                    color: #9A25C3;
+                }
+            }
+        }
+        #integration{
+            .circle-holder.is-pink{
+                .circle{
+                    background: #9A25C3;
+                    &.blur{
+                        opacity: .2;
+                    }
+                }
+            }
+        }
+        #get-in-touch{
+            .content-area{
+                h2{
+                    &.is-pink{
+                        color: #9A25C3;
                     }
                 }
             }

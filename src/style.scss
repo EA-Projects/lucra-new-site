@@ -175,6 +175,16 @@ a {
         border-color: #BFF300;
     }
   }
+  &.pink-dark {
+    background-color: #9A25C3;
+    border-color: #9A25C3;
+    color: #FFFFFF;
+    transition: 0.35s all ease-in-out;
+    &:hover {
+        background: transparent;
+        border-color: #FFFFFF;
+    }
+  }
   @media (max-width: 575px) {
     min-width: initial;
     padding: 10px 40px 11px;
