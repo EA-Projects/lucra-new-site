@@ -2800,6 +2800,11 @@ body {
         #lucra-technology{
             &.is-puttshack{
                 background-image: url(../../images/case-studies/technology-bg-pink.jpg);
+                .top-area{
+                    h3{
+                        max-width: 900px;
+                    }
+                }
                 .grid-boxs{
                     .inner-box{
                         &.is-pink{
