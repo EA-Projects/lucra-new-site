@@ -60,7 +60,8 @@ body {
   font-family: 'Bauziet';
   font-weight: 400;
   color: $dark-blue;
-  background-color: $background;
+  // background-color: $background;
+  background-color: #000000;
   &.hidde {
     height: 100vh;
     width: 100%;
