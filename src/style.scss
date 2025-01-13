@@ -521,7 +521,8 @@ a {
       }
     }
     &.fixed{
-      background-color: $darkblue;
+      // background-color: $darkblue;
+      background-color: #000000;
     }
   }
   &.anchors-nav{
@@ -3871,6 +3872,10 @@ footer {
     margin-top: 30px;
     position: relative;
     z-index: 1;
+    h5{
+      text-align: left;
+      color: $darkblue;
+    }
     .position {
       padding: 35px 30px;
       background-color: $new-blue;

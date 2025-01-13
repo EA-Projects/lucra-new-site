@@ -1,7 +1,8 @@
 
 #hero-press{
     padding: 120px 0 0px;
-    background-color: #001242;
+    // background-color: #001242;
+    background-color: #000000;
     .hero-press-content{
         position: relative;
         min-height: 770px;
@@ -83,7 +84,8 @@
 #press-releases {
     position: relative;
     min-height: 100vh;
-    background: #001242;
+    // background: #001242;
+    background-color: #000000;
     .release {
         display: flex;
         justify-content: space-between;
@@ -303,8 +305,10 @@
 #join-us {
     &.is-press {
         padding-top: 100px;
-        background-color: #001242;
-        background-image: url(../../images/press/images/join-us-press.jpg);
+        // background-color: #001242;
+        background-color: #000000;
+        // background-image: url(../../images/press/images/join-us-press.jpg);
+        background-image: url(../../images/press/images/join-us-press-dark.jpg);
         .content-cta {
             max-width: 933px;
             margin: auto;
@@ -313,7 +317,7 @@
                 max-width: 140px;
                 margin-bottom: 50px;
                 border-radius: 50%;
-                box-shadow: 0px 0px 52px 0px rgba(14, 241, 105, 0.55);
+                box-shadow: 0px 0px 100px 0px rgba(14, 241, 105, 0.25);
             }
         }
         @media  (min-width: 1200px) {

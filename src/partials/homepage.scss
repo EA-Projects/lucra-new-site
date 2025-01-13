@@ -593,8 +593,10 @@ background-position: 0 0;
             position: absolute;
             bottom: 0;
             left: 0;
-            background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
-            background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
+            // background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
+            // background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
+            background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#000000));
+            background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#000000 100%);
         }
         .carousel-inner {
             z-index: 3;
@@ -641,7 +643,8 @@ background-position: 0 0;
     #risk-and-compliance{
         &.is-home-new{
             padding-top: 0;
-            background-color: #152876;
+            // background-color: #152876;
+            background-color: #000000;
             background-image: none;
             &::before{
                 display: none;
@@ -675,7 +678,7 @@ background-position: 0 0;
                 margin-top: 110px;
                 .inner-box{
                     border: 1px solid rgba(14,241,105,0.8);
-                    min-height: 232px;
+                    min-height: 260px;
                     @media (max-width:991px) {
                         min-height: 253px;
                     }
@@ -817,7 +820,8 @@ background-position: 0 0;
 
     #brands-grid{
     padding: 130px 0 170px;
-    background: linear-gradient(180deg,#011035 0%,#101a50 100%);
+    // background: linear-gradient(180deg,#011035 0%,#101a50 100%);
+    background-color: #000000;
     overflow: hidden;
     .top-area{
         margin-bottom: 50px;

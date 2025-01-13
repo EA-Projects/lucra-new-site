@@ -2254,16 +2254,16 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger tabs animation on PROFESSIONAL SPORTS SDK section
   $("#pro-sports .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 0, 25, "first-step", false, true, false);
+    createTabAnimationProSports($(element), index, 0, 50, "first-step", false, true, false);
   });
   
   $("#pro-sports .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 25, 50, "second-step", false, false, true);
+    createTabAnimationProSports($(element), index, 50, 70, "second-step", true, false, false);
   });
   
-  $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
-  });
+  // $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
+  //   createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
+  // });
   
   
   // RECREATIONAL GAMES SDK section change tabs on scroll
@@ -2324,16 +2324,16 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger tabs animation on RECREATIONAL GAMES SDK section
   $("#rec-games .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 0, 25, "first-step", false, true);
+    createTabAnimationRecGames($(element), index, 0, 50, "first-step", false, true);
   });
   
   $("#rec-games .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 25, 50, "second-step", false, false);
+    createTabAnimationRecGames($(element), index, 50, 70, "second-step", true, false);
   });
   
-  $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
-  });
+  // $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
+  //   createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
+  // });
 
   // RISK AND COMPLIANCE section animation 
   let riskCompliance = gsap.timeline({
