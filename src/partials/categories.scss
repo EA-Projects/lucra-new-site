@@ -6,9 +6,9 @@ body{
 
 .categories-page {
 #client-categories{
-    padding: 200px 0 100px;
+    padding: 200px 0 300px;
     // background: linear-gradient(180deg, #01123F 0%, #37358F 100%);
-    background: linear-gradient(180deg, #000000 50%, #37358F 100%);
+    background:#000000;
     position: relative;
     z-index: 1;
     .container {
@@ -216,7 +216,8 @@ body{
         position: relative;
         margin-top: 0px;
         padding-top: 180px;
-        padding-bottom: 200px;
+        // padding-bottom: 200px;
+        padding-bottom: 170px;
         &::before{
             content: "";
             width: 100%;
@@ -225,6 +226,7 @@ body{
             top: 0;
             left: 0;
             background: linear-gradient(0deg, #37358F00 0%, #37358F 100%);
+            display: none;
         }
         @media (max-width: 991px) {
             padding-top: 50px;
