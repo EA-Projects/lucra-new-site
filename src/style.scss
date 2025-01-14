@@ -208,7 +208,8 @@ a {
       &:hover {
         background-color: $yellow;
         border-color: $yellow;
-        color: $darkblue;
+        // color: $darkblue;
+        color: #000000;
       }
     }
   }
@@ -645,11 +646,12 @@ a {
     }
     .navbar-collapse.collapsing,
     .navbar-collapse.show {
-      background-image: url(../images/mobile-bg.jpg);
+      background-image: url(../images/mobile-bg-dark.jpg);
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      background-color: #1C1A77;
+      // background-color: #1C1A77;
+      background-color: #000000;
       position: absolute;
       top: 0;
 
@@ -727,7 +729,8 @@ a {
     &.transparent{
       .container-nav{
         .mobile-top{
-          background-color: $darkblue;
+          // background-color: $darkblue;
+          background-color: #000000;
         }
         nav{
           .navbar-toggler{
