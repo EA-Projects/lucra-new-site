@@ -2071,10 +2071,10 @@ if ($('.press-page').length) {
         let slideElements = gsap.timeline();
         slideElements
         // Show main image and cards
-        .from("#hero-press .hero-press-content img",{
-          opacity: 0,
-          duration: 1,
-        })
+        // .from("#hero-press .hero-press-content img",{
+        //   opacity: 0,
+        //   duration: 1,
+        // })
         .from("#hero-press .hero-press-content h6",{
           opacity: 0,
           duration: .5,

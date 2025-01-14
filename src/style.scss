@@ -118,7 +118,8 @@ a {
   font-size: 16px;
   line-height: 20px;
   border-radius: 50px;
-  color: #2D2B81;
+  // color: #2D2B81;
+  color: #000000;
   background: $yellow;
   border: 2px solid $yellow;
   position: relative;
@@ -867,7 +868,8 @@ a {
     background-color: #020c1e;
   }
   &.hero-careers {
-    background-image: url(../images/hero-careers.jpg);
+    // background-image: url(../images/hero-careers.jpg);
+    background-image: url(../images/hero-inner-dark.jpg);
     padding: 230px 0 160px;
     h1 {
       text-transform: uppercase;

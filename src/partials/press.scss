@@ -3,6 +3,10 @@
     padding: 120px 0 0px;
     // background-color: #001242;
     background-color: #000000;
+    background-image: url(../../images/press/images/press_hero_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     .hero-press-content{
         position: relative;
         min-height: 770px;
@@ -156,7 +160,7 @@
         .article-image {
             max-width: 660px;
             width: 100%;
-            filter: drop-shadow(0px 14px 44px rgba(0, 0, 0, 0.55));
+            filter: drop-shadow(0px 14px 44px rgba(28, 104, 255, 0.3));
             border-radius: 40px;
             border: 2px solid #9693F3;
             overflow: hidden;
