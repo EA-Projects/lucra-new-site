@@ -758,6 +758,34 @@ if (window.matchMedia('(min-width: 575px)').matches) {
 }
 
 
+  // HOMEPAGE VIDEO
+  const homepageVideo = document.querySelectorAll('#video video');
+  const observerHomepageVideo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Play video when it's on view
+        entry.target.play();
+      } else {
+        // Pause video when it's out of the view
+        entry.target.pause();
+      }
+    });
+  });
+  
+  // Observar cada video
+  homepageVideo.forEach((video) => {
+    observerHomepageVideo.observe(video);
+  });  
+
+  // Alternar el sonido al hacer clic en el botón de volumen
+  const volumeButton = document.querySelector('#video .volume');
+  volumeButton.addEventListener('click', () => {
+  const video = document.querySelector('#video video');
+  video.muted = !video.muted;
+
+  // Cambiar el icono del botón según el estado del sonido
+  volumeButton.classList = video.muted ? 'volume muted' : 'volume active';
+});
 
 //  end window onload
 });
