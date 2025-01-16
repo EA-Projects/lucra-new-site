@@ -758,6 +758,34 @@ if (window.matchMedia('(min-width: 575px)').matches) {
 }
 
 
+  // HOMEPAGE VIDEO
+  const homepageVideo = document.querySelectorAll('#video video');
+  const observerHomepageVideo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Play video when it's on view
+        entry.target.play();
+      } else {
+        // Pause video when it's out of the view
+        entry.target.pause();
+      }
+    });
+  });
+  
+  // Observar cada video
+  homepageVideo.forEach((video) => {
+    observerHomepageVideo.observe(video);
+  });  
+
+  // Alternar el sonido al hacer clic en el botón de volumen
+  const volumeButton = document.querySelector('#video .volume');
+  volumeButton.addEventListener('click', () => {
+  const video = document.querySelector('#video video');
+  video.muted = !video.muted;
+
+  // Cambiar el icono del botón según el estado del sonido
+  volumeButton.classList = video.muted ? 'volume muted' : 'volume active';
+});
 
 //  end window onload
 });
@@ -2071,10 +2099,10 @@ if ($('.press-page').length) {
         let slideElements = gsap.timeline();
         slideElements
         // Show main image and cards
-        .from("#hero-press .hero-press-content img",{
-          opacity: 0,
-          duration: 1,
-        })
+        // .from("#hero-press .hero-press-content img",{
+        //   opacity: 0,
+        //   duration: 1,
+        // })
         .from("#hero-press .hero-press-content h6",{
           opacity: 0,
           duration: .5,
@@ -2254,16 +2282,16 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger tabs animation on PROFESSIONAL SPORTS SDK section
   $("#pro-sports .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 0, 25, "first-step", false, true, false);
+    createTabAnimationProSports($(element), index, 0, 50, "first-step", false, true, false);
   });
   
   $("#pro-sports .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 25, 50, "second-step", false, false, true);
+    createTabAnimationProSports($(element), index, 50, 70, "second-step", true, false, false);
   });
   
-  $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
-  });
+  // $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
+  //   createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
+  // });
   
   
   // RECREATIONAL GAMES SDK section change tabs on scroll
@@ -2324,16 +2352,16 @@ if ($('.solutions-page').length) {
   
   // Functions to trigger tabs animation on RECREATIONAL GAMES SDK section
   $("#rec-games .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 0, 25, "first-step", false, true);
+    createTabAnimationRecGames($(element), index, 0, 50, "first-step", false, true);
   });
   
   $("#rec-games .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 25, 50, "second-step", false, false);
+    createTabAnimationRecGames($(element), index, 50, 70, "second-step", true, false);
   });
   
-  $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
-  });
+  // $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
+  //   createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
+  // });
 
   // RISK AND COMPLIANCE section animation 
   let riskCompliance = gsap.timeline({

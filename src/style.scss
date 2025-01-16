@@ -60,7 +60,8 @@ body {
   font-family: 'Bauziet';
   font-weight: 400;
   color: $dark-blue;
-  background-color: $background;
+  // background-color: $background;
+  background-color: #000000;
   &.hidde {
     height: 100vh;
     width: 100%;
@@ -117,7 +118,8 @@ a {
   font-size: 16px;
   line-height: 20px;
   border-radius: 50px;
-  color: #2D2B81;
+  // color: #2D2B81;
+  color: #000000;
   background: $yellow;
   border: 2px solid $yellow;
   position: relative;
@@ -206,7 +208,8 @@ a {
       &:hover {
         background-color: $yellow;
         border-color: $yellow;
-        color: $darkblue;
+        // color: $darkblue;
+        color: #000000;
       }
     }
   }
@@ -487,7 +490,8 @@ a {
   top: 0;
   padding: 10px 0;
   z-index: 999;
-  background-color: #fff;
+  // background-color: #fff;
+  background-color: #000000;
   transition: all 0.2s ease-in-out;
   &.fixed {
     z-index: 9;
@@ -503,7 +507,8 @@ a {
     }
   }
   &.transparent{
-    background-color: #ffffff00;
+    // background-color: #ffffff00;
+    background-color: #000000;
     .container-nav{
       nav{
         .navbar-collapse{
@@ -521,7 +526,8 @@ a {
       }
     }
     &.fixed{
-      background-color: $darkblue;
+      // background-color: $darkblue;
+      background-color: #000000;
     }
   }
   &.anchors-nav{
@@ -554,6 +560,7 @@ a {
       .navbar-toggler {
         border: 0;
         padding: 0;
+        filter: invert(1);
         span {
           width: 1.2em;
           height: 1.2em;
@@ -593,14 +600,16 @@ a {
               margin: 0 5px;
             }
             .nav-link {
-              color: #222222;
+              // color: #222222;
+              color: #FFFFFF;
               font-weight: 400;
               font-size: 12px;
               line-height: 14px;
               letter-spacing: 1.5px;
               text-transform: uppercase;
               &:hover {
-                color: #37358F;
+                // color: #37358F;
+                color: $yellow;
               }
               &.active {
                 color: #37358F;
@@ -642,11 +651,12 @@ a {
     }
     .navbar-collapse.collapsing,
     .navbar-collapse.show {
-      background-image: url(../images/mobile-bg.jpg);
+      background-image: url(../images/mobile-bg-dark.jpg);
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      background-color: #1C1A77;
+      // background-color: #1C1A77;
+      background-color: #000000;
       position: absolute;
       top: 0;
 
@@ -724,12 +734,13 @@ a {
     &.transparent{
       .container-nav{
         .mobile-top{
-          background-color: $darkblue;
+          // background-color: $darkblue;
+          background-color: #000000;
         }
         nav{
           .navbar-toggler{
             span{
-              filter: invert(1);
+              // filter: invert(1);
             }
           }
         }
@@ -740,7 +751,8 @@ a {
       padding-left: 0;
       padding-right: 0;
       .mobile-top {
-        background: #fff;
+        // background: #fff;
+        background-color: #000000;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -865,7 +877,9 @@ a {
     background-color: #020c1e;
   }
   &.hero-careers {
-    background-image: url(../images/hero-careers.jpg);
+    // background-image: url(../images/hero-careers.jpg);
+    background-image: url(../images/hero-inner-dark.jpg);
+    background-color: #000000;
     padding: 230px 0 160px;
     h1 {
       text-transform: uppercase;
@@ -1713,33 +1727,6 @@ a {
 }
 
 
-// Video
-#video {
-  background-color: $new-darkblue;
-  position: relative;
-  line-height: 0;
-  .placeholder {
-    width: 100%;
-    // opacity: 0.5;
-    position: relative;
-  }
-  .volume {
-    position: absolute;
-    cursor: pointer;
-    bottom: 50px;
-    right: 50px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-image: url(../images/volume.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    &.muted {
-      background-image: url(../images/mute.svg);
-    }
-  }
-}
 #shop {
   padding: 100px 0;
   background-color: #fff;
@@ -2204,12 +2191,14 @@ a {
 
 // Footer
 footer {
-  background-color: #f4f4f4;
+  // background-color: #f4f4f4;
+  background-color: #000000;
   padding: 50px 0 70px;
   position: relative;
   .top-contact {
     padding-bottom: 25px;
-    border-bottom: 1px solid $darkblue;
+    // border-bottom: 1px solid $darkblue;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
     .contact-us {
@@ -2224,16 +2213,19 @@ footer {
           font-weight: 400;
           font-size: 22px;
           line-height: 30px;
-          color: $darkblue;
+          // color: $darkblue;
+          color: #FFFFFF;
           margin-bottom: 0;
         }
         a {
           font-size: 14px;
           font-weight: 400;
           line-height: 16px;
-          color: #4d4d4d;
+          // color: #4d4d4d;
+          color: rgba(255, 255, 255, 0.3);
           &:hover {
-            color: $new-blue;
+            // color: $new-blue;
+            color: $yellow;
           }
         }
       }
@@ -2252,10 +2244,12 @@ footer {
       line-height: 14px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: $darkblue;
+      // color: $darkblue;
+      color: #FFFFFF;
       margin-right: 15px;
       &:hover {
-        color: $new-blue;
+        // color: $new-blue;
+        color: $yellow;
       }
     }
   }
@@ -2264,13 +2258,15 @@ footer {
     p {
       font-size: 14px;
       line-height: 24px;
-      color: #4d4d4d;
+      // color: #4d4d4d;
+      color: rgba(255, 255, 255, 0.3);
       margin: 0;
     }
   }
   .up-your-game {
     h4 {
-      color: $darkblue;
+      // color: $darkblue;
+      color: #FFFFFF;
       text-align: left;
     }
     p {
@@ -2280,7 +2276,8 @@ footer {
     }
     h6 {
       text-align: left;
-      color: $darkblue;
+      // color: $darkblue;
+      color: #FFFFFF;
     }
     .form {
       margin: 10px 0 25px;
@@ -3871,6 +3868,10 @@ footer {
     margin-top: 30px;
     position: relative;
     z-index: 1;
+    h5{
+      text-align: left;
+      color: $darkblue;
+    }
     .position {
       padding: 35px 30px;
       background-color: $new-blue;

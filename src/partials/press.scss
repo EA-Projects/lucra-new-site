@@ -1,7 +1,12 @@
 
 #hero-press{
     padding: 120px 0 0px;
-    background-color: #001242;
+    // background-color: #001242;
+    background-color: #000000;
+    background-image: url(../../images/press/images/press_hero_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     .hero-press-content{
         position: relative;
         min-height: 770px;
@@ -83,7 +88,8 @@
 #press-releases {
     position: relative;
     min-height: 100vh;
-    background: #001242;
+    // background: #001242;
+    background-color: #000000;
     .release {
         display: flex;
         justify-content: space-between;
@@ -154,7 +160,7 @@
         .article-image {
             max-width: 660px;
             width: 100%;
-            filter: drop-shadow(0px 14px 44px rgba(0, 0, 0, 0.55));
+            filter: drop-shadow(0px 14px 44px rgba(28, 104, 255, 0.3));
             border-radius: 40px;
             border: 2px solid #9693F3;
             overflow: hidden;
@@ -303,8 +309,10 @@
 #join-us {
     &.is-press {
         padding-top: 100px;
-        background-color: #001242;
-        background-image: url(../../images/press/images/join-us-press.jpg);
+        // background-color: #001242;
+        background-color: #000000;
+        // background-image: url(../../images/press/images/join-us-press.jpg);
+        background-image: url(../../images/press/images/join-us-press-dark.jpg);
         .content-cta {
             max-width: 933px;
             margin: auto;
@@ -313,7 +321,7 @@
                 max-width: 140px;
                 margin-bottom: 50px;
                 border-radius: 50%;
-                box-shadow: 0px 0px 52px 0px rgba(14, 241, 105, 0.55);
+                box-shadow: 0px 0px 100px 0px rgba(14, 241, 105, 0.25);
             }
         }
         @media  (min-width: 1200px) {

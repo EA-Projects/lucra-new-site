@@ -556,7 +556,7 @@ background-repeat: repeat;
 background-size: 180px;
 background-position: 0 0;
 .content-area{
-    max-width: 525px;
+    max-width: 625px;
     margin: 0 auto;
     text-align: center;
     h2{
@@ -593,8 +593,10 @@ background-position: 0 0;
             position: absolute;
             bottom: 0;
             left: 0;
-            background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
-            background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
+            // background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#152876));
+            // background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#152876 100%);
+            background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,16,53,0)),to(#000000));
+            background: linear-gradient(180deg,rgba(0,16,53,0) 0%,#000000 100%);
         }
         .carousel-inner {
             z-index: 3;
@@ -641,7 +643,8 @@ background-position: 0 0;
     #risk-and-compliance{
         &.is-home-new{
             padding-top: 0;
-            background-color: #152876;
+            // background-color: #152876;
+            background-color: #000000;
             background-image: none;
             &::before{
                 display: none;
@@ -664,7 +667,7 @@ background-position: 0 0;
                     margin: 0 auto 20px;
                 }
                 p{
-                    color: #A1C8FF;
+                    color: #B1BCCC;
                     text-align: center;
                     max-width: 810px;
                     margin: auto;
@@ -675,7 +678,7 @@ background-position: 0 0;
                 margin-top: 110px;
                 .inner-box{
                     border: 1px solid rgba(14,241,105,0.8);
-                    min-height: 232px;
+                    min-height: 260px;
                     @media (max-width:991px) {
                         min-height: 253px;
                     }
@@ -684,7 +687,7 @@ background-position: 0 0;
                         margin: 0;
                     }
                     p {
-                        color: #A1C8FF;
+                        color: #B1BCCC;
                         font-family: 'Roboto',sans-serif;
                         font-size: 18px;
                         font-weight: 300;
@@ -712,6 +715,7 @@ background-position: 0 0;
                 padding:70px 0 100px;
             }
             @media (max-width: 768px) {
+                padding:70px 0 50px;
                 .inner-box {
                     min-height: 0!important;
                     text-align: left;
@@ -815,377 +819,456 @@ background-position: 0 0;
         
     }
 
-    #brands-grid{
-    padding: 130px 0 170px;
-    background: linear-gradient(180deg,#011035 0%,#101a50 100%);
-    overflow: hidden;
-    .top-area{
-        margin-bottom: 50px;
-        h2{
-            color: #FFFFFF;
-            font-size: 60px;
-            line-height: 75px;
-            text-align: center;
-            margin: 0 auto 20px;
-            text-transform: uppercase;
-        }
-        p{
-            color: #A1C8FF;
-            text-align: center;
-            max-width: 810px;
-            margin: auto;
-            font-weight: 300;
-        }
-    }
-    .phone-bottom-area{
-        position: relative;
-        min-height: 600px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-width: 1070px;
-        margin: 0 auto;
-        img.brands-bg {
-            position: absolute;
-            pointer-events: none;
-            top: 50%;
-            bottom: 0;
-            left: 20px;
-            width: 921px;
-            mix-blend-mode: lighten;
-            transform: translateY(-50%) rotate(-90deg);
-            @media (max-width: 991px) {
-                    
-                    margin-left: -90px;
-                    top: 40%;
-                    bottom: 0;
-                    left: unset;
-                    width: 100%;
-                    height: 100%;
-                    mix-blend-mode: lighten;
-                    transform: translateY(-50%) rotate(-90deg);
-                
+    #video{
+        padding: 100px 0;
+        background-color: #000000;
+        .holder-video{
+            line-height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(14, 241, 105, 0.8);
+            filter: drop-shadow(0 0 80px rgba(28, 104, 255, 0.3));
+            position: relative;
+            video{
+                width: 100%;
+                &::-webkit-media-controls-panel{
+                    background-image: none !important; 
+                }
             }
-            @media (max-width: 767px) {
-                    margin-left: -60px;
-                
-            }
-        }
-        &::after,
-        &::before{
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%) translate3d(0,0,0) translateZ(0);
-            width: 50%;
-            height: 50%;
-            border-radius: 316.994px;
-            opacity: 0.4;
-            background: #754ce8;
-            filter: blur(150px);
-        }
-       
-        .apps-phone{
-            position: static;
-            text-align: center;
-         
-            //Phones or Dasboard image
-            
-            // Grid Logos, last step
-            .grid-logos{
+            .volume{
+                width: 40px;
+                height: 40px;
+                background-color: #000000;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                flex-wrap: wrap;
-                gap: 1vh;
-                margin-top: 40px;
-                .logos{
-                    width: 100%;
-                    max-width: 245px;
-                    border-radius: 16px;
-                    border: 1px solid rgba(170, 156, 255, 0.40);
-                    background: rgba(0, 19, 65, 0.80);
-                    box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
-                    backdrop-filter: blur(5px);
-                    padding: 5vh;
-                    height: 150px;
-                    max-height: 20vh;
+                border-radius: 50%;
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1;
+                cursor: pointer;
+                .muted-line{
+                    width: 80%;
+                    height: 2px;
+                    background-color: #FFFFFF;
+                    position: absolute;
+                    transform: rotate(-45deg);
+                    transition: all .4s ease-in-out;
+                }
+                img{
+                    transition: all .4s ease-in-out;
+                    width: 20px;
+                }
+                &.muted{
+                    img{
+                        opacity: .4;
+                    }
+                }
+                &.active{
+                    .muted-line{
+                        opacity: 0;
+                    }
+                    img{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        @media(max-width: 575px){
+            padding: 50px 0;
+            .holder-video{
+                .volume{
+                    bottom: 10px;
+                    right: 10px;
+                    width: 7vw;
+                    height: 7vw;
+                    img{
+                        width: 4vw;
+                    }
+                    .muted-line{
+                        height: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    #brands-grid{
+        padding: 130px 0 170px;
+        // background: linear-gradient(180deg,#011035 0%,#101a50 100%);
+        background-color: #000000;
+        overflow: hidden;
+        .top-area{
+            margin-bottom: 50px;
+            h2{
+                color: #FFFFFF;
+                font-size: 60px;
+                line-height: 75px;
+                text-align: center;
+                margin: 0 auto 20px;
+                text-transform: uppercase;
+            }
+            p{
+                color: #B1BCCC;
+                text-align: center;
+                max-width: 810px;
+                margin: auto;
+                font-weight: 300;
+            }
+        }
+        .phone-bottom-area{
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1070px;
+            margin: 0 auto;
+            img.brands-bg {
+                position: absolute;
+                pointer-events: none;
+                top: 50%;
+                bottom: 0;
+                left: 20px;
+                width: 921px;
+                mix-blend-mode: lighten;
+                object-fit: contain;
+                transform: translateY(-50%) rotate(-90deg);
+                @media (max-width: 991px) {
+                        
+                        margin-left: -90px;
+                        top: 40%;
+                        bottom: 0;
+                        left: unset;
+                        width: 100%;
+                        height: 100%;
+                        mix-blend-mode: lighten;
+                        transform: translateY(-50%) rotate(-90deg);
+                    
+                }
+                @media (max-width: 767px) {
+                        margin-left: -60px;
+                    
+                }
+            }
+            &::after,
+            &::before{
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%) translate3d(0,0,0) translateZ(0);
+                width: 50%;
+                height: 50%;
+                border-radius: 316.994px;
+                opacity: 0.4;
+                background: #754ce8;
+                filter: blur(150px);
+            }
+        
+            .apps-phone{
+                position: static;
+                text-align: center;
+            
+                //Phones or Dasboard image
+                
+                // Grid Logos, last step
+                .grid-logos{
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 0.5vh 0;
-                    opacity: 0;
-                    transform: scale(.9);
-                    transition: box-shadow .3s ease-in-out;
-                    &.is-link{
+                    flex-wrap: wrap;
+                    gap: 1vh;
+                    margin-top: 40px;
+                    .logos{
+                        width: 100%;
+                        max-width: 245px;
+                        border-radius: 16px;
+                        border: 1px solid rgba(170, 156, 255, 0.40);
+                        // background: rgba(0, 19, 65, 0.80);
+                        background: #0D0C2C;
+                        box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
+                        backdrop-filter: blur(5px);
+                        padding: 5vh;
+                        height: 150px;
+                        max-height: 20vh;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0.5vh 0;
+                        opacity: 0;
+                        transform: scale(.9);
                         transition: box-shadow .3s ease-in-out;
-                        &:hover{
-                            border: 1px solid #A68EFF;
-                            background: rgb(0, 20, 65);
-                            box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.40);
+                        &.is-link{
+                            transition: box-shadow .3s ease-in-out;
+                            &:hover{
+                                border: 1px solid #A68EFF;
+                                background: rgb(0, 20, 65);
+                                box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.40);
+                            }
                         }
-                    }
-                    &.delay-5{
-                        transition-delay: .1s;
-                    }
-                    &.delay-10{
-                        transition-delay: .2s;
-                    }
-                    img{
-                        &.aeropay{
-                            max-width: 186px;
+                        &.delay-5{
+                            transition-delay: .1s;
                         }
-                        &.morris{
-                            max-width: 186px;
+                        &.delay-10{
+                            transition-delay: .2s;
                         }
-                        &.geocomply{
-                            max-width: 166px;
+                        img{
+                            &.aeropay{
+                                max-width: 186px;
+                            }
+                            &.morris{
+                                max-width: 186px;
+                            }
+                            &.geocomply{
+                                max-width: 166px;
+                            }
+                            &.gli{
+                                max-width: 111px;
+                            }
+                            &.ifrah{
+                                max-width: 154px;
+                            }
+                            &.megaplanit{
+                                max-width: 187px;
+                            }
+                            &.premier{
+                                max-width: 128px;
+                            }
+                            &.sardine{
+                                max-width: 160px;
+                            }
+                            &.sportsdata{
+                                max-width: 165px;
+                            }
+                            &.ankura{
+                                max-width: 170px;
+                            }
+                            &.aws{
+                                max-width: 104px;
+                            }
+                            &.okta{
+                                max-width: 152px;
+                            }
+                            &.paypal{
+                                max-width: 174px;
+                            }
+                            &.sigma{
+                                max-width: 195px;
+                            }
+                            &.venmo{
+                                max-width: 147px;
+                            }
                         }
-                        &.gli{
-                            max-width: 111px;
+                        &.empty{
+                            position: relative;
+                            border: 0;
+                            background: rgba(0, 19, 65, 0.0);
+                            box-shadow: none;
+                            backdrop-filter: blur(0);
+                            .data-phone{
+                                width: 110%;
+                                height: 110%;
+                                top: 0;
+                                right: 0;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                h4{
+                                    margin: 0;
+                                }
+                            }
                         }
-                        &.ifrah{
-                            max-width: 154px;
-                        }
-                        &.megaplanit{
-                            max-width: 187px;
-                        }
-                        &.premier{
-                            max-width: 128px;
-                        }
-                        &.sardine{
-                            max-width: 160px;
-                        }
-                        &.sportsdata{
-                            max-width: 165px;
-                        }
-                        &.ankura{
-                            max-width: 170px;
-                        }
-                        &.aws{
-                            max-width: 104px;
-                        }
-                        &.okta{
-                            max-width: 152px;
-                        }
-                        &.paypal{
-                            max-width: 174px;
-                        }
-                        &.sigma{
-                            max-width: 195px;
-                        }
-                        &.venmo{
-                            max-width: 147px;
-                        }
-                    }
-                    &.empty{
-                        position: relative;
-                        border: 0;
-                        background: rgba(0, 19, 65, 0.0);
-                        box-shadow: none;
-                        backdrop-filter: blur(0);
-                        .data-phone{
-                            width: 110%;
-                            height: 110%;
-                            top: 0;
-                            right: 0;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            h4{
+                        &.more{
+                            h5{
+                                font-family: 'Bauziet', sans-serif;
+                                font: 600px;
+                                text-transform: uppercase;
+                                color: #2F57AF;
                                 margin: 0;
                             }
                         }
                     }
-                    &.more{
-                        h5{
-                            font-family: 'Bauziet', sans-serif;
-                            font: 600px;
-                            text-transform: uppercase;
-                            color: #2F57AF;
-                            margin: 0;
-                        }
-                    }
                 }
-            }
 
-            // Status on scroll
-            &.active{
-                z-index: 6;
-                // opacity: 1;
-                img{
-                    opacity: 1;
-                    transform: scale(1);
-                    &.is-dashboard{
-                        transform: scale(1);
-                    }
-                }
-                .grid-logos{
-                    .logos{
+                // Status on scroll
+                &.active{
+                    z-index: 6;
+                    // opacity: 1;
+                    img{
                         opacity: 1;
                         transform: scale(1);
+                        &.is-dashboard{
+                            transform: scale(1);
+                        }
+                    }
+                    .grid-logos{
+                        .logos{
+                            opacity: 1;
+                            transform: scale(1);
+                        }
                     }
                 }
             }
         }
-    }
-    @media (max-width: 1440px){
-        .phone-bottom-area{
-            .apps-phone{
-                .grid-logos{
-                    margin-top: 0;
-                    gap: 25px;
-                    .logos{
-                        margin: 0.5% 0;
+        @media (max-width: 1440px){
+            .phone-bottom-area{
+                .apps-phone{
+                    .grid-logos{
+                        margin-top: 0;
+                        gap: 25px;
+                        .logos{
+                            margin: 0.5% 0;
+                        }
                     }
                 }
             }
         }
-    }
-    @media (max-width: 1024px){
-        .phone-bottom-area{
-            .apps-phone{
+        @media (max-width: 1024px){
+            .phone-bottom-area{
+                .apps-phone{
+                    
+                    .grid-logos{
+                        .logos{
+                            padding: 20px;
+                            min-height: 125px;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 991px){
+            .phone-bottom-area{
+                min-height: 550px;
+                .apps-phone{
                 
-                .grid-logos{
-                    .logos{
-                        padding: 20px;
-                        min-height: 125px;
-                        height: auto;
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width: 991px){
-        .phone-bottom-area{
-            min-height: 550px;
-            .apps-phone{
-               
-                .grid-logos{
-                    .logos{
-                        padding: 5px;
-                        img{
-                            &.aeropay{
-                                max-width: 146px;
+                    .grid-logos{
+                        .logos{
+                            padding: 5px;
+                            img{
+                                &.aeropay{
+                                    max-width: 146px;
+                                }
+                                &.ankura{
+                                    max-width: 130px;
+                                }
+                                &.morris{
+                                    max-width: 130px;
+                                }
+                                &.geocomply{
+                                    max-width: 130px;
+                                }
+                                &.gli{
+                                    max-width: 83px;
+                                }
+                                &.ifrah{
+                                    max-width: 120px;
+                                }
+                                &.megaplanit{
+                                    max-width: 140px;
+                                }
+                                &.premier{
+                                    max-width: 97px;
+                                }
+                                &.sardine{
+                                    max-width: 100px;
+                                }
+                                &.sportsdata{
+                                    max-width: 105px;
+                                }
+                                &.aws{
+                                    max-width: 80px;
+                                }
+                                &.okta{
+                                    max-width: 130px;
+                                }
+                                &.paypal{
+                                    max-width: 134px;
+                                }
+                                &.sigma{
+                                    max-width: 165px;
+                                }
+                                &.venmo{
+                                    max-width: 117px;
+                                }
                             }
-                            &.ankura{
-                                max-width: 130px;
-                            }
-                            &.morris{
-                                max-width: 130px;
-                            }
-                            &.geocomply{
-                                max-width: 130px;
-                            }
-                            &.gli{
-                                max-width: 83px;
-                            }
-                            &.ifrah{
-                                max-width: 120px;
-                            }
-                            &.megaplanit{
-                                max-width: 140px;
-                            }
-                            &.premier{
-                                max-width: 97px;
-                            }
-                            &.sardine{
-                                max-width: 100px;
-                            }
-                            &.sportsdata{
-                                max-width: 105px;
-                            }
-                            &.aws{
-                                max-width: 80px;
-                            }
-                            &.okta{
-                                max-width: 130px;
-                            }
-                            &.paypal{
-                                max-width: 134px;
-                            }
-                            &.sigma{
-                                max-width: 165px;
-                            }
-                            &.venmo{
-                                max-width: 117px;
-                            }
-                        }
-                        &.empty{
-                            .data-phone{
-                                width: 135%;
+                            &.empty{
+                                .data-phone{
+                                    width: 135%;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-    @media (max-width: 767px){
-        padding: 90px 0 100px;
-        .top-area h2 {
-            font-size: 34px;
-            line-height: 40px;
-        }
-        .phone-bottom-area{
-            .apps-phone{
-                .grid-logos{
-                    gap: 5px;
-                    .logos{
-                        min-height: 85px;
-                        border-radius: 6px;
-                        border: 1px solid rgba(170,156,255,1);
-                        img{
-                            &.aeropay{
-                                max-width: 100px;
+        @media (max-width: 767px){
+            padding: 90px 0 100px;
+            .top-area h2 {
+                font-size: 34px;
+                line-height: 40px;
+            }
+            .phone-bottom-area{
+                .apps-phone{
+                    .grid-logos{
+                        gap: 5px;
+                        .logos{
+                            min-height: 85px;
+                            border-radius: 6px;
+                            border: 1px solid rgba(170,156,255,1);
+                            img{
+                                &.aeropay{
+                                    max-width: 100px;
+                                }
+                                &.ankura{
+                                    max-width: 90px;
+                                }
+                                &.aws{
+                                    max-width: 50px;
+                                }
+                                &.okta{
+                                    max-width: 90px;
+                                }
+                                &.paypal{
+                                    max-width: 90px;
+                                }
+                                &.sigma{
+                                    max-width: 110px;
+                                }
+                                &.venmo{
+                                    max-width: 80px;
+                                }
                             }
-                            &.ankura{
-                                max-width: 90px;
-                            }
-                            &.aws{
-                                max-width: 50px;
-                            }
-                            &.okta{
-                                max-width: 90px;
-                            }
-                            &.paypal{
-                                max-width: 90px;
-                            }
-                            &.sigma{
-                                max-width: 110px;
-                            }
-                            &.venmo{
-                                max-width: 80px;
-                            }
-                        }
-                        &.empty{
-                            .data-phone{
-                                width: 160%;
+                            &.empty{
+                                .data-phone{
+                                    width: 160%;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-    }
-    @media (max-width: 575px){
-        .phone-bottom-area{
-            min-height: 450px;
-            .apps-phone{
-                .grid-logos{
-                    .logos{
-                        width: 49%;
-                        &.empty{
-                            width: 100%;
-                            order: 9;
-                            .data-phone{
-                                top: 0;
-                                left: 0;
-                                right: initial;
+        @media (max-width: 575px){
+            .phone-bottom-area{
+                min-height: 450px;
+                .apps-phone{
+                    .grid-logos{
+                        .logos{
+                            width: 49%;
+                            &.empty{
                                 width: 100%;
-                                max-width: 100%;
+                                order: 9;
+                                .data-phone{
+                                    top: 0;
+                                    left: 0;
+                                    right: initial;
+                                    width: 100%;
+                                    max-width: 100%;
+                                }
                             }
                         }
                     }
@@ -1193,6 +1276,4 @@ background-position: 0 0;
             }
         }
     }
-    
-}
 }

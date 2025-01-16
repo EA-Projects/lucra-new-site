@@ -319,7 +319,8 @@ background-color: #00144d;
 
 // NEW SOLUTIONS PAGE
 #overview{
-background-color: #011136;
+// background-color: #011136;
+background-color: #000000;
 padding: 200px 0 130px;
 overflow: hidden;
 .energy-slide{
@@ -366,13 +367,13 @@ overflow: hidden;
                     p{
                         min-height: 100px;
                         margin-bottom: 20px;
-                        color: #A1C8FF;
+                        color: #B1BCCC;
                     }
                     ul{
                         margin: 0;
                         padding: 0 0 0 15px;
                         li{
-                            color: #A1C8FF;
+                            color: #B1BCCC;
                             font-family: "Roboto", sans-serif;
                             font-size: 18px;
                             font-weight: 300;
@@ -437,7 +438,7 @@ overflow: hidden;
     .carousel .carousel-inner .carousel-item .box-content-slide .content-left p {
         min-height: 66px;
         margin-bottom: 20px;
-        color: #A1C8FF;
+        color: #B1BCCC;
     }
     .carousel .arrows-navigation .carousel-indicators {
         -webkit-box-pack: start;
@@ -539,7 +540,8 @@ overflow: hidden;
         
     }
     .carousel .carousel-inner .carousel-item .box-content-slide .content-left ul li {
-        max-width: 260px;
+        max-width: 300px;
+        font-size: 16px;
     }
     
     
@@ -547,7 +549,8 @@ overflow: hidden;
 }
 #pro-sports{
     padding: 150px 0;
-    background-color: #011136;
+    // background-color: #011136;
+    background-color: #000000;
     position: relative;
     height: 300vh;
     overflow-x: clip;
@@ -570,7 +573,7 @@ overflow: hidden;
         }
         p{
             text-align: center;
-            color: #A1C8FF;
+            color: #B1BCCC;
             max-width: 765px;
             margin: 0 auto;
             position: relative;
@@ -701,7 +704,7 @@ overflow: hidden;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 mix-blend-mode: lighten;
-                width: 600px;
+                width: 500px;
             }
             .icons-step{
                 position: absolute;
@@ -976,8 +979,8 @@ overflow: hidden;
         }
         .tabs-area .left-area .tab-content-inner h4 {
             max-width: 320px;
-            font-size: 20px;
-            line-height: 25px;
+            font-size: 13px;
+            line-height: 16px;
             padding-left: 0;
             padding-right: 0;
             text-align: center;
@@ -1021,7 +1024,8 @@ overflow: hidden;
 
 #rec-games{
     padding: 100px 0 200px;
-    background-color: #011136;
+    // background-color: #011136;
+    background-color: #000000;
     position: relative;
     height: 300vh;
     overflow-x: clip;
@@ -1044,7 +1048,7 @@ overflow: hidden;
         }
         p{
             text-align: center;
-            color: #A1C8FF;
+            color: #B1BCCC;
             max-width: 800px;
             margin: 0 auto;
             position: relative;
@@ -1320,8 +1324,8 @@ overflow: hidden;
         }
         .tabs-area .left-area .tab-content-inner h4 {
             max-width: 320px;
-            font-size: 20px;
-            line-height: 25px;
+            font-size: 13px;
+            line-height: 16px;
             padding-left: 0;
             text-align: center;
         }
@@ -1336,7 +1340,8 @@ overflow: hidden;
 
 #risk-and-compliance{
     &.is-solutions{
-        background-color: #011136;
+        // background-color: #011136;
+        background-color: #000000;
         background-image: none;
         &::before{
             display: none;
@@ -1352,7 +1357,7 @@ overflow: hidden;
                 margin: 0 auto 20px;
             }
             p{
-                color: #A1C8FF;
+                color: #B1BCCC;
                 text-align: center;
             }
         }
@@ -1402,10 +1407,11 @@ overflow: hidden;
 }
 
 #dashboard{
-    background-color: #011136;
+    // background-color: #011136;
+    background-color: #000000;
     position: relative;
     &::after{
-        content: "";
+        // content: "";
         width: 100%;
         height: 400px;
         position: absolute;
@@ -1425,7 +1431,7 @@ overflow: hidden;
             p{
                 max-width: 680px;
                 margin: 0 auto 20px;
-                color: #A1C8FF;
+                color: #B1BCCC;
                 text-align: center;
             }
             hr{
@@ -1451,7 +1457,7 @@ overflow: hidden;
                     }
                     span{
                         font-family: 'Roboto', sans-serif;
-                        color: #A1C8FF;
+                        color: #B1BCCC;
                         font-size: 18px;
                         line-height: 24px;
                         font-weight: 300;
@@ -1534,7 +1540,7 @@ overflow: hidden;
     @media (max-width: 500px) {
         #inner-dashboard .top-area .dashboard-items .inner-item span {
             font-family: "Roboto",sans-serif;
-            color: #A1C8FF;
+            color: #B1BCCC;
             font-size: 14px;
             line-height: 18px;
             font-weight: 300;
@@ -1549,7 +1555,8 @@ overflow: hidden;
     height: 320vh;
     padding-top: 100px;
     position: relative;
-    background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), #292777;
+    // background: linear-gradient(180deg, rgba(55, 53, 143, 0.00) 50%, #28267B 100%), #292777;
+    background-color: #000000;
     .top-area{
         margin-bottom: 50px;
         h2{
@@ -1559,7 +1566,7 @@ overflow: hidden;
         }
         p {
             text-align: center;
-            color: #A1C8FF;
+            color: #B1BCCC;
             max-width: 610px;
             margin: 0 auto;
         }
@@ -1830,7 +1837,8 @@ overflow: hidden;
 .solutions-page {
     #overview {
         padding: 235px 0px 100px;
-        background-image: url(../../images/solutions/solutions-bg-hero.jpg);
+        // background-image: url(../../images/solutions/solutions-bg-hero.jpg);
+        background-image: url(../../images/solutions/solutions_hero_bg_dark.jpg);
         background-position: center 91px;
         background-size: cover;
         background-repeat: no-repeat;
@@ -1855,7 +1863,7 @@ overflow: hidden;
             margin-top: 25px;
         }
         p.why-desc {
-            color: #A1C8FF;
+            color: #B1BCCC;
             font-family: Roboto;
             font-size: 20px;
             font-style: normal;
@@ -2155,7 +2163,7 @@ overflow: hidden;
                 }
             }
             .bottom-wrapper {
-                display: none;
+                // display: none;
                 &.mobile {
                     display:flex;
                     justify-content: space-between;
