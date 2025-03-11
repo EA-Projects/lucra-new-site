@@ -132,7 +132,7 @@ window.addEventListener('load', function () {
         e.preventDefault();
         var password = $('input#password').val();
         // Compare entered password with the correct password
-        if (password === 'lucraT&C') {
+        if (password === 'Lucra2025') {
           
           // Save the password at localStorage
           localStorage.setItem("password", password);
