@@ -651,7 +651,7 @@ if (window.matchMedia('(min-width: 575px)').matches) {
     .from("#the-team .team-grid-desktop .team-card",{
       opacity: 0,
       duration: .3,
-      stagger: .2,
+      stagger: .15,
       y: 50,
       onComplete: function(){
         $("#the-team .team-grid-desktop .team-card").addClass("visible-card");
