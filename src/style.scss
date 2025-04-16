@@ -197,14 +197,15 @@ a {
         border-color: #FFFFFF;
     }
   }
-  &.gold {
-    background-color: #E2CB71;
-    border-color: #E2CB71;
-    color: #000000;
+  &.orange {
+    background-color: #BC6F4E;
+    border-color: #BC6F4E;
+    color: #ffffff;
     transition: 0.35s all ease-in-out;
     &:hover {
         background: #fff;
         border-color: #ffffff;
+        color: #BC6F4E;
     }
   }
   @media (max-width: 575px) {
