@@ -1284,7 +1284,7 @@ if ($('.home-new-page').length) {
   autoInterval = setInterval(nextTab, 7000);
 
     // What We Do section animation
-    const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us');
+    const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
     const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {

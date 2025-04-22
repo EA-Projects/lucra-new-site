@@ -213,6 +213,17 @@ a {
         color: #BC6F4E;
     }
   }
+  &.gold {
+    background-color: #D7AC5B;
+    border-color: #D7AC5B;
+    color: #000000;
+    transition: 0.35s all ease-in-out;
+    &:hover {
+        background: #000000;
+        border-color: #D7AC5B;
+        color: #D7AC5B;
+    }
+  }
   @media (max-width: 575px) {
     min-width: initial;
     padding: 10px 40px 11px;
