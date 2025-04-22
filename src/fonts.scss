@@ -1,27 +1,4 @@
 @font-face {
-  font-family: 'Arbeit';
-  font-weight: 200;
-  src: url('../dist/fonts/Arbeit-Light.eot') format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Arbeit-Light.eot?#iefix') format('embedded-opentype'),
-    url('../dist/fonts/Arbeit-Light.woff2') format('woff2'),
-    url('../dist/fonts/Arbeit-Light.woff') format('woff'),
-    url('../dist/fonts/Arbeit-Light.ttf') format('truetype'),
-    url('../dist/fonts/Arbeit-Light.svg#Arbeit-Light') format('svg');
-}
-
-@font-face {
-  font-family: 'Arbeit';
-  font-weight: 600;
-  src: url('../dist/fonts/Arbeit-SemiBold.eot') format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Arbeit-SemiBold.eot?#iefix')
-      format('embedded-opentype'),
-    url('../dist/fonts/Arbeit-SemiBold.woff2') format('woff2'),
-    url('../dist/fonts/Arbeit-SemiBold.woff') format('woff'),
-    url('../dist/fonts/Arbeit-SemiBold.ttf') format('truetype'),
-    url('../dist/fonts/Arbeit-SemiBold.svg#Arbeit-SemiBold') format('svg');
-}
-
-@font-face {
   font-family: 'Bauziet';
   font-weight: 800;
   src: url('../dist/fonts/Bauziet-Bold.eot') format('embedded-opentype'); /* IE9 + later */
@@ -41,38 +18,4 @@
     url('../dist/fonts/BauzietNormMedium.woff') format('woff'),
     url('../dist/fonts/BauzietNormMedium.ttf') format('truetype'),
     url('../dist/fonts/BauzietNormMedium.svg#BauzietNormMedium') format('svg');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 200;
-  src: url('../dist/fonts/Roboto-Light-webfont.eot') format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Roboto-Light-webfont.eot?#iefix')
-      format('embedded-opentype'),
-    url('../dist/fonts/Roboto-Light-webfont.woff') format('woff'),
-    url('../dist/fonts/Roboto-Light-webfont.ttf') format('truetype'),
-    url('../dist/fonts/Roboto-Light-webfont.svg') format('svg');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 400;
-  src: url('../dist/fonts/Roboto-Medium-webfont.eot')
-    format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Roboto-Medium-webfont.eot?#iefix')
-      format('embedded-opentype'),
-    url('../dist/fonts/Roboto-Medium-webfont.woff') format('woff'),
-    url('../dist/fonts/Roboto-Medium-webfont.ttf') format('truetype'),
-    url('../dist/fonts/Roboto-Medium-webfont.svg') format('svg');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-weight: 800;
-  src: url('../dist/fonts/Roboto-Bold-webfont.eot') format('embedded-opentype'); /* IE9 + later */
-  src: url('../dist/fonts/Roboto-Bold-webfont.eot?#iefix')
-      format('embedded-opentype'),
-    url('../dist/fonts/Roboto-Bold-webfont.woff') format('woff'),
-    url('../dist/fonts/Roboto-Bold-webfont.ttf') format('truetype'),
-    url('../dist/fonts/Roboto-Bold-webfont.svg') format('svg');
 }

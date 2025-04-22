@@ -1,182 +1,130 @@
-////// DISABLE ANIMATIONS ON MOBILE
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  ) ||
-  $(window).width() < 575
-) {
-  $('.animate').removeClass('animate'); // to remove transition
-}
+$(document).ready(function () {
+  const $navigation = $('#navigation');
+  const $dropdown = $('.dropdown');
+  const $overlay = $('.overflow-dropdown');
+  const $backgroundDropdown = $('.background-dropdown');
+  
+  $dropdown.hover(
+    function () {
+      // Mostramos el dropdown temporalmente fuera de vista para medirlo
+      const $menu = $(this).find('.dropdown-menu');      
+      const heightDropdown = $menu.outerHeight(); // Calcula el alto total
+      const heightNavigation = $navigation.outerHeight(); // Calcula el alto total
+        
+      // Aplicamos el alto al background
+      $backgroundDropdown.css('height', heightDropdown + heightNavigation + 'px');
+  
+      // Mostrar elementos
+      $(this).addClass('show');
+      $menu.addClass('show');
+      $overlay.addClass('active');
+      $backgroundDropdown.addClass('active');
+    },
+    function () {
+      // Ocultar
+      $(this).removeClass('show');
+      $(this).find('.dropdown-menu').removeClass('show');
+      $overlay.removeClass('active');
+      $backgroundDropdown.removeClass('active');
+      $backgroundDropdown.css('height', ''); // Limpiar el alto si querés
+    }
+  );
 
-let previousY = {};
-let previousRatio = {};
+  // Mobile navigation
+  $('button.navbar-toggler.is-open').on('click', function(){
+    $(this).closest('#navigation').addClass('open');
+  })
+  $('button.navbar-toggler.is-close').on('click', function() {
+    const $nav = $(this).closest('#navigation');
+    $nav.removeClass('open');
+  
+    // Cerrar el menú colapsable de Bootstrap
+    $nav.find('.navbar-collapse').removeClass('show').addClass('collapse');
+  });
 
-const thresholdArray = (steps) =>
-  Array(steps + 1)
-    .fill(0)
-    .map((_, index) => index / steps || 0);
+  $(".team-card").on("click", function() {
+    $(this).toggleClass("active");
+  });
 
-function handleIntersection(entries, observer) {
-  entries.forEach((entry) => {
-    const currentY = entry.boundingClientRect.y;
-    const currentRatio = entry.intersectionRatio;
-    const isIntersecting = true;
+  $(".team-card").on("mouseleave", function() {
+    $(this).removeClass("active");
+  });
 
-    if (entry.intersectionRatio > 0) {
-      let output = '';
+  // Tilt effect to Team Cards only on Desktop 
+  if (window.matchMedia('(min-width: 575px)').matches) {
+    if ($('.team-card').length) {
+      $('.team-card').tilt({
+        glare: true,
+        maxTilt: 3,
+        speed: 700,
+        transition: true,
+        maxGlare: 0.1
+      });
+    }
+  }
 
-      // Scrolling down/up
-      if (
-        currentY < previousY[entry.target.id] ||
-        (previousY[entry.target.id] === 0 && currentY > 0)
-      ) {
-        if (currentRatio > previousRatio[entry.target.id] && isIntersecting) {
-          output = entry.target.id + ' Scrolling down enter';
-          $(entry.target).addClass('animated-in');
-        } else {
-          output = entry.target.id + ' Scrolling down leave';
-          $(entry.target).addClass('animated-out');
-        }
-      } else if (currentY > previousY[entry.target.id] && isIntersecting) {
-        if (currentRatio < previousRatio[entry.target.id]) {
-          output = entry.target.id + ' Scrolling up leave';
-          $(entry.target).removeClass('animated-in');
-        } else {
-          output = entry.target.id + ' Scrolling up enter';
-          $(entry.target).removeClass('animated-out');
-        }
-      }
+  // Password page trigger
+  $("#password-page form").submit(function(e){
+    e.preventDefault();
+    var password = $('input#password').val();
+    // Compare entered password with the correct password
+    if (password === 'Lucra2025') {
+      
+      // Save the password at localStorage
+      localStorage.setItem("password", password);
 
-      previousY[entry.target.id] = currentY;
-      previousRatio[entry.target.id] = currentRatio;
+      // Redirect to page
+      window.location.replace("/pages/terms-and-conditions.html");
+
+    } else {
+      // Error message when the user fail
+      $('.error-message').fadeIn();
     }
   });
-}
+
+  // If is a protected page
+  if ($('.is-protected-page').length) {
+    // Check if the password exist in the localStorage
+    var storedPassword = localStorage.getItem("password");
+    // If the password doesn't exist, redirect to the password page
+    if(!storedPassword) {
+        window.location.href = "/tc-access.html";
+    } else{
+      $('.overlay-protect').fadeOut();
+    }
+  }
+  // End of document ready
+});
+
+// Fix navbar when scroll
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 60) {
+    $('#header-nav').addClass('fixed');
+    $('#navigation').addClass('fixed');
+    $('#anchors-nav').addClass('fixed');
+  } 
+  else {
+    $('#header-nav').removeClass('fixed');
+    $('#navigation').removeClass('fixed');
+    $('#anchors-nav').removeClass('fixed');
+  }
+
+  // Anchors Navigation , to trigger active class between sections
+  var cutoff = $(window).scrollTop();
+  $('.with-sticky-anchors section').each(function () {
+      if ($(this).offset().top + $(this).height() > cutoff) {
+          var currSection = $(this).attr('id');
+
+          $('.anchors-nav a').removeClass('active');
+          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
+          return false;
+      }
+  });
+});
 
 window.addEventListener('load', function () {
-  $('#header').addClass('animated');
-
-  const elements = document.querySelectorAll('[data-animable]');
-  const options = {
-    root: null,
-    threshold: [0.25, 0.75],
-  };
-  const observer = new IntersectionObserver(handleIntersection, options);
-  elements.forEach((el) => {
-    previousY[el.id] = 0;
-    previousRatio[el.id] = 0;
-    observer.observe(el);
-  });
-
   (function ($) {
-    $(document).ready(function () {
-      const $navigation = $('#navigation');
-      const $dropdown = $('.dropdown');
-      const $overlay = $('.overflow-dropdown');
-      const $backgroundDropdown = $('.background-dropdown');
-      
-      $dropdown.hover(
-        function () {
-          // Mostramos el dropdown temporalmente fuera de vista para medirlo
-          const $menu = $(this).find('.dropdown-menu');      
-          const heightDropdown = $menu.outerHeight(); // Calcula el alto total
-          const heightNavigation = $navigation.outerHeight(); // Calcula el alto total
-            
-          // Aplicamos el alto al background
-          $backgroundDropdown.css('height', heightDropdown + heightNavigation + 'px');
-      
-          // Mostrar elementos
-          $(this).addClass('show');
-          $menu.addClass('show');
-          $overlay.addClass('active');
-          $backgroundDropdown.addClass('active');
-        },
-        function () {
-          // Ocultar
-          $(this).removeClass('show');
-          $(this).find('.dropdown-menu').removeClass('show');
-          $overlay.removeClass('active');
-          $backgroundDropdown.removeClass('active');
-          $backgroundDropdown.css('height', ''); // Limpiar el alto si querés
-        }
-      );
-
-      // Mobile navigation
-      $('button.navbar-toggler.is-open').on('click', function(){
-        $(this).closest('#navigation').addClass('open');
-      })
-      $('button.navbar-toggler.is-close').on('click', function() {
-        const $nav = $(this).closest('#navigation');
-        $nav.removeClass('open');
-      
-        // Cerrar el menú colapsable de Bootstrap
-        $nav.find('.navbar-collapse').removeClass('show').addClass('collapse');
-      });
-      
-
-      var elementTop, elementBottom, viewportTop, viewportBottom;
-
-      function isScrolledIntoView(elem) {
-        elementTop = $(elem).offset().top;
-        elementBottom = elementTop + $(elem).outerHeight();
-        viewportTop = $(window).scrollTop();
-        viewportBottom = viewportTop + $(window).height();
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-      }
-
-      $(".team-card").on("click", function() {
-        $(this).toggleClass("active");
-      });
-
-      $(".team-card").on("mouseleave", function() {
-        $(this).removeClass("active");
-      });
-
-      // Tilt effect to Team Cards only on Desktop 
-      if (window.matchMedia('(min-width: 575px)').matches) {
-        if ($('.team-card').length) {
-          $('.team-card').tilt({
-            glare: true,
-            maxTilt: 3,
-            speed: 700,
-            transition: true,
-            maxGlare: 0.1
-          });
-        }
-      }
-
-      // Password page trigger
-      $("#password-page form").submit(function(e){
-        e.preventDefault();
-        var password = $('input#password').val();
-        // Compare entered password with the correct password
-        if (password === 'Lucra2025') {
-          
-          // Save the password at localStorage
-          localStorage.setItem("password", password);
-
-          // Redirect to page
-          window.location.replace("/pages/terms-and-conditions.html");
-
-        } else {
-          // Error message when the user fail
-          $('.error-message').fadeIn();
-        }
-      });
-
-
-      // If is a protected page
-      if ($('.is-protected-page').length) {
-        // Check if the password exist in the localStorage
-        var storedPassword = localStorage.getItem("password");
-        // If the password doesn't exist, redirect to the password page
-        if(!storedPassword) {
-            window.location.href = "/tc-access.html";
-        } else{
-          $('.overlay-protect').fadeOut();
-        }
-      }
-    });
   })(jQuery);
 
   // Ambassadors University and Games
@@ -650,57 +598,6 @@ $('.faq-heading').click(function () {
     .slideToggle();
 });
 
-// Fix navbar when scroll
-$(window).scroll(function () {
-  var scroll = $(window).scrollTop();
-  if (scroll >= 60) {
-    $('#header-nav').addClass('fixed');
-    $('#navigation').addClass('fixed');
-    $('#anchors-nav').addClass('fixed');
-  } 
-  else {
-    $('#header-nav').removeClass('fixed');
-    $('#navigation').removeClass('fixed');
-    $('#anchors-nav').removeClass('fixed');
-  }
-
-  // Anchors Navigation , to trigger active class between sections
-  var cutoff = $(window).scrollTop();
-  $('.with-sticky-anchors section').each(function () {
-      if ($(this).offset().top + $(this).height() > cutoff) {
-          var currSection = $(this).attr('id');
-
-          $('.anchors-nav a').removeClass('active');
-          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
-          return false;
-      }
-  });
-});
-
-// Values Slider on About page
-if ($('.slider-nav').length) {
-  $('.slider-nav').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    dots: false,
-    centerMode: false,
-    focusOnSelect: false,
-    arrows: true,
-    autoplay: false,
-    autoplaySpeed: 6000,
-    pauseOnHover: false,
-    draggable: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
-}
-
 // About Team Slider
 if ($('.slider-team').length) {
   $('.slider-team').slick({
@@ -720,95 +617,6 @@ if ($('.slider-team').length) {
         return  '<span>' + (i + 1)+ '</span>' + ' of ' + slider.slideCount;
     }
   });
-}
-
-// Team Slider on About page
-if ($('.team-slider').length) {
-  $('.team-slider').slick({
-    centerMode: true,
-    centerPadding: '50px',
-    slidesToShow: 2,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    arrows: true,
-    draggable: false,
-    responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
-}
-
-// Add class to de prev and next Team Slider for move position
-$('.team-slider').on(
-  'beforeChange',
-  function (event, { slideCount: count }, currentSlide, nextSlide) {
-    let selectors = [nextSlide, nextSlide - count, nextSlide + count]
-      .map((n) => `[data-slick-index="${n}"]`)
-      .join(', ');
-    $('.slick-now').removeClass('slick-now');
-    $(selectors).next().addClass('slick-now');
-    $('.prev-now').removeClass('prev-now');
-    $(selectors).prev().addClass('prev-now');
-  }
-);
-
-$('[data-slick-index="0"]').addClass('slick-now');
-$('[data-slick-index="0"]').prev().addClass('prev-now');
-
-if ($('#info-cards').length) {
-  var $slider = $('.slider');
-  var $progressBar = $('.progress');
-  var $progressBarLabel = $('.slider__label');
-  
-  $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
-    var calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
-    
-    $progressBar
-      .css('background-size', calc + '% 100%')
-      .attr('aria-valuenow', calc );
-    
-    $progressBarLabel.text( calc + '% completed' );
-  });
-  
-  $slider.slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    // infinite: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: false,
-    speed: 1000,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 575,
-        settings: {
-          slidesToShow: 1,
-          dots: true
-        }
-      }
-    ]
-  });  
 }
 
 // Check Browsers
@@ -1960,11 +1768,6 @@ if ($('.press-page').length) {
       if ($('#hero-press').length) {
         let slideElements = gsap.timeline();
         slideElements
-        // Show main image and cards
-        // .from("#hero-press .hero-press-content img",{
-        //   opacity: 0,
-        //   duration: 1,
-        // })
         .from("#hero-press .hero-press-content h6",{
           opacity: 0,
           duration: .5,
@@ -2365,48 +2168,6 @@ if ($('.solutions-page').length) {
   });
 
   // End Solutions Conditional
-}
-
-if ($('#particles-dashboard').length) {
-  particlesJS("particles-dashboard", {
-      particles: {
-        number: { value: 1500, density: { enable: true, value_area: 2000 } },
-        color: { value: "#0EF169" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000000" },
-          polygon: { nb_sides: 3 },
-        },
-        opacity: {
-          value: 1,
-          random: true,
-          anim: { enable: false, speed: 3, opacity_min: 0.1, sync: false },
-        },
-        size: {
-          value: 1,
-          random: true,
-          anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
-        },
-        line_linked: {
-          enable: false,
-          distance: 50,
-          color: "#ffffff",
-          opacity: 0.6,
-          width: 1,
-        },
-        move: {
-          enable: true,
-          speed: 0.7,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: { enable: false, rotateX: 600, rotateY: 1200 },
-        },
-      },
-      retina_detect: true,
-  });
 }
 
 // Clickable solution tabs
