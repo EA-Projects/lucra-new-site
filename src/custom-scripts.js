@@ -124,32 +124,6 @@ window.addEventListener('load', function () {
         return elementBottom > viewportTop && elementTop < viewportBottom;
       }
 
-      // if ($('video').length) {
-      //   var loadVideo;
-
-      //   $('video').each(function () {
-      //     $(this).attr('webkit-playsinline', '');
-      //     $(this).attr('playsinline', '');
-      //     $(this).attr('muted', 'muted');
-
-      //     $(this).attr('id', 'loadvideo');
-      //     loadVideo = document.getElementById('loadvideo');
-      //     loadVideo.load();
-      //   });
-
-      //   $(window).scroll(function () {
-      //     // video to play when is on viewport
-
-      //     $('video').each(function () {
-      //       if (isScrolledIntoView(this) == true) {
-      //         $(this)[0].play();
-      //       } else {
-      //         $(this)[0].pause();
-      //       }
-      //     });
-      //   }); // video to play when is on viewport
-      // } // end .field--name-field-video
-
       $(".team-card").on("click", function() {
         $(this).toggleClass("active");
       });
@@ -402,33 +376,6 @@ window.addEventListener('load', function () {
     });
     prefooterTrigger.forEach((animation) => {
       observerPrefooter.observe(animation);
-    });
-  }
-
-  if ($('.watch-area').length) {
-    let buttonVideoHover = gsap.timeline({paused: true});
-    buttonVideoHover
-    .fromTo(".watch-area .video-play", {
-      duration: .4,
-      ease: "power1.out",
-      scale: .2,
-      opacity: 0,
-      xPercent: -17,
-      yPercent: -35
-    }, {
-      duration: .4,
-      scale: 1,
-      opacity: 1,
-      xPercent: -17,
-      yPercent: -115
-    })
-
-    // Hover event to trigger video preview
-    $(".watch-area .button").on("mouseenter", function() {
-      buttonVideoHover.play();
-    });
-    $(".watch-area .button").on("mouseleave", function() {
-      buttonVideoHover.reverse();
     });
   }
 
@@ -701,87 +648,6 @@ $('.faq-heading').click(function () {
     .toggleClass('the-active')
     .find('.faq-text')
     .slideToggle();
-});
-
-// Button to mute and unmuted the video
-$('#video .volume').on('click', function () {
-  if ($('#video .placeholder').prop('muted')) {
-    $('#video .placeholder').prop('muted', false);
-    $('#video .volume').removeClass('muted');
-  } else {
-    $('#video .placeholder').prop('muted', true);
-    $('#video .volume').addClass('muted');
-  }
-});
-
-// Videos pre footer
-var videos = [
-  `<iframe
-      id="video-0"
-      class="video-iframe"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      src="https://www.youtube.com/embed/DjZWyOPQJcU?start=1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-  `<iframe
-      id="video-1"
-      class="video-iframe"
-      src="//content.jwplatform.com/players/ZppCgNir-YrbGYzGZ.html"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-  `<iframe
-      id="video-2"
-      class="video-iframe"
-      src="https://www.youtube.com/embed/amHTD3bF1Zo"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-  ></iframe>`,
-  `<iframe
-      id="video-3"
-      class="video-iframe"
-      src="https://www.bloomberg.com/multimedia/api/embed/iframe?id=b2d1e5d1-4198-41d4-a6bf-03d3d7f3d86d"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-];
-
-$(function () {
-  // Play video pre footer
-  $('.playvideo').on('click', function () {
-    $(this).next('.video-holder').css('display', 'none');
-    $(this).css('display', 'none');
-    //As noted in addendum, check for querystring exitence
-    var symbol =
-      $(this).prev('.video-iframe').attr('src').indexOf('?') > -1 ? '&' : '?';
-    //Modify source to autoplay and start video
-    $(this)
-      .prev('.video-iframe')
-      .attr(
-        'src',
-        $(this).prev('.video-iframe').attr('src') + symbol + 'autoplay=1'
-      );
-  });
-
-  $('#carouselExampleCaption').on('slide.bs.carousel', function (e) {
-    $(`#video-${e.from}`).replaceWith(videos[e.from]);
-  });
 });
 
 // Fix navbar when scroll
@@ -1335,26 +1201,29 @@ if ($('.home-new-page').length) {
     observerWhatWeDo.observe(animation);
   });
 
-  let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
-  whatWeDo
-  .from('#what-we-do .inner-phone.is-medium.left', {
-    // opacity: 0,
-    x: 100,
-    delay: 0.1,
-  },'<')
-  .from('#what-we-do .inner-phone.is-medium.right', {
-    // opacity: 0,
-    x: -100,
-  },'<')
-  .from('#what-we-do .inner-phone.is-small.left', {
-    // opacity: 0,
-    x: 200,
-    delay: 0.1,
-  },'<')
-  .from('#what-we-do .inner-phone.is-small.right', {
-    // opacity: 0,
-    x: -200,
-  },'<');
+  let mediaQuerywhatWeDo = gsap.matchMedia();
+  mediaQuerywhatWeDo.add("(min-width: 575px)", () => {
+    let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
+    whatWeDo
+    .from('#what-we-do .inner-phone.is-medium.left', {
+      // opacity: 0,
+      x: 100,
+      delay: 0.1,
+    },'<')
+    .from('#what-we-do .inner-phone.is-medium.right', {
+      // opacity: 0,
+      x: -100,
+    },'<')
+    .from('#what-we-do .inner-phone.is-small.left', {
+      // opacity: 0,
+      x: 200,
+      delay: 0.1,
+    },'<')
+    .from('#what-we-do .inner-phone.is-small.right', {
+      // opacity: 0,
+      x: -200,
+    },'<');
+  });
 
   // How Brands Benefit section animation
   let tabTexts = $('.tab-text');

@@ -202,6 +202,7 @@
                 width: auto;
                 max-width: 231px;
                 filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+                transform: translateZ(0);
             }
             &.is-medium{
                 z-index: 2;
