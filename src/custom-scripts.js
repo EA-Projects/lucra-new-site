@@ -1200,10 +1200,11 @@ if ($('.home-new-page').length) {
   whatWeDoTrigger.forEach((animation) => {
     observerWhatWeDo.observe(animation);
   });
-
+  
+  let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
+  
   let mediaQuerywhatWeDo = gsap.matchMedia();
   mediaQuerywhatWeDo.add("(min-width: 575px)", () => {
-    let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
     whatWeDo
     .from('#what-we-do .inner-phone.is-medium.left', {
       // opacity: 0,
