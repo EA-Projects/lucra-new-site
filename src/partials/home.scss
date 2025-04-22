@@ -27,13 +27,31 @@
         position: absolute;
         inset: 0;
         opacity: 50%;
+        &::before,
+        &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100px;
+            background: linear-gradient(to right, $black, transparent);
+            z-index: 1;
+            pointer-events: none;
+        }
+        &::after{
+            left: initial;
+            right: 0;
+            transform: rotate(180deg);
+        }
         .video-wall{
             width: 100%;
             flex: none;
             justify-content: flex-start;
             align-items: stretch;
             max-width: none;
-            animation: heroMarquee 40s linear infinite;
+            animation: heroMarquee 50s linear infinite;
             animation-delay: .5s;
             @keyframes heroMarquee {
                 0% {
@@ -139,6 +157,12 @@
                     }
                 }
             }
+        }
+    }
+    @media (min-width: 1441px){
+        .wrapper-wall{
+            max-width: 1440px;
+            margin: 0 auto;
         }
     }
     @media (max-width: 575px){
