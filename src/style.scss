@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /*** COLORS ***/
 $background: #fff;
+$black: #000000;
 $light: #ffffff;
 $dark: #000e2b;
 $dark-blue: #042156;
@@ -11,6 +14,7 @@ $new-blue: #42409d;
 $new-darkblue: #001b60;
 $darkblue: #001035;
 $yellow: #0EF169;
+$new-yellow: #9BFF92;
 $sky-blue: #AA9CFF;
 $middle-blue: #A68EFF;
 
@@ -41,6 +45,8 @@ $button-gradient: linear-gradient(
 @import './lib/bootstrap.min.scss';
 @import './lib/animate.scss';
 @import './lib/slidebars.scss';
+@import './partials/utils.scss';
+@import './partials/home.scss';
 @import './partials/homepage.scss';
 @import './partials/solutions.scss';
 @import './partials/contact.scss';
@@ -111,23 +117,22 @@ a {
 }
 
 .button {
-  min-width: 200px;
+  min-width: 170px;
   display: inline-block;
   text-align: center;
   padding: 11px 32px 12px;
-  font-size: 16px;
-  line-height: 20px;
-  border-radius: 50px;
-  // color: #2D2B81;
+  font-size: 14px;
+  line-height: 100%;
+  border-radius: 16px;
   color: #000000;
-  background: $yellow;
-  border: 2px solid $yellow;
+  background: $new-yellow;
+  border: 2px solid $new-yellow;
   position: relative;
   z-index: 1;
   overflow: hidden;
   transition: 0.35s all ease-in-out;
   &:hover {
-    color: $yellow;
+    color: $new-yellow;
     background: #2D2B81;
     border-color: #2D2B81;
   }
@@ -213,22 +218,21 @@ a {
     padding: 10px 40px 11px;
   }
   &.outline {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #222222;
     border: 2px solid #222222;
     background: #ffff;
-    margin-top: 20px;
     &:hover {
-      background-color: $yellow;
-      border-color: $yellow;
+      background-color: $new-yellow;
+      border-color: $new-yellow;
     }
     &.white {
       color: #ffffff;
       border-color: #ffffff;
       background-color: transparent;
       &:hover {
-        background-color: $yellow;
-        border-color: $yellow;
+        background-color: $new-yellow;
+        border-color: $new-yellow;
         // color: $darkblue;
         color: #000000;
       }
@@ -378,7 +382,7 @@ h5, .h5 {
   font-weight: 400;
   font-size: 24px;
   line-height: 31px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   @media (max-width: 767px) {
     font-size: 20px;
     line-height: 25px;
@@ -415,40 +419,34 @@ h6, .h6 {
 }
 
 p {
-  font-size: 20px;
-  line-height: 27px;
-  font-weight: 200;
+  font-size: 15px;
+  line-height: 140%;
+  font-weight: 400;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   &.description{
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 24px;
+    font-size: 15px;
     @media (max-width: 575px) {
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 13px;
     }
   }
   &.featured {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 20px;
+    font-weight: 300;
     @media (max-width: 767px) {
       font-size: 16px;
-      line-height: 27px;
     }
   }
   @media (max-width: 991px) {
     font-size: 18px;
-    line-height: 30px;
   }
   @media (max-width: 767px) {
     font-size: 16px;
-    line-height: 27px;
   }
 }
 
 a {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
 }
@@ -1057,7 +1055,7 @@ a {
             line-height: 28px;
             margin-bottom: 50px;
             text-align: left;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             color: $light-blue;
           }
           h2 {
@@ -1495,7 +1493,7 @@ a {
           height: 20px;
           bottom: initial;
           li {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 20px;
             line-height: 23px;
             display: none;
@@ -1891,7 +1889,7 @@ a {
   align-items: center;
   .content {
     h3 {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Inter', sans-serif;
       text-align: center;
       color: #fff;
       font-weight: 700;
@@ -1968,7 +1966,7 @@ a {
       background-image: url(../images/homepage/were-hiring.jpg);
       position: relative;
       h3 {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Inter', sans-serif;
         text-align: center;
         color: #fff;
         font-weight: 700;
@@ -2103,7 +2101,7 @@ a {
   background-color: $new-darkblue;
   padding: 100px 0 150px;
   .recent-press-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin-bottom: 50px;
   }
   .company-logo {
@@ -2303,7 +2301,7 @@ footer {
     .form {
       margin: 10px 0 25px;
       input {
-        font-family: 'Roboto';
+        font-family: 'Inter';
         font-weight: 200;
         font-size: 13px;
         line-height: 15px;
@@ -2446,7 +2444,7 @@ footer {
         ol {
           padding-left: 30px;
           li {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 16px;
             line-height: 28px;
             font-weight: 200;
@@ -2480,7 +2478,7 @@ footer {
         margin-bottom: 30px;
       }
       table{
-        font-family: "Roboto", sans-serif;
+        font-family: "Inter", sans-serif;
         margin: 20px 0;
         width: 100%;
         border-collapse: separate;
@@ -2691,7 +2689,7 @@ footer {
         height: 20px;
         bottom: initial;
         li {
-          font-family: 'Roboto', sans-serif;
+          font-family: 'Inter', sans-serif;
           font-size: 20px;
           line-height: 23px;
           display: none;
@@ -3448,7 +3446,7 @@ footer {
               position: absolute;
               right: 10px;
               top: 5px;
-              font-family: 'Roboto', sans-serif;
+              font-family: 'Inter', sans-serif;
               font-weight: 200;
               color: $new-blue;
             }
@@ -3502,7 +3500,7 @@ footer {
                 font-size: 14px;
                 line-height: 24px;
                 font-weight: 200;
-                font-family: 'Roboto', sans-serif;
+                font-family: 'Inter', sans-serif;
               }
             }
             a {
@@ -3621,7 +3619,7 @@ footer {
         margin: 0;
         padding-left: 14px;
         li {
-          font-family: 'Roboto', sans-serif;
+          font-family: 'Inter', sans-serif;
           color: #000;
           font-weight: 200;
           font-size: 16px;
@@ -4524,7 +4522,7 @@ footer {
       font-weight: 300;
       letter-spacing: 0.01rem;
       background-color: #00164f;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0 auto 30px;
       appearance: none;
       background-image: url('../images/ambassadors/arrow-dropdown.svg');
@@ -4648,7 +4646,7 @@ footer {
       li {
         font-size: 18px;
         line-height: 38px;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 300;
         color: #ffffff;
         position: relative;

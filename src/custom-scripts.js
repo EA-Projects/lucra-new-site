@@ -70,6 +70,50 @@ window.addEventListener('load', function () {
 
   (function ($) {
     $(document).ready(function () {
+      const $navigation = $('#navigation');
+      const $dropdown = $('.dropdown');
+      const $overlay = $('.overflow-dropdown');
+      const $backgroundDropdown = $('.background-dropdown');
+      
+      $dropdown.hover(
+        function () {
+          // Mostramos el dropdown temporalmente fuera de vista para medirlo
+          const $menu = $(this).find('.dropdown-menu');      
+          const heightDropdown = $menu.outerHeight(); // Calcula el alto total
+          const heightNavigation = $navigation.outerHeight(); // Calcula el alto total
+            
+          // Aplicamos el alto al background
+          $backgroundDropdown.css('height', heightDropdown + heightNavigation + 'px');
+      
+          // Mostrar elementos
+          $(this).addClass('show');
+          $menu.addClass('show');
+          $overlay.addClass('active');
+          $backgroundDropdown.addClass('active');
+        },
+        function () {
+          // Ocultar
+          $(this).removeClass('show');
+          $(this).find('.dropdown-menu').removeClass('show');
+          $overlay.removeClass('active');
+          $backgroundDropdown.removeClass('active');
+          $backgroundDropdown.css('height', ''); // Limpiar el alto si querés
+        }
+      );
+
+      // Mobile navigation
+      $('button.navbar-toggler.is-open').on('click', function(){
+        $(this).closest('#navigation').addClass('open');
+      })
+      $('button.navbar-toggler.is-close').on('click', function() {
+        const $nav = $(this).closest('#navigation');
+        $nav.removeClass('open');
+      
+        // Cerrar el menú colapsable de Bootstrap
+        $nav.find('.navbar-collapse').removeClass('show').addClass('collapse');
+      });
+      
+
       var elementTop, elementBottom, viewportTop, viewportBottom;
 
       function isScrolledIntoView(elem) {
@@ -311,115 +355,6 @@ window.addEventListener('load', function () {
       $(".disclaimer").removeClass("show");
     }
   });
-
-// Homepage animations, features section
-// Feature one || COMMUNITY BUILDING
-  if ($('.feature-one').length) {
-    var featOne = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-    featOne
-    .from(".feature-graphic.feature-one .world-image", {
-        duration: 1,
-        ease: "none",
-        opacity: 0,
-    }, "-=.5")
-
-    const featOneTrigger = document.querySelectorAll('#product-features .feature-one .trigger');
-    const observerFeatOne = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featOne.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatOne.unobserve(entry.target);
-        }
-      });
-    });
-    featOneTrigger.forEach((animation) => {
-      observerFeatOne.observe(animation);
-    });
-  }
-
-  // Feature three || USER EXPERIENCE
-  if ($('.feature-three').length) {
-    var featThree = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-    featThree
-    .from(".feature-graphic.feature-three .vs-image", {
-        duration: .6,
-        ease: "back",
-        y: 120,
-        opacity: 0,
-        onComplete: function(){
-          $(".feature-graphic.feature-three .vs-image").addClass("floating");
-        }
-    }, "-=.5")
-
-    const featThreeTrigger = document.querySelectorAll('#product-features .feature-three .trigger');
-    const observerFeatThree = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featThree.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatThree.unobserve(entry.target);
-        }
-      });
-    });
-    featThreeTrigger.forEach((animation) => {
-      observerFeatThree.observe(animation);
-    });
-  }
-
-  // Feature four || RISK MANAGEMENT
-  if ($('.feature-four').length) {
-    var featFour = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-  featFour
-    .from(".feature-graphic.feature-four .card-feature", {
-        duration: .6,
-        ease: "back",
-        y: 120,
-        opacity: 0,
-        onComplete: function(){
-          $(".feature-graphic.feature-four .card-feature").addClass("floating");
-        }
-    }, "-=.5")
-
-    const featFourTrigger = document.querySelectorAll('#product-features .feature-four .trigger');
-    const observerFeatFour = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featFour.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatFour.unobserve(entry.target);
-        }
-      });
-    });
-    featFourTrigger.forEach((animation) => {
-      observerFeatFour.observe(animation);
-    });
-  }
-
 
   // Animation the background image for Case Study and Get in Touch blocks
   // When the user hovers on the button, we trigger the animation
@@ -756,37 +691,6 @@ if (window.matchMedia('(min-width: 575px)').matches) {
   }
   // END conditional query
 }
-
-
-  // HOMEPAGE VIDEO
-  const homepageVideo = document.querySelectorAll('#video video');
-  const observerHomepageVideo = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Play video when it's on view
-        entry.target.play();
-      } else {
-        // Pause video when it's out of the view
-        entry.target.pause();
-      }
-    });
-  });
-  
-  // Observar cada video
-  homepageVideo.forEach((video) => {
-    observerHomepageVideo.observe(video);
-  });  
-
-  // Alternar el sonido al hacer clic en el botón de volumen
-  const volumeButton = document.querySelector('#video .volume');
-  volumeButton.addEventListener('click', () => {
-  const video = document.querySelector('#video video');
-  video.muted = !video.muted;
-
-  // Cambiar el icono del botón según el estado del sonido
-  volumeButton.classList = video.muted ? 'volume muted' : 'volume active';
-});
-
 //  end window onload
 });
 
@@ -885,10 +789,12 @@ $(window).scroll(function () {
   var scroll = $(window).scrollTop();
   if (scroll >= 60) {
     $('#header-nav').addClass('fixed');
+    $('#navigation').addClass('fixed');
     $('#anchors-nav').addClass('fixed');
   } 
   else {
     $('#header-nav').removeClass('fixed');
+    $('#navigation').removeClass('fixed');
     $('#anchors-nav').removeClass('fixed');
   }
 
@@ -1411,65 +1317,151 @@ if ($('.categories-page').length) {
 ////// HOME-NEW PAGE //////
 ////////////////////////////
 
-if ($('.home-new-page').length) {
-  //Logos Grid
-  let gridLogos = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#brands-grid',
-      start: '10% 50%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
+if ($('.home-new-page').length) {  
+  // What We Do section animation
+  const whatWeDoTrigger = document.querySelectorAll('#what-we-do .is-trigger');
+  const observerWhatWeDo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        whatWeDo.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerWhatWeDo.unobserve(entry.target);
+      }
+    });
+  });
+  whatWeDoTrigger.forEach((animation) => {
+    observerWhatWeDo.observe(animation);
   });
 
-  gridLogos.fromTo('#brands-grid .grid-logos .logos', {
-    y: 100,
-    opacity: 0,
-  },{
-    y: 0,
-    opacity: 1,
-    stagger: .1
-  });
-  let greenCircles = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '0% 10%%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
+  let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
+  whatWeDo
+  .from('#what-we-do .inner-phone.is-medium.left', {
+    // opacity: 0,
+    x: 100,
+    delay: 0.1,
+  },'<')
+  .from('#what-we-do .inner-phone.is-medium.right', {
+    // opacity: 0,
+    x: -100,
+  },'<')
+  .from('#what-we-do .inner-phone.is-small.left', {
+    // opacity: 0,
+    x: 200,
+    delay: 0.1,
+  },'<')
+  .from('#what-we-do .inner-phone.is-small.right', {
+    // opacity: 0,
+    x: -200,
+  },'<');
+
+  // How Brands Benefit section animation
+  let tabTexts = $('.tab-text');
+  let tabPanes = $('.tab-pane');
+  let currentIndex = 0;
+  let autoInterval;
+
+  function showTab(index) {
+    const target = tabTexts.eq(index).data('tab');
+
+    if ($('#' + target).hasClass('active')) return;
+
+    // Change active class on texts
+    tabTexts.removeClass('active');
+    tabTexts.eq(index).addClass('active');
+
+    const currentTab = $('.tab-pane.active');
+    const nextTab = $('#' + target);
+
+    // Animate the current tab out
+    gsap.to(currentTab, {
+      duration: 0.3,
+      opacity: 0,
+      y: 20,
+      onComplete: function () {
+        currentTab.removeClass('active');
+
+        // Show and animate the new tab
+        nextTab.addClass('active');
+        gsap.fromTo(nextTab,
+          { opacity: 0, y: -20 },
+          { duration: 0.3, opacity: 1, y: 0 }
+        );
+      }
+    });
+  }
+
+  function nextTab() {
+    currentIndex = (currentIndex + 1) % tabTexts.length;
+    showTab(currentIndex);
+  }
+
+  function resetAutoAdvance() {
+    clearInterval(autoInterval);
+    autoInterval = setInterval(nextTab, 5000);
+  }
+
+  // Manual tab change
+  tabTexts.on('click', function () {
+    const clickedIndex = tabTexts.index(this);
+    currentIndex = clickedIndex;
+    showTab(currentIndex);
+    resetAutoAdvance();
   });
 
-  greenCircles.fromTo('#risk-and-compliance .circle', {
-    opacity: 0,
-  },{
-    opacity: .1,
-    stagger: .1
-  });
+  // Start the auto advance
+  autoInterval = setInterval(nextTab, 7000);
 
-  // RISK AND COMPLIANCE section animation 
-  let riskCompliance = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '10% 50%',
-      end: '20% 50%',
-      scrub: 0.5,
-    }
-  });
-  // Prevent animation on mobile
-  let mediaQueryRiskCompliance = gsap.matchMedia();
-  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
-        y: 0,
-        x: 0,
-        rotate: 0,
-        duration: .3,
-        stagger: {
-          amount: 4,
-          from: "random"
+    // What We Do section animation
+    const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us');
+    const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          brandsWhoTrustUs.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerBrandsWhoTrustUs.unobserve(entry.target);
         }
       });
-  });
+    });
+    brandsWhoTrustUsTrigger.forEach((animation) => {
+      observerBrandsWhoTrustUs.observe(animation);
+    });
+  
+    let brandsWhoTrustUs  = gsap.timeline({ duration: .5, ease: "power3.out", paused: true });
+    brandsWhoTrustUs
+    .from('#brands-who-trust-us .top-area > *', {
+      opacity: 0,
+      y: 10,
+      stagger: 0.4,
+    })
+    .from('#brands-who-trust-us .inner-brand-wrapper', {
+      opacity: 0,
+      scale: 0.99,
+      y: 10,
+      filter: 'blur(5px)',
+      stagger: 0.1,
+    },'<+.5')
+    .from('#brands-who-trust-us .text-center', {
+      opacity: 0,
+    },'<');
 
+    $('.slider-brands').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      centerMode: true,
+      centerPadding:'20px',
+      focusOnSelect: false,
+      arrows: false,
+      autoplay: false,
+      pauseOnHover: false,
+      draggable: true,
+      infinite: false,
+      dots: true,
+    });
+  // End of new homepage
 }
 
 ////////////////////////////
