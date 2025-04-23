@@ -1034,6 +1034,22 @@ if ($('.home-new-page').length) {
     },'<');
   });
 
+  // How We Do It section animation
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo("#how-we-do-it .how-we-do-it-block .inner-how-we-do-it-block img", {
+    y: -20
+    },
+  {
+    y: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#how-we-do-it",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+  }
+  });
+
   // How Brands Benefit section animation
   let tabTexts = $('.tab-text');
   let tabPanes = $('.tab-pane');
@@ -1053,19 +1069,56 @@ if ($('.home-new-page').length) {
     const nextTab = $('#' + target);
 
     // Animate the current tab out
-    gsap.to(currentTab, {
-      duration: 0.3,
+    // 1. Animar la salida de las imágenes del tab actual
+    gsap.to(currentTab.find('.inner-tab-content img'), {
       opacity: 0,
       y: 20,
+      duration: 0.3,
+      stagger: 0.02,
+      ease: "power2.in",
       onComplete: function () {
-        currentTab.removeClass('active');
+        // 2. Luego animar la salida del tab actual
+        gsap.to(currentTab, {
+          duration: 0.3,
+          opacity: 0,
+          y: 20,
+          onComplete: function () {
+            currentTab.removeClass('active');
 
-        // Show and animate the new tab
-        nextTab.addClass('active');
-        gsap.fromTo(nextTab,
-          { opacity: 0, y: -20 },
-          { duration: 0.3, opacity: 1, y: 0 }
-        );
+            // 3. Setear imágenes del nuevo tab a opacity 0 antes de mostrarlo
+            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
+
+            // 4. Mostrar el nuevo tab
+            nextTab.addClass('active');
+
+            gsap.fromTo(
+              nextTab,
+              { opacity: 0, y: -20 },
+              {
+                duration: 0.3,
+                opacity: 1,
+                y: 0,
+                onComplete: function () {
+                  // 5. Animar entrada de las imágenes del nuevo tab
+                  gsap.fromTo(
+                    nextTab.find('.inner-tab-content img'),
+                    { 
+                      opacity: 0, 
+                      y: -20 
+                    },
+                    {
+                      opacity: 1,
+                      y: 0,
+                      duration: 0.3,
+                      stagger: 0.1,
+                      ease: "back.out(2)",
+                    }
+                  );
+                }
+              }
+            );
+          }
+        });
       }
     });
   }
@@ -1089,7 +1142,7 @@ if ($('.home-new-page').length) {
   });
 
   // Start the auto advance
-  autoInterval = setInterval(nextTab, 7000);
+  autoInterval = setInterval(nextTab, 5000);
 
     // What We Do section animation
     const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
@@ -1126,6 +1179,15 @@ if ($('.home-new-page').length) {
       opacity: 0,
     },'<');
 
+    $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseenter', function() {
+      $('#brands-who-trust-us .inner-brand-wrapper img').addClass('hover');
+      $(this).removeClass('hover');
+    })
+    $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseleave', function() {
+      $('#brands-who-trust-us .inner-brand-wrapper img').removeClass('hover');
+    })
+
+    // How Brands Benefit section animation
     $('.slider-brands').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -1139,6 +1201,43 @@ if ($('.home-new-page').length) {
       infinite: false,
       dots: true,
     });
+
+    // We Power Play section animation
+    const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .text-center');
+    const observerWePowerPlay = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          wePowerPlay.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerWePowerPlay.unobserve(entry.target);
+        }
+      });
+    });
+    wePowerPlayTrigger.forEach((animation) => {
+      observerWePowerPlay.observe(animation);
+    });
+
+    let wePowerPlay  = gsap.timeline({ paused: true, ease: "power2.out" });
+    // Split the text into characters
+    let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+  
+    // Hide the text before animating it
+    gsap.set("#we-power-play .all-h1 .char", { 
+      opacity: 0,
+    });
+    // Typing animation
+    wePowerPlay.to("#we-power-play .all-h1 .char", {
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.05,
+    })
+    .from("#we-power-play .text-center", {
+      opacity: 0,
+      y: 20,
+    });
+
   // End of new homepage
 }
 

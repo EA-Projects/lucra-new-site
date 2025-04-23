@@ -37,7 +37,7 @@
             height: 100%;
             width: 100px;
             background: linear-gradient(to right, $black, transparent);
-            z-index: 1;
+            z-index: 9;
             pointer-events: none;
         }
         &::after{
@@ -221,7 +221,7 @@
     padding: 100px 0;
     position: relative;
     .top-area{
-        max-width: 720px;
+        max-width: 750px;
         margin: 0 auto;
         text-align: center;
         .all-h5{
@@ -296,6 +296,9 @@
         }
     }
     @media (max-width: 575px){
+        .top-area{
+            max-width: 350px;
+        }
         .wrapper-phones{
             .inner-phone{
                 margin: 0 -20px;
@@ -365,7 +368,7 @@
     }
     .wrapper-tab-area{
         position: relative;
-        margin: 80px 0 60px;
+        margin: 80px 0 120px;
         .tab-text-wrapper{
             display: flex;
             flex-direction: column;
@@ -401,7 +404,7 @@
                 &:nth-child(4){
                     display: flex;
                     justify-content: flex-start;
-                    max-width: 250px;
+                    max-width: 255px;
                 }
             }
         }  
@@ -411,14 +414,105 @@
             left: 50%;
             transform: translate(-50%, -50%);
             pointer-events: none;
+            // 
+            min-width: 700px;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
             .tab-pane {
                 display: none;
-                overflow: hidden;
+                max-width: 690px;
+                margin: 0 auto;
+                position: relative;
+                // overflow: hidden;
                 &.active{
                     display: block;
                 }
                 .phone-img {
                     max-width: 690px;
+                }
+                &.is-first{
+                    .inner-tab-content{
+                        img{
+                            max-width: 311px;
+                            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+                            transform: translateZ(0) translate3d(0, 0, 0);
+                        }
+                        .is-first{
+                            position: relative;
+                            z-index: 1;
+                            left: -80px;
+                            top: 20px;
+                        }
+                        .is-second{
+                            position: absolute;
+                            top: 0;
+                            right: -100px;
+                        }
+                    }
+                }
+                &.is-second{
+                    .inner-tab-content{
+                        img{
+                            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+                            transform: translateZ(0) translate3d(0, 0, 0);
+                        }
+                        .is-first{
+                            max-width: 256px;
+                            position: absolute;
+                            left: -140px;
+                            top: 20px;
+                        }
+                        .is-second{
+                            max-width: 261px;
+                            position: relative;
+                            z-index: 1;
+                            top: 0;
+                        }
+                        .is-third{
+                            max-width: 257px;
+                            position: absolute;
+                            right: -140px;
+                            top: 20px;
+                        }
+                    }
+                }
+                &.is-third{
+                    .inner-tab-content{
+                        img{
+                            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+                            transform: translateZ(0) translate3d(0, 0, 0);
+                        }
+                        .is-first{
+                            max-width: 492px;
+                            position: absolute;
+                            z-index: 3;
+                            left: -120px;
+                        }
+                        .is-second{
+                            max-width: 503px;
+                            position: relative;
+                            z-index: 2;
+                            top: 30px;
+                        }
+                        .is-third{
+                            max-width: 417px;
+                            position: absolute;
+                            z-index: 1;
+                            right: -65px;
+                            top: 70px;
+                        }
+                    }
+                }
+                &.is-fourth{
+                    .inner-tab-content{
+                        .is-first{
+                            max-width: 584px;
+                            position: relative;
+                        }
+                    }
                 }
             }
         } 
@@ -452,6 +546,7 @@
                     }
                     img{
                         max-width: 400px;
+                        margin: 0 auto;
                         opacity: 0;
                         transition: all .3s ease-in-out;
                     }
@@ -522,6 +617,15 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
+        img{
+            transition: all .4s ease-in-out;
+            transform: translateZ(0) translate3d(0, 0, 0);
+            &.hover{
+                filter: blur(5px);
+                opacity: .5;
+                transform: scale(.98);
+            }
+        }
         &.five-iron-golf{
             max-width: 235px;
         }
