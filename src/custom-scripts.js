@@ -1050,26 +1050,27 @@ if ($('.home-new-page').length) {
   }
   });
 
-  // How Brands Benefit section animation
   let tabTexts = $('.tab-text');
   let tabPanes = $('.tab-pane');
   let currentIndex = 0;
   let autoInterval;
-
+  
   function showTab(index) {
     const target = tabTexts.eq(index).data('tab');
-
-    if ($('#' + target).hasClass('active')) return;
-
-    // Change active class on texts
+    const nextTab = $('#' + target);
+  
+    // Si ya está activo, no hacer nada
+    if (nextTab.hasClass('active')) return;
+  
+    // Evitar que múltiples animaciones se sobrepongan
+    if (gsap.isTweening('.tab-pane')) return;
+  
+    // Actualizar clases activas en los botones
     tabTexts.removeClass('active');
     tabTexts.eq(index).addClass('active');
-
+  
     const currentTab = $('.tab-pane.active');
-    const nextTab = $('#' + target);
-
-    // Animate the current tab out
-    // 1. Animar la salida de las imágenes del tab actual
+  
     gsap.to(currentTab.find('.inner-tab-content img'), {
       opacity: 0,
       y: 20,
@@ -1077,169 +1078,166 @@ if ($('.home-new-page').length) {
       stagger: 0.02,
       ease: "power2.in",
       onComplete: function () {
-        // 2. Luego animar la salida del tab actual
         gsap.to(currentTab, {
           duration: 0.3,
           opacity: 0,
           y: 20,
           onComplete: function () {
             currentTab.removeClass('active');
-
-            // 3. Setear imágenes del nuevo tab a opacity 0 antes de mostrarlo
+  
+            // Preparar nuevo tab
             gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
-
-            // 4. Mostrar el nuevo tab
             nextTab.addClass('active');
-
-            gsap.fromTo(
-              nextTab,
-              { opacity: 0, y: -20 },
-              {
-                duration: 0.3,
-                opacity: 1,
-                y: 0,
-                onComplete: function () {
-                  // 5. Animar entrada de las imágenes del nuevo tab
-                  gsap.fromTo(
-                    nextTab.find('.inner-tab-content img'),
-                    { 
-                      opacity: 0, 
-                      y: -20 
-                    },
-                    {
-                      opacity: 1,
-                      y: 0,
-                      duration: 0.3,
-                      stagger: 0.1,
-                      ease: "back.out(2)",
-                    }
-                  );
-                }
+  
+            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
+              duration: 0.3,
+              opacity: 1,
+              y: 0,
+              onComplete: function () {
+                gsap.fromTo(
+                  nextTab.find('.inner-tab-content img'),
+                  { opacity: 0, y: -20 },
+                  {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    stagger: 0.1,
+                    ease: "back.out(2)"
+                  }
+                );
               }
-            );
+            });
           }
         });
       }
     });
   }
-
+  
   function nextTab() {
     currentIndex = (currentIndex + 1) % tabTexts.length;
     showTab(currentIndex);
   }
-
+  
   function resetAutoAdvance() {
     clearInterval(autoInterval);
     autoInterval = setInterval(nextTab, 5000);
   }
-
-  // Manual tab change
+  
   tabTexts.on('click', function () {
     const clickedIndex = tabTexts.index(this);
     currentIndex = clickedIndex;
     showTab(currentIndex);
     resetAutoAdvance();
   });
-
-  // Start the auto advance
-  autoInterval = setInterval(nextTab, 5000);
-
-    // Brands Who Trust Us section animation
-    const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
-    const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          brandsWhoTrustUs.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerBrandsWhoTrustUs.unobserve(entry.target);
-        }
-      });
-    });
-    brandsWhoTrustUsTrigger.forEach((animation) => {
-      observerBrandsWhoTrustUs.observe(animation);
-    });
   
-    let brandsWhoTrustUs  = gsap.timeline({ duration: .5, ease: "power3.out", paused: true });
-    let mediaQueryBrandsWhoTrustUs = gsap.matchMedia();
-    mediaQueryBrandsWhoTrustUs.add("(min-width: 575px)", () => {
-      brandsWhoTrustUs
-      .from('#brands-who-trust-us .top-area > *', {
-        opacity: 0,
-        y: 10,
-        stagger: 0.4,
-      })
-      .from('#brands-who-trust-us .inner-brand-wrapper', {
-        opacity: 0,
-        scale: 0.99,
-        y: 10,
-        filter: 'blur(5px)',
-        stagger: 0.1,
-      },'<+.5')
-      .from('#brands-who-trust-us .text-center', {
-        opacity: 0,
-      },'<');
-    });
-
-    $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseenter', function() {
-      $('#brands-who-trust-us .inner-brand-wrapper img').addClass('hover');
-      $(this).removeClass('hover');
-    })
-    $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseleave', function() {
-      $('#brands-who-trust-us .inner-brand-wrapper img').removeClass('hover');
-    })
-
-    // How Brands Benefit section animation
-    $('.slider-brands').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      centerMode: true,
-      centerPadding:'20px',
-      focusOnSelect: false,
-      arrows: false,
-      autoplay: false,
-      pauseOnHover: false,
-      draggable: true,
-      infinite: false,
-      dots: true,
-    });
-
-    // We Power Play section animation
-    const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .is-trigger');
-    const observerWePowerPlay = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          wePowerPlay.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerWePowerPlay.unobserve(entry.target);
-        }
-      });
-    });
-    wePowerPlayTrigger.forEach((animation) => {
-      observerWePowerPlay.observe(animation);
-    });
-
-    let wePowerPlay  = gsap.timeline({ paused: true, ease: "power2.out" });
-    // Split the text into characters
-    let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+  // Iniciar intervalo
+  resetAutoAdvance();
   
-    // Hide the text before animating it
-    gsap.set("#we-power-play .all-h1 .char", { 
-      opacity: 0,
+  // Pausar y reanudar el autoavance cuando se oculta/muestra la pestaña
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      clearInterval(autoInterval);
+    } else {
+      resetAutoAdvance();
+    }
+  });  
+
+  // Brands Who Trust Us section animation
+  const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
+  const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        brandsWhoTrustUs.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerBrandsWhoTrustUs.unobserve(entry.target);
+      }
     });
-    // Typing animation
-    wePowerPlay.to("#we-power-play .all-h1 .char", {
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.05,
+  });
+  brandsWhoTrustUsTrigger.forEach((animation) => {
+    observerBrandsWhoTrustUs.observe(animation);
+  });
+
+  let brandsWhoTrustUs  = gsap.timeline({ duration: .5, ease: "power3.out", paused: true });
+  let mediaQueryBrandsWhoTrustUs = gsap.matchMedia();
+  mediaQueryBrandsWhoTrustUs.add("(min-width: 575px)", () => {
+    brandsWhoTrustUs
+    .from('#brands-who-trust-us .top-area > *', {
+      opacity: 0,
+      y: 10,
+      stagger: 0.4,
     })
-    .from("#we-power-play .text-center", {
+    .from('#brands-who-trust-us .inner-brand-wrapper', {
       opacity: 0,
-      y: 20,
+      scale: 0.99,
+      y: 10,
+      filter: 'blur(5px)',
+      stagger: 0.1,
+    },'<+.5')
+    .from('#brands-who-trust-us .text-center', {
+      opacity: 0,
+    },'<');
+  });
+
+  $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseenter', function() {
+    $('#brands-who-trust-us .inner-brand-wrapper img').addClass('hover');
+    $(this).removeClass('hover');
+  })
+  $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseleave', function() {
+    $('#brands-who-trust-us .inner-brand-wrapper img').removeClass('hover');
+  })
+
+  // How Brands Benefit section animation
+  $('.slider-brands').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
+  // We Power Play section animation
+  const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .is-trigger');
+  const observerWePowerPlay = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        wePowerPlay.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerWePowerPlay.unobserve(entry.target);
+      }
     });
+  });
+  wePowerPlayTrigger.forEach((animation) => {
+    observerWePowerPlay.observe(animation);
+  });
+
+  let wePowerPlay  = gsap.timeline({ paused: true, ease: "power2.out" });
+  // Split the text into characters
+  let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+
+  // Hide the text before animating it
+  gsap.set("#we-power-play .all-h1 .char", { 
+    opacity: 0,
+  });
+  // Typing animation
+  wePowerPlay.to("#we-power-play .all-h1 .char", {
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.05,
+  })
+  .from("#we-power-play .text-center", {
+    opacity: 0,
+    y: 20,
+  });
 
   // End of new homepage
 }
