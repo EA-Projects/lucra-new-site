@@ -11,6 +11,9 @@
     .top-area{
         position: relative;
         z-index: 1;
+        .all-h1{
+            color: #FFFFFF;
+        }
         p{
             margin: 20px 0 25px;
         }
@@ -680,6 +683,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     background: $black;
     background-image: url('../../public/images/home/we-power-play.jpg');
     background-position: center;
@@ -687,8 +691,16 @@
     background-repeat: no-repeat;
     text-align: center;
     .all-h1{
+        color: #FFFFFF;
         font-size: 70px;
         margin-bottom: 40px;
+    }
+    .is-trigger{
+        position: absolute;
+        bottom: 80px;
+        pointer-events: none;
+        opacity: 0;
+        visibility: hidden;
     }
     @media (max-width: 575px){
         .all-h1{

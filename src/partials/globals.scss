@@ -1,0 +1,76 @@
+.careers-card{
+    padding: 30px 25px;
+    margin: 15px 0;
+    position: relative;
+    border-radius: 10px;
+    background: #FFFFFF;
+    overflow: hidden;
+    .data-career{
+        position: relative;
+        z-index: 1;
+        h5{
+            text-align: left;
+            color: $black;
+        }
+        p{
+            margin: 0;
+            color: $black;
+        }
+    }
+    .number-values{
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        transition: all .25s ease-in-out;
+        img{
+            width: 30px;
+            position: relative;
+            transition: all .25s ease-in-out;
+            z-index: 1;
+        }
+    }
+    &::after{
+        content: "";
+        background-color: $new-yellow;
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        bottom: -80px;
+        right: -80px;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        transition: all .25s ease-in-out;
+    }
+    &:hover{
+        .number-values{
+            bottom: 70px;
+            img{
+                transform: rotate(-45deg);
+            }
+        }
+        &::after{
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            right: 0;
+            border-radius: 0;
+        }
+    }
+    @media (max-width: 575px){
+        margin: 5px 0;
+        &:hover{
+            .number-values{
+                bottom: 60px;
+            }
+        }
+    }
+    @media (max-width: 425px){
+        padding: 20px;
+        &:hover{
+            .number-values{
+                bottom: 45px;
+            }
+        }
+    }
+}

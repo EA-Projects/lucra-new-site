@@ -2,6 +2,12 @@
 @import './navigation.scss';
 @import './footer.scss';
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .all-h1,
 .all-h2,
 .all-h3,
@@ -13,53 +19,84 @@ a {
     font-family: "Inter", sans-serif;
 }
 
+h1,
+.h1,
 .all-h1{
     font-size: 50px;
-    line-height: 110%;
-    font-weight: 500;
+    line-height: 125%;
     letter-spacing: 0;
+    font-weight: 500;
+    color: $black;
     @media(max-width: 991px){
         font-size: 40px;
     }
 }
 
+h2,
+.h2,
 .all-h2{
     font-size: 40px;
-    line-height: 110%;
+    line-height: 125%;
     letter-spacing: 0;
     font-weight: 500;
+    color: $black;
     @media(max-width: 991px){
         font-size: 30px;
     }
 }
 
+h3,
+.h3,
 .all-h3{
     font-size: 34px;
-    line-height: 110%;
+    line-height: 125%;
     letter-spacing: 0;
     font-weight: 500;
+    color: $black;
     @media(max-width: 991px){
         font-size: 24px;
     }
 }
 
+h4,
+.h4,
 .all-h4{
     font-size: 26px;
-    line-height: 110%;
+    line-height: 125%;
     letter-spacing: 0;
     font-weight: 500;
+    color: $black;
     @media(max-width: 991px){
         font-size: 22px;
     }
 }
 
+h5,
+.h5,
 .all-h5{
     font-size: 20px;
-    line-height: 120%;
-    letter-spacing: -0.04em;
+    line-height: 130%;
+    letter-spacing: 0;
     font-weight: 500;
+    color: $black;
+    &.is-yellow{
+        color: $new-yellow; 
+    }
     @media(max-width: 991px){
         font-size: 18px;
+    }
+}
+
+h6,
+.h6,
+.all-h6{
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: 0em;
+    font-weight: 500;
+    color: $black;
+    &.is-yellow{
+        color: $new-yellow; 
     }
 }
 

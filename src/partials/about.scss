@@ -17,11 +17,8 @@
         justify-content: center;
         gap: 20px;
         a{
-            color: #FFF;
-            font-family: 'Bauziet';
+            color: #FFFFFF;
             font-size: 15px;
-            font-weight: 700;
-            text-transform: uppercase;
             opacity: .3;
             .flag{
                 display: inline-block;
@@ -37,6 +34,8 @@
             }
             &:hover,
             &.active{
+                text-decoration: none;
+                color: $new-yellow;
                 opacity: 1;
                 .flag{
                     opacity: 1;
@@ -103,13 +102,12 @@
         gap: 15px;
         h1,
         h6{
+            color: #FFFFFF;
             text-align: center;
             position: relative;
             z-index: 1;
         }
         h1{
-            font-weight: 500;
-            color: #FFFFFF;
             span{
                 line-height: 58px;
                 display: inline-block;
@@ -186,8 +184,8 @@
                 filter: drop-shadow(8px 20px 14px rgba(0, 0, 0, 0.20));
             }
             h5{
-                // font-family: "Bauziet";
                 position: absolute;
+                color: #FFFFFF;
             }
         }
         .cards-container{
@@ -209,14 +207,12 @@
                     box-shadow: 8px 20px 14px 0px rgba(0, 0, 0, 0.20);
                     overflow: hidden;
                     h5{
-                        // font-family: "Bauziet";
                         text-align: left;
                         color: #001B60;
                     }
                     .number-values{
                         background-color: $yellow;
                         color: #FFFFFF;
-                        // font-family: "Bauziet";
                         font-size: 25px;
                         position: absolute;
                         bottom: -80px;
@@ -320,6 +316,7 @@
     .top-area{
         margin-bottom: 50px;
         h6{
+            color: #FFFFFF;
             text-align: center;
         }
         img{
@@ -460,6 +457,7 @@
     .top-area{
         margin-bottom: 50px;
         h6{
+            color: #FFFFFF;
             text-align: center;
         }
     }
@@ -480,7 +478,6 @@
                 background: rgba(0, 0, 0, 0.70);
                 p{
                     color: #FFFFFF;
-                    // font-family: "Bauziet";
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 34px;
@@ -545,6 +542,7 @@
     position: relative;
     .top-area{
         h6{
+            color: #FFFFFF;
             text-align: center;
         }
     }
@@ -560,8 +558,8 @@
                         width: 40%;
                         text-align: left;
                         h3{
+                            color: #FFFFFF;
                             text-align: left;
-                            text-transform: uppercase;
                         }
                         p{
                             min-height: 120px;
@@ -683,101 +681,23 @@
 }
 
 #careers{
-    padding: 150px 0 50px;
-    // background-color: #37358f;
+    padding: 150px 0 100px;
     background-color: #000000;
     .top-area{
         text-align: center;
         margin-bottom: 50px;
         h6{
-            text-align: center;
-            margin-bottom: 40px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
         }
     }
-    .careers-card{
-        padding: 30px 25px;
-        margin: 15px 0;
-        position: relative;
-        border-radius: 6px;
-        background: #FFF;
-        box-shadow: 8px 20px 14px 0px rgba(0, 0, 0, 0.20);
-        overflow: hidden;
-        .data-career{
-            position: relative;
-            z-index: 1;
-            h5{
-                // font-family: "Bauziet";
-                text-align: left;
-                color: #001B60;
-            }
-            p{
-                color: #42409D;
-                font-size: 16px;
-                font-weight: 600;
-                margin: 0;
-            }
-        }
-        .number-values{
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            transition: all .25s ease-in-out;
-            img{
-                width: 30px;
-                position: relative;
-                transition: all .25s ease-in-out;
-                z-index: 1;
-            }
-        }
-        &::after{
-            content: "";
-            background-color: $yellow;
-            width: 160px;
-            height: 160px;
-            position: absolute;
-            bottom: -80px;
-            right: -80px;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            transition: all .25s ease-in-out;
-        }
+    a{
         &:hover{
-            .number-values{
-                bottom: 70px;
-                img{
-                    transform: rotate(-45deg);
-                }
-            }
-            &::after{
-                height: 100%;
-                width: 100%;
-                bottom: 0;
-                right: 0;
-                border-radius: 0;
-            }
-        }
-    }
-    @media (max-width: 575px){
-        .careers-card{
-            margin: 5px 0;
-            &:hover{
-                .number-values{
-                    bottom: 60px;
-                }
-            }
+            text-decoration: none;
         }
     }
     @media (max-width: 425px){
         padding: 80px 0 50px;
-        .careers-card{
-            padding: 20px;
-            &:hover{
-                .number-values{
-                    bottom: 45px;
-                }
-            }
-        }
     }
 }
 

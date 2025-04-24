@@ -1144,7 +1144,7 @@ if ($('.home-new-page').length) {
   // Start the auto advance
   autoInterval = setInterval(nextTab, 5000);
 
-    // What We Do section animation
+    // Brands Who Trust Us section animation
     const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
     const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -1162,22 +1162,25 @@ if ($('.home-new-page').length) {
     });
   
     let brandsWhoTrustUs  = gsap.timeline({ duration: .5, ease: "power3.out", paused: true });
-    brandsWhoTrustUs
-    .from('#brands-who-trust-us .top-area > *', {
-      opacity: 0,
-      y: 10,
-      stagger: 0.4,
-    })
-    .from('#brands-who-trust-us .inner-brand-wrapper', {
-      opacity: 0,
-      scale: 0.99,
-      y: 10,
-      filter: 'blur(5px)',
-      stagger: 0.1,
-    },'<+.5')
-    .from('#brands-who-trust-us .text-center', {
-      opacity: 0,
-    },'<');
+    let mediaQueryBrandsWhoTrustUs = gsap.matchMedia();
+    mediaQueryBrandsWhoTrustUs.add("(min-width: 575px)", () => {
+      brandsWhoTrustUs
+      .from('#brands-who-trust-us .top-area > *', {
+        opacity: 0,
+        y: 10,
+        stagger: 0.4,
+      })
+      .from('#brands-who-trust-us .inner-brand-wrapper', {
+        opacity: 0,
+        scale: 0.99,
+        y: 10,
+        filter: 'blur(5px)',
+        stagger: 0.1,
+      },'<+.5')
+      .from('#brands-who-trust-us .text-center', {
+        opacity: 0,
+      },'<');
+    });
 
     $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseenter', function() {
       $('#brands-who-trust-us .inner-brand-wrapper img').addClass('hover');
@@ -1203,7 +1206,7 @@ if ($('.home-new-page').length) {
     });
 
     // We Power Play section animation
-    const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .text-center');
+    const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .is-trigger');
     const observerWePowerPlay = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -1863,25 +1866,7 @@ aboutItemsAnimation.fromTo(
 if ($('.press-page').length) { 
   
   if (window.matchMedia('(min-width: 575px)').matches) {
-    // HERO Section
-      if ($('#hero-press').length) {
-        let slideElements = gsap.timeline();
-        slideElements
-        .from("#hero-press .hero-press-content h6",{
-          opacity: 0,
-          duration: .5,
-          y: -50
-        }, "-=.3")
-        .from("#hero-press .hero-press-content h1 span",{
-          duration: .6,
-          yPercent: 110,
-          opacity: 0,
-          stagger:  0.06,
-          rotationZ: 5,
-        }, "-=.6")
-      }
-
-      const releaseItems = document.querySelectorAll('#press-releases .release');
+      const releaseItems = document.querySelectorAll('#press-releases .release:not(.is-first)');
 
       releaseItems.forEach((release, index) => {
         // Create a timeline for each release item
@@ -1889,7 +1874,7 @@ if ($('.press-page').length) {
           scrollTrigger: {
             trigger: release,
             start: 'top bottom',
-            end: '50% 50%',
+            end: '50% 80%',
             scrub: 0.5,
             once: true, 
           }
