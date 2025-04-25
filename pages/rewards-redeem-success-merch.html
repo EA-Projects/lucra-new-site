@@ -160,19 +160,6 @@
     </script>
     <script defer="True" src="https://guidebar-backend-727ab3a68ba9.herokuapp.com/install/lucrasports_com"></script>
     <script src="../dist/scripts.js" type="text/javascript"></script>
-    <script>
-      // Load the navigation HTML into the header
-      fetch('/utils/navigation.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('navigation').innerHTML = html;
-      });
-      // Load the footer HTML into the footer
-      fetch('/utils/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('footer').innerHTML = html;
-      });
-    </script>
+    <script src="/src/global.js"></script>
   </body>
 </html>
