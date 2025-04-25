@@ -214,9 +214,9 @@ a {
     color: #ffffff;
     transition: 0.35s all ease-in-out;
     &:hover {
-        background: #fff;
-        border-color: #ffffff;
-        color: #BC6F4E;
+        background: $black;
+        border-color: #FFFFFF;
+        color: #FFFFFF;
     }
   }
   &.gold {
@@ -2186,7 +2186,7 @@ footer {
   &.responsible-gaming {
     background-color: #fff;
     #policy-content {
-      padding: 30px 0 80px;
+      padding: 100px 0 80px;
       .content {
         .effective-date {
           margin-bottom: 40px;
