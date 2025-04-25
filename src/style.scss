@@ -2318,6 +2318,7 @@ footer {
         }
       }
       @media (max-width: 575px) {
+        padding: 50px 0 50px;
         #hero {
           min-height: auto;
           height: auto;
@@ -2325,7 +2326,10 @@ footer {
         }
         .content {
           padding: 0 20px;
-          margin-top: 50px;
+          ul,
+          ol {
+            padding-left: 10px;
+          }
         }
       }
     }
