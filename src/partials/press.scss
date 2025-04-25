@@ -110,26 +110,4 @@
             }
         }
     }
-}
-
-#prefooter-action{
-    padding: 110px 0;
-    text-align: center;
-    position: relative;
-    background-color: $black;
-    background-image: url('../../public/images/global/prefooter-action-bg.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    .inner-content{
-        max-width: 900px;
-        margin: 0 auto;
-        .all-h2{
-            color: #FFFFFF;
-            margin-bottom: 50px;
-        }
-    }
-    @media (min-width: 1441px){
-        background-position: center top;
-    }
-}   
+} 

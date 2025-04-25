@@ -27,6 +27,12 @@ h1,
     letter-spacing: 0;
     font-weight: 500;
     color: $black;
+    &.is-bigger{
+        font-size: 70px;
+        @media (max-width: 575px){
+            font-size: 40px;
+        }
+    }
     @media(max-width: 991px){
         font-size: 40px;
     }

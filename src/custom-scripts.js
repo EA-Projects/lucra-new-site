@@ -1008,49 +1008,44 @@ if ($('.home-new-page').length) {
   });
 
   let tabTexts = $('.tab-text');
-  let tabPanes = $('.tab-pane');
   let currentIndex = 0;
-  let autoInterval;
-  
+
   function showTab(index) {
     const target = tabTexts.eq(index).data('tab');
     const nextTab = $('#' + target);
-  
+
     // Si ya está activo, no hacer nada
     if (nextTab.hasClass('active')) return;
-  
-    // Evitar que múltiples animaciones se sobrepongan
-    if (gsap.isTweening('.tab-pane')) return;
-  
+
     // Actualizar clases activas en los botones
     tabTexts.removeClass('active');
     tabTexts.eq(index).addClass('active');
-  
+
     const currentTab = $('.tab-pane.active');
-  
+
     gsap.to(currentTab.find('.inner-tab-content img'), {
       opacity: 0,
       y: 20,
       duration: 0.3,
-      stagger: 0.02,
+      stagger: 0.005,
       ease: "power2.in",
-      onComplete: function () {
+      onComplete() {
         gsap.to(currentTab, {
-          duration: 0.3,
+          duration: 0.2,
           opacity: 0,
           y: 20,
-          onComplete: function () {
+          onComplete() {
             currentTab.removeClass('active');
-  
+
             // Preparar nuevo tab
             gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
             nextTab.addClass('active');
-  
+
             gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
-              duration: 0.3,
+              duration: 0.2,
               opacity: 1,
               y: 0,
-              onComplete: function () {
+              onComplete() {
                 gsap.fromTo(
                   nextTab.find('.inner-tab-content img'),
                   { opacity: 0, y: -20 },
@@ -1069,35 +1064,11 @@ if ($('.home-new-page').length) {
       }
     });
   }
-  
-  function nextTab() {
-    currentIndex = (currentIndex + 1) % tabTexts.length;
-    showTab(currentIndex);
-  }
-  
-  function resetAutoAdvance() {
-    clearInterval(autoInterval);
-    autoInterval = setInterval(nextTab, 5000);
-  }
-  
+
   tabTexts.on('click', function () {
-    const clickedIndex = tabTexts.index(this);
-    currentIndex = clickedIndex;
+    currentIndex = tabTexts.index(this);
     showTab(currentIndex);
-    resetAutoAdvance();
   });
-  
-  // Iniciar intervalo
-  resetAutoAdvance();
-  
-  // Pausar y reanudar el autoavance cuando se oculta/muestra la pestaña
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      clearInterval(autoInterval);
-    } else {
-      resetAutoAdvance();
-    }
-  });  
 
   // Brands Who Trust Us section animation
   const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');

@@ -1,3 +1,25 @@
+#prefooter-action{
+    padding: 140px 0;
+    text-align: center;
+    position: relative;
+    background-color: $black;
+    background-image: url('../../public/images/global/prefooter-action-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .inner-content{
+        max-width: 900px;
+        margin: 0 auto;
+        .all-h1{
+            color: #FFFFFF;
+            margin-bottom: 30px;
+        }
+    }
+    @media (min-width: 1441px){
+        background-position: center top;
+    }
+}  
+
 .careers-card{
     padding: 30px 25px;
     margin: 15px 0;
