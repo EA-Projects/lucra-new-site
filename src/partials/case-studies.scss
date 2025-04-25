@@ -2188,7 +2188,6 @@ body {
                         text-align: left;                        
                         line-height: 115%;
                         margin-bottom: 20px;
-                        font-weight: 600;
                         span{
                             font-size: 18px;
                         }
@@ -2360,6 +2359,7 @@ body {
         .content-area {
             max-width: 557px;
             h2 {
+                color: #ffffff;
                 text-align: left;
                 margin-bottom: 32px;
             }
@@ -3115,6 +3115,100 @@ body {
                 h2{
                     &.is-gold{
                         color: #D7AC5B;
+                    }
+                }
+            }
+        }
+    }
+    &.is-foodfight{
+        #hero-case-studies{
+            background-image: url(../../images/case-studies/foodfight-image-hero.jpg);
+            .content-hero{
+                h6.pretitle{
+                    &.is-orange-red{
+                        color: #FB441C;
+                    }
+                }
+            }
+            .hero-image-wrapper{
+                img{
+                    &.foodfight{
+                        max-width: 168px;
+                    }
+                }
+            }
+            @media (max-width: 991px){
+                .content-hero {
+                    .logo-image{
+                        max-width: 80px;
+                    }
+                }
+            }
+        } 
+        #about{
+            background-image: url(../../images/case-studies/foodfight-about-bg.jpg);
+            .content-area{
+                p{
+                    a{
+                        color: #FB441C;
+                        &:hover{
+                            border-color: #FB441C;
+                        }
+                    }
+                }
+            }
+            .items-wrapper{
+                .about-item{
+                    border-color: #FB441C;
+                    box-shadow: 0px 0px 35px 0px #FB441C44;
+                    .copy-item{
+                        p{
+                            color: #FB441C;
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0px 0px 150px 0px #FB441C61;
+                    }
+                }
+            }
+        }
+        #lucra-technology{
+            padding-bottom: 220px;
+            .top-area{
+                margin-bottom: 0;
+                max-width: 900px;
+            }
+            .grid-boxs{
+                margin-top: 100px;
+                max-width: 1400px;
+                .inner-box{
+                    &.is-orange-red{
+                        border-color: #FB441C;
+                        box-shadow: 0px 0px 35px 0px #FB441C3b;
+                    }
+                }
+            }
+        }
+        #testimonial{
+            padding: 120px 0;
+            background-image: url(../../images/case-studies/foodfight-testimonial-bg.jpg);
+            background-position: bottom right;
+            background-size: cover;
+            background-repeat: no-repeat;
+            img{
+                filter: drop-shadow(0 0 50px #fb451c4f);
+            }
+            .content-area{
+                p.description.author{
+                    color: #FB441C;
+                }
+            }
+        }
+        #get-in-touch{
+            .content-area{
+                h2{
+                    &.is-orange-red{
+                        color: #FB441C;
                     }
                 }
             }

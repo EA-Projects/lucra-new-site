@@ -230,6 +230,16 @@ a {
         color: #D7AC5B;
     }
   }
+  &.orange-red {
+    background-color: #FB441C;
+    border-color: #FB441C;
+    color: #ffffff;
+    transition: 0.35s all ease-in-out;
+    &:hover {
+        background: transparent;
+        border-color: #FB441C;
+    }
+  }
   @media (max-width: 575px) {
     min-width: initial;
     padding: 10px 40px 11px;

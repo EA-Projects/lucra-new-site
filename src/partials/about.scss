@@ -63,7 +63,7 @@
         }
     }
     @media (max-width: 575px){
-        top: 52px;
+        top: 50px;
         .about-nav-items{
             gap: 5px;
             justify-content: space-between;
@@ -75,7 +75,7 @@
             }
         }
         &.fixed{
-            top: 52px;
+            top: 50px;
         }
     }
     @media (max-width: 425px){
