@@ -141,11 +141,6 @@ position: relative;
     &::after{
         background: linear-gradient(345deg,#137FE6 -5%,rgba(14,241,105,0) 65%);
     }
-    .content-hero{
-        h1{
-            line-height: 33px;
-        }
-    }
     .graphic-hero{
         display: flex;
         align-items: center;
@@ -782,7 +777,6 @@ body {
     .content-area {
         p.description {
             font-size: 18px;
-            line-height: 33px;
         }
     }
     }
@@ -1448,7 +1442,6 @@ body {
     .content-area {
         p.description {
             font-size: 18px;
-            line-height: 33px;
         }
     }
     }
@@ -2398,7 +2391,6 @@ body {
         .content-area {
             p.description {
                 font-size: 18px;
-                line-height: 33px;
             }
         }
         }
