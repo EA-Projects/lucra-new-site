@@ -87,82 +87,34 @@
     }
 }
 #hero-about{
-    padding: 150px 0 0px;
-    // background-color: #01154c;
+    padding: 150px 0 120px;
     background-color: #000000;
     .hero-about-content{
-        position: relative;
-        min-height: 770px;
-        max-width: 750px;
+        max-width: 1000px;
         margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 15px;
-        h1,
-        h6{
+        text-align: center;
+        h1{
+            margin-top: 30px;
             color: #FFFFFF;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        h1{
-            span{
-                line-height: 58px;
-                display: inline-block;
-            }
-            .hidden{
-                overflow: hidden;
-            }
-        }
-        img{
-            max-width: 1045px;
-            position: absolute;
-            animation: Smallfloating 4s ease-in-out infinite;
         }
     }
     @media (max-width: 991px){
-        padding: 120px 0 0px;
+
     }
     @media (max-width: 767px){
-        .hero-about-content{
-            min-height: 600px;
-            h1{
-                span{
-                    line-height: 40px;
-                }
-                div{
-                    display: inline;
-                }
-            }
-        }
+
     }
     @media (max-width: 575px){
-        .hero-about-content{
-            min-height: 500px;
-            gap: 5px;
-            h1{
-                span{
-                    line-height: 32px;
-                }
-            }
-        }
+
     }
     @media (max-width: 425px){
-        .hero-about-content{
-            min-height: 120vw;
-            img{
-                width: 120vw;
-            }
-        }
     }
 }
 
 #values{
-    padding: 130px 0 50px;
-    // background: linear-gradient(180deg, #01154c 0%, #37358F 100%);
-    background-color: #000000;
+    padding: 100px 0 150px;
+    background-color: $new-lightblue;
     .top-area{
         margin-bottom: 80px;
         h6{
@@ -181,7 +133,7 @@
             align-items: center;
             justify-content: center;
             img{
-                filter: drop-shadow(8px 20px 14px rgba(0, 0, 0, 0.20));
+                filter: drop-shadow(10px 20px 25px rgba(0, 0, 0, 0.10));
             }
             h5{
                 position: absolute;
@@ -204,16 +156,18 @@
                     position: relative;
                     border-radius: 6px;
                     background: #FFF;
-                    box-shadow: 8px 20px 14px 0px rgba(0, 0, 0, 0.20);
+                    box-shadow: 0 0 35px rgba(0, 0, 0, 0.10);
                     overflow: hidden;
                     h5{
                         text-align: left;
-                        color: #001B60;
+                        color: $black;
+                        margin-bottom: 0;
                     }
                     .number-values{
-                        background-color: $yellow;
-                        color: #FFFFFF;
+                        background-color: $new-yellow;
                         font-size: 25px;
+                        font-weight: 500;
+                        color: $black;
                         position: absolute;
                         bottom: -80px;
                         right: -80px;
@@ -310,22 +264,18 @@
 }
 
 #the-team{
-    padding: 150px 0 50px;
-    // background-color: #37358f;
-    background-color: #000000;
+    padding: 100px 0 70px;
+    background-color: #FFFFFF;
     .top-area{
         margin-bottom: 50px;
-        h6{
-            color: #FFFFFF;
-            text-align: center;
-        }
-        img{
-            max-width: 157px;
-            position: absolute;
-            left: -45px;
-            bottom: -60px;
-            z-index: 1;
-        }
+        text-align: center;
+        // img{
+        //     max-width: 157px;
+        //     position: absolute;
+        //     left: -45px;
+        //     bottom: -60px;
+        //     z-index: 1;
+        // }
     }
     .mobile-slide{
         display: none;
@@ -451,15 +401,12 @@
 }
 
 #investors{
-    padding: 150px 0 50px;
-    // background-color: #37358f;
+    padding: 100px 0;
     background-color: #000000;
+    background-color: $new-lightblue;
     .top-area{
         margin-bottom: 50px;
-        h6{
-            color: #FFFFFF;
-            text-align: center;
-        }
+        text-align: center;
     }
     .investors-grid{
         display: flex;
@@ -476,15 +423,12 @@
                 left: 0;
                 padding: 8px 0;
                 background: rgba(0, 0, 0, 0.70);
+                text-align: center;
                 p{
                     color: #FFFFFF;
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 34px;
                     margin: 0;
-                    text-align: center;
                     span{
-                        color: $yellow;
+                        color: $new-yellow;
                     }
                 }
             }
@@ -536,15 +480,11 @@
 }
 
 #our-advisors{
-    padding: 150px 0 0;
-    // background-color: #37358f;
-    background-color: #000000;
+    padding: 100px 0;
+    background-color:#ffffff;
     position: relative;
     .top-area{
-        h6{
-            color: #FFFFFF;
-            text-align: center;
-        }
+        text-align: center;
     }
     .carousel{
         .carousel-inner{
@@ -558,10 +498,10 @@
                         width: 40%;
                         text-align: left;
                         h3{
-                            color: #FFFFFF;
                             text-align: left;
                         }
                         p{
+                            color: $black;
                             min-height: 120px;
                         }
                     }
@@ -586,18 +526,13 @@
                             position: absolute;
                             left: 0;
                             top: 0;
-                            // background: linear-gradient(270deg, rgba(55,53,143,1) 0%, rgba(55,53,143,0) 20%, rgba(55,53,143,0) 80%, rgba(55,53,143,1) 100%);
                             z-index: 1;
-                            // background: radial-gradient(circle, rgba(55,53,143,0) 0%, rgba(55,53,143,1) 100%);
-                            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+                            background: radial-gradient(circle, rgba(0,0,0,0) 15%, #ffffff 100%);
                         }
                         &::before{
-                            // background: 
-                            // linear-gradient(0deg, rgba(55,53,143,1) 0%, rgba(55,53,143,0) 10%, rgba(55,53,143,0) 90%, rgba(55,53,143,1) 100%),
-                            // linear-gradient(270deg, rgba(55,53,143,1) 0%, rgba(55,53,143,0) 20%, rgba(55,53,143,0) 80%, rgba(55,53,143,1) 100%);
                             background: 
-                            linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, rgba(0,0,0,1) 100%),
-                            linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,1) 100%);
+                            linear-gradient(0deg, #ffffff 0%, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, #ffffff 100%),
+                            linear-gradient(270deg, #ffffff 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, #ffffff 100%);
                         }
                     }
                 }
@@ -619,7 +554,7 @@
                     &::after{
                         height: 3px;
                         width: 100%;
-                        background-color: $yellow;
+                        background-color: $black;
                         transition: all .2s ease-in-out;
                         opacity: 0;
                     }
@@ -681,14 +616,12 @@
 }
 
 #careers{
-    padding: 150px 0 100px;
-    background-color: #000000;
+    padding: 100px 0;
+    background-color: $new-lightblue;
     .top-area{
         text-align: center;
-        margin-bottom: 50px;
-        h6{
-            color: #FFFFFF;
-            margin-bottom: 20px;
+        p{
+            color: $black;
         }
     }
     a{
