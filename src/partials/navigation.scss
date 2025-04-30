@@ -35,6 +35,7 @@
         justify-content: flex-end;
         .navbar-toggler.is-close{
             margin-bottom: 30px;
+            padding: 0;
             span{
                 width: 25px;
                 background-image: url(../../public/images/close-menu-icon.svg);

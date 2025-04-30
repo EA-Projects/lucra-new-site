@@ -5,10 +5,19 @@ body{
 }
 
 .categories-page {
+#hero-categories{
+    background-color: $black;
+    padding: 200px 0 120px;
+    .top-area{
+        h1{
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
 #client-categories{
-    padding: 200px 0 300px;
-    // background: linear-gradient(180deg, #01123F 0%, #37358F 100%);
-    background:#000000;
+    padding: 50px 0 300px;
+    background:#FFFFFF;
     position: relative;
     z-index: 1;
     .container {
@@ -16,29 +25,6 @@ body{
             max-width: 1440px;
             width: 100%;
             padding: 0px 36px;
-        }
-    }
-    .top-area{
-        h1 {
-        text-transform: uppercase;
-            @media (min-width: 1200px) {
-                font-size: 80px;
-                line-height: 92px;  
-                font-weight: 800;  
-            }
-            @media (max-width: 500px) {
-                max-width: 250px;
-                margin: auto; 
-            }
-            
-            span {
-                color: #0ef169;
-            }
-        }
-        h2{
-            color: #FFFFFF;
-            text-transform: uppercase;
-            text-align: left;
         }
     }
     .cards-area{
@@ -53,10 +39,8 @@ body{
             gap: 5%;
             .category-card{
                 border-radius: 8px;
-                border: 1.5px solid #A68EFF;
-                background: rgba(0, 19, 65, 0.65);
-                box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
-                backdrop-filter: blur(5px);
+                border: 2px solid $new-lightblue;
+                background: $black;
                 overflow: hidden;
                 position: relative;
                 transition: box-shadow .5s ease-in-out;
@@ -64,13 +48,10 @@ body{
                 &:hover{
                     box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.30);
                 }
-                h5{
-                    font-family: "Bauziet", sans-serif;
-                    text-transform: uppercase;
+                h4{
                     color: #FFFFFF;
                     margin: 0;
-                    padding: 30px 5px;
-                    font-size: 20px;
+                    padding: 20px 30px;
                 }
                 &.top-left{
                     width: 375px;
@@ -91,11 +72,10 @@ body{
                     left: -20px;
                 }
                 &.bottom-middle{
-                        width: 100%;
-                        max-width: 35%;
-                        left: -21px;
-                        top: 42px;
-
+                    width: 100%;
+                    max-width: 35%;
+                    left: -21px;
+                    top: 42px;
                     align-self: flex-start;
                 }
                 &.bottom-right{

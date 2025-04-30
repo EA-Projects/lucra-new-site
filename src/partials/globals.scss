@@ -8,12 +8,27 @@
     background-size: cover;
     background-repeat: no-repeat;
     .inner-content{
+        position: relative;
+        z-index: 1;
         max-width: 900px;
         margin: 0 auto;
         .all-h1{
             color: #FFFFFF;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
+        p{
+            max-width: 630px;
+            margin: 0 auto;
+        }
+        .button{
+            margin-top: 30px;
+        }
+    }
+    .overlay{
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        pointer-events: none;
     }
     @media (min-width: 1441px){
         background-position: center top;

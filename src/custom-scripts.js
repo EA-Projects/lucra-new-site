@@ -235,25 +235,6 @@ window.addEventListener('load', function () {
     }
   });
 
-  // Animation the background image for Case Study and Get in Touch blocks
-  // When the user hovers on the button, we trigger the animation
-  if ($('.animated-background').length) {
-    let buttonHover = gsap.timeline({repeat: -1, paused: true});
-    buttonHover
-    .from("#get-in-touch, #case-study-block", {
-      backgroundPosition: "200% 0",
-      duration: 25,
-      ease: Linear.easeNone
-    });
-
-    // Hover event to trigger background image
-    $("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
-      buttonHover.play();
-    });
-    $("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
-      buttonHover.pause();
-    });
-  }
 
   //Prefooter animation, stagger words
   if ($('#prefooter').length) {
