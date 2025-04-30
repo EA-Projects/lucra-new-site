@@ -286,14 +286,14 @@
             li{
                 display: none;
                 text-align: center;
-                color: rgba(255, 255, 255, 0.40);
+                color: rgba(0, 0, 0, 0.40);
                 font-family: "Bauziet";
                 font-size: 14px;
                 font-weight: 800;
                 line-height: 34px;
                 text-transform: uppercase;
                 span{
-                    color: $yellow;
+                    color: $black;
                 }
                 &.slick-active{
                     display: block;

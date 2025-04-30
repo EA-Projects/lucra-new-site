@@ -17,3 +17,11 @@ Redirect 301 /pages/marketing-manager.html /pages/careers.html
 Redirect 301 /pages/lead-backend-engineer.html /pages/careers.html
 Redirect 301 /pages/newsletter.html /
 Redirect 301 /pages/world-cup-22-giveaway-rules.html /
+Redirect 301 /pages/ambassadors.html /
+Redirect 301 /pages/loyaltyprogram.html /
+Redirect 301 /pages/rewards.html /
+Redirect 301 /pages/rewards-states.html /
+Redirect 301 /pages/rewards-redeem-error.html /
+Redirect 301 /pages/rewards-redeem-success-bucks.html /
+Redirect 301 /pages/rewards-redeem-success-merch.html /
+Redirect 301 /pages/ourstory.html /
