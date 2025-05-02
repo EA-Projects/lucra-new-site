@@ -843,7 +843,7 @@ if ($('.home-new-page').length) {
     showTab(currentIndex);
   });
 
-  // Brands Who Trust Us section animation
+  // Notable Brands Who Trust Us section animation
   const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
   const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -922,22 +922,27 @@ if ($('.home-new-page').length) {
   });
 
   let wePowerPlay  = gsap.timeline({ paused: true, ease: "power2.out" });
-  // Split the text into characters
-  let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+  
+  let mediaQuerywePowerPlay = gsap.matchMedia();
+  mediaQuerywePowerPlay.add("(min-width: 575px)", () => {
+    // Split the text into characters
+    let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+  
+    // Hide the text before animating it
+    gsap.set("#we-power-play .all-h1 .char", { 
+      opacity: 0,
+    });
+    // Typing animation
+    wePowerPlay.to("#we-power-play .all-h1 .char", {
+        opacity: 1,
+        duration: 0.5,
+        stagger: 0.05,
+    })
+    .from("#we-power-play .text-center", {
+      opacity: 0,
+      y: 20,
+    });
 
-  // Hide the text before animating it
-  gsap.set("#we-power-play .all-h1 .char", { 
-    opacity: 0,
-  });
-  // Typing animation
-  wePowerPlay.to("#we-power-play .all-h1 .char", {
-      opacity: 1,
-      duration: 0.5,
-      stagger: 0.05,
-  })
-  .from("#we-power-play .text-center", {
-    opacity: 0,
-    y: 20,
   });
 
   // End of new homepage

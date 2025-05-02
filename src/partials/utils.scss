@@ -129,8 +129,14 @@ p {
       font-size: 20px;
       font-weight: 300;
       @media (max-width: 767px) {
-        font-size: 16px;
+        font-size: 15px;
       }
+    }
+    &.medium{
+        font-size: 18px;
+        @media (max-width: 767px) {
+            font-size: 15px;
+        }
     }
     &.small {
         font-size: 12px;
