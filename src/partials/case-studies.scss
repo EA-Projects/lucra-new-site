@@ -36,7 +36,7 @@
     }
     h1 {
       max-width: 440px;
-      color: #ffffff;
+      color: $light;
       text-align: left;
     }
     p {
@@ -182,7 +182,7 @@
     }
     h2,
     h4 {
-      color: #ffffff;
+      color: $light;
     }
     h2 {
       font-size: 80px;
@@ -2034,7 +2034,7 @@ body {
     .content-area {
       max-width: 550px;
       h2 {
-        color: #ffffff;
+        color: $light;
         text-align: left;
         margin-bottom: 20px;
       }
@@ -2050,8 +2050,8 @@ body {
             color: #bff300;
             border-color: #bff300;
             &:hover {
-              color: #ffffff;
-              border-color: #ffffff;
+              color: $light;
+              border-color: $light;
             }
           }
         }
@@ -2189,7 +2189,7 @@ body {
             margin-bottom: 35px;
           }
           h5 {
-            color: #ffffff;
+            color: $light;
             text-align: left;
             line-height: 115%;
             margin-bottom: 20px;
@@ -2360,7 +2360,7 @@ body {
     .content-area {
       max-width: 557px;
       h2 {
-        color: #ffffff;
+        color: $light;
         text-align: left;
         margin-bottom: 32px;
       }
@@ -2427,7 +2427,7 @@ body {
     padding: 122px 0px 95px;
     background: linear-gradient(0deg, #000 0%, #232323 100%);
     h3 {
-      color: #ffffff;
+      color: $light;
       text-align: center;
       position: relative;
       z-index: 1;

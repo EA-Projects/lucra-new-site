@@ -3,7 +3,7 @@
     background-color: $black;
     h1{
         text-align: center;
-        color: #FFFFFF;
+        color: $light;
     }
 }
 
@@ -18,7 +18,7 @@
         padding: 45px 40px 30px;
         max-width: 720px;
         margin: 0 auto;
-        background-color: $new-lightblue;
+        background-color: $lightblue;
         border-radius: 16px;
     }
     @media (max-width: 575px){

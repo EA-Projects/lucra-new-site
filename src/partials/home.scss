@@ -12,7 +12,7 @@
         position: relative;
         z-index: 1;
         .all-h1{
-            color: #FFFFFF;
+            color: $light;
             margin-bottom: 40px;
         }
         div{
@@ -330,7 +330,7 @@
 
 #how-we-do-it{
     padding: 100px 0;
-    background: #E7F0F8;
+    background: $lightblue;
     .top-area{
         text-align: center;
         .all-h5{
@@ -403,7 +403,7 @@
                     top: 8px;
                     width: 10px;
                     height: 30px;
-                    background-color: $new-yellow;
+                    background-color: $yellow;
                     margin-right: 10px;
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
@@ -546,7 +546,7 @@
                             top: 6px;
                             width: 8px;
                             height: 23px;
-                            background-color: $new-yellow;
+                            background-color: $yellow;
                             margin-right: 10px;
                             opacity: 0;
                             transition: opacity 0.3s ease-in-out;
@@ -696,7 +696,7 @@
     background-repeat: no-repeat;
     text-align: center;
     .all-h1{
-        color: #FFFFFF;
+        color: $light;
         margin-bottom: 40px;
     }
     .is-trigger{

@@ -89,7 +89,7 @@ h5,
     font-weight: 500;
     color: $black;
     &.is-yellow{
-        color: $new-yellow; 
+        color: $yellow; 
     }
     @media(max-width: 991px){
         font-size: 18px;
@@ -108,7 +108,7 @@ h6,
     font-weight: 500;
     color: $black;
     &.is-yellow{
-        color: $new-yellow; 
+        color: $yellow; 
     }
 }
 

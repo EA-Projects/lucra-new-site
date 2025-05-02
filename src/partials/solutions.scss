@@ -192,7 +192,7 @@ background-color: #00144d;
         margin: 15px 0 20px;
         line-height: 48px;
         strong{
-            color: $new-yellow;
+            color: $yellow;
         }
     }
 }
@@ -247,7 +247,7 @@ overflow: hidden;
                 top: 50%;
                 left: 70%;
                 transform: translate(-50%, -50%) translate3d(0,0,0);
-                background-color: $new-yellow;
+                background-color: $yellow;
                 filter: blur(100px);
                 opacity: .7;
             }
@@ -261,10 +261,10 @@ overflow: hidden;
                     h2{
                         text-align: left;
                         text-transform: uppercase;
-                        color: #FFFFFF;
+                        color: $light;
                         span{
-                            color: $new-yellow;
-                            text-shadow: 0 0 30px rgba($new-yellow, .6);
+                            color: $yellow;
+                            text-shadow: 0 0 30px rgba($yellow, .6);
                         }
                     }
                     p{
@@ -295,7 +295,7 @@ overflow: hidden;
                     .energy-slide{
                         position: absolute;
                         max-width: 698px;
-                        filter: drop-shadow(0 0 0 $new-yellow) drop-shadow(0 0 5px $new-yellow);
+                        filter: drop-shadow(0 0 0 $yellow) drop-shadow(0 0 5px $yellow);
                         z-index: 1;
                         left: 50%;
                         top: 95%;
@@ -320,7 +320,7 @@ overflow: hidden;
             z-index: 1;
             li{
                 text-indent: 0;
-                background-color: #FFFFFF;
+                background-color: $light;
                 transition: all .2s ease-in-out;
                 opacity: .2;
                 width: 55px;
@@ -330,7 +330,7 @@ overflow: hidden;
                 &:hover,
                 &.active{
                     opacity: 1;
-                    background-color: $new-yellow;
+                    background-color: $yellow;
                 }
             }
         }
@@ -463,13 +463,13 @@ overflow: hidden;
     .top-area{
         margin-bottom: 50px;
         h2{
-            color: #FFFFFF;
+            color: $light;
             text-align: center;
             position: relative;
             z-index: 1;
             span{
-                color: $new-yellow;
-                text-shadow: 0 0 30px rgba($new-yellow, .6);
+                color: $yellow;
+                text-shadow: 0 0 30px rgba($yellow, .6);
             }
         }
         p{
@@ -543,12 +543,12 @@ overflow: hidden;
                     }
                 }
                 h4{
-                    color: #FFFFFF;
+                    color: $light;
                     text-align: left;
                     opacity: 0.1;
                     transition: all .5s ease-in-out;
                     span{
-                        color: #FFFFFF;
+                        color: $light;
                         display: block;
                     }
                     &.mw-470 {
@@ -565,7 +565,7 @@ overflow: hidden;
                 &.viewed{
                     .line-tab{
                         .dot-line{
-                            background-color: #FFFFFF;
+                            background-color: $light;
                         }
                     }
                 }
@@ -575,10 +575,10 @@ overflow: hidden;
                         visibility: visible;
                     }
                     .dot-line{
-                        background-color: $new-yellow;
+                        background-color: $yellow;
                     }
                     h4{
-                        color: $new-yellow;
+                        color: $yellow;
                         opacity: 1;
                     }
                     p{
@@ -621,7 +621,7 @@ overflow: hidden;
                     justify-content: center;
                     margin: 14px 0;
                     border-radius: 16px;
-                    border: 1px solid $new-yellow;
+                    border: 1px solid $yellow;
                     background: rgba(0, 19, 65, 0.80);
                     box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
                     backdrop-filter: blur(5px);
@@ -693,7 +693,7 @@ overflow: hidden;
                         bottom: 30px;
                         right: -35px;
                         opacity: .9;
-                        filter: drop-shadow(0 0 0 $new-yellow) drop-shadow(0 0 3px $new-yellow);
+                        filter: drop-shadow(0 0 0 $yellow) drop-shadow(0 0 3px $yellow);
                         &.is-left{
                             max-width: 98px;
                             right: initial;
@@ -931,13 +931,13 @@ overflow: hidden;
     .top-area{
         margin-bottom: 50px;
         h2{
-            color: #FFFFFF;
+            color: $light;
             text-align: center;
             position: relative;
             z-index: 1;
             span{
-                color: #A68EFF;
-                text-shadow: 0 0 30px rgba(#A68EFF, .6);
+                color: $middle-blue;
+                text-shadow: 0 0 30px rgba($middle-blue, .6);
             }
         }
         p{
@@ -1008,13 +1008,13 @@ overflow: hidden;
                     }
                 }
                 h4{
-                    color: #FFFFFF;
+                    color: $light;
                     text-align: right;
                     opacity: 0.1;
                     transition: all .5s ease-in-out;
                     max-width: 500px;
                     span{
-                        color: #FFFFFF;
+                        color: $light;
                         display: block;
                         font-size: 24px;
                         line-height: 32px;
@@ -1030,7 +1030,7 @@ overflow: hidden;
                 &.viewed{
                     .line-tab{
                         .dot-line{
-                            background-color: #FFFFFF;
+                            background-color: $light;
                         }
                     }
                 }
@@ -1242,7 +1242,7 @@ overflow: hidden;
         .top-area{
             margin-bottom: 50px;
             h2{
-                color: #FFFFFF;
+                color: $light;
                 text-align: center;
                 margin: 0 auto 20px;
             }
@@ -1315,7 +1315,7 @@ overflow: hidden;
             margin-bottom: 50px;
             h2{
                 text-align: center;
-                color: #FFFFFF;
+                color: $light;
             }
             p{
                 max-width: 680px;
@@ -1433,7 +1433,7 @@ overflow: hidden;
     .top-area{
         margin-bottom: 50px;
         h2{
-            color: #FFFFFF;
+            color: $light;
             text-align: center;
         }
         p {
@@ -1453,7 +1453,7 @@ overflow: hidden;
             margin: 0 auto;
             .timeline-top{
                 border-radius: 16px;
-                border: 1px solid #A68EFF;
+                border: 1px solid $middle-blue;
                 background: rgba(0, 19, 65, 0.35);
                 box-shadow: 0px 0px 35px 0px rgba(170, 156, 255, 0.20);
                 backdrop-filter: blur(5px);
@@ -1461,7 +1461,7 @@ overflow: hidden;
                 padding: 30px;
                 margin-bottom: 20px;
                 h4{
-                    color: #FFFFFF;
+                    color: $light;
                 }
                 // Top Line fixed all the time
                 &::after{
@@ -1499,7 +1499,7 @@ overflow: hidden;
                         font-weight: 300;
                         line-height: 20px;
                         strong{
-                            color: #FFFFFF;
+                            color: $light;
                         }
                     }
                 }
@@ -1573,7 +1573,7 @@ overflow: hidden;
                         h6{
                             text-align: left;
                             margin: 0;
-                            color: #FFFFFF;
+                            color: $light;
                         }
                     }
                     &.viewed{
@@ -1614,9 +1614,9 @@ overflow: hidden;
             }
             &.green{
                 .timeline-top{
-                    border-color: $new-yellow;
+                    border-color: $yellow;
                     span.option{
-                        color: $new-yellow;
+                        color: $yellow;
                     }
                     .complete-time{
                         span{
@@ -1624,25 +1624,25 @@ overflow: hidden;
                         }
                     }
                     &::after{
-                        background-color: $new-yellow;
+                        background-color: $yellow;
                     }
                 }
                 .timeline-bottom{
                     .timeline-row{
                         .timeline-content{
-                            border-color: $new-yellow;
+                            border-color: $yellow;
                         }
                         &.active{
                             .timeline-counter{
                                 .number{
-                                    background-color: $new-yellow;
+                                    background-color: $yellow;
                                     img{
                                         filter: invert(1);
                                     }
                                 }
                             }
                             .timeline-line{
-                                background-color: $new-yellow;
+                                background-color: $yellow;
                             }
                         }
                     }
@@ -1725,7 +1725,7 @@ overflow: hidden;
             color: #B1BCCC;
             margin-bottom: 0;
             strong{
-                color: #FFFFFF;
+                color: $light;
             }
         }
         

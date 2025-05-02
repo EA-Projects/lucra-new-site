@@ -14,9 +14,9 @@
             margin-top: 50px;
             a{
                 font-size: 14px;
-                color: #FFFFFF;
+                color: $light;
                 &:hover{
-                    color: $new-yellow;
+                    color: $yellow;
                     text-decoration: none;
                 }    
             }
@@ -28,9 +28,9 @@
             margin: 40px 0;
             gap: 10px;
             a{
-                color: #FFFFFF;
+                color: $light;
                 &:hover{
-                    color: $new-yellow;
+                    color: $yellow;
                 }    
             }
         }
