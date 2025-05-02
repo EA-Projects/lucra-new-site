@@ -1,501 +1,88 @@
-////// DISABLE ANIMATIONS ON MOBILE
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  ) ||
-  $(window).width() < 575
-) {
-  $('.animate').removeClass('animate'); // to remove transition
-}
+$(document).ready(function () {
+  $(".team-card").on("click", function() {
+    $(this).toggleClass("active");
+  });
 
-let previousY = {};
-let previousRatio = {};
+  $(".team-card").on("mouseleave", function() {
+    $(this).removeClass("active");
+  });
 
-const thresholdArray = (steps) =>
-  Array(steps + 1)
-    .fill(0)
-    .map((_, index) => index / steps || 0);
+  // Tilt effect to Team Cards only on Desktop 
+  if (window.matchMedia('(min-width: 575px)').matches) {
+    if ($('.team-card').length) {
+      $('.team-card').tilt({
+        glare: true,
+        maxTilt: 3,
+        speed: 700,
+        transition: true,
+        maxGlare: 0.1
+      });
+    }
+  }
 
-function handleIntersection(entries, observer) {
-  entries.forEach((entry) => {
-    const currentY = entry.boundingClientRect.y;
-    const currentRatio = entry.intersectionRatio;
-    const isIntersecting = true;
+  // Password page trigger
+  $("#password-page form").submit(function(e){
+    e.preventDefault();
+    var password = $('input#password').val();
+    // Compare entered password with the correct password
+    if (password === 'Lucra2025') {
+      
+      // Save the password at localStorage
+      localStorage.setItem("password", password);
 
-    if (entry.intersectionRatio > 0) {
-      let output = '';
+      // Redirect to page
+      window.location.replace("/pages/terms-and-conditions.html");
 
-      // Scrolling down/up
-      if (
-        currentY < previousY[entry.target.id] ||
-        (previousY[entry.target.id] === 0 && currentY > 0)
-      ) {
-        if (currentRatio > previousRatio[entry.target.id] && isIntersecting) {
-          output = entry.target.id + ' Scrolling down enter';
-          $(entry.target).addClass('animated-in');
-        } else {
-          output = entry.target.id + ' Scrolling down leave';
-          $(entry.target).addClass('animated-out');
-        }
-      } else if (currentY > previousY[entry.target.id] && isIntersecting) {
-        if (currentRatio < previousRatio[entry.target.id]) {
-          output = entry.target.id + ' Scrolling up leave';
-          $(entry.target).removeClass('animated-in');
-        } else {
-          output = entry.target.id + ' Scrolling up enter';
-          $(entry.target).removeClass('animated-out');
-        }
-      }
-
-      previousY[entry.target.id] = currentY;
-      previousRatio[entry.target.id] = currentRatio;
+    } else {
+      // Error message when the user fail
+      $('.error-message').fadeIn();
     }
   });
-}
+
+  // If is a protected page
+  if ($('.is-protected-page').length) {
+    // Check if the password exist in the localStorage
+    var storedPassword = localStorage.getItem("password");
+    // If the password doesn't exist, redirect to the password page
+    if(!storedPassword) {
+        window.location.href = "/tc-access.html";
+    } else{
+      $('.overlay-protect').fadeOut();
+    }
+  }
+  // End of document ready
+});
+
+// Fix navbar when scroll
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  if (scroll >= 60) {
+    $('#header-nav').addClass('fixed');
+    $('#navigation').addClass('fixed');
+    $('#anchors-nav').addClass('fixed');
+  } 
+  else {
+    $('#header-nav').removeClass('fixed');
+    $('#navigation').removeClass('fixed');
+    $('#anchors-nav').removeClass('fixed');
+  }
+
+  // Anchors Navigation , to trigger active class between sections
+  var cutoff = $(window).scrollTop();
+  $('.with-sticky-anchors section').each(function () {
+      if ($(this).offset().top + $(this).height() > cutoff) {
+          var currSection = $(this).attr('id');
+
+          $('.anchors-nav a').removeClass('active');
+          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
+          return false;
+      }
+  });
+});
 
 window.addEventListener('load', function () {
-  $('#header').addClass('animated');
-
-  const elements = document.querySelectorAll('[data-animable]');
-  const options = {
-    root: null,
-    threshold: [0.25, 0.75],
-  };
-  const observer = new IntersectionObserver(handleIntersection, options);
-  elements.forEach((el) => {
-    previousY[el.id] = 0;
-    previousRatio[el.id] = 0;
-    observer.observe(el);
-  });
-
   (function ($) {
-    $(document).ready(function () {
-      var elementTop, elementBottom, viewportTop, viewportBottom;
-
-      function isScrolledIntoView(elem) {
-        elementTop = $(elem).offset().top;
-        elementBottom = elementTop + $(elem).outerHeight();
-        viewportTop = $(window).scrollTop();
-        viewportBottom = viewportTop + $(window).height();
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-      }
-
-      // if ($('video').length) {
-      //   var loadVideo;
-
-      //   $('video').each(function () {
-      //     $(this).attr('webkit-playsinline', '');
-      //     $(this).attr('playsinline', '');
-      //     $(this).attr('muted', 'muted');
-
-      //     $(this).attr('id', 'loadvideo');
-      //     loadVideo = document.getElementById('loadvideo');
-      //     loadVideo.load();
-      //   });
-
-      //   $(window).scroll(function () {
-      //     // video to play when is on viewport
-
-      //     $('video').each(function () {
-      //       if (isScrolledIntoView(this) == true) {
-      //         $(this)[0].play();
-      //       } else {
-      //         $(this)[0].pause();
-      //       }
-      //     });
-      //   }); // video to play when is on viewport
-      // } // end .field--name-field-video
-
-      $(".team-card").on("click", function() {
-        $(this).toggleClass("active");
-      });
-
-      $(".team-card").on("mouseleave", function() {
-        $(this).removeClass("active");
-      });
-
-      // Tilt effect to Team Cards only on Desktop 
-      if (window.matchMedia('(min-width: 575px)').matches) {
-        if ($('.team-card').length) {
-          $('.team-card').tilt({
-            glare: true,
-            maxTilt: 3,
-            speed: 700,
-            transition: true,
-            maxGlare: 0.1
-          });
-        }
-      }
-
-      // Password page trigger
-      $("#password-page form").submit(function(e){
-        e.preventDefault();
-        var password = $('input#password').val();
-        // Compare entered password with the correct password
-        if (password === 'Lucra2025') {
-          
-          // Save the password at localStorage
-          localStorage.setItem("password", password);
-
-          // Redirect to page
-          window.location.replace("/pages/terms-and-conditions.html");
-
-        } else {
-          // Error message when the user fail
-          $('.error-message').fadeIn();
-        }
-      });
-
-
-      // If is a protected page
-      if ($('.is-protected-page').length) {
-        // Check if the password exist in the localStorage
-        var storedPassword = localStorage.getItem("password");
-        // If the password doesn't exist, redirect to the password page
-        if(!storedPassword) {
-            window.location.href = "/tc-access.html";
-        } else{
-          $('.overlay-protect').fadeOut();
-        }
-      }
-    });
   })(jQuery);
-
-  // Ambassadors University and Games
-  if ($('#games').length) {
-    const gamesLogos = anime.timeline({
-      direction: 'normal',
-      autoplay: true,
-      loop: true,
-    });
-
-    gamesLogos
-      .add({
-        targets: '#games .container-blocks .blocks',
-        translateY: [0, 30],
-        opacity: [0, 1],
-        easing: 'easeInQuad',
-        duration: 400,
-        delay: anime.stagger(50),
-      })
-      .add({
-        targets: '#games .container-blocks .blocks',
-        translateY: 30,
-        opacity: 1,
-        easing: 'easeInQuad',
-        duration: 2500,
-        changeComplete: () => {
-          $('#games .container-blocks.first').addClass('hide');
-          $('#games .container-blocks.second').removeClass('hide');
-        },
-      })
-      .add({
-        targets: '#games .container-blocks .blocks',
-        translateY: [0, 30],
-        opacity: [0, 1],
-        easing: 'easeInQuad',
-        duration: 400,
-        delay: anime.stagger(50),
-      })
-      .add({
-        targets: '#games .container-blocks .blocks',
-        translateY: 30,
-        opacity: 1,
-        easing: 'easeInQuad',
-        duration: 2500,
-        changeComplete: () => {
-          $('#games .container-blocks.first').removeClass('hide');
-          $('#games .container-blocks.second').addClass('hide');
-        },
-      });
-    }
-    // Form Variables, like Actions to the form
-    var greenhouseAction = 'https://www.linkedin.com/jobs/view/3566908844/';
-    var californiaAction = 'https://www.linkedin.com/jobs/view/3430512566/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=3IpRdQFPy%2F6P4iAy1VswyQ%3D%3D&trk=flagship3_search_srp_jobs';
-    var pennsylvaniaAction = 'https://www.linkedin.com/jobs/view/3431737768/?eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=IN_NETWORK&refId=G50fpkbGhNNLn3sug3eRlA%3D%3D&trackingId=chJhbG4eDtQgGGABW2PVsQ%3D%3D&trk=flagship3_search_srp_jobs';
-    
-    // Ambassadors States Select
-  $('#states-select').change(function () {
-    if ($(this).val() == 'select') {
-      $('#submit-state').prop('disabled', true);
-      $('.option-display.games').addClass('hide');
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.full').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $(".contact-mail").addClass("hide");
-      $('#states-form').attr('action', greenhouseAction);
-      $(".disclaimer").removeClass("show");
-    } else if (
-      $(this).val() == 'AZ' ||
-      $(this).val() == 'WA' ||
-      $(this).val() == 'NV' ||
-      $(this).val() == 'CO' ||
-      $(this).val() == 'IA' ||
-      $(this).val() == 'MI' ||
-      $(this).val() == 'OH' ||
-      $(this).val() == 'VA' ||
-      $(this).val() == 'MD' ||
-      $(this).val() == 'NJ' ||
-      $(this).val() == 'NH' ||
-      $(this).val() == 'SC' ||
-      $(this).val() == 'VT'
-    ) {
-      $('.option-display.games').removeClass('hide');
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.full').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $('#submit-state').prop('disabled', false);
-      $(".contact-mail").addClass("hide");
-      $('#states-form').attr('action', greenhouseAction);
-      $(".disclaimer").removeClass("show");
-    } else if ($(this).val() == 'SD' || $(this).val() == 'DE') {
-      $('.option-display.sports').removeClass('hide');
-      $('.option-display.games').addClass('hide');
-      $('.option-display.full').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $('#submit-state').prop('disabled', false);
-      $(".contact-mail").addClass("hide");
-      $('#states-form').attr('action', greenhouseAction);
-      $(".disclaimer").removeClass("show");
-    } else if (
-      $(this).val() == 'MT' ||
-      $(this).val() == 'AR' ||
-      $(this).val() == 'LA' ||
-      $(this).val() == 'TN' ||
-      $(this).val() == 'CT'
-    ) {
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.games').addClass('hide');
-      $('.option-display.full').addClass('hide');
-      $('.option-display.not-offered').removeClass('hide');
-      $('#submit-state').prop('disabled', true);
-      $(".contact-mail").addClass("hide");
-      $('#states-form').attr('action', greenhouseAction);
-      $(".disclaimer").removeClass("show");
-    }
-    // California Option
-    else if (
-      $(this).val() == 'CA'
-    ) {
-      $('.option-display.full').removeClass('hide');
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.games').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $('#submit-state').prop('disabled', false);
-      $('#states-form').attr('action', californiaAction);
-      $(".contact-mail").addClass("hide");
-      $(".disclaimer").addClass("show");
-      $(".contact-mail.california").removeClass("hide");
-    }
-    // Pennsylvania Option
-    else if (
-      $(this).val() == 'PA'
-    ) {
-      $('.option-display.full').removeClass('hide');
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.games').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $('#submit-state').prop('disabled', false);
-      $('#states-form').attr('action', pennsylvaniaAction);
-      $(".contact-mail").addClass("hide");
-      $(".disclaimer").addClass("show");
-      $(".contact-mail.pennsylvania").removeClass("hide");
-    } else {
-      $('.option-display.full').removeClass('hide');
-      $('.option-display.sports').addClass('hide');
-      $('.option-display.games').addClass('hide');
-      $('.option-display.not-offered').addClass('hide');
-      $('#submit-state').prop('disabled', false);
-      $(".contact-mail").addClass("hide");
-      $('#states-form').attr('action', greenhouseAction);
-      $(".disclaimer").removeClass("show");
-    }
-  });
-
-// Homepage animations, features section
-// Feature one || COMMUNITY BUILDING
-  if ($('.feature-one').length) {
-    var featOne = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-    featOne
-    .from(".feature-graphic.feature-one .world-image", {
-        duration: 1,
-        ease: "none",
-        opacity: 0,
-    }, "-=.5")
-
-    const featOneTrigger = document.querySelectorAll('#product-features .feature-one .trigger');
-    const observerFeatOne = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featOne.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatOne.unobserve(entry.target);
-        }
-      });
-    });
-    featOneTrigger.forEach((animation) => {
-      observerFeatOne.observe(animation);
-    });
-  }
-
-  // Feature three || USER EXPERIENCE
-  if ($('.feature-three').length) {
-    var featThree = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-    featThree
-    .from(".feature-graphic.feature-three .vs-image", {
-        duration: .6,
-        ease: "back",
-        y: 120,
-        opacity: 0,
-        onComplete: function(){
-          $(".feature-graphic.feature-three .vs-image").addClass("floating");
-        }
-    }, "-=.5")
-
-    const featThreeTrigger = document.querySelectorAll('#product-features .feature-three .trigger');
-    const observerFeatThree = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featThree.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatThree.unobserve(entry.target);
-        }
-      });
-    });
-    featThreeTrigger.forEach((animation) => {
-      observerFeatThree.observe(animation);
-    });
-  }
-
-  // Feature four || RISK MANAGEMENT
-  if ($('.feature-four').length) {
-    var featFour = gsap.timeline({  
-      duration: 1,
-      ease: "power2.out",
-      delay: 0,
-      paused: true,
-    });
-
-  featFour
-    .from(".feature-graphic.feature-four .card-feature", {
-        duration: .6,
-        ease: "back",
-        y: 120,
-        opacity: 0,
-        onComplete: function(){
-          $(".feature-graphic.feature-four .card-feature").addClass("floating");
-        }
-    }, "-=.5")
-
-    const featFourTrigger = document.querySelectorAll('#product-features .feature-four .trigger');
-    const observerFeatFour = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          featFour.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerFeatFour.unobserve(entry.target);
-        }
-      });
-    });
-    featFourTrigger.forEach((animation) => {
-      observerFeatFour.observe(animation);
-    });
-  }
-
-
-  // Animation the background image for Case Study and Get in Touch blocks
-  // When the user hovers on the button, we trigger the animation
-  if ($('.animated-background').length) {
-    let buttonHover = gsap.timeline({repeat: -1, paused: true});
-    buttonHover
-    .from("#get-in-touch, #case-study-block", {
-      backgroundPosition: "200% 0",
-      duration: 25,
-      ease: Linear.easeNone
-    });
-
-    // Hover event to trigger background image
-    $("#get-in-touch .button, #case-study-block .button").on("mouseenter", function() {
-      buttonHover.play();
-    });
-    $("#get-in-touch .button, #case-study-block .button").on("mouseleave", function() {
-      buttonHover.pause();
-    });
-  }
-
-  //Prefooter animation, stagger words
-  if ($('#prefooter').length) {
-    let prefooterAnimation = gsap.timeline({paused: true});
-    prefooterAnimation
-    .from("#prefooter p span", {
-      duration: .7,
-      opacity: 0,
-      y: 30,
-      stagger: .3,
-      ease: "power2.out",
-    });
-
-    const prefooterTrigger = document.querySelectorAll('#prefooter p span');
-    const observerPrefooter = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          prefooterAnimation.play();
-        }
-        // Unobserve trigger
-        if (entry.intersectionRatio > 0) {
-          observerPrefooter.unobserve(entry.target);
-        }
-      });
-    });
-    prefooterTrigger.forEach((animation) => {
-      observerPrefooter.observe(animation);
-    });
-  }
-
-  if ($('.watch-area').length) {
-    let buttonVideoHover = gsap.timeline({paused: true});
-    buttonVideoHover
-    .fromTo(".watch-area .video-play", {
-      duration: .4,
-      ease: "power1.out",
-      scale: .2,
-      opacity: 0,
-      xPercent: -17,
-      yPercent: -35
-    }, {
-      duration: .4,
-      scale: 1,
-      opacity: 1,
-      xPercent: -17,
-      yPercent: -115
-    })
-
-    // Hover event to trigger video preview
-    $(".watch-area .button").on("mouseenter", function() {
-      buttonVideoHover.play();
-    });
-    $(".watch-area .button").on("mouseleave", function() {
-      buttonVideoHover.reverse();
-    });
-  }
 
   // Hero Case Studies
   if ($('#hero-case-studies.dpr').length) {
@@ -570,29 +157,6 @@ if ($('#hero-case-studies .animation-graphic .ball').length) {
 // About page animations
 // Only trigger the animation on Tablet and Desktop
 if (window.matchMedia('(min-width: 575px)').matches) {
-// HERO Section
-  if ($('#hero-about').length) {
-    let slideElements = gsap.timeline();
-    slideElements
-    // Show main image and cards
-    .from("#hero-about .hero-about-content img",{
-      opacity: 0,
-      duration: 1,
-    })
-    .from("#hero-about .hero-about-content h6",{
-      opacity: 0,
-      duration: .5,
-      y: -50
-    }, "-=.3")
-    .from("#hero-about .hero-about-content h1 span",{
-      duration: .6,
-      yPercent: 110,
-      opacity: 0,
-      stagger:  0.06,
-      rotationZ: 5,
-    }, "-=.6")
-  }
-
   // VALUES Section
   if ($('.card-values').length) {
     let valuesAnimation = gsap.timeline({paused: true, delay: .2});
@@ -643,10 +207,6 @@ if (window.matchMedia('(min-width: 575px)').matches) {
       opacity: 0,
       duration: .5,
       y: -50
-    })
-    .from("#the-team .top-area img",{
-      opacity: 0,
-      duration: .3,
     })
     .from("#the-team .team-grid-desktop .team-card",{
       opacity: 0,
@@ -756,37 +316,6 @@ if (window.matchMedia('(min-width: 575px)').matches) {
   }
   // END conditional query
 }
-
-
-  // HOMEPAGE VIDEO
-  const homepageVideo = document.querySelectorAll('#video video');
-  const observerHomepageVideo = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Play video when it's on view
-        entry.target.play();
-      } else {
-        // Pause video when it's out of the view
-        entry.target.pause();
-      }
-    });
-  });
-  
-  // Observar cada video
-  homepageVideo.forEach((video) => {
-    observerHomepageVideo.observe(video);
-  });  
-
-  // Alternar el sonido al hacer clic en el botón de volumen
-  const volumeButton = document.querySelector('#video .volume');
-  volumeButton.addEventListener('click', () => {
-  const video = document.querySelector('#video video');
-  video.muted = !video.muted;
-
-  // Cambiar el icono del botón según el estado del sonido
-  volumeButton.classList = video.muted ? 'volume muted' : 'volume active';
-});
-
 //  end window onload
 });
 
@@ -798,136 +327,6 @@ $('.faq-heading').click(function () {
     .find('.faq-text')
     .slideToggle();
 });
-
-// Button to mute and unmuted the video
-$('#video .volume').on('click', function () {
-  if ($('#video .placeholder').prop('muted')) {
-    $('#video .placeholder').prop('muted', false);
-    $('#video .volume').removeClass('muted');
-  } else {
-    $('#video .placeholder').prop('muted', true);
-    $('#video .volume').addClass('muted');
-  }
-});
-
-// Videos pre footer
-var videos = [
-  `<iframe
-      id="video-0"
-      class="video-iframe"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      src="https://www.youtube.com/embed/DjZWyOPQJcU?start=1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-  `<iframe
-      id="video-1"
-      class="video-iframe"
-      src="//content.jwplatform.com/players/ZppCgNir-YrbGYzGZ.html"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-  `<iframe
-      id="video-2"
-      class="video-iframe"
-      src="https://www.youtube.com/embed/amHTD3bF1Zo"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-  ></iframe>`,
-  `<iframe
-      id="video-3"
-      class="video-iframe"
-      src="https://www.bloomberg.com/multimedia/api/embed/iframe?id=b2d1e5d1-4198-41d4-a6bf-03d3d7f3d86d"
-      width="100%"
-      height="300"
-      allowscriptaccess="always"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>`,
-];
-
-$(function () {
-  // Play video pre footer
-  $('.playvideo').on('click', function () {
-    $(this).next('.video-holder').css('display', 'none');
-    $(this).css('display', 'none');
-    //As noted in addendum, check for querystring exitence
-    var symbol =
-      $(this).prev('.video-iframe').attr('src').indexOf('?') > -1 ? '&' : '?';
-    //Modify source to autoplay and start video
-    $(this)
-      .prev('.video-iframe')
-      .attr(
-        'src',
-        $(this).prev('.video-iframe').attr('src') + symbol + 'autoplay=1'
-      );
-  });
-
-  $('#carouselExampleCaption').on('slide.bs.carousel', function (e) {
-    $(`#video-${e.from}`).replaceWith(videos[e.from]);
-  });
-});
-
-// Fix navbar when scroll
-$(window).scroll(function () {
-  var scroll = $(window).scrollTop();
-  if (scroll >= 60) {
-    $('#header-nav').addClass('fixed');
-    $('#anchors-nav').addClass('fixed');
-  } 
-  else {
-    $('#header-nav').removeClass('fixed');
-    $('#anchors-nav').removeClass('fixed');
-  }
-
-  // Anchors Navigation , to trigger active class between sections
-  var cutoff = $(window).scrollTop();
-  $('.with-sticky-anchors section').each(function () {
-      if ($(this).offset().top + $(this).height() > cutoff) {
-          var currSection = $(this).attr('id');
-
-          $('.anchors-nav a').removeClass('active');
-          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
-          return false;
-      }
-  });
-});
-
-// Values Slider on About page
-if ($('.slider-nav').length) {
-  $('.slider-nav').slick({
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    dots: false,
-    centerMode: false,
-    focusOnSelect: false,
-    arrows: true,
-    autoplay: false,
-    autoplaySpeed: 6000,
-    pauseOnHover: false,
-    draggable: true,
-    responsive: [
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
-}
 
 // About Team Slider
 if ($('.slider-team').length) {
@@ -948,95 +347,6 @@ if ($('.slider-team').length) {
         return  '<span>' + (i + 1)+ '</span>' + ' of ' + slider.slideCount;
     }
   });
-}
-
-// Team Slider on About page
-if ($('.team-slider').length) {
-  $('.team-slider').slick({
-    centerMode: true,
-    centerPadding: '50px',
-    slidesToShow: 2,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: false,
-    arrows: true,
-    draggable: false,
-    responsive: [
-      {
-        breakpoint: 991,
-        settings: {
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1,
-        },
-      },
-    ],
-  });
-}
-
-// Add class to de prev and next Team Slider for move position
-$('.team-slider').on(
-  'beforeChange',
-  function (event, { slideCount: count }, currentSlide, nextSlide) {
-    let selectors = [nextSlide, nextSlide - count, nextSlide + count]
-      .map((n) => `[data-slick-index="${n}"]`)
-      .join(', ');
-    $('.slick-now').removeClass('slick-now');
-    $(selectors).next().addClass('slick-now');
-    $('.prev-now').removeClass('prev-now');
-    $(selectors).prev().addClass('prev-now');
-  }
-);
-
-$('[data-slick-index="0"]').addClass('slick-now');
-$('[data-slick-index="0"]').prev().addClass('prev-now');
-
-if ($('#info-cards').length) {
-  var $slider = $('.slider');
-  var $progressBar = $('.progress');
-  var $progressBarLabel = $('.slider__label');
-  
-  $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide) {   
-    var calc = ( (nextSlide) / (slick.slideCount-1) ) * 100;
-    
-    $progressBar
-      .css('background-size', calc + '% 100%')
-      .attr('aria-valuenow', calc );
-    
-    $progressBarLabel.text( calc + '% completed' );
-  });
-  
-  $slider.slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    // infinite: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: false,
-    speed: 1000,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 575,
-        settings: {
-          slidesToShow: 1,
-          dots: true
-        }
-      }
-    ]
-  });  
 }
 
 // Check Browsers
@@ -1411,65 +721,226 @@ if ($('.categories-page').length) {
 ////// HOME-NEW PAGE //////
 ////////////////////////////
 
-if ($('.home-new-page').length) {
-  //Logos Grid
-  let gridLogos = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#brands-grid',
-      start: '10% 50%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
+if ($('.home-new-page').length) {  
+  // What We Do section animation
+  const whatWeDoTrigger = document.querySelectorAll('#what-we-do .is-trigger');
+  const observerWhatWeDo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        whatWeDo.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerWhatWeDo.unobserve(entry.target);
+      }
+    });
+  });
+  whatWeDoTrigger.forEach((animation) => {
+    observerWhatWeDo.observe(animation);
+  });
+  
+  let whatWeDo  = gsap.timeline({ duration: 0.6, ease: "power3.out", paused: true });
+  
+  let mediaQuerywhatWeDo = gsap.matchMedia();
+  mediaQuerywhatWeDo.add("(min-width: 575px)", () => {
+    whatWeDo
+    .from('#what-we-do .inner-phone.is-medium.left', {
+      // opacity: 0,
+      x: 100,
+      delay: 0.1,
+    },'<')
+    .from('#what-we-do .inner-phone.is-medium.right', {
+      // opacity: 0,
+      x: -100,
+    },'<')
+    .from('#what-we-do .inner-phone.is-small.left', {
+      // opacity: 0,
+      x: 200,
+      delay: 0.1,
+    },'<')
+    .from('#what-we-do .inner-phone.is-small.right', {
+      // opacity: 0,
+      x: -200,
+    },'<');
   });
 
-  gridLogos.fromTo('#brands-grid .grid-logos .logos', {
-    y: 100,
+  // How We Do It section animation
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.fromTo("#how-we-do-it .how-we-do-it-block .inner-how-we-do-it-block img", {
+    y: -20
+    },
+  {
+    y: 30,
+    ease: "none",
+    scrollTrigger: {
+      trigger: "#how-we-do-it",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+  }
+  });
+
+  let tabTexts = $('.tab-text');
+  let currentIndex = 0;
+
+  function showTab(index) {
+    const target = tabTexts.eq(index).data('tab');
+    const nextTab = $('#' + target);
+
+    // Si ya está activo, no hacer nada
+    if (nextTab.hasClass('active')) return;
+
+    // Actualizar clases activas en los botones
+    tabTexts.removeClass('active');
+    tabTexts.eq(index).addClass('active');
+
+    const currentTab = $('.tab-pane.active');
+
+    gsap.to(currentTab.find('.inner-tab-content img'), {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      stagger: 0.005,
+      ease: "power2.in",
+      onComplete() {
+        gsap.to(currentTab, {
+          duration: 0.2,
+          opacity: 0,
+          y: 20,
+          onComplete() {
+            currentTab.removeClass('active');
+
+            // Preparar nuevo tab
+            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
+            nextTab.addClass('active');
+
+            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
+              duration: 0.2,
+              opacity: 1,
+              y: 0,
+              onComplete() {
+                gsap.fromTo(
+                  nextTab.find('.inner-tab-content img'),
+                  { opacity: 0, y: -20 },
+                  {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    stagger: 0.1,
+                    ease: "back.out(2)"
+                  }
+                );
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
+  tabTexts.on('click', function () {
+    currentIndex = tabTexts.index(this);
+    showTab(currentIndex);
+  });
+
+  // Brands Who Trust Us section animation
+  const brandsWhoTrustUsTrigger = document.querySelectorAll('#brands-who-trust-us .inner-brand-wrapper');
+  const observerBrandsWhoTrustUs = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        brandsWhoTrustUs.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerBrandsWhoTrustUs.unobserve(entry.target);
+      }
+    });
+  });
+  brandsWhoTrustUsTrigger.forEach((animation) => {
+    observerBrandsWhoTrustUs.observe(animation);
+  });
+
+  let brandsWhoTrustUs  = gsap.timeline({ duration: .5, ease: "power3.out", paused: true });
+  let mediaQueryBrandsWhoTrustUs = gsap.matchMedia();
+  mediaQueryBrandsWhoTrustUs.add("(min-width: 575px)", () => {
+    brandsWhoTrustUs
+    .from('#brands-who-trust-us .top-area > *', {
+      opacity: 0,
+      y: 10,
+      stagger: 0.4,
+    })
+    .from('#brands-who-trust-us .inner-brand-wrapper', {
+      opacity: 0,
+      scale: 0.99,
+      y: 10,
+      filter: 'blur(5px)',
+      stagger: 0.1,
+    },'<+.5')
+    .from('#brands-who-trust-us .text-center', {
+      opacity: 0,
+    },'<');
+  });
+
+  $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseenter', function() {
+    $('#brands-who-trust-us .inner-brand-wrapper img').addClass('hover');
+    $(this).removeClass('hover');
+  })
+  $('#brands-who-trust-us .inner-brand-wrapper img').on('mouseleave', function() {
+    $('#brands-who-trust-us .inner-brand-wrapper img').removeClass('hover');
+  })
+
+  // How Brands Benefit section animation
+  $('.slider-brands').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
+  // We Power Play section animation
+  const wePowerPlayTrigger = document.querySelectorAll('#we-power-play .is-trigger');
+  const observerWePowerPlay = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        wePowerPlay.play();
+      }
+      // Unobserve trigger
+      if (entry.intersectionRatio > 0) {
+        observerWePowerPlay.unobserve(entry.target);
+      }
+    });
+  });
+  wePowerPlayTrigger.forEach((animation) => {
+    observerWePowerPlay.observe(animation);
+  });
+
+  let wePowerPlay  = gsap.timeline({ paused: true, ease: "power2.out" });
+  // Split the text into characters
+  let splitText = new SplitType("#we-power-play .all-h1", { types: "chars" });
+
+  // Hide the text before animating it
+  gsap.set("#we-power-play .all-h1 .char", { 
     opacity: 0,
-  },{
-    y: 0,
-    opacity: 1,
-    stagger: .1
   });
-  let greenCircles = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '0% 10%%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
-  });
-
-  greenCircles.fromTo('#risk-and-compliance .circle', {
+  // Typing animation
+  wePowerPlay.to("#we-power-play .all-h1 .char", {
+      opacity: 1,
+      duration: 0.5,
+      stagger: 0.05,
+  })
+  .from("#we-power-play .text-center", {
     opacity: 0,
-  },{
-    opacity: .1,
-    stagger: .1
+    y: 20,
   });
 
-  // RISK AND COMPLIANCE section animation 
-  let riskCompliance = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '10% 50%',
-      end: '20% 50%',
-      scrub: 0.5,
-    }
-  });
-  // Prevent animation on mobile
-  let mediaQueryRiskCompliance = gsap.matchMedia();
-  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
-        y: 0,
-        x: 0,
-        rotate: 0,
-        duration: .3,
-        stagger: {
-          amount: 4,
-          from: "random"
-        }
-      });
-  });
-
+  // End of new homepage
 }
 
 ////////////////////////////
@@ -2094,30 +1565,7 @@ aboutItemsAnimation.fromTo(
 if ($('.press-page').length) { 
   
   if (window.matchMedia('(min-width: 575px)').matches) {
-    // HERO Section
-      if ($('#hero-press').length) {
-        let slideElements = gsap.timeline();
-        slideElements
-        // Show main image and cards
-        // .from("#hero-press .hero-press-content img",{
-        //   opacity: 0,
-        //   duration: 1,
-        // })
-        .from("#hero-press .hero-press-content h6",{
-          opacity: 0,
-          duration: .5,
-          y: -50
-        }, "-=.3")
-        .from("#hero-press .hero-press-content h1 span",{
-          duration: .6,
-          yPercent: 110,
-          opacity: 0,
-          stagger:  0.06,
-          rotationZ: 5,
-        }, "-=.6")
-      }
-
-      const releaseItems = document.querySelectorAll('#press-releases .release');
+      const releaseItems = document.querySelectorAll('#press-releases .release:not(.is-first)');
 
       releaseItems.forEach((release, index) => {
         // Create a timeline for each release item
@@ -2125,7 +1573,7 @@ if ($('.press-page').length) {
           scrollTrigger: {
             trigger: release,
             start: 'top bottom',
-            end: '50% 50%',
+            end: '50% 80%',
             scrub: 0.5,
             once: true, 
           }
@@ -2503,48 +1951,6 @@ if ($('.solutions-page').length) {
   });
 
   // End Solutions Conditional
-}
-
-if ($('#particles-dashboard').length) {
-  particlesJS("particles-dashboard", {
-      particles: {
-        number: { value: 1500, density: { enable: true, value_area: 2000 } },
-        color: { value: "#0EF169" },
-        shape: {
-          type: "circle",
-          stroke: { width: 0, color: "#000000" },
-          polygon: { nb_sides: 3 },
-        },
-        opacity: {
-          value: 1,
-          random: true,
-          anim: { enable: false, speed: 3, opacity_min: 0.1, sync: false },
-        },
-        size: {
-          value: 1,
-          random: true,
-          anim: { enable: true, speed: 2, size_min: 0.1, sync: false },
-        },
-        line_linked: {
-          enable: false,
-          distance: 50,
-          color: "#ffffff",
-          opacity: 0.6,
-          width: 1,
-        },
-        move: {
-          enable: true,
-          speed: 0.7,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: { enable: false, rotateX: 600, rotateY: 1200 },
-        },
-      },
-      retina_detect: true,
-  });
 }
 
 // Clickable solution tabs

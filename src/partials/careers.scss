@@ -1,0 +1,35 @@
+#hero{
+    &.hero-careers{
+        padding: 150px 0 120px;
+        background-color: #000000;
+        .inner-content{   
+            text-align: center;  
+            h1,
+            .all-h1{
+                color: #FFFFFF;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+#join-the-team {
+    padding: 100px 0;
+    background-color: $new-lightblue;
+    position: relative;
+    .top-area{
+        max-width: 650px;
+        margin: 0 auto;
+        text-align: center;   
+        h2 {
+            color: $black;
+        }
+        p{
+            color: $black;
+        }
+    }
+    a{
+        &:hover{
+            text-decoration: none;
+        }
+    }
+  }
