@@ -1,7 +1,6 @@
 #anchors-nav{
     width: 100%;
-    // background-color: $darkblue;
-    background-color: #000000;
+    background-color: $black;
     padding: 10px 0;
     transition: all 0.2s ease-in-out;
     position: fixed;
@@ -88,7 +87,7 @@
 }
 #hero-about{
     padding: 150px 0 120px;
-    background-color: #000000;
+    background-color: $black;
     .hero-about-content{
         max-width: 1000px;
         margin: 0 auto;
@@ -269,13 +268,6 @@
     .top-area{
         margin-bottom: 50px;
         text-align: center;
-        // img{
-        //     max-width: 157px;
-        //     position: absolute;
-        //     left: -45px;
-        //     bottom: -60px;
-        //     z-index: 1;
-        // }
     }
     .mobile-slide{
         display: none;
@@ -287,7 +279,6 @@
                 display: none;
                 text-align: center;
                 color: rgba(0, 0, 0, 0.40);
-                font-family: "Bauziet";
                 font-size: 14px;
                 font-weight: 800;
                 line-height: 34px;
@@ -402,7 +393,7 @@
 
 #investors{
     padding: 100px 0;
-    background-color: #000000;
+    background-color: $black;
     background-color: $new-lightblue;
     .top-area{
         margin-bottom: 50px;
@@ -636,9 +627,7 @@
 
 #join-us{
     padding: 150px 0 150px;
-    // background-color: #37358f;
-    background-color: #000000;
-    // background-image: url(../../images/about/images/energy-bottom.jpg);
+    background-color: $black;
     background-image: url(../../images/about/energy-bg-black.jpg);
     background-position: center bottom;
     background-size: contain;

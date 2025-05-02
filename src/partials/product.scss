@@ -184,7 +184,6 @@ body{
                 -webkit-transform-style: preserve-3d;
                 will-change: transform;
                 color: $middle-blue;
-                font-family: "Bauziet";
                 font-size: 106px;
                 font-weight: 800;
                 line-height: 125px;
@@ -255,7 +254,6 @@ body{
                 width: 60px;
             }
             h5{
-                font-family: "Bauziet";
                 text-transform: uppercase;
                 text-align: left;
                 span{
@@ -953,8 +951,6 @@ body{
                     }
                     &.more{
                         h5{
-                            font-family: 'Bauziet', sans-serif;
-                            font: 600px;
                             text-transform: uppercase;
                             color: #2F57AF;
                             margin: 0;
@@ -1420,7 +1416,6 @@ body{
                     box-shadow: 0px 0px 150px 0px rgba(170, 156, 255, 0.30);
                 }
                 h5{
-                    font-family: "Bauziet", sans-serif;
                     text-transform: uppercase;
                     color: #FFFFFF;
                     margin: 0;

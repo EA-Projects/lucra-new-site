@@ -223,7 +223,7 @@ background-color: #00144d;
 // NEW SOLUTIONS PAGE
 #overview{
 // background-color: #011136;
-background-color: #000000;
+background-color: $black;
 padding: 200px 0 130px;
 overflow: hidden;
 .energy-slide{
@@ -452,7 +452,7 @@ overflow: hidden;
 }
 #pro-sports{
     padding: 150px 0;
-    background-color: #000000;
+    background-color: $black;
     position: relative;
     height: 300vh;
     overflow-x: clip;
@@ -920,7 +920,7 @@ overflow: hidden;
 
 #rec-games{
     padding: 100px 0 200px;
-    background-color: #000000;
+    background-color: $black;
     position: relative;
     height: 300vh;
     overflow-x: clip;
@@ -1231,7 +1231,7 @@ overflow: hidden;
 
 #risk-and-compliance{
     &.is-solutions{
-        background-color: #000000;
+        background-color: $black;
         background-image: none;
         &::before{
             display: none;
@@ -1297,7 +1297,7 @@ overflow: hidden;
 }
 
 #dashboard{
-    background-color: #000000;
+    background-color: $black;
     position: relative;
     &::after{
         // content: "";
@@ -1429,7 +1429,7 @@ overflow: hidden;
     height: 320vh;
     padding-top: 100px;
     position: relative;
-    background-color: #000000;
+    background-color: $black;
     .top-area{
         margin-bottom: 50px;
         h2{
@@ -1705,7 +1705,6 @@ overflow: hidden;
 .solutions-page {
     #overview {
         padding: 235px 0px 100px;
-        // background-image: url(../../images/solutions/solutions-bg-hero.jpg);
         background-image: url(../../images/solutions/solutions_hero_bg_dark.jpg);
         background-position: center 91px;
         background-size: cover;
@@ -1865,7 +1864,6 @@ overflow: hidden;
                 p {
                     color: #FFF;
                     text-align: center;
-                    font-family: Bauziet;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
