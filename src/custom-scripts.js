@@ -50,6 +50,54 @@ $(document).ready(function () {
       $('.overlay-protect').fadeOut();
     }
   }
+
+  //PRODUCT PAGE
+
+    if (window.location.href.includes("product")) {
+      $("#navigation").addClass("is-transparent");
+    } else {
+      $("#navigation").removeClass("is-transparent");
+    }
+
+   $slideshow = $('.why-lucra-slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: false,
+    centerPadding: '0',
+    draggable: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          infinite: true,
+        }
+      },
+    ]
+  });
+
+  $('.why-lucra-slider').click(function() {
+    $slideshow.slick('slickGoTo', parseInt($slideshow.slick('slickCurrentSlide'))+1);
+  });
+
+  $('.slider-products').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
   // End of document ready
 });
 
@@ -777,70 +825,7 @@ if ($('.home-new-page').length) {
       start: "top bottom",
       end: "bottom top",
       scrub: true,
-  }
-  });
-
-  let tabTexts = $('.tab-text');
-  let currentIndex = 0;
-
-  function showTab(index) {
-    const target = tabTexts.eq(index).data('tab');
-    const nextTab = $('#' + target);
-
-    // Si ya está activo, no hacer nada
-    if (nextTab.hasClass('active')) return;
-
-    // Actualizar clases activas en los botones
-    tabTexts.removeClass('active');
-    tabTexts.eq(index).addClass('active');
-
-    const currentTab = $('.tab-pane.active');
-
-    gsap.to(currentTab.find('.inner-tab-content img'), {
-      opacity: 0,
-      y: 20,
-      duration: 0.3,
-      stagger: 0.005,
-      ease: "power2.in",
-      onComplete() {
-        gsap.to(currentTab, {
-          duration: 0.2,
-          opacity: 0,
-          y: 20,
-          onComplete() {
-            currentTab.removeClass('active');
-
-            // Preparar nuevo tab
-            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
-            nextTab.addClass('active');
-
-            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
-              duration: 0.2,
-              opacity: 1,
-              y: 0,
-              onComplete() {
-                gsap.fromTo(
-                  nextTab.find('.inner-tab-content img'),
-                  { opacity: 0, y: -20 },
-                  {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.3,
-                    stagger: 0.1,
-                    ease: "back.out(2)"
-                  }
-                );
-              }
-            });
-          }
-        });
-      }
-    });
-  }
-
-  tabTexts.on('click', function () {
-    currentIndex = tabTexts.index(this);
-    showTab(currentIndex);
+    }
   });
 
   // Notable Brands Who Trust Us section animation
@@ -947,6 +932,73 @@ if ($('.home-new-page').length) {
 
   // End of new homepage
 }
+
+
+// Global Products Tabs
+if ($('.tab-pane').length) {  
+  let tabTexts = $('.tab-text');
+  let currentIndex = 0;
+
+  function showTab(index) {
+    const target = tabTexts.eq(index).data('tab');
+    const nextTab = $('#' + target);
+
+    // Si ya está activo, no hacer nada
+    if (nextTab.hasClass('active')) return;
+
+    // Actualizar clases activas en los botones
+    tabTexts.removeClass('active');
+    tabTexts.eq(index).addClass('active');
+
+    const currentTab = $('.tab-pane.active');
+
+    gsap.to(currentTab.find('.inner-tab-content img'), {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      stagger: 0.005,
+      ease: "power2.in",
+      onComplete() {
+        gsap.to(currentTab, {
+          duration: 0.2,
+          opacity: 0,
+          y: 20,
+          onComplete() {
+            currentTab.removeClass('active');
+
+            // Preparar nuevo tab
+            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
+            nextTab.addClass('active');
+
+            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
+              duration: 0.2,
+              opacity: 1,
+              y: 0,
+              onComplete() {
+                gsap.fromTo(
+                  nextTab.find('.inner-tab-content img'),
+                  { opacity: 0, y: -20 },
+                  {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    stagger: 0.1,
+                    ease: "back.out(2)"
+                  }
+                );
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
+  tabTexts.on('click', function () {
+    currentIndex = tabTexts.index(this);
+    showTab(currentIndex);
+  });
+};
 
 ////////////////////////////
 ///// DUPR CASE STUDY //////
@@ -2026,3 +2078,4 @@ if (recGamesContainer) {
     });
   });
 }
+

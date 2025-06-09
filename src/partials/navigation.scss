@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 20px 0;
+    padding: 15px 0;
     background-color: $black;
     transition: all 0.2s ease-in-out;
     z-index: 999;
@@ -42,17 +42,22 @@
             }
         }
         .navbar-nav{
+            align-items: center;
             .nav-item{
+                line-height: 0;
                 .nav-link{
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 120%;
                     color: $light;
-                    padding: 0 15px;
+                    padding: 15px;
                     transition: all 0.4s ease-in-out;
                     &:hover{
                         color: $yellow;
                     }
+                }
+                .button{
+                    margin-left: 15px;
                 }
                 .inner-dropdown-mobile{
                     display: none;
@@ -78,7 +83,7 @@
             width: 100vw;
             position: fixed;
             left: 0;
-            top: 70px;
+            top: 81px;
             background-color: $black;
             display: block !important;
             opacity: 0;
@@ -100,7 +105,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 30px;
+                gap: 20px;
                 z-index: 1;
                 .dropdown-item{
                     width: auto;
@@ -113,18 +118,18 @@
                         gap: 20px;
                         text-align: left;
                         .inner-dropdown-icon{
-                            max-width: 135px;
+                            max-width: 120px;
                             border-radius: 16px;
                             overflow: hidden;
                             img{
                                 transition: all .2s ease-in-out;
                             }
                         }
-                        .all-h3,
+                        .all-h4,
                         .all-h5{
                             text-align: left;
                         }
-                        .all-h3{
+                        .all-h4{
                             margin-bottom: 5px;
                             color: $yellow;
                         }
@@ -157,16 +162,70 @@
                         }
                     }
                 }
+                &.is-case-studies{
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    gap: 0 3%;
+                    .highlight-item{
+                        width: 38%; 
+                        .dropdown-item{
+                            flex: none;
+                            .inner-dropdown{
+                                flex-direction: column;
+                                .all-h4{
+                                    color: $yellow;
+                                    margin-bottom: 5px;
+                                }
+                                .all-h5{
+                                    color: $yellow;
+                                }
+                                .inner-dropdown-icon{
+                                    max-width: 100%;
+                                    max-height: 200px;
+                                    overflow: hidden;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 8px;
+                                }
+                            }
+                        }
+                    }
+                    .case-studies-list{
+                        width: 15%;
+                        padding-left: 3%;
+                        border-left: 1px solid rgba(255, 255, 255, 0.1);
+                        > .all-h5{
+                            color: $light;
+                            margin-bottom: 30px;
+                        }
+                        .dropdown-item{
+                            margin-bottom: 18px;
+                            .inner-dropdown{
+                                .all-h5{
+                                    color: $yellow;
+                                    &:hover{
+                                        color: $light;
+                                    }
+                                }
+                            }
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
             }
             // Trick to mantain the dropdown open
             &::after{
                 content: '';
                 background-color: $black;
                 position: absolute;
-                top: -30px;
+                top: -20px;
                 left: 0;
                 width: 100vw;
-                height: 30px;
+                height: 20px;
             }
         }
     }      
@@ -201,7 +260,13 @@
         }
     }
     &.fixed{
-        padding: 20px 0;
+        padding: 15px 0;
+        &.is-transparent{
+            background-color: #000000;
+        }
+    }
+    &.is-transparent{
+        background-color: #00000000;
     }
     @media (max-width: 991px){
         padding: 0;
@@ -252,7 +317,9 @@
                 }
                 .navbar-nav{
                     .nav-item{
+                        width: 100%;
                         margin-bottom: 40px;
+                        line-height: initial;
                         .nav-link{
                             font-size: 34px;
                             margin: 0;
@@ -267,6 +334,9 @@
                                 background-color: $yellow;
                                 transition: opacity 0.3s ease-in-out;
                             }
+                        }
+                        .button{
+                            margin-left: 0;
                         }
                         .inner-dropdown-mobile{
                             display: flex;

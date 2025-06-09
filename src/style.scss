@@ -25,7 +25,8 @@ $middle-blue: #A68EFF;
 @import './partials/careers.scss';
 @import './partials/faqs.scss';
 @import './partials/press.scss';
-@import './partials/product.scss';
+// @import './partials/product.scss';
+@import './partials/products.scss';
 @import './partials/categories.scss';
 @import './partials/globals.scss';
 
@@ -109,6 +110,9 @@ a {
     background: #263037;
     border-color: #263037;
     text-decoration: none;
+  }
+  &.small{
+    min-width: auto;
   }
   &:focus {
     outline: none;

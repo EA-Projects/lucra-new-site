@@ -53,7 +53,7 @@ $(document).ready(function () {
   // On Click
   $dropdown.on('click', function (e) {
     e.stopPropagation(); // Para evitar que se cierre de inmediato
-    e.preventDefault(); // Prevent default link behavior
+    //e.preventDefault(); // Prevent default link behavior
     const $this = $(this);
     if ($this.hasClass('show')) {
       hideDropdown($this);
