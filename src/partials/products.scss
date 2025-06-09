@@ -376,6 +376,7 @@
                         margin-bottom: 0;
                     }
                 }
+                &:hover,
                 &.slick-active{
                     opacity: 100%;
                 }
@@ -993,7 +994,12 @@
         background-position: center bottom;
         backdrop-filter: blur(3px);
         position: relative;
+        transition: all .3s ease-in-out;
         z-index: 1;
+        &:hover{
+            transform: scale(1.03);
+            box-shadow: 0 0 65px rgba(0, 0, 0, 0.10);
+        }
         .wrapper-icon{
             position: relative;
             margin-bottom: 20px;

@@ -7,7 +7,7 @@
     </url>
     <url>
         <loc>
-            https://lucrasports.com/pages/solutions.html
+            https://lucrasports.com/pages/product-overview.html
         </loc>
     </url>
     <url>
@@ -98,6 +98,21 @@
     <url>
         <loc>
             https://lucrasports.com/pages/general-games-rules.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://lucrasports.com/product/client-hosted-tournaments.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://lucrasports.com/product/user-generated-competitions.html
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://lucrasports.com/product/security-payments-infrastructure.html
         </loc>
     </url>
 </urlset>
