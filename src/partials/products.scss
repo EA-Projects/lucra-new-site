@@ -488,6 +488,9 @@
     }
     &.security-payments-infrastructure{
         background-image: url(../../public/images/product/security-payments-infrastructure/security-payments-infrastructure-hero.webp);
+        background-position: bottom;
+        background-size: 1440px;
+        background-color: #05070B;
     }
 }
 
@@ -581,6 +584,7 @@
 
 #platform-capabilities{
     padding: 70px 0 100px;
+    overflow: hidden;
     .top-area{
         text-align: center;
         margin-bottom: 60px;
@@ -1038,18 +1042,17 @@
     }
     @media(max-width:991px){
         padding-bottom: 0;
+        .top-area{
+            margin-bottom: 50px;
+        }
         .inner-number{
-            top: -80px;
-            max-height: 250px;
+            display: none;
         }
         .inner-impact-block{
-            margin-bottom: 100px;
+            margin-bottom: 30px;
         }
     }
     @media(max-width:525px){
-        .top-area{
-            margin-bottom: 130px;
-        }
         .inner-impact-block{
             min-height: auto;
         }

@@ -177,11 +177,15 @@
                                     color: $yellow;
                                 }
                                 .all-h5{
-                                    color: $yellow;
+                                    color: $light;
                                     margin-bottom: 8px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 120%;
                                 }
                                 p{
                                     margin-bottom: 0;
+                                    opacity: .3;
                                 }
                                 .inner-dropdown-icon{
                                     max-width: 100%;
@@ -198,7 +202,7 @@
                     .case-studies-list{
                         width: 40%;
                         padding-left: 3%;
-                        border-left: 1px solid rgba(255, 255, 255, 0.05);
+                        border-left: 1px solid rgba(255, 255, 255, 0.1);
                         display: flex;
                         align-items: flex-start;
                         justify-content: flex-start;
@@ -206,6 +210,9 @@
                         .col-title{
                             width: 100%;
                             .all-h6{
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 120%;
                                 color: $light;
                                 margin-bottom: 20px;
                             }
