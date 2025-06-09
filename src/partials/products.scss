@@ -1,5 +1,5 @@
 #product-hero{
-    padding: 100px;
+    padding: 100px 0;
     min-height: 590px;
     display: flex;
     align-items: center;
@@ -480,14 +480,14 @@
 // Client-Hosted Tournaments
 #product-hero{
     &.client-hosted-tournaments{
-        background-image: url(../../public/images/product/client-hosted-tournaments/client-hosted-tournaments-hero.jpg);
+        background-image: url(../../public/images/product/client-hosted-tournaments/client-hosted-tournaments-hero.webp);
     }
     &.user-generated-competitions{
-        background-image: url(../../public/images/product/user-generated-competitions/user-generated-competitions-hero.jpg);
+        background-image: url(../../public/images/product/user-generated-competitions/user-generated-competitions-hero.webp);
         background-position: center bottom;
     }
     &.security-payments-infrastructure{
-        background-image: url(../../public/images/product/security-payments-infrastructure/security-payments-infrastructure-hero.jpg);
+        background-image: url(../../public/images/product/security-payments-infrastructure/security-payments-infrastructure-hero.webp);
     }
 }
 
@@ -508,6 +508,14 @@
         display: block;
         max-width: 324px;
         margin: 0 auto;
+    }
+    @media(max-width: 767px){
+        margin-top: 0;
+        padding: 50px 0 50px;
+        .inner-content{
+            text-align: center;
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -557,6 +565,16 @@
         }
         &.is-right{
             text-align: right;
+        }
+    }
+    @media(max-width: 767px){
+        padding: 80px 0;
+        .background-bar{
+            height: 65%;
+            transform: translate(-50%, -30%);
+        }
+        .inner-content{
+            margin-top: 40px;
         }
     }
 }
@@ -806,6 +824,113 @@
             }
         } 
     }
+    .wrapper-slide-area{
+        .slick-list{
+            overflow: initial;
+        }
+        .carousel-item{
+            .platform-slide{
+                .inner-platform-content{
+                    .all-h2,
+                    .all-h3{
+                        position: relative;
+                        max-width: 230px;
+                        margin: 0 auto 10px;
+                        color: rgba(16, 16, 16, 0.3);
+                        text-align: left;
+                        transition: color 0.3s ease-in-out;
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            left: -15px;
+                            top: 3px;
+                            width: 8px;
+                            height: 20px;
+                            background-color: $yellow;
+                            margin-right: 10px;
+                            opacity: 0;
+                            transition: opacity 0.3s ease-in-out;
+                        }
+                        &.is-large{
+                            max-width: 280px;
+                        }
+                    }
+                    .description-tab{
+                        max-width: 300px;
+                        margin: 0 auto;
+                        transition: all .3s ease-in-out;
+                        opacity: 0;
+                        p{
+                            margin-bottom: 20px;
+                            color: $dark;
+                        }
+                    }
+                    .wrapper-image{
+                        min-height: 250px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            max-width: 300px;
+                            margin: 0 auto;
+                            opacity: 0;
+                            transition: all .3s ease-in-out;
+                        }
+                        &.is-vertical{
+                            img{
+                                max-width: 200px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.slick-current{
+                .platform-slide{
+                    .inner-platform-content{
+                        .all-h2,
+                        .all-h3{
+                            color: #101010;
+                            &::before{
+                                opacity: 1;
+                            }
+                        }
+                        .description-tab,
+                        img{
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-dots{
+            li{
+                margin: 0 2px;
+                width: 5px;
+                height: 5px;
+                button{
+                    padding: 0;
+                    width: 5px;
+                    height: 5px;
+                    background-color: $black;
+                    opacity: .3;
+                    border-radius: 50px;
+                    &::before{
+                        display: none;
+                    }
+                }
+                &.slick-active{
+                    width: 15px;
+                    button{
+                        width: 15px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    @media(max-width: 525px){
+        padding: 50px 0;
+    }
 }
 
 #business-impact{
@@ -911,6 +1036,24 @@
             }
         }
     }
+    @media(max-width:991px){
+        padding-bottom: 0;
+        .inner-number{
+            top: -80px;
+            max-height: 250px;
+        }
+        .inner-impact-block{
+            margin-bottom: 100px;
+        }
+    }
+    @media(max-width:525px){
+        .top-area{
+            margin-bottom: 130px;
+        }
+        .inner-impact-block{
+            min-height: auto;
+        }
+    }
 }
 
 #product-navigation{
@@ -965,6 +1108,30 @@
                 }
                 .circle{
                     transform: scale(1);
+                }
+            }
+        }
+    }
+    @media(max-width:767px){
+        padding: 50px 0;
+        .wrapper-pagination-product{
+            flex-direction: column;
+            gap: 30px;
+            .pagination-product{
+                align-self: flex-end;
+                &.is-left{
+                    align-self: flex-start;
+                    .circle{
+                        left: -10px;
+                    }
+                }
+                svg{
+                    max-width: 50px;
+                }
+                .circle{
+                    right: -10px;
+                    width: 70px;
+                    height: 70px;
                 }
             }
         }

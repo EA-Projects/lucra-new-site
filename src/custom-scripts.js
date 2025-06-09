@@ -98,6 +98,20 @@ $(document).ready(function () {
     dots: true,
   });
 
+  $('.slider-platform-capabilities').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
   // End of document ready
 });
 
