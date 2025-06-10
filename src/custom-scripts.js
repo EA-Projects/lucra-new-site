@@ -764,6 +764,42 @@ if ($('.tab-pane').length) {
   });
 };
 
+// Features Block section animation on Product pages
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".features-block").forEach(block => {
+  const image = block.querySelector(".wrapper-image img.is-features-bubble");
+  if (image) {
+    // 1. Fade-in 
+    gsap.fromTo(image,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: block,
+          start: "top 40%", 
+          toggleActions: "play none none none"
+        }
+      }
+    );
+    // 2. Parallax 
+    gsap.fromTo(image,
+      { y: 50 },
+      {
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: block,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      }
+    );
+  }
+});
+
 ////////////////////////////
 ///// DUPR CASE STUDY //////
 ////////////////////////////

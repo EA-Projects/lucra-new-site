@@ -528,7 +528,7 @@
     position: relative;
     .background-bar{
         width: 100%;
-        height: 350px;
+        min-height: 60%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -564,8 +564,23 @@
         }
     }
     .wrapper-image{
+        min-height: 480px;
+        position: relative;
+        overflow: hidden;
         img{
+            top: 0;
+            left: 0;
+            position: absolute;
             max-width: 643px;
+            &.is-features-bg{
+                z-index: 1;
+            }
+            &.is-features-top{
+                z-index: 3;
+            }
+            &.is-features-bubble{
+                z-index: 2;
+            }
         }
         &.is-right{
             text-align: right;
@@ -966,83 +981,93 @@
         text-align: center;
         margin-bottom: 240px;
     }
-    .inner-number{
-        position: absolute;
-        top: -170px;
-        left: 0;
-        right: 0;
-        max-height: 350px;
-        opacity: 70%;
-    }
-    .inner-impact-block{
-        max-width: 375px;
-        min-height: 440px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto;
-        padding: 40px;
-        border-radius: 24px;
-        text-align: center;
-        box-shadow: 0 0 35px rgba(0, 0, 0, 0.05);
-        background: url('../../public/images/product/border-numbers.svg'), linear-gradient(0deg,
-        rgba(255, 255, 255, 0.5) 0%,
-        #ffffff00 100%);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        backdrop-filter: blur(3px);
-        position: relative;
-        transition: all .3s ease-in-out;
-        z-index: 1;
-        &:hover{
-            transform: scale(1.03);
-            box-shadow: 0 0 65px rgba(0, 0, 0, 0.10);
+    .wrapper-impact-block{
+        .inner-number{
+            position: absolute;
+            top: -170px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-height: 350px;
+            color: $light;
+            opacity: .7;
+            transition: all .3s ease-in-out;
         }
-        .wrapper-icon{
+        .inner-impact-block{
+            max-width: 375px;
+            min-height: 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.05);
+            background: url('../../public/images/product/border-numbers.svg'), linear-gradient(0deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            #ffffff00 100%);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            backdrop-filter: blur(3px);
+            transition: all .3s ease-in-out;
             position: relative;
-            margin-bottom: 20px;
-            img{
-                max-width: 180px;
+            z-index: 1;
+            .wrapper-icon{
                 position: relative;
-                z-index: 1;
-            }
-            &::after{
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 200px;
-                height: 200px;
-                background-color: #A4BCCC;
-                filter: blur(50px);
-                border-radius: 50%;
-            }
-        }
-        h3{
-            margin-bottom: 0;
-        }
-        &.is-green{
-            .wrapper-icon{
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 img{
-                    max-width: 215px;
+                    max-width: 180px;
+                    position: relative;
+                    z-index: 1;
                 }
                 &::after{
-                    background-color: #88C2AF;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 200px;
+                    height: 200px;
+                    background-color: #A4BCCC;
+                    filter: blur(50px);
+                    border-radius: 50%;
+                }
+            }
+            h3{
+                margin-bottom: 0;
+            }
+            &.is-green{
+                .wrapper-icon{
+                    margin-bottom: 10px;
+                    img{
+                        max-width: 215px;
+                    }
+                    &::after{
+                        background-color: #88C2AF;
+                    }
+                }
+            }
+            &.is-blue{
+                .wrapper-icon{
+                    img{
+                        max-width: 150px;
+                    }
+                    &::after{
+                        background-color: #a888c2d4;
+                    }
                 }
             }
         }
-        &.is-blue{
-            .wrapper-icon{
-                img{
-                    max-width: 150px;
-                }
-                &::after{
-                    background-color: #a888c2d4;
-                }
+        &:hover{
+            .inner-number{
+                color: $black;
+                opacity: 1;
+            }
+            .inner-impact-block{
+                box-shadow: 0 0 35px rgba(0, 0, 0, 0.15);
+                margin-top: -10px;
             }
         }
     }
@@ -1051,16 +1076,20 @@
         .top-area{
             margin-bottom: 50px;
         }
-        .inner-number{
-            display: none;
-        }
-        .inner-impact-block{
-            margin-bottom: 30px;
+        .wrapper-impact-block{
+            .inner-number{
+                display: none;
+            }
+            .inner-impact-block{
+                margin-bottom: 30px;
+            }
         }
     }
     @media(max-width:525px){
-        .inner-impact-block{
-            min-height: auto;
+        .wrapper-impact-block{
+            .inner-impact-block{
+                min-height: auto;
+            }
         }
     }
 }
