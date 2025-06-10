@@ -2604,8 +2604,9 @@ body {
             max-width: 380px;
           }
           &.energy {
-            max-width: 56px;
-            mix-blend-mode: screen;
+            max-width: 12px;
+            // max-width: 56px;
+            // mix-blend-mode: screen;
           }
           &.lucra {
             max-width: 180px;
@@ -3124,6 +3125,105 @@ body {
         h2 {
           &.is-gold {
             color: #d7ac5b;
+          }
+        }
+      }
+    }
+  }
+  &.is-genius {
+    #hero-case-studies {
+      background-image: url(../../images/case-studies/genius-hero.webp);
+      .content-hero {
+        h6.pretitle {
+          &.is-blue {
+            color: #63AEF7;
+          }
+        }
+      }
+      .hero-image-wrapper {
+        img {
+          &.genius {
+            max-width: 250px;
+          }
+        }
+      }
+      @media (max-width: 991px) {
+        .content-hero {
+          .logo-image {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+    #about {
+      background-image: url(../../images/case-studies/genius-about-bg.webp);
+      .content-area {
+        p {
+          a {
+            color: #63AEF7;
+            &:hover {
+              border-color: #63AEF7;
+            }
+          }
+        }
+      }
+      .items-wrapper {
+        .about-item {
+          border-color: #63AEF7;
+          box-shadow: 0px 0px 35px 0px #63AEF744;
+          .copy-item {
+            p {
+              color: #63AEF7;
+            }
+          }
+          &:hover {
+            box-shadow: 0px 0px 150px 0px #63AEF761;
+          }
+        }
+      }
+    }
+    #lucra-technology {
+      padding-bottom: 220px;
+      &.is-playplayground {
+        background-image: url(../../images/case-studies/technology-bg-blue.webp);
+        .top-area {
+          max-width: 1100px;
+          margin-bottom: 0;
+        }
+        .grid-boxs {
+          margin-top: 100px;
+          max-width: 1400px;
+          .inner-box {
+            &.is-blue {
+              border-color: #63AEF7;
+              box-shadow: 0px 0px 35px 0px #63AEF73b;
+            }
+          }
+        }
+      }
+    }
+    #testimonial {
+      padding: 120px 0;
+      &.is-playplayground {
+        background-image: url(../../images/case-studies/genius-testimonial-bg.webp);
+        background-position: bottom right;
+        background-size: cover;
+        background-repeat: no-repeat;
+        img {
+          filter: drop-shadow(0 0 50px #63AEF74a);
+        }
+      }
+      .content-area {
+        p.description.author {
+          color: #63AEF7;
+        }
+      }
+    }
+    #get-in-touch {
+      .content-area {
+        h2 {
+          &.is-blue {
+            color: #63AEF7;
           }
         }
       }
