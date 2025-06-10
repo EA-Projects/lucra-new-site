@@ -564,18 +564,18 @@
         }
     }
     .wrapper-image{
-        min-height: 480px;
         position: relative;
         overflow: hidden;
+        max-width: 643px;
         img{
             top: 0;
             left: 0;
             position: absolute;
-            max-width: 643px;
             &.is-features-bg{
                 z-index: 1;
             }
             &.is-features-top{
+                position: relative;
                 z-index: 3;
             }
             &.is-features-bubble{
@@ -583,7 +583,7 @@
             }
         }
         &.is-right{
-            text-align: right;
+            margin-left: auto;
         }
     }
     @media(max-width: 767px){
