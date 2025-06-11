@@ -1,38 +1,39 @@
 $(document).ready(function () {
-  // Load the navigation HTML into the header
+  // Load navigation and then initialize events
   fetch('/utils/navigation.html')
-      .then(res => res.text())
-      .then(html => {
+    .then(res => res.text())
+    .then(html => {
       document.getElementById('navigation').innerHTML = html;
-  });
-  // Load the footer HTML into the footer
-  fetch('/utils/footer.html')
-      .then(res => res.text())
-      .then(html => {
-      document.getElementById('footer').innerHTML = html;
-  });
+      
+      // Trigger navigation events
+      initNavigationEvents();
+    });
 
-  setTimeout(() => {
+  // Load footer
+  fetch('/utils/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer').innerHTML = html;
+    });
+
+  function initNavigationEvents() {
     const $navigation = $('#navigation');
     const $dropdown = $('.dropdown');
     const $overlay = $('.overflow-dropdown');
     const $backgroundDropdown = $('.background-dropdown');
-    
-    // Function to show the dropdown
+
     function showDropdown($this) {
       const $menu = $this.find('.dropdown-menu');
       const heightDropdown = $menu.outerHeight();
       const heightNavigation = $navigation.outerHeight();
-    
+
       $backgroundDropdown.css('height', heightDropdown + heightNavigation + 'px');
-    
       $this.addClass('show');
       $menu.addClass('show');
       $overlay.addClass('active');
       $backgroundDropdown.addClass('active');
     }
-    
-    // Function to hide the dropdown
+
     function hideDropdown($this) {
       $this.removeClass('show');
       $this.find('.dropdown-menu').removeClass('show');
@@ -40,8 +41,8 @@ $(document).ready(function () {
       $backgroundDropdown.removeClass('active');
       $backgroundDropdown.css('height', '');
     }
-    
-    // On Hover
+
+    // Hover
     $dropdown.hover(
       function () {
         showDropdown($(this));
@@ -50,11 +51,10 @@ $(document).ready(function () {
         hideDropdown($(this));
       }
     );
-    
-    // On Click
+
+    // Click
     $dropdown.on('click', function (e) {
-      e.stopPropagation(); // Para evitar que se cierre de inmediato
-      //e.preventDefault(); // Prevent default link behavior
+      e.stopPropagation();
       const $this = $(this);
       if ($this.hasClass('show')) {
         hideDropdown($this);
@@ -62,24 +62,23 @@ $(document).ready(function () {
         showDropdown($this);
       }
     });
-   
-    // Hide dropdown when clicking outside
+
     $(document).on('click', function () {
       $dropdown.each(function () {
         hideDropdown($(this));
       });
-    });  
-  
+    });
+
     // Mobile navigation
     $('button.navbar-toggler.is-open').on('click', function(){
       $(this).closest('#navigation').addClass('open');
-    })
+    });
     $('button.navbar-toggler.is-close').on('click', function() {
       const $nav = $(this).closest('#navigation');
       $nav.removeClass('open');
-    
-      // Close the Bootstrap collapsible menu
       $nav.find('.navbar-collapse').removeClass('show').addClass('collapse');
     });
-  }, 100);
+
+    console.log('Events initialized.');
+  }
 });
