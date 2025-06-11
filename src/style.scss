@@ -200,6 +200,17 @@ a {
         color: #D7AC5B;
     }
   }
+   &.blue {
+    background-color: #63AEF7;
+    border-color: #63AEF7;
+    color: $black;
+    transition: 0.35s all ease-in-out;
+    &:hover {
+        background: $black;
+        border-color: #63AEF7;
+        color: #63AEF7;
+    }
+  }
   &.orange-red {
     background-color: #FB441C;
     border-color: #FB441C;
