@@ -339,10 +339,6 @@
             }
             .slick-list {
                 margin: 0 -15px;
-                overflow: visible;
-                @media(min-width: 1441px){
-                    overflow: hidden;
-                }
             }
             .inner-slide-item{
                 max-width: 370px;
