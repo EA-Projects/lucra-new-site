@@ -72,7 +72,6 @@ $(document).ready(function () {
       {
         breakpoint: 575,
         settings: {
-          slidesToShow: 1,
           centerMode: true,
           infinite: true,
         }

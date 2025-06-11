@@ -50,7 +50,7 @@
     }
     .wrapper-tab-area.is-three-items{
         position: relative;
-        margin: 80px 0 120px;
+        margin: 40px 0 0;
         .tab-text-wrapper{
             width: 25%;
             display: flex;
@@ -315,7 +315,8 @@
 }
 
 #why-lucra{
-    padding: 100px 0;
+    padding: 50px 0 100px;
+    overflow: hidden;
     .top-area{
         display: flex;
         align-items: center;
@@ -325,7 +326,12 @@
         }
     }
     .wrapper-slider{
-        margin: 30px 0 100px;
+        max-width: 1300px;
+        margin: 30px 0 100px auto;
+        @media(min-width: 1441px){
+            max-width: 1200px;
+            margin: 30px auto 100px auto;
+        }
         .why-lucra-slider{
             position: relative;
             .slick-slide {
@@ -333,6 +339,10 @@
             }
             .slick-list {
                 margin: 0 -15px;
+                overflow: visible;
+                @media(min-width: 1441px){
+                    overflow: hidden;
+                }
             }
             .inner-slide-item{
                 max-width: 370px;
@@ -428,9 +438,6 @@
     }
     @media(max-width:575px){
         padding: 60px 0;
-        .col-12{
-            padding: 0;
-        }
         .top-area{
             flex-direction: column;
             gap: 20px;
@@ -439,8 +446,11 @@
         margin: 30px 0 50px;
             .why-lucra-slider{ 
                 .inner-slide-item{
+                    border-radius: 12px;
                     max-width: 320px;
                     .inner-content{ 
+                        padding: 30px 20px 25px;
+                        text-align: center;
                         .wrapper-image{
                             img{
                                 max-width: 200px;
@@ -449,6 +459,7 @@
                         }
                         h3{
                             max-width: 250px;
+                            margin: 0 auto 15px;
                         }
                         p{
                             min-height: 65px;
