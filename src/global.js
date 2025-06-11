@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   // Load the navigation HTML into the header
   fetch('/utils/navigation.html')

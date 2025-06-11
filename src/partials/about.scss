@@ -6,6 +6,7 @@
     position: fixed;
     top: 77px;
     z-index: 9;
+    border-radius: 1px;
     &.is-product,
     &.is-product.fixed{
         top: 0;
