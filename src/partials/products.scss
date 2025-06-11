@@ -520,6 +520,19 @@
             margin-bottom: 0;
         }
     }
+    .wrapper-phone{
+        max-width: 324px;
+        margin: 0 auto;
+        position: relative;
+        .frame{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .iphone-vide{
+
+        }
+    }
     img{
         display: block;
         max-width: 324px;
