@@ -518,6 +518,7 @@
         }
     }
     .wrapper-phone{
+        min-height: 730px;
         max-width: 355px;
         margin: 0 auto;
         position: relative;
@@ -539,6 +540,9 @@
         .inner-content{
             text-align: center;
             margin-bottom: 50px;
+        }
+        .wrapper-phone{
+            min-height: auto;
         }
     }
     @media(max-width:575px){
