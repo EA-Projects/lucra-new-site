@@ -353,7 +353,7 @@
                     rgba(255, 255, 255, 0.2);
                 border-radius: 24px;
                 .inner-content{
-                    padding: 40px 38px 35px;
+                    padding: 35px 35px 30px;
                     .wrapper-image{
                         position: relative;
                         text-align: center;
@@ -376,9 +376,12 @@
                         }
                     }
                     h3{
+                        font-size: 35px;
                         margin-bottom: 25px;
                     }
                     p{
+                        color: $dark;
+                        font-weight: 500;
                         margin-bottom: 0;
                         min-height: 110px;
                     }
@@ -455,7 +458,8 @@
                             }
                         }
                         h3{
-                            max-width: 250px;
+                            font-size: 24px;
+                            max-width: 200px;
                             margin: 0 auto 15px;
                         }
                         p{
