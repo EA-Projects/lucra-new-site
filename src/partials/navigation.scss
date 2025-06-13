@@ -396,7 +396,11 @@
                     }
                     &.is-case-studies{
                         .highlight-item{
-                            display: none;
+                            width: 100%;
+                            margin-bottom: 10px;
+                            .inner-dropdown{
+                                display: none;
+                            }
                         }
                         .case-studies-list{
                             width: 100%;
