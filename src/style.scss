@@ -18,14 +18,13 @@ $middle-blue: #A68EFF;
 @import './lib/slidebars.scss';
 @import './partials/utils.scss';
 @import './partials/home.scss';
-@import './partials/solutions.scss';
 @import './partials/contact.scss';
 @import './partials/case-studies.scss';
 @import './partials/about.scss';
 @import './partials/careers.scss';
 @import './partials/faqs.scss';
 @import './partials/press.scss';
-@import './partials/product.scss';
+@import './partials/products.scss';
 @import './partials/categories.scss';
 @import './partials/globals.scss';
 
@@ -109,6 +108,9 @@ a {
     background: #263037;
     border-color: #263037;
     text-decoration: none;
+  }
+  &.small{
+    min-width: auto;
   }
   &:focus {
     outline: none;
@@ -198,7 +200,7 @@ a {
         color: #D7AC5B;
     }
   }
-  &.blue {
+   &.blue {
     background-color: #63AEF7;
     border-color: #63AEF7;
     color: $black;

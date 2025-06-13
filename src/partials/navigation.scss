@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    padding: 20px 0;
+    padding: 15px 0;
     background-color: $black;
     transition: all 0.2s ease-in-out;
     z-index: 999;
@@ -42,17 +42,22 @@
             }
         }
         .navbar-nav{
+            align-items: center;
             .nav-item{
+                line-height: 0;
                 .nav-link{
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 120%;
                     color: $light;
-                    padding: 0 15px;
-                    transition: all 0.4s ease-in-out;
+                    padding: 15px;
+                    transition: all 0.2s ease-in-out;
                     &:hover{
                         color: $yellow;
                     }
+                }
+                .button{
+                    margin-left: 15px;
                 }
                 .inner-dropdown-mobile{
                     display: none;
@@ -71,36 +76,35 @@
     .dropdown{
         .dropdown-menu{
             margin: 0;
-            padding: 0 0 20px;
-            border-radius: 0;
+            padding: 20px 0 40px;
+            border-radius: 1px;
             border: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             width: 100vw;
             position: fixed;
             left: 0;
-            top: 70px;
+            top: 77px;
             background-color: $black;
             display: block !important;
             opacity: 0;
             visibility: hidden;
-            transform: translateX(-4px);
-            transition: opacity 0.2s ease, transform 0.2s ease;
+            transform: translateX(-4px) translate3d(0, 0, 0);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
             pointer-events: none;
             &.show{
                 opacity: 1;
                 visibility: visible;
-                transform: translateX(0);
+                transform: translateX(0) translate3d(0, 0, 0);
                 pointer-events: auto;
             }
             .wrapper-dropdown{
                 position: relative;
                 max-width: 1200px;
                 margin: 0 auto;
-                background-color: $black;
+                // background-color: $black;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 30px;
+                gap: 20px;
                 z-index: 1;
                 .dropdown-item{
                     width: auto;
@@ -113,18 +117,18 @@
                         gap: 20px;
                         text-align: left;
                         .inner-dropdown-icon{
-                            max-width: 135px;
+                            max-width: 120px;
                             border-radius: 16px;
                             overflow: hidden;
                             img{
                                 transition: all .2s ease-in-out;
                             }
                         }
-                        .all-h3,
+                        .all-h4,
                         .all-h5{
                             text-align: left;
                         }
-                        .all-h3{
+                        .all-h4{
                             margin-bottom: 5px;
                             color: $yellow;
                         }
@@ -157,16 +161,91 @@
                         }
                     }
                 }
+                &.is-case-studies{
+                    justify-content: flex-end;
+                    align-items: stretch;
+                    flex-wrap: wrap;
+                    gap: 0 3%;
+                    .highlight-item{
+                        width: 20%; 
+                        .dropdown-item{
+                            flex: none;
+                            .inner-dropdown{
+                                flex-direction: column;
+                                gap: 15px;
+                                .all-h4{
+                                    color: $yellow;
+                                }
+                                .all-h5{
+                                    color: $light;
+                                    margin-bottom: 8px;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 120%;
+                                }
+                                p{
+                                    margin-bottom: 0;
+                                    opacity: .3;
+                                }
+                                .inner-dropdown-icon{
+                                    max-width: 100%;
+                                    max-height: 200px;
+                                    overflow: hidden;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                    .case-studies-list{
+                        width: 40%;
+                        padding-left: 3%;
+                        border-left: 1px solid rgba(255, 255, 255, 0.1);
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        .col-title{
+                            width: 100%;
+                            .all-h6{
+                                font-size: 14px;
+                                font-weight: 500;
+                                line-height: 120%;
+                                color: $light;
+                                margin-bottom: 20px;
+                            }
+                        }
+                        .col-menu{
+                            width: 50%;
+                        }
+                        .dropdown-item{
+                            margin-bottom: 18px;
+                            .inner-dropdown{
+                                .all-h5{
+                                    color: $yellow;
+                                    &:hover{
+                                        color: $light;
+                                    }
+                                }
+                            }
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
             }
             // Trick to mantain the dropdown open
             &::after{
                 content: '';
                 background-color: $black;
                 position: absolute;
-                top: -30px;
+                top: -18px;
                 left: 0;
                 width: 100vw;
-                height: 30px;
+                height: 18px;
             }
         }
     }      
@@ -177,16 +256,16 @@
         width: 100vw;
         height: 100vh;   
         backdrop-filter: blur(3px);
-        background-color: #00000030;
+        background-color: rgba(0, 0, 0, 0.2);
         opacity: 0;     
-        transition: opacity 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
         pointer-events: none;
+        will-change: transform, opacity;
         &.active{
             opacity: 1;
         }
     }
     .background-dropdown{
-        content: '';
         background-color: $black;
         position: absolute;
         top: 0;
@@ -194,6 +273,8 @@
         width: 100vw;
         height: 100%;
         opacity: 0;     
+        z-index: 1;
+        border-radius: 1px;
         transition: opacity 0.2s ease-in-out;
         pointer-events: none;
         &.active{
@@ -201,17 +282,22 @@
         }
     }
     &.fixed{
-        padding: 20px 0;
+        padding: 15px 0;
+        &.is-transparent{
+            background-color: #000000;
+        }
+    }
+    &.is-transparent{
+        background-color: #00000000;
     }
     @media (max-width: 991px){
         padding: 0;
-        background-color: transparent;
+        background-color: #00000000;
         .container{
             max-width: none;
             padding: 0;
         }
         nav{
-            // height: 100vh;
             display: block;
             .navbar-brand{
                 margin: 0;
@@ -236,8 +322,7 @@
                 top: 0;
                 padding: 30px 100px 30px 50px;
                 transform: translateX(100%);
-                // opacity: 0;
-                transition: all .4s ease-in-out;
+                transition: all .2s ease-in-out;
                 &.collapsing {
                     -webkit-transition: none !important;
                     transition: none !important;
@@ -252,7 +337,9 @@
                 }
                 .navbar-nav{
                     .nav-item{
+                        width: 100%;
                         margin-bottom: 40px;
+                        line-height: initial;
                         .nav-link{
                             font-size: 34px;
                             margin: 0;
@@ -265,8 +352,11 @@
                                 width: 10px;
                                 height: 25px;
                                 background-color: $yellow;
-                                transition: opacity 0.3s ease-in-out;
+                                transition: opacity 0.2s ease-in-out;
                             }
+                        }
+                        .button{
+                            margin-left: 0;
                         }
                         .inner-dropdown-mobile{
                             display: flex;
@@ -302,6 +392,31 @@
                         .inner-dropdown-mobile{
                             margin-top: 0;
                             display: block;
+                        }
+                    }
+                    &.is-case-studies{
+                        .highlight-item{
+                            width: 100%;
+                            margin-bottom: 10px;
+                            .inner-dropdown{
+                                display: none;
+                            }
+                        }
+                        .case-studies-list{
+                            width: 100%;
+                            padding-left: 0;
+                            border-left: 0;
+                            gap: 10px;
+                            .col-menu{
+                                width: 100%;
+                            }
+                            .dropdown-item{
+                                margin-bottom: 10px;
+                            }
+                            .col-title,
+                            p.all-h6{
+                                display: none;
+                            }
                         }
                     }
                 }

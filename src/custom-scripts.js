@@ -50,6 +50,67 @@ $(document).ready(function () {
       $('.overlay-protect').fadeOut();
     }
   }
+
+  //PRODUCT PAGE
+
+    if (window.location.href.includes("product")) {
+      $("#navigation").addClass("is-transparent");
+    } else {
+      $("#navigation").removeClass("is-transparent");
+    }
+
+   $slideshow = $('.why-lucra-slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: false,
+    centerPadding: '0',
+    draggable: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 575,
+        settings: {
+          centerMode: true,
+          infinite: true,
+        }
+      },
+    ]
+  });
+
+  $('.why-lucra-slider').click(function() {
+    $slideshow.slick('slickGoTo', parseInt($slideshow.slick('slickCurrentSlide'))+1);
+  });
+
+  $('.slider-products').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
+  $('.slider-platform-capabilities').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'20px',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: true,
+    infinite: false,
+    dots: true,
+  });
+
   // End of document ready
 });
 
@@ -362,231 +423,6 @@ if (ua.indexOf('safari') != -1) {
 }
 
 if ($('.product-page').length) {
-  // Tilt effect to Product Cards only on Desktop 
-  if (window.matchMedia('(min-width: 575px)').matches) {
-    if ($('.product-card').length) {
-      $('.product-card').tilt({
-        glare: true,
-        maxTilt: 3,
-        speed: 700,
-        transition: true,
-        maxGlare: 0.1
-      });
-    }
-  }
-
-  // HERO Product on scroll 
-  let heroProduct = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#hero-product',
-      start: '25% 0%',
-      end: '100% 40%',
-      scrub: 0.5,
-    }
-  })
-
-    // Prevent animation on mobile
-    let mediaQueryHeroProduct = gsap.matchMedia();
-    mediaQueryHeroProduct.add("(min-width: 991px)", () => {
-      heroProduct.fromTo('#hero-product .hero-images .hero-screen:not(.center-images)', {
-        y: 0,
-        opacity: 1,
-      },{
-        y: -100,
-        opacity: 0,
-        stagger: {
-          amount: 2,
-          from: "random"
-        }
-      }).to('#hero-product .hero-images .hero-phone',{
-        y: -100,
-        opacity: 0,
-      })
-    })
-
-  // WHAT MAKES marquee boxs animation 
-  let innerBoxBlue = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#what-makes',
-      start: '10% 50%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
-  });
-
-  innerBoxBlue.fromTo('#what-makes .outline-boxes .inner-box', {
-    y: 100,
-    opacity: 0,
-  },{
-    y: 0,
-    opacity: 1,
-    stagger: .1
-  });
-
-  // KEY PRODUCT marquee boxs animation 
-  let innerBoxGreen = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#key-product',
-      start: '10% 50%',
-      end: '65% 50%',
-      scrub: 0.5,
-    }
-  });
-
-  innerBoxGreen.fromTo('#key-product .outline-boxes .inner-box', {
-    y: 100,
-    opacity: 0,
-  },{
-    y: 0,
-    opacity: 1,
-    stagger: .1
-  });
-
-  // LUCRA’S WHITE-LABEL WAGERING TECHNOLOGY section change tabs on scroll
-  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    return gsap.fromTo(
-      element,
-      { opacity: 1 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#lucra-technology",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            if(onLeave != true){
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            } 
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            if(onLeaveBack != true){
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-        },
-      }
-    );
-  }
-
-  // Functions to trigger tabs animation on LUCRA’S WHITE-LABEL WAGERING TECHNOLOGY section
-  $(".tab-content-inner.top-left").each(function (index, element) {
-    createTabAnimation($(element), index, 0, 15, "first-step", false, true);
-  });
-
-  $(".tab-content-inner.top-right").each(function (index, element) {
-    createTabAnimation($(element), index, 15, 30, "second-step", false, false);
-  });
-
-  $(".tab-content-inner.bottom-left").each(function (index, element) {
-    createTabAnimation($(element), index, 30, 45, "third-step", false, false);
-  });
-
-  $(".tab-content-inner.bottom-right").each(function (index, element) {
-    createTabAnimation($(element), index, 45, 65, "fourth-step", true, false);
-  });
-
-
-$(".tab-content-inner").on("click", function() {
-  var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-
-  console.log(tabClass);
-
-  // Realizar la animación correspondiente al bloque clicado
-  switch (tabClass) {
-    case "top-left":
-      $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.30
-      }, 100);
-      break;
-
-    case "top-right":
-      $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.50
-      }, 100);
-      break;
-
-    case "bottom-left":
-      $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
-      }, 100);
-      break;
-
-    case "bottom-right":
-      $('html, body').animate({
-        scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
-      }, 100);
-      break;
-  }
-});
-
-  // OUR VALUE PROPOSITION section change accordions on scroll
-  function createAccordionAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    return gsap.from(
-      element,
-      {
-        scrollTrigger: {
-          trigger: "#our-value-proposition",
-          start: `${startPercentage}% 50%`,
-          end: `${endPercentage}% 50%`,
-          scrub: 0.5,
-          // markers: true,
-          onEnter: function () {
-            element.addClass("active");
-            // $(`.apps-accordion.${stepClass}`).addClass("active");
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            // $(`.apps-accordion.${stepClass}`).addClass("active");
-          },
-          onLeave: function () {
-            if(onLeave != true){
-              element.removeClass("active");
-              // $(`.apps-accordion.${stepClass}`).removeClass("active");
-            }
-          },
-          onLeaveBack: function () {
-            if(onLeaveBack != true){
-              element.removeClass("active");
-            // $(`.apps-accordion.${stepClass}`).removeClass("active");
-            }
-          },
-        },
-      }
-    );
-  }
-
-  // Functions to trigger accordions animation on OUR VALUE PROPOSITION section
-  $(".apps-phone.first-step").each(function (index, element) {
-    createAccordionAnimation($(element), index, 15, 25, "first-step", false, true);
-  });
-
-  $(".apps-phone.second-step").each(function (index, element) {
-    createAccordionAnimation($(element), index, 25, 40, "second-step", false, false);
-  });
-
-  $(".apps-phone.third-step").each(function (index, element) {
-    createAccordionAnimation($(element), index, 40, 50, "third-step", false, false);
-  });
-
-  $(".apps-phone.fourth-step").each(function (index, element) {
-    createAccordionAnimation($(element), index, 50, 70, "fourth-step", false, false);
-  });
-
-  $(".apps-phone.fifth-step").each(function (index, element) {
-    createAccordionAnimation($(element), index, 70, 90, "fifth-step", true, false);
-  });
-
   // CLIENT CATEGORIES section animation 
   let clientCategories = gsap.timeline({
     scrollTrigger: {
@@ -621,46 +457,21 @@ $(".tab-content-inner").on("click", function() {
     }
   });
   mediaQueryClientCategories.add("(min-width: 991px)", () => {
-  clientCategoriesScroll.to("#client-categories .category-card.rotate",{
-    y: 70,
-    stagger: {
-      amount: 1,
-      from: "random"
-    }
-  }, "<")
-  .to("#client-categories .category-card.rotate-right",{
-    y: 70,
-    stagger: {
-      amount: 1,
-      from: "random"
-    }
-  }, "<")
-})
-
-
-  // RISK AND COMPLIANCE section animation 
-  let riskCompliance = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '5% 50%',
-      end: '15% 50%',
-      scrub: 0.5,
-    }
-  });
-  // Prevent animation on mobile
-  let mediaQueryRiskCompliance = gsap.matchMedia();
-  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
-        y: 0,
-        x: 0,
-        rotate: 0,
-        duration: .3,
-        stagger: {
-          amount: 4,
-          from: "random"
-        }
-      });
-  });
+    clientCategoriesScroll.to("#client-categories .category-card.rotate",{
+      y: 70,
+      stagger: {
+        amount: 1,
+        from: "random"
+      }
+    }, "<")
+    .to("#client-categories .category-card.rotate-right",{
+      y: 70,
+      stagger: {
+        amount: 1,
+        from: "random"
+      }
+    }, "<")
+  })
 }
 ////////////////////////////
 ////// CATEGORIES PAGE //////
@@ -777,70 +588,7 @@ if ($('.home-new-page').length) {
       start: "top bottom",
       end: "bottom top",
       scrub: true,
-  }
-  });
-
-  let tabTexts = $('.tab-text');
-  let currentIndex = 0;
-
-  function showTab(index) {
-    const target = tabTexts.eq(index).data('tab');
-    const nextTab = $('#' + target);
-
-    // Si ya está activo, no hacer nada
-    if (nextTab.hasClass('active')) return;
-
-    // Actualizar clases activas en los botones
-    tabTexts.removeClass('active');
-    tabTexts.eq(index).addClass('active');
-
-    const currentTab = $('.tab-pane.active');
-
-    gsap.to(currentTab.find('.inner-tab-content img'), {
-      opacity: 0,
-      y: 20,
-      duration: 0.3,
-      stagger: 0.005,
-      ease: "power2.in",
-      onComplete() {
-        gsap.to(currentTab, {
-          duration: 0.2,
-          opacity: 0,
-          y: 20,
-          onComplete() {
-            currentTab.removeClass('active');
-
-            // Preparar nuevo tab
-            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
-            nextTab.addClass('active');
-
-            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
-              duration: 0.2,
-              opacity: 1,
-              y: 0,
-              onComplete() {
-                gsap.fromTo(
-                  nextTab.find('.inner-tab-content img'),
-                  { opacity: 0, y: -20 },
-                  {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.3,
-                    stagger: 0.1,
-                    ease: "back.out(2)"
-                  }
-                );
-              }
-            });
-          }
-        });
-      }
-    });
-  }
-
-  tabTexts.on('click', function () {
-    currentIndex = tabTexts.index(this);
-    showTab(currentIndex);
+    }
   });
 
   // Notable Brands Who Trust Us section animation
@@ -948,6 +696,109 @@ if ($('.home-new-page').length) {
   // End of new homepage
 }
 
+
+// Global Products Tabs
+if ($('.tab-pane').length) {  
+  let tabTexts = $('.tab-text');
+  let currentIndex = 0;
+
+  function showTab(index) {
+    const target = tabTexts.eq(index).data('tab');
+    const nextTab = $('#' + target);
+
+    // If the next tab is already active, do nothing
+    if (nextTab.hasClass('active')) return;
+
+    // Update active classes on buttons
+    tabTexts.removeClass('active');
+    tabTexts.eq(index).addClass('active');
+
+    const currentTab = $('.tab-pane.active');
+
+    gsap.to(currentTab.find('.inner-tab-content img'), {
+      opacity: 0,
+      y: 20,
+      duration: 0.3,
+      stagger: 0.005,
+      ease: "power2.in",
+      onComplete() {
+        gsap.to(currentTab, {
+          duration: 0.2,
+          opacity: 0,
+          y: 20,
+          onComplete() {
+            currentTab.removeClass('active');
+
+            // Prepare next tab
+            gsap.set(nextTab.find('.inner-tab-content img'), { opacity: 0 });
+            nextTab.addClass('active');
+
+            gsap.fromTo(nextTab, { opacity: 0, y: -20 }, {
+              duration: 0.2,
+              opacity: 1,
+              y: 0,
+              onComplete() {
+                gsap.fromTo(
+                  nextTab.find('.inner-tab-content img'),
+                  { opacity: 0, y: -20 },
+                  {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                    stagger: 0.1,
+                    ease: "back.out(2)"
+                  }
+                );
+              }
+            });
+          }
+        });
+      }
+    });
+  }
+
+  tabTexts.on('click', function () {
+    currentIndex = tabTexts.index(this);
+    showTab(currentIndex);
+  });
+};
+
+// Features Block section animation on Product pages
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray(".features-block").forEach(block => {
+  const image = block.querySelector(".wrapper-image img.is-features-bubble");
+  if (image) {
+    // 1. Fade-in 
+    gsap.fromTo(image,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: block,
+          start: "top 40%", 
+          toggleActions: "play none none none"
+        }
+      }
+    );
+    // 2. Parallax 
+    gsap.fromTo(image,
+      { y: 50 },
+      {
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+          trigger: block,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        }
+      }
+    );
+  }
+});
+
 ////////////////////////////
 ///// DUPR CASE STUDY //////
 ////////////////////////////
@@ -974,89 +825,6 @@ heroAnimations.fromTo('.ball', {
   ease: 'power2.out'
 });
 
-  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    var video =  $(`#lucra-technology .screen-tab video`);
-    return gsap.fromTo(
-      element,
-      { opacity: 1 }, 
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#lucra-technology",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-            $(`.screen-tab.${stepClass}`).addClass("active");
-            video.trigger('play'); // Play video on entering the section
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            video.trigger('play'); // Play video on entering the section
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeave != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeaveBack != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-        },
-      }
-    );
-  }
- 
-  $(".tab-content-inner.top-left").each(function (index, element) {
-    createTabAnimation($(element), index, 0, 20, "first-step", false, true);
-  });
-  
-  $(".tab-content-inner.top-right").each(function (index, element) {
-    createTabAnimation($(element), index, 20, 35, "second-step", false, false);
-  });
-  
-  $(".tab-content-inner.mid-right").each(function (index, element) {
-    createTabAnimation($(element), index, 35, 50, "third-step", false, false);
-  });
-  
-  $(".tab-content-inner.bottom-right").each(function (index, element) {
-    createTabAnimation($(element), index, 50, 65, "fourth-step", true, false);
-  });
-  
-  $(".tab-content-inner").on("click", function () {
-    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-    console.log(tabClass);
-    // Realizar la animación correspondiente al bloque clicado
-    switch (tabClass) {
-     
-      case "top-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
-        }, 100);
-        break;
-  
-      case "mid-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
-        }, 100);
-        break;
-  
-      case "bottom-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
-        }, 100);
-        break;
-    }
-
-  });
   
 
 // Initialize Phones Slide
@@ -1185,96 +953,6 @@ phoneAnimations
     ease: 'power2.out'
   }, "-=0.33"); 
 
-  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    var video =  $(`#lucra-technology .screen-tab video`);
-    return gsap.fromTo(
-      element,
-      { opacity: 1 }, 
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#lucra-technology",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-            video.trigger('play'); // Play video on entering the section
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            video.trigger('play'); // Play video on entering the section
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeave != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeaveBack != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-        },
-      }
-    );
-  }
-  
- 
-  $(".tab-content-inner.top-left").each(function (index, element) {
-    createTabAnimation($(element), index, 0, 20, "first-step", false, true);
-  });
-  
-  $(".tab-content-inner.top-right").each(function (index, element) {
-    createTabAnimation($(element), index, 20, 35, "second-step", false, false);
-  });
-  
-  $(".tab-content-inner.mid-right").each(function (index, element) {
-    createTabAnimation($(element), index, 35, 50, "third-step", false, false);
-  });
-  
-  $(".tab-content-inner.bottom-right").each(function (index, element) {
-    createTabAnimation($(element), index, 50, 65, "fourth-step", true, false);
-  });
-  
-  $(".tab-content-inner").on("click", function () {
-    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-    console.log(tabClass);
-  });
-  
-  $(".tab-content-inner").on("click", function() {
-    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-  
-    console.log(tabClass);
-   
-    // Realizar la animación correspondiente al bloque clicado
-    switch (tabClass) {
-     
-      case "top-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
-        }, 100);
-        break;
-  
-      case "mid-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
-        }, 100);
-        break;
-  
-      case "bottom-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
-        }, 100);
-        break;
-    }
-  });
 // Initialize Phones Slide
 $('.phones-slider').slick({
   centerMode: true,
@@ -1395,96 +1073,6 @@ heroAnimations.fromTo('.logo-image', {
   ease: 'power2.out'
 });
 
-  function createTabAnimation(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    var video =  $(`#lucra-technology .screen-tab video`);
-    return gsap.fromTo(
-      element,
-      { opacity: 1 }, 
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#lucra-technology",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-            video.trigger('play'); // Play video on entering the section
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            video.trigger('play'); // Play video on entering the section
-            $(`.screen-tab.${stepClass}`).addClass("active");
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeave != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            video.trigger('pause'); // Play video on entering the section
-            if (onLeaveBack != true) {
-              $(`.screen-tab.${stepClass}`).removeClass("active");
-            }
-          },
-        },
-      }
-    );
-  }
-  
- 
-  $(".tab-content-inner.top-left").each(function (index, element) {
-    createTabAnimation($(element), index, 0, 20, "first-step", false, true);
-  });
-  
-  $(".tab-content-inner.top-right").each(function (index, element) {
-    createTabAnimation($(element), index, 20, 35, "second-step", false, false);
-  });
-  
-  $(".tab-content-inner.mid-right").each(function (index, element) {
-    createTabAnimation($(element), index, 35, 50, "third-step", false, false);
-  });
-  
-  $(".tab-content-inner.bottom-right").each(function (index, element) {
-    createTabAnimation($(element), index, 50, 65, "fourth-step", true, false);
-  });
-  
-  $(".tab-content-inner").on("click", function () {
-    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-    console.log(tabClass);
-  });
-  
-  $(".tab-content-inner").on("click", function() {
-    var tabClass = $(this).attr("class").split(" ")[1]; // Get class of steps
-  
-    console.log(tabClass);
-   
-    // Realizar la animación correspondiente al bloque clicado
-    switch (tabClass) {
-     
-      case "top-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 0.70
-        }, 100);
-        break;
-  
-      case "mid-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.1
-        }, 100);
-        break;
-  
-      case "bottom-right":
-        $('html, body').animate({
-          scrollTop: $("#lucra-technology").offset().top + (window.innerHeight) * 1.8
-        }, 100);
-        break;
-    }
-  });
 // Initialize Phones Slide
 $('.phones-slider').slick({
   centerMode: true,
@@ -1624,405 +1212,6 @@ if ($('.is-dave-and-busters').length) {
       duration: 1,
       ease: "power2.out",
       delay: index * 0.2 // Staggering the delay by 0.2s * index
-    });
-  });
-}
-
-
-////////////////////////////
-////// SOLUTIONS PAGE //////
-////////////////////////////
-
-
-if ($('.solutions-page').length) {
-  //Why Lucra Animation
-  let whyLucra = gsap.timeline ({})
-
-  whyLucra.from('.lucra-holder', {
-    opacity: 0,
-    y: -10,
-    duration: 0.8,
-    delay: 0.2,
-    ease: "power2.out"
-  });
-  whyLucra.from('.graph-wrapper', {
-    opacity: 0,
-    duration: 1,
-    delay: 0,
-    ease: "power2.out"
-  });
-  gsap.from('.bottom-wrapper .image-wrapper', {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    delay: 1.2,
-    ease: "power2.out"
-  });
-  gsap.from('.bottom-wrapper-mobile .image-wrapper', {
-    opacity: 0,
-    y: 50,
-    duration: 1,
-    stagger: 0.2,
-    delay: 1.2,
-    ease: "power2.out"
-  });
-
-//Circles Animation 
-  const circles = document.querySelectorAll('.circle-flex .circle');
-  circles.forEach((circle, index) => {
-    gsap.from(circle, {
-      opacity: 0,
-      duration: 0.2,
-      delay: 0.3 * index + 0.2, // Adding 0.2 per circle
-      ease: "power2.out"
-    });
-  });
-  
-  // PROFESSIONAL SPORTS SDK section change tabs on scroll
-  function createTabAnimationProSports(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack, haveIconStep) {
-    var video =  $(`#pro-sports .screen-tab.${stepClass} video`);
-    return gsap.fromTo(
-      element,
-      { opacity: 1 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#pro-sports",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-            $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
-            // Play the video if the container has the class "active".
-            if (element.hasClass("active")) {
-              video.trigger('play');
-            }
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            $(`#pro-sports .screen-tab.${stepClass}`).addClass("active");
-            // Play the video if the container has the class "active".
-            if (element.hasClass("active")) {
-              video.trigger('play');
-            }
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            if(onLeave != true){
-              $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
-              // Play the video if the container has the class "active".
-              if (!element.hasClass("active")) {
-                video.trigger('pause');
-              }
-            } 
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            if(onLeaveBack != true){
-              $(`#pro-sports .screen-tab.${stepClass}`).removeClass("active");
-              // Play the video if the container has the class "active".
-              if (!element.hasClass("active")) {
-                video.trigger('pause');
-              }
-            }
-          },
-        },
-      }
-    );
-  }
-  
-  // Functions to trigger tabs animation on PROFESSIONAL SPORTS SDK section
-  $("#pro-sports .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 0, 50, "first-step", false, true, false);
-  });
-  
-  $("#pro-sports .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationProSports($(element), index, 50, 70, "second-step", true, false, false);
-  });
-  
-  // $("#pro-sports .tab-content-inner.third-tab").each(function (index, element) {
-  //   createTabAnimationProSports($(element), index, 50, 70, "third-step", true, false, false);
-  // });
-  
-  
-  // RECREATIONAL GAMES SDK section change tabs on scroll
-  function createTabAnimationRecGames(element, index, startPercentage, endPercentage, stepClass, onLeave, onLeaveBack) {
-    var video =  $(`#rec-games .screen-tab.${stepClass} video`);
-
-    return gsap.fromTo(
-      element,
-      { opacity: 1 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#rec-games",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          // markers: true,
-          onEnter: function () {
-            element.addClass("active viewed");
-            $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
-            // Play the video if the container has the class "active".
-            if (element.hasClass("active")) {
-              video.trigger('play');
-            }
-          },
-          onEnterBack: function () {
-            element.addClass("active");
-            $(`#rec-games .screen-tab.${stepClass}`).addClass("active");
-            // Play the video if the container has the class "active".
-            if (element.hasClass("active")) {
-              video.trigger('play');
-            }
-          },
-          onLeave: function () {
-            element.removeClass("active");
-            if(onLeave != true){
-              $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
-              // Play the video if the container has the class "active".
-              if (!element.hasClass("active")) {
-                  video.trigger('pause');
-              }
-            } 
-          },
-          onLeaveBack: function () {
-            element.removeClass("active");
-            if(onLeaveBack != true){
-              $(`#rec-games .screen-tab.${stepClass}`).removeClass("active");
-              // Play the video if the container has the class "active".
-              if (!element.hasClass("active")) {
-                  video.trigger('pause');
-              }
-            }
-          },
-        },
-      }
-    );
-  }
-  
-  // Functions to trigger tabs animation on RECREATIONAL GAMES SDK section
-  $("#rec-games .tab-content-inner.first-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 0, 50, "first-step", false, true);
-  });
-  
-  $("#rec-games .tab-content-inner.second-tab").each(function (index, element) {
-    createTabAnimationRecGames($(element), index, 50, 70, "second-step", true, false);
-  });
-  
-  // $("#rec-games .tab-content-inner.third-tab").each(function (index, element) {
-  //   createTabAnimationRecGames($(element), index, 50, 70, "third-step", true, false);
-  // });
-
-  // RISK AND COMPLIANCE section animation 
-  let riskCompliance = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#risk-and-compliance',
-      start: '10% 50%',
-      end: '20% 50%',
-      scrub: 0.5,
-    }
-  });
-  // Prevent animation on mobile
-  let mediaQueryRiskCompliance = gsap.matchMedia();
-  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-      riskCompliance.to("#risk-and-compliance .grid-boxs .inner-box",{
-        y: 0,
-        x: 0,
-        rotate: 0,
-        duration: .3,
-        stagger: {
-          amount: 4,
-          from: "random"
-        }
-      });
-  });
-
-  // TIMELINE section change steps on scroll
-  function createTabAnimationTimeLine(element, index, startPercentage, endPercentage, onEnterBack) {
-    return gsap.fromTo(
-      element,
-      { opacity: 1 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#timeline",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-          },
-          onEnterBack: function () {
-            element.addClass("active viewed");
-            if(onEnterBack != true){
-              element.removeClass("active");
-            }
-          },
-          onLeave: function(){
-            element.removeClass("viewed");
-          },
-          onLeaveBack: function(){
-            element.removeClass("viewed");
-          }
-        },
-      }
-    );
-  }
-  
-  // Functions to trigger steps animation on TIMELINE section
-  $("#timeline .timeline-block.week .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 0, true);
-  });
-  
-  $("#timeline .timeline-block.week .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 30, 30, false);
-  });
-  
-  $("#timeline .timeline-block.week .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 45, 45, false);
-  });
-    
-  $("#timeline .timeline-block.week .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 55, 55, false);
-  });
-
-
-  // TIMELINE section change steps on scroll
-  function createTabAnimationTimeLine(element, index, startPercentage, endPercentage, onEnterBack) {
-    return gsap.fromTo(
-      element,
-      { opacity: 1 },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: "#timeline",
-          start: `${startPercentage}% 20%`,
-          end: `${endPercentage}% 20%`,
-          scrub: 0.5,
-          onEnter: function () {
-            element.addClass("active viewed");
-          },
-          onEnterBack: function () {
-            element.addClass("active viewed");
-            if(onEnterBack != true){
-              element.removeClass("active");
-            }
-          },
-          onLeave: function(){
-            element.removeClass("viewed");
-          },
-          onLeaveBack: function(){
-            element.removeClass("viewed");
-          }
-        },
-      }
-    );
-  }
-  
-  // Functions to trigger steps animation on TIMELINE section
-  $("#timeline .timeline-block.month .timeline-row.row-one").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 0, 10, true);
-  });
-  
-  $("#timeline .timeline-block.month .timeline-row.row-two").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 40, 50, false);
-  });
-  
-  $("#timeline .timeline-block.month .timeline-row.row-three").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 50, 60, false);
-  });
-    
-  $("#timeline .timeline-block.month .timeline-row.row-four").each(function (index, element) {
-    createTabAnimationTimeLine($(element), index, 60, 60, false);
-  });
-
-  const solutionsDashboard = document.querySelectorAll('#dashboard .dashboard-area');
-  const observerSolutionsDashboard = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        $("#dashboard .dashboard-area").addClass("animated");
-      }
-      // Unobserve trigger
-      if (entry.intersectionRatio > 0) {
-        observerSolutionsDashboard.unobserve(entry.target);
-      }
-    });
-  });
-  solutionsDashboard.forEach((animation) => {
-    observerSolutionsDashboard.observe(animation);
-  });
-
-  // End Solutions Conditional
-}
-
-// Clickable solution tabs
-const proSportsContainer = document.getElementById('pro-sports');
-const recGamesContainer = document.getElementById('rec-games');
-
-if (proSportsContainer) {
-  const proSportsTabContentInner = proSportsContainer.querySelectorAll('.tab-content-inner');
-
-  proSportsTabContentInner.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-      proSportsTabContentInner.forEach((tab) => {
-        tab.classList.remove('active');
-      });
-
-      tab.classList.add('active');
-
-      const proSportsScreenTabs = proSportsContainer.querySelectorAll('.screen-tab');
-      proSportsScreenTabs.forEach((screenTab) => {
-        screenTab.classList.remove('active');
-        const video = screenTab.querySelector('video');
-        if (video) {
-          video.pause();
-        }
-      });
-
-      const selectedProSportsScreenTab = proSportsContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
-      if (selectedProSportsScreenTab) {
-        selectedProSportsScreenTab.classList.add('active');
-        const video = selectedProSportsScreenTab.querySelector('video');
-        if (video) {
-          video.play();
-        }
-      }
-    });
-  });
-}
-
-if (recGamesContainer) {
-  const recGamesTabContentInner = recGamesContainer.querySelectorAll('.tab-content-inner');
-
-  recGamesTabContentInner.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-      recGamesTabContentInner.forEach((tab) => {
-        tab.classList.remove('active');
-      });
-
-      tab.classList.add('active');
-
-      const recGamesScreenTabs = recGamesContainer.querySelectorAll('.screen-tab');
-
-      recGamesScreenTabs.forEach((screenTab) => {
-        screenTab.classList.remove('active');
-        const video = screenTab.querySelector('video');
-        if (video) {
-          video.pause();
-        }
-      });
-
-      const selectedRecGamesScreenTab = recGamesContainer.querySelector(`.screen-tab:nth-child(${index + 1})`);
-      if (selectedRecGamesScreenTab) {
-        selectedRecGamesScreenTab.classList.add('active');
-        const video = selectedRecGamesScreenTab.querySelector('video');
-        if (video) {
-          video.play();
-        }
-      }
     });
   });
 }
