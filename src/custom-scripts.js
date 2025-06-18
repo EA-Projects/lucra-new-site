@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // Team Cards
   $(".team-card").on("click", function() {
     $(this).toggleClass("active");
   });
@@ -51,14 +52,7 @@ $(document).ready(function () {
     }
   }
 
-  //PRODUCT PAGE
-
-    if (window.location.href.includes("product")) {
-      $("#navigation").addClass("is-transparent");
-    } else {
-      $("#navigation").removeClass("is-transparent");
-    }
-
+    //PRODUCT PAGE
    $slideshow = $('.why-lucra-slider').slick({
     infinite: true,
     slidesToShow: 1,
@@ -97,6 +91,58 @@ $(document).ready(function () {
     dots: true,
   });
 
+  $('.values-cards-slide').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'0',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: false,
+    infinite: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          centerPadding:'20px',
+          slidesToShow: 1,
+          centerMode: true,
+          draggable: true,
+          dots: true,
+        }
+      },
+    ]
+  });
+
+  $('.market-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding:'0',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: false,
+    draggable: false,
+    infinite: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          centerPadding:'20px',
+          slidesToShow: 1,
+          centerMode: true,
+          draggable: true,
+          dots: true,
+        }
+      },
+    ]
+  });
+
   $('.slider-platform-capabilities').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -120,12 +166,10 @@ $(window).scroll(function () {
   if (scroll >= 60) {
     $('#header-nav').addClass('fixed');
     $('#navigation').addClass('fixed');
-    $('#anchors-nav').addClass('fixed');
   } 
   else {
     $('#header-nav').removeClass('fixed');
     $('#navigation').removeClass('fixed');
-    $('#anchors-nav').removeClass('fixed');
   }
 
   // Anchors Navigation , to trigger active class between sections
@@ -133,9 +177,6 @@ $(window).scroll(function () {
   $('.with-sticky-anchors section').each(function () {
       if ($(this).offset().top + $(this).height() > cutoff) {
           var currSection = $(this).attr('id');
-
-          $('.anchors-nav a').removeClass('active');
-          $('.anchors-nav a[data-id=' + currSection + ']').addClass('active');
           return false;
       }
   });
@@ -144,76 +185,6 @@ $(window).scroll(function () {
 window.addEventListener('load', function () {
   (function ($) {
   })(jQuery);
-
-  // Hero Case Studies
-  if ($('#hero-case-studies.dpr').length) {
-    let heroCaseStudiesAnimation = gsap.timeline();
-    heroCaseStudiesAnimation
-    // Show phones
-    .fromTo(".animation-graphic .phones .phone-left",{
-      opacity: 0,
-      duration: 1,
-      yPercent: -25
-    },{
-      opacity: 1,
-      yPercent: -32,
-    })
-    .fromTo(".animation-graphic .phones .phone-right",{
-      opacity: 0,
-      duration: 1,
-      yPercent: -50,
-    },{
-      opacity: 1,
-      yPercent: -59,
-    }, "<.2")
-    // Move phones
-    .fromTo(".animation-graphic .phones .phone-left", {
-      xPercent: -70,
-      yPercent: -32,
-    },
-    {
-      xPercent: -80,
-      yPercent: -40,
-    }
-    )
-    .fromTo(".animation-graphic .phones .phone-right", {
-      xPercent: -37,
-      yPercent: -59,
-    },
-    {
-      xPercent: -24,
-      yPercent: -45,
-    }, '<')
-    .fromTo(".animation-graphic .ball", {
-      opacity: 0,
-      yPercent: 15
-    },{
-      opacity: 1,
-      yPercent: 0,
-    }, "<.2")
-    .fromTo(".animation-graphic .dupr-x-lucra", {
-      opacity: 0,
-    },{
-      opacity: 1,
-    }, "<.2");
-  }
-
-// Hover on ball (Case Studies)
-if ($('#hero-case-studies .animation-graphic .ball').length) {
-  let hoverBall = gsap.timeline({paused: true, duration: 1});
-  hoverBall.to("#hero-case-studies .animation-graphic .ball", {
-    rotate: 55,
-    xPercent: 20,
-    yPercent: 20,
-  }, "-=.4");
-
-  $("#hero-case-studies .animation-graphic .ball").on("mouseenter", function() {
-    hoverBall.play();
-  });
-  $("#hero-case-studies .animation-graphic .ball").on("mouseleave", function() {
-    hoverBall.reverse();
-  });
-}
 
 // About page animations
 // Only trigger the animation on Tablet and Desktop
@@ -800,359 +771,6 @@ gsap.utils.toArray(".features-block").forEach(block => {
 });
 
 ////////////////////////////
-///// DUPR CASE STUDY //////
-////////////////////////////
-if ($('.is-dupr').length) {
-
-// Hero Animations
-let heroAnimations = gsap.timeline({});
-
-heroAnimations.fromTo('.logo-image', {
-  opacity: 0,
-}, {
-  opacity: 1,
-  duration: 0.5,
-  top: '14%',
-  delay: 0.2,
-  ease: 'power2.out'
-});
-heroAnimations.fromTo('.ball', {
-  opacity: 0,
-}, {
-  opacity: 1,
-  bottom: -10,
-  duration: 0.4,
-  ease: 'power2.out'
-});
-
-  
-
-// Initialize Phones Slide
-$('.phones-slider').slick({
-  centerMode: true,
-  centerPadding: '25vh',
-  slidesToShow: 3,
-  draggable: false,
-  initialSlide: 2,
-  swipe: false,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-  responsive: [
-    {
-      breakpoint: 991,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 575,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1,
-        draggable: true,
-        swipe: true
-      }
-    }
-  ]
-});
-
-let imageAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#integration',
-    start: 'top-=20vh bottom',
-    end: '65% 50%',
-    scrub: 0.5,
-  }
-});
-
-imageAnimation.fromTo('#integration .outlined.first', {
-  x: '50%',
-},{
-  x: '-50%',
-  stagger: 0.1
-});
-
-// About Section Box Items
-let aboutItemsAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#about',
-    start: '10% 50%',
-    end: '65% 50%',
-    scrub: 0.5,
-    once: true,
-  }
-});
-
-const aboutItems = document.querySelectorAll('#about .items-wrapper .about-item');
-
-aboutItemsAnimation.fromTo(
-  aboutItems,
-  {
-    y: 100,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    stagger: 0.1,
-  }
-);
-}
-
-////////////////////////////
-/// TOUCHTUNES CASE STUDY ///
-////////////////////////////
-if ($('.is-touchtunes').length) {
-// Hero Animations
-let heroAnimations = gsap.timeline({});
-
-heroAnimations.fromTo('.logo-image', {
-  opacity: 0,
-}, {
-  opacity: 1,
-  top: '12%',
-  duration: 1,
-  delay: 0.2,
-  ease: 'power2.out'
-});
-
-let phoneAnimations = gsap.timeline({});
-
-phoneAnimations
-  .fromTo('.right-phone-wrapper', {
-    opacity: 0,
-    y: 50
-  }, {
-    opacity: 1,
-    y: 0,
-    duration: 0.66,
-    ease: 'power2.out'
-  })
-  .fromTo('.middle-phone-wrapper', {
-    opacity: 0,
-    x: 50
-  }, {
-    opacity: 1,
-    x: 0,
-    duration: 0.66,
-    ease: 'power2.out'
-  }, "-=0.33") 
-  .fromTo('.left-phone-wrapper', {
-    opacity: 0,
-    x: 50
-  }, {
-    opacity: 1,
-    x: 0,
-    duration: 0.66,
-    ease: 'power2.out'
-  }, "-=0.33"); 
-
-// Initialize Phones Slide
-$('.phones-slider').slick({
-  centerMode: true,
-  centerPadding: '25vh',
-  slidesToShow: 3,
-  draggable: false,
-  initialSlide: 0,
-  swipe: false,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-  responsive: [
-    {
-      breakpoint: 991,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 575,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1,
-        draggable: true,
-        swipe: true
-      }
-    }
-  ]
-});
-
-let imageAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#integration',
-    start: 'top-=20vh bottom',
-    end: '65% 50%',
-    scrub: 0.5,
-  }
-});
-
-imageAnimation.fromTo('#integration .outlined.first', {
-  x: '50%',
-},{
-  x: '-50%',
-  stagger: 0.1
-});
-
-// About Section Box Items
-let aboutItemsAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#about',
-    start: '10% 50%',
-    end: '65% 50%',
-    scrub: 0.5,
-    once: true,
-  }
-});
-
-const aboutItems = document.querySelectorAll('#about .items-wrapper .about-item');
-
-aboutItemsAnimation.fromTo(
-  aboutItems,
-  {
-    y: 100,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    stagger: 0.1,
-  }
-);
-
-  // Lucra Tech Tabs section animation 
-  let lucraTech = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#lucra-technology',
-      start: '15% 50%',
-      end: '15% 50%',
-      scrub: 0.2,
-    }
-  });
-  // Prevent animation on mobile
-  let mediaQueryRiskCompliance = gsap.matchMedia();
-  mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-      lucraTech.to("#lucra-technology .grid-boxs .inner-box",{
-        y: 0,
-        x: 0,
-        rotate: 0,
-        duration: .3,
-        stagger: {
-          amount: 4,
-          from: "random"
-        }
-      });
-  });
-
-}
-
-////////////////////////////
-/// TENNISONE CASE STUDY ///
-////////////////////////////
-if ($('.is-tennisone').length) {
-// Hero Animations
-let heroAnimations = gsap.timeline({});
-
-heroAnimations.fromTo('.logo-image', {
-  opacity: 0,
-}, {
-  opacity: 1,
-  top: '12%',
-  duration: 1,
-  delay: 0.2,
-  ease: 'power2.out'
-});
-
-// Initialize Phones Slide
-$('.phones-slider').slick({
-  centerMode: true,
-  centerPadding: '25vh',
-  slidesToShow: 3,
-  draggable: false,
-  initialSlide: 2,
-  swipe: false,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-  responsive: [
-    {
-      breakpoint: 991,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '0px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 575,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1,
-        draggable: true,
-        swipe: true
-      }
-    }
-  ]
-});
-
-let imageAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#integration',
-    start: 'top-=20vh bottom',
-    end: '65% 50%',
-    scrub: 0.5,
-  }
-});
-
-imageAnimation.fromTo('#integration .outlined.first', {
-  x: '50%',
-},{
-  x: '-50%',
-  stagger: 0.1
-});
-
-// About Section Box Items
-let aboutItemsAnimation = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#about',
-    start: '10% 50%',
-    end: '65% 50%',
-    scrub: 0.5,
-    once: true,
-  }
-});
-
-const aboutItems = document.querySelectorAll('#about .items-wrapper .about-item');
-
-aboutItemsAnimation.fromTo(
-  aboutItems,
-  {
-    y: 100,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    stagger: 0.1,
-  }
-);
-
-}
-
-////////////////////////////
 //////// PRESS PAGE ////////
 ////////////////////////////
 if ($('.press-page').length) { 
@@ -1187,31 +805,72 @@ if ($('.press-page').length) {
     }
 }
 
-///////////////////////////////////////
-////// DAVE & BUSTERS CASE STUDY //////
-///////////////////////////////////////
+///////////////////////////////////
+//////// CASE STUDY PAGES ////////
+/////////////////////////////////
 
-
-if ($('.is-dave-and-busters').length) {
-  let daveAnimations = gsap.timeline({});
-  daveAnimations.fromTo('.dave-logo', {
-    opacity: 0,
-  }, {
-    opacity: 1,
-    top: '12%',
-    duration: 1,
-    delay: 0.2,
-    ease: 'power2.out'
-  });
-  
-
-  ['.first-image', '.second-image', '.third-image', '.fourth-image'].forEach((image, index) => {
-    gsap.from(image, {
+// Only trigger the animation on Tablet and Desktop
+if (window.matchMedia('(min-width: 575px)').matches) {
+  // MARKET OPTIONS
+  if ($('#market-options').length) {
+    let marketCardAnimation = gsap.timeline({paused: true, delay: .4});
+    marketCardAnimation
+    // Show cards
+    .from("#market-options .market-card",{
       opacity: 0,
-      y: 10, // Adjusting y position based on index
-      duration: 1,
-      ease: "power2.out",
-      delay: index * 0.2 // Staggering the delay by 0.2s * index
+      duration: .4,
+      scale: .95,
+      stagger: .1,
     });
-  });
+
+    const cardMarketTrigger = document.querySelectorAll('#market-options .trigger-animation');
+    const observerCardMarket = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          marketCardAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerCardMarket.unobserve(entry.target);
+        }
+      });
+    });
+    cardMarketTrigger.forEach((animation) => {
+      observerCardMarket.observe(animation);
+    });
+  }
+
+  // VALUES
+  if ($('#case-study-values').length) {
+    let valueCardAnimation = gsap.timeline({paused: true, delay: .4});
+    valueCardAnimation
+    // Show cards
+    .from("#case-study-values h2",{
+      opacity: 0,
+      duration: .4,
+      y: 30,
+    })
+    .from("#case-study-values .value-card",{
+      opacity: 0,
+      duration: .4,
+      scale: .95,
+      stagger: .1,
+    });
+
+    const cardValueTrigger = document.querySelectorAll('#case-study-values .trigger-animation');
+    const observerCardValue = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          valueCardAnimation.play();
+        }
+        // Unobserve trigger
+        if (entry.intersectionRatio > 0) {
+          observerCardValue.unobserve(entry.target);
+        }
+      });
+    });
+    cardValueTrigger.forEach((animation) => {
+      observerCardValue.observe(animation);
+    });
+  }
 }

@@ -1141,6 +1141,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        &.is-center{
+            justify-content: center;
+        }
         .pagination-product{
             position: relative;
             display: inline-flex;
@@ -1196,10 +1199,19 @@
         .wrapper-pagination-product{
             flex-direction: column;
             gap: 30px;
+            &.is-center{
+                .pagination-product{
+                    align-self: center;
+                }
+            }
             .pagination-product{
                 align-self: flex-end;
+                &.is-center{
+                    &.is-left{
+                        align-self: center;
+                    }
+                }
                 &.is-left{
-                    align-self: flex-start;
                     .circle{
                         left: -10px;
                     }

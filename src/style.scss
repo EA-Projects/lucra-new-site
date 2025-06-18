@@ -135,91 +135,6 @@ a {
           border-color: #E0E154;
       }
     }
-    &.purple {
-      background-color: #8E69FF;
-      border-color: #8E69FF;
-      color: white;
-      transition: 0.35s all ease-in-out;
-      &:hover {
-          color: #8E69FF;
-          background: transparent;
-          border-color: #8E69FF;
-      }
-    } 
-  }
-  &.yellow-dark {
-    background-color: #BFF300;
-    border-color: #BFF300;
-    color: black;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        color: #BFF300;
-        background: transparent;
-        border-color: #BFF300;
-    }
-  }
-  &.pink-dark {
-    background-color: #9A25C3;
-    border-color: #9A25C3;
-    color: $light;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: transparent;
-        border-color: $light;
-    }
-  }
-  &.red {
-    background-color: #E83643;
-    border-color: #E83643;
-    color: $light;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: transparent;
-        border-color: $light;
-    }
-  }
-  &.orange {
-    background-color: #BC6F4E;
-    border-color: #BC6F4E;
-    color: $light;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: $black;
-        border-color: $light;
-        color: $light;
-    }
-  }
-  &.gold {
-    background-color: #D7AC5B;
-    border-color: #D7AC5B;
-    color: $black;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: $black;
-        border-color: #D7AC5B;
-        color: #D7AC5B;
-    }
-  }
-   &.blue {
-    background-color: #63AEF7;
-    border-color: #63AEF7;
-    color: $black;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: $black;
-        border-color: #63AEF7;
-        color: #63AEF7;
-    }
-  }
-  &.orange-red {
-    background-color: #FB441C;
-    border-color: #FB441C;
-    color: $light;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-        background: transparent;
-        border-color: #FB441C;
-    }
   }
   &.outline {
     font-family: 'Inter', sans-serif;
@@ -240,33 +155,17 @@ a {
         border-color: #263037;
       }
     }
-  }
-  &.outline.with-apple {
-    border-color: #fff;
-    background: rgba(0, 27, 96, 0.3);
-    color: #fff;
-    img {
-      width: 16px;
-      margin-right: 8px;
-      margin-top: -7px;
-    }
-    &:hover {
-      background: $orange;
-      background-color: $orange;
-      border-color: $orange;
-    }
-  }
-  &.gradiented{
-    background-color: #8E69FF;
-    border-color: #8E69FF;
-    color: white;
-    transition: 0.35s all ease-in-out;
-    &:hover {
-      background-color: $light;
-      border-color: $light;
+    &.black {
       color: $black;
+      border-color: $black;
+      background-color: transparent;
+      &:hover {
+        color: $yellow;
+        background-color: #263037;
+        border-color: #263037;
+      }
     }
-}
+  }
 }
 
 a {

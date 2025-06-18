@@ -119,6 +119,9 @@ p {
     font-weight: 400;
     color: #fff;
     font-family: 'Inter', sans-serif;
+    &.black{
+        color: $black;
+    }
     &.description{
       font-size: 15px;
       @media (max-width: 575px) {

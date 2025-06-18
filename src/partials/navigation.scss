@@ -56,6 +56,11 @@
                         color: $yellow;
                     }
                 }
+                &.active{
+                    .nav-link{
+                        color: $yellow;
+                    }
+                }
                 .button{
                     margin-left: 15px;
                 }
