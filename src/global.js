@@ -79,6 +79,24 @@ $(document).ready(function () {
       $nav.find('.navbar-collapse').removeClass('show').addClass('collapse');
     });
 
-    console.log('Events initialized.');
+    // console.log('Events initialized.');
+
+    // Transparent navigation
+    if ((window.location.href.includes("product")) || (window.location.href.includes("case-studies")))  {
+      $("#navigation").addClass("is-transparent");
+    } else {
+      $("#navigation").removeClass("is-transparent");
+    }
+
+    // Navigation Active Links
+    if (window.location.href.includes("product"))  {
+      $("#navigation .nav-item.is-product").addClass("active");
+    } else if (window.location.href.includes("case-studies")) {
+      $("#navigation .nav-item.is-case-studies").addClass("active");
+    } else if (window.location.href.includes("press")) {
+      $("#navigation .nav-item.is-press").addClass("active");
+    } else if (window.location.href.includes("about")) {
+      $("#navigation .nav-item.is-about-us").addClass("active");
+    }
   }
 });
