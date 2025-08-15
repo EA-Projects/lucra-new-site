@@ -147,7 +147,8 @@
             gap: 20px;
             border-radius: 16px;
             padding: 8px;
-            background-color: $lightblue;
+            background-color: #f9fcff;
+            border: solid 1px #edf5fd;
             .article-image{
                 position: relative;
                 max-height: 220px;
@@ -159,11 +160,13 @@
                     position: absolute;
                     top: 8px;
                     left: 8px;
-                    background-color: $lightblue;
-                    color: $black;
-                    font-size: 12px;
-                    font-weight: 500;
-                    padding: 4px 10px;
+                    background-color: $black;
+                    color: $light;
+                    font-size: 9px;
+                    font-weight: 700;
+                    padding: 3px 8px;
+                    text-transform: uppercase;
+                    letter-spacing: 0.18em;
                     border-radius: 4px;
                     z-index: 3;
                 }
