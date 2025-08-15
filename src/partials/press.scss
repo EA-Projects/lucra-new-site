@@ -16,6 +16,7 @@
 }
 
 #press-releases {
+    padding: 100px 0;
     position: relative;
     .wrapper-release{
         padding: 100px 0;
@@ -37,46 +38,53 @@
             h4 {
                 text-align: left;
                 color: #5E798F;
-                margin-bottom: 23px;
+                margin-bottom: 0;
                 &.timestamp {
-                    font-size: 90%;
-                    margin-top: 10px;
+                    font-size: 12px;
+                    margin-bottom: 0;
                 }
             }
             .logo-image {
-                margin-top: 30px;
-                margin-bottom: 40px;
+                // margin-top: 30px;
+                // margin-bottom: 40px;
                 filter: invert(1);
                 img {
-                    max-height: 25px;
+                    // max-height: 25px;
+                    max-width: 110px;
                     width: auto;
+                    &.bloomberg{
+                        max-width: 90px;
+                    }
                     &.media-and-entertainment{
                         max-height: initial;
-                        max-width: 220px;
+                        max-width: 155px;
                     }
                     &.earnings-more{
                         max-height: initial;
-                        max-width: 150px;
+                        max-width: 100px;
                     }
                     &.cnbc{
                         max-height: initial;
-                        max-width: 110px;
+                        max-width: 80px;
                     }
                     &.axios{
                         max-height: initial;
-                        max-width: 80px;
+                        max-width: 45px;
                     }
                     &.reuters{
-                        max-height: 30px;
+                        max-width: 85px;
                     }
                     &.fsr{
-                        max-height: 28px;
+                        max-width: 42px;
                     }
                     &.athletech{
-                        max-width: 250px;
+                        max-width: 90px;
                     }
                     &.fit-insider{
-                        max-width: 200px;
+                        max-width: 90px;
+                    }
+                    &.sbj{
+                        max-width: 90px;
                     }
                 }
                 &.mb-0 {
@@ -99,11 +107,154 @@
             }
             &:hover{
                 img {
-                    transform: scale(1.02);
+                    transform: scale(1.05);
                 }
             }
         }
     } 
+    .filter-controls{
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        .all-h6{
+            text-align: left;
+            color: #5E798F;
+            margin-bottom: 0;
+        }
+        .button{
+            cursor: pointer;
+            min-width: auto;
+            padding: 9px 15px 10px;
+            border-radius: 8px;
+            &.active{
+                background-color: $yellow;
+                border-color: $yellow;
+            }
+        }
+    }
+    .press-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 40px 3%;
+        .release{
+            width: 31.3%;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+            border-radius: 16px;
+            padding: 8px;
+            background-color: $lightblue;
+            .article-image{
+                position: relative;
+                max-height: 220px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                .tag{
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    background-color: $lightblue;
+                    color: $black;
+                    font-size: 12px;
+                    font-weight: 500;
+                    padding: 4px 10px;
+                    border-radius: 4px;
+                    z-index: 3;
+                }
+                .list-tags{
+                    position: absolute;
+                    top: 8px;
+                    left: 8px;
+                    display: flex;
+                    gap: 5px;
+                    .tag{
+                        position: static;
+                    }
+                }
+            }
+            .article-copy{
+                padding: 0 15px 10px;
+                .metadata{
+                    min-height: 25px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin-bottom: 20px;
+                    .all-h6{
+                        font-size: 12px;
+                    }
+                }
+                > h3.all-h5{
+                    min-height: 105px;
+                    margin-bottom: 20px;
+                }
+                .button-holder{
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 0 4px;
+                }
+                .button{
+                    min-width: auto;
+                    padding: 11px 12px 12px;
+                }
+            }
+            &.hidden{
+                display: none;
+            }
+        }
+    }
+    .pagination{
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: none !important;
+        }
+        .button{
+            min-width: auto;
+            padding: 4px;
+            width: 37px;
+            height: 37px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: .3;
+            &:hover,
+            &[disabled]{
+                opacity: 1;
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .filter-controls{
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 8px;
+            .all-h6{
+                text-align: center;
+                width: 100%;
+            }
+        }
+        .press-list{
+            .release{
+                width: 48.5%;
+            }
+        }
+    }
     @media (max-width: 767px){
         .wrapper-release{
             padding: 80px 0;
@@ -116,6 +267,26 @@
             }
             .article-copy{
                 max-width: 100%;
+            }
+        }
+    }
+    @media (max-width: 575px){
+        .filter-controls{
+            gap: 5px;
+            .button{
+                padding: 7px 10px 8px;
+                border-radius: 6px;
+            }
+        }
+        .press-list{
+            gap: 20px 3%;
+            .release{
+                width: 100%;
+                .article-copy{
+                    > h3.all-h5{
+                        min-height: auto;
+                    }
+                }
             }
         }
     }

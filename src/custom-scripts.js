@@ -157,6 +157,134 @@ $(document).ready(function () {
     dots: true,
   });
 
+  const wrapper = document.querySelector(".press-list")
+const pagination = document.querySelector(".pagination")
+const items = Array.from(document.querySelectorAll(".release"))
+let filteredItems = items;
+let currPage = 1;
+
+const filters = document.getElementById('filters');
+
+// ⭐ Función para aplicar filtro por tipo
+function applyFilter(type) {
+  // Quitar "active" de todos los botones
+  filters.querySelectorAll('.filter').forEach(btn => btn.classList.remove('active'));
+
+  // Marcar el botón correspondiente como activo
+  const btn = filters.querySelector(`.filter[data-filter="${type}"]`);
+  if (btn) btn.classList.add('active');
+
+  // Filtrar elementos
+  if (type === 'all') {
+    filteredItems = items;
+  } else {
+    filteredItems = items.filter(el => el.classList.contains(type));
+  }
+
+  currPage = 1;
+
+  if (filteredItems.length !== 0) {
+    pagination.style.display = "flex";
+    setHTML(filteredItems);
+  } else {
+    pagination.style.display = "none";
+    wrapper.innerHTML = "<p>No Data Found.</p>";
+  }
+}
+
+filters.addEventListener('click', e => {
+  if (e.target.classList.contains('filter')) {
+    const type = e.target.getAttribute('data-filter');
+    applyFilter(type);
+
+    // ⭐ Actualizar la URL con el filtro
+    const url = new URL(window.location);
+    url.searchParams.set('filter', type);
+    window.history.replaceState({}, '', url);
+  }
+});
+
+function paginate(totalItems, currentPage = 1, pageSize = 2, maxPages = 3) {
+  let totalPages = Math.ceil(totalItems / pageSize);
+  if (currentPage < 1) currentPage = 1;
+  else if (currentPage > totalPages) currentPage = totalPages;
+
+  let startPage, endPage;
+  if (totalPages <= maxPages) {
+    startPage = 1;
+    endPage = totalPages;
+  } else {
+    let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+    let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+    if (currentPage <= maxPagesBeforeCurrentPage) {
+      startPage = 1;
+      endPage = maxPages;
+    } else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
+      startPage = totalPages - maxPages + 1;
+      endPage = totalPages;
+    } else {
+      startPage = currentPage - maxPagesBeforeCurrentPage;
+      endPage = currentPage + maxPagesAfterCurrentPage;
+    }
+  }
+
+  let startIndex = (currentPage - 1) * pageSize;
+  let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+  let pages = Array.from(Array((endPage + 1) - startPage).keys()).map(i => startPage + i);
+
+  return { totalItems, currentPage, pageSize, totalPages, startPage, endPage, startIndex, endIndex, pages };
+}
+
+function setHTML(items) {
+  wrapper.innerHTML = ""
+  pagination.innerHTML = ""
+  const { currentPage, pageSize, pages, endPage } = paginate(items.length, currPage, 9, 5)
+
+  const nav = document.createElement("nav")
+  nav.classList.add(...['relative', 'z-0', 'inline-flex', 'rounded-md', 'shadow-sm', '-space-x-px'])
+
+  let paginationHTML = ""
+  paginationHTML += `<button ${currentPage === 1 && 'disabled'} class="${currentPage === 1 ? 'cursor-not-allowed' : 'prev'} d-none">Prev</button>`
+
+  pages.forEach(page => {
+    if (currentPage === page) {
+      paginationHTML += `<button class="button z-10" page="${page}" ${currentPage === page && 'disabled'}>${page}</button>`
+    } else {
+      paginationHTML += `<button class="page button" page="${page}">${page}</button>`
+    }
+  })
+
+  paginationHTML += `<button ${currentPage === endPage && 'disabled'} class="${currentPage === endPage ? 'cursor-not-allowed' : 'next'} d-none">Next</button>`
+
+  nav.innerHTML = paginationHTML
+  pagination.append(nav)
+
+  const start = (currentPage - 1) * pageSize, end = currentPage * pageSize;
+  items.slice(start, end).forEach(el => wrapper.append(el))
+}
+
+document.addEventListener('click', function (e) {
+  const $this = e.target
+  if ($this.classList.contains("page")) {
+    currPage = parseInt($this.getAttribute("page"))
+    setHTML(filteredItems)
+  }
+  if ($this.classList.contains("next")) {
+    currPage += 1;
+    setHTML(filteredItems)
+  }
+  if ($this.classList.contains("prev")) {
+    currPage -= 1;
+    setHTML(filteredItems)
+  }
+});
+
+// ⭐ Al cargar la página, leer parámetro "filter"
+const params = new URLSearchParams(window.location.search);
+const filterParam = params.get('filter') || 'all';
+applyFilter(filterParam);
+
+
   // End of document ready
 });
 
@@ -776,31 +904,7 @@ gsap.utils.toArray(".features-block").forEach(block => {
 if ($('.press-page').length) { 
   
   if (window.matchMedia('(min-width: 575px)').matches) {
-      const releaseItems = document.querySelectorAll('#press-releases .release:not(.is-first)');
 
-      releaseItems.forEach((release, index) => {
-        // Create a timeline for each release item
-        let riskCompliance = gsap.timeline({
-          scrollTrigger: {
-            trigger: release,
-            start: 'top bottom',
-            end: '50% 80%',
-            scrub: 0.5,
-            once: true, 
-          }
-        });
-      
-        // Prevent animation on mobile
-        let mediaQueryRiskCompliance = gsap.matchMedia();
-        mediaQueryRiskCompliance.add("(min-width: 991px)", () => {
-          riskCompliance.from(release, {
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0,
-          });
-        });
-      });
 
     }
 }

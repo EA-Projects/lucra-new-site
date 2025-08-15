@@ -166,6 +166,18 @@ a {
       }
     }
   }
+  &.underline{
+    padding: 0;
+    background-color: initial;
+    border: 0;
+    border-radius: 0;
+    min-width: auto;
+    border-bottom: 2px solid $black;
+    &:hover{
+      color: $new-darkblue;
+      border-color: $new-darkblue;
+    }
+  }
 }
 
 a {
