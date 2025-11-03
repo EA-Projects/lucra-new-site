@@ -24,7 +24,7 @@ h1,
 .all-h1{
     font-size: 50px;
     line-height: 120%;
-    letter-spacing: 0;
+    letter-spacing: -0.02em;
     font-weight: 500;
     color: $black;
     &.is-bigger{
@@ -43,7 +43,7 @@ h2,
 .all-h2{
     font-size: 40px;
     line-height: 120%;
-    letter-spacing: 0;
+    letter-spacing: -0.02em;
     font-weight: 500;
     color: $black;
     @media(max-width: 991px){
@@ -56,7 +56,7 @@ h3,
 .all-h3{
     font-size: 34px;
     line-height: 120%;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     font-weight: 500;
     color: $black;
     @media(max-width: 991px){
@@ -69,7 +69,7 @@ h4,
 .all-h4{
     font-size: 26px;
     line-height: 120%;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     font-weight: 500;
     color: $black;
     @media(max-width: 991px){
@@ -85,7 +85,7 @@ h5,
 .all-h5{
     font-size: 20px;
     line-height: 130%;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     font-weight: 500;
     color: $black;
     &.is-yellow{
@@ -104,7 +104,7 @@ h6,
 .all-h6{
     font-size: 16px;
     line-height: 130%;
-    letter-spacing: 0em;
+    letter-spacing: -0.01em;
     font-weight: 500;
     color: $black;
     &.is-yellow{

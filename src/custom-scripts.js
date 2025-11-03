@@ -488,7 +488,45 @@ $('.faq-heading').click(function () {
     .slideToggle();
 });
 
-// About Team Slider
+// About Team Sliders
+if ($('.wrapper-team-cards').length) {
+  const slickSettings = {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0',
+    focusOnSelect: false,
+    arrows: false,
+    autoplay: false,
+    pauseOnHover: true,
+    draggable: true,
+    infinite: false,
+    dots: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 575,
+        settings: "unslick"
+      }
+    ]
+  };
+
+  // Initialize all sliders that match the indicated classes
+  const sliderClasses = ['.is-leadership', '.is-team', '.is-investors', '.is-advisors'];
+
+  sliderClasses.forEach(cls => {
+    $(`.wrapper-team-cards${cls}`).slick(slickSettings);
+  });
+}
+
+// Refresh Slick sliders inside tabs when shown (only on mobile)
+if (window.matchMedia('(max-width: 575px)').matches) {
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    var target = $(e.target).attr('href');
+    $(target).find('.wrapper-team-cards').slick('refresh'); // a veces ayuda más que setPosition
+  });
+}
+
 if ($('.slider-team').length) {
   $('.slider-team').slick({
     slidesToShow: 1,

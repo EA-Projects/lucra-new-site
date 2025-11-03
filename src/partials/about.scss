@@ -572,3 +572,282 @@
         background-size: cover;
     }
 }
+
+#product-hero{
+    &.is-about{
+        min-height: 810px;
+    }
+}
+
+#our-vision{
+    background-color: $light;
+    padding: 70px 0;
+    h5{
+        color: #808080;
+        margin-bottom: 30px;
+    }
+    h2{
+        margin-bottom: 0;
+    }
+    img{
+        max-width: 522px;
+    }
+    @media (max-width: 767px){
+        img{
+            display: block;
+            margin: 0 auto;
+            max-width: 400px;
+        }
+    }
+    @media (max-width: 575px){
+        padding: 60px 0;
+        img{
+            margin-top: 30px;
+            max-width: 250px;
+        }
+    }
+}
+
+#our-mission{
+    background-color: $black;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    .sides{
+        width: 100%;
+        max-width: 50%;
+        &.left-side{
+            text-align: right;
+            img{
+                max-width: 720px;
+            }
+        }
+        &.right-side{
+            padding: 80px;
+            background-color: $yellow;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            > * {
+                max-width: 560px;
+            }
+            h5{
+                margin-bottom: 30px;
+            }
+            h2{
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        flex-wrap: wrap;
+        .sides{
+            max-width: 100%;
+        }
+    }
+    @media (max-width: 575px){
+        .sides{
+            &.right-side{
+                padding: 40px;
+            }
+        }
+    }
+}
+
+#our-team{
+    padding: 100px 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #E7F0F8 50%);
+    .nav{
+        border: 0;
+        margin-bottom: 30px;
+        .nav-item{
+            font-size: 40px;
+            padding: 0;
+            border: 0;
+            margin-right: 25px;
+            color: #101010;
+            opacity: 50%;
+            background-color: inherit;
+            &.active,
+            &:hover{
+                opacity: 100%;
+            }
+        }
+    }
+    .tab-content{
+        .tab-pane{
+            .wrapper-team-cards{
+                display: flex;
+                align-items: stretch;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .inner-team-card{
+        max-width: 280px;
+        border-radius: 24px;
+        overflow: hidden;
+        .team-data{
+            height: 100%;
+            background-color: $black;
+            padding: 25px 30px;
+            h4{
+                color: $light;
+                margin-bottom: 8px;
+            }
+            p{
+                font-weight: 400;
+                color: $yellow;
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media (max-width: 991px){
+        .nav{
+            .nav-item{
+                font-size: 24px;
+                margin-right: 15px;
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                .wrapper-team-cards{
+                    gap: 15px;
+                }
+            }
+        }
+        .inner-team-card{
+            max-width: 220px;
+            .team-data{
+                padding: 20px 15px;
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .inner-team-card{
+            width: 100%;
+            max-width: calc(50% - 8px);
+        }
+    }
+    @media (max-width: 575px){
+        padding: 60px 0;
+        .nav{
+            gap: 10px 0;
+            .nav-item{
+                font-size: 24px;
+                width: 50%;
+                text-align: center;
+                margin-right: 0;
+            }
+        }
+        .inner-team-card{
+            margin: 0 5px;
+            border-radius: 12px;
+        }
+        .slick-dots{
+            margin-top: 30px;
+            position: static;
+            line-height: 0;
+            li{
+                width: auto;
+                height: auto;
+                margin: 2px; 
+                transition: all .2s ease-in-out;
+                button{
+                    width: 5px;
+                    height: 5px;
+                    padding: 0;
+                    border-radius: 50px;
+                    background: $black;
+                    opacity: .3;
+                    transition: all .2s ease-in-out;
+                    &::before{
+                        display: none;
+                    }
+                }
+                &.slick-active{
+                    button{
+                        width: 20px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#positions{
+    padding: 80px 0 100px;
+    background-color: $light;
+    h2:first-of-type{
+        margin-bottom: 40px;
+    }
+    .career-card{
+        display: block;
+        background: linear-gradient(-45deg,#BCCAD7 0%,#EAEFF3 33%,#D4DEE5 66%,#BCCAD7 100%),rgba(255,255,255,0.2);
+        border-radius: 24px;
+        padding: 35px 35px 35px;
+        h3{
+            min-height: 200px;
+        }
+        .inner-link{
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            color: $black;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+            position: relative;
+            svg{
+                position: relative;
+                z-index: 1;
+            }
+            .circle{
+                position: absolute;
+                right: -10px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background-color: $yellow;
+                transform: scale(0);
+                transition: transform .2s ease-in-out;
+            }
+        }
+        &:hover{
+            text-decoration: none;
+            .inner-link{
+                .circle{
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    @media (max-width: 767px){
+        .career-card{
+            h3{
+                min-height: 90px;
+            }
+            a{
+                font-size: 16px;
+                svg{
+                    max-width: 50px;
+                }
+                .circle{
+                    right: -10px;
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+        }
+    }
+    @media (max-width: 575px){
+        padding: 50px 0 60px;
+        .career-card{
+            border-radius: 12px;
+            padding: 30px 25px 20px;
+        }
+    }
+}
