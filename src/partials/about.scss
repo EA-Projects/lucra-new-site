@@ -771,6 +771,11 @@
         .inner-team-card{
             margin: 0 5px;
             border-radius: 12px;
+            .team-data{
+                &.is-advisors{
+                    min-height: 114px;
+                }
+            }
         }
         .slick-dots{
             margin-top: 30px;
