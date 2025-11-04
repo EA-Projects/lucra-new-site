@@ -575,7 +575,33 @@
 
 #product-hero{
     &.is-about{
-        min-height: 810px;
+        padding: 0;
+        min-height: auto;
+        video{
+            position: static;
+            width: 100%;
+            height: auto;
+            &.is-desktop{
+                display: block;
+            }
+            &.is-mobile{
+                display: none;
+            }
+        }
+        @media(max-width: 767px){
+            padding-top: 50px;
+            padding-bottom: 0;
+        }
+        @media(max-width: 575px){
+            video{
+                &.is-desktop{
+                    display: none;
+                }
+                &.is-mobile{
+                    display: block;
+                }
+            }
+        }
     }
 }
 
@@ -589,19 +615,19 @@
     h2{
         margin-bottom: 0;
     }
-    img{
+    video{
         max-width: 522px;
+        display: block;
+        margin: 0 auto;
     }
     @media (max-width: 767px){
-        img{
-            display: block;
-            margin: 0 auto;
+        video{
             max-width: 400px;
         }
     }
     @media (max-width: 575px){
         padding: 60px 0;
-        img{
+        video{
             margin-top: 30px;
             max-width: 250px;
         }
