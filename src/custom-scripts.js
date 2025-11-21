@@ -838,6 +838,44 @@ if ($('.home-new-page').length) {
 if ($('.tab-pane').length) {  
   let tabTexts = $('.tab-text');
   let currentIndex = 0;
+  let animatedTabs = new Set(); // Track which tabs have been animated
+
+  // Animate stat values for initially active tab on scroll
+  const initialTab = $('.tab-pane.active');
+  if (initialTab.length) {
+    const initialTabId = initialTab.attr('id');
+    
+    ScrollTrigger.create({
+      trigger: initialTab[0],
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        animatedTabs.add(initialTabId);
+        
+        const statValues = initialTab.find('#stat-value');
+        if (statValues.length) {
+          statValues.each(function() {
+            const statElement = this;
+            const finalValue = parseInt(statElement.innerText.replace(/\D/g, ''));
+            const startValue = parseInt($(statElement).data('start-animation')) || 0;
+            
+            gsap.fromTo(statElement, 
+              { innerText: startValue }, 
+              { 
+                innerText: finalValue, 
+                duration: 3, 
+                ease: 'power2.out',
+                snap: { innerText: 1 },
+                onUpdate: function() {
+                  statElement.innerText = Math.floor(this.targets()[0].innerText).toLocaleString();
+                }
+              }
+            );
+          });
+        }
+      }
+    });
+  }
 
   function showTab(index) {
     const target = tabTexts.eq(index).data('tab');
@@ -875,6 +913,35 @@ if ($('.tab-pane').length) {
               opacity: 1,
               y: 0,
               onComplete() {
+                // Animate stat values only on first time (at start of image animation)
+                const tabId = nextTab.attr('id');
+                if (!animatedTabs.has(tabId)) {
+                  animatedTabs.add(tabId);
+                  
+                  const statValues = nextTab.find('#stat-value');
+                  if (statValues.length) {
+                    statValues.each(function() {
+                      const statElement = this;
+                      const finalValue = parseInt(statElement.innerText.replace(/\D/g, ''));
+                      const startValue = parseInt($(statElement).data('start-animation')) || 0;
+                      
+                      gsap.fromTo(statElement, 
+                        { innerText: startValue }, 
+                        { 
+                          innerText: finalValue, 
+                          duration: 3, 
+                          ease: 'power2.out',
+                          snap: { innerText: 1 },
+                          onUpdate: function() {
+                            statElement.innerText = Math.floor(this.targets()[0].innerText).toLocaleString();
+                          }
+                        }
+                      );
+                    });
+                  }
+                }
+
+                // Animate images
                 gsap.fromTo(
                   nextTab.find('.inner-tab-content img'),
                   { opacity: 0, y: -20 },
@@ -898,8 +965,7 @@ if ($('.tab-pane').length) {
     currentIndex = tabTexts.index(this);
     showTab(currentIndex);
   });
-};
-
+}
 // Features Block section animation on Product pages
 gsap.registerPlugin(ScrollTrigger);
 
