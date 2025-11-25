@@ -834,6 +834,7 @@ if ($('.home-new-page').length) {
 }
 
 
+
 // Global Products Tabs
 if ($('.tab-pane').length) {  
   let tabTexts = $('.tab-text');
@@ -856,8 +857,8 @@ if ($('.tab-pane').length) {
         if (statValues.length) {
           statValues.each(function() {
             const statElement = this;
-            const finalValue = parseInt(statElement.innerText.replace(/\D/g, ''));
-            const startValue = parseInt($(statElement).data('start-animation')) || 0;
+            const startValue = parseInt(statElement.innerText.replace(/\D/g, ''));
+            const finalValue = parseInt($(statElement).data('final-animation')) || startValue;
             
             gsap.fromTo(statElement, 
               { innerText: startValue }, 
@@ -922,8 +923,8 @@ if ($('.tab-pane').length) {
                   if (statValues.length) {
                     statValues.each(function() {
                       const statElement = this;
-                      const finalValue = parseInt(statElement.innerText.replace(/\D/g, ''));
-                      const startValue = parseInt($(statElement).data('start-animation')) || 0;
+                      const startValue = parseInt(statElement.innerText.replace(/\D/g, ''));
+                      const finalValue = parseInt($(statElement).data('final-animation')) || startValue;
                       
                       gsap.fromTo(statElement, 
                         { innerText: startValue }, 
@@ -940,7 +941,7 @@ if ($('.tab-pane').length) {
                     });
                   }
                 }
-
+ 
                 // Animate images
                 gsap.fromTo(
                   nextTab.find('.inner-tab-content img'),
@@ -966,6 +967,7 @@ if ($('.tab-pane').length) {
     showTab(currentIndex);
   });
 }
+
 // Features Block section animation on Product pages
 gsap.registerPlugin(ScrollTrigger);
 
