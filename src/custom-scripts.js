@@ -279,7 +279,7 @@ document.addEventListener('click', function (e) {
   }
 });
 
-// ⭐ Al cargar la página, leer parámetro "filter"
+// Al cargar la página, leer parámetro "filter"
 const params = new URLSearchParams(window.location.search);
 const filterParam = params.get('filter') || 'all';
 applyFilter(filterParam);

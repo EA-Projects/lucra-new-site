@@ -14,6 +14,8 @@ $(document).ready(function () {
     .then(res => res.text())
     .then(html => {
       document.getElementById('footer').innerHTML = html;
+      var year = new Date().getFullYear();
+      $('.current-year').text(year);
     });
 
   function initNavigationEvents() {
