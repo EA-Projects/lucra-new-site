@@ -21,6 +21,21 @@ $(document).ready(function () {
     }
   }
 
+    var $videos = $('.about-video');
+    var $volumeBtn = $('.volume-control');
+    var isMuted = true;
+
+    $volumeBtn.on('click', function () {
+      isMuted = !isMuted;
+
+      $videos.each(function () {
+        this.muted = isMuted;
+        this.volume = 1; // volumen máximo
+      });
+
+      $volumeBtn.toggleClass('is-on', !isMuted);
+    });
+
   // Password page trigger
   $("#password-page form").submit(function(e){
     e.preventDefault();
