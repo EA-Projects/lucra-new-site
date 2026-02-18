@@ -48,6 +48,9 @@
         h5{
             text-align: left;
             color: $black;
+            @media (min-width: 767px) and (max-width: 991px) {
+                min-height: 2lh;
+            }
         }
         p{
             margin: 0;
