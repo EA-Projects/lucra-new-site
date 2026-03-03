@@ -47,9 +47,9 @@
             .logo-image {
                 // margin-top: 30px;
                 // margin-bottom: 40px;
-                filter: invert(1);
                 img {
                     // max-height: 25px;
+                    filter: invert(1);
                     max-width: 110px;
                     width: auto;
                     &.bloomberg{
@@ -85,6 +85,13 @@
                     }
                     &.sbj{
                         max-width: 90px;
+                    }
+                    &.forbes{
+                        max-width: 70px;
+                    }
+                    &.ap{
+                        filter: grayscale(1);
+                        max-width: 25px;
                     }
                 }
                 &.mb-0 {
