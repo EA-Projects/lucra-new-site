@@ -266,9 +266,12 @@ a {
           li {
             font-size: 15px;
             line-height: 150%;
-            margin: 14px 0;
+            margin: 18px 0 14px;
             position: relative;
             color: #263037;
+            p:first-of-type {
+              margin-top: 12px;
+            }
             ul,ol{
               margin-bottom: 30px;
               ul,ol{
@@ -276,9 +279,9 @@ a {
               }
             }
             &::marker {
-              font-size: 12px;
+              font-size: 15px;
               color: #263037;
-              font-weight: 600;
+              font-weight: 700;
             }
           }
           &.no-numbers{
