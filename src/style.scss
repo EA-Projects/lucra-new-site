@@ -9,6 +9,8 @@ $orange: #fa4919;
 $new-darkblue: #001b60;
 $darkblue: #001035;
 $yellow: #9BFF92;
+$yellow-dark: #FFB900;
+$green: #FFB364;
 $lightblue: #E7F0F8;
 $middle-blue: #A68EFF;
 
@@ -26,6 +28,7 @@ $middle-blue: #A68EFF;
 @import './partials/press.scss';
 @import './partials/products.scss';
 @import './partials/categories.scss';
+@import './partials/arcade.scss';
 @import './partials/globals.scss';
 
 /*** RESET & BUTTONS ***/ 

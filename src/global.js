@@ -1,22 +1,26 @@
 $(document).ready(function () {
   // Load navigation and then initialize events
-  fetch('/utils/navigation.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navigation').innerHTML = html;
-      
-      // Trigger navigation events
-      initNavigationEvents();
-    });
+  if ($('#navigation').length) {
+    fetch('/utils/navigation.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('navigation').innerHTML = html;
+        
+        // Trigger navigation events
+        initNavigationEvents();
+      });
+  }
 
   // Load footer
-  fetch('/utils/footer.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('footer').innerHTML = html;
-      var year = new Date().getFullYear();
-      $('.current-year').text(year);
-    });
+  if ($('#footer').length) {
+    fetch('/utils/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+        var year = new Date().getFullYear();
+        $('.current-year').text(year);
+      });
+  }
 
   function initNavigationEvents() {
     const $navigation = $('#navigation');

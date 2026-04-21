@@ -1,4 +1,39 @@
 $(document).ready(function () {
+
+  // Global Animations
+  // Animations on fade in
+  let animatedElements = new Set(); // Para evitar reanimaciones
+
+  let observer = new IntersectionObserver((entries) => {
+      // Filtrar los elementos que están entrando en vista y no han sido animados aún
+      const toAnimate = entries
+          .filter(entry => entry.isIntersecting && !animatedElements.has(entry.target))
+          .map(entry => entry.target);
+
+      if (toAnimate.length > 0) {
+          gsap.to(toAnimate, {
+              opacity: 1,
+              y: 0,
+              stagger: 0.15,
+              ease: "power2.out",
+              duration: 0.5,
+              delay: 0.3
+          });
+
+          // Marcar los elementos como animados y dejar de observarlos
+          toAnimate.forEach(el => {
+              animatedElements.add(el);
+              observer.unobserve(el);
+          });
+      }
+  }, {
+      threshold: 0.3
+  });
+
+  document.querySelectorAll("[data-fade]").forEach((el) => {
+      observer.observe(el);
+  });
+
   // Team Cards
   $(".team-card").on("click", function() {
     $(this).toggleClass("active");
@@ -323,6 +358,17 @@ $(window).scroll(function () {
           return false;
       }
   });
+});
+
+// Fix navbar when scroll [ARCADE]
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    if (scroll >= 1) {
+        $('#arcade-navigation').addClass('scrolled');
+    } 
+    else {
+        $('#arcade-navigation').removeClass('scrolled');
+    }
 });
 
 window.addEventListener('load', function () {
