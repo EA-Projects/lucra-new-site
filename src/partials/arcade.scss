@@ -356,6 +356,7 @@
         // Rewards Arcade
         #rewards-arcade{
             text-align: center;
+            padding-bottom: 0;
             .top-area{
                 max-width: 900px;
                 margin: 0 auto 30px;
@@ -371,7 +372,7 @@
                 }
             }
             @media(max-width: 767px){
-                padding-bottom: 0;
+                padding-bottom: 50px;
                 .wrapper-image{
                     img{
                         margin: -130px auto 0;
@@ -388,6 +389,7 @@
         }
         //Brands Arcade
         #brands-arcade{
+            padding-top: 0;
             text-align: center;
             .top-area{
                 max-width: 900px;
