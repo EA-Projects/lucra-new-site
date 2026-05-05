@@ -208,6 +208,46 @@
             .wrapper-feature{
                 text-align: center;
                 position: relative;
+                &.is-videos{
+                    min-height: 300px;
+                }
+                .video-card{
+                    padding: 16px;
+                    border-radius: 32px;
+                    border: 1px solid rgba(255, 255, 255, 0.50);
+                    max-width: 260px;
+                    line-height: 0;
+                    background-color: rgba(0, 0, 0, 0.50);
+                    position: absolute;
+                    backdrop-filter: blur(10px);
+                    .wrapper-video{
+                        min-height: 280px;
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 24px;
+                        margin-bottom: 16px;
+                        border: 1px solid rgba(255, 255, 255, 0.15);
+                    }
+                    video{
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                    &.is-1{
+                        top: 20%;
+                        left: 0;
+                    }
+                    &.is-2{
+                        top: -5%;
+                        left: 32%;
+                    }
+                    &.is-3{
+                        top: 40%;
+                        right: 0;
+                    }
+                }
                 .inner-feature{
                     max-width: 260px;
                 }
@@ -233,24 +273,38 @@
                         &.is-1{
                             max-width: 103px;
                             top: -10%;
-                            right: -5%;
+                            left: -4%;
                         }
                         &.is-2{
                             max-width: 81px;
-                            top: 12%;
-                            left: -10%;
+                            top: -5%;
+                            right: -10%;
                             animation-duration: 3s;
                         }
                         &.is-3{
                             max-width: 89px;
-                            bottom: -12%;
-                            right: -12%;
+                            bottom: -16%;
+                            left: 0%;
                         }
                     }
                 }
             }
             @media(max-width: 991px){
                 .wrapper-feature{
+                    &.is-videos{
+                        min-height: 55vh;
+                    }
+                    .video-card{
+                        &.is-1{
+                            top: 0%;
+                        }
+                        &.is-2{
+                            top: 0%;
+                        }
+                        &.is-3{
+                            top: 0%;
+                        }
+                    }
                     &.is-middle{
                         margin: 40px auto;
                     }
@@ -258,11 +312,41 @@
             }
             @media(max-width: 767px){
                 overflow: hidden;
+                .wrapper-feature{
+                    &.is-videos{
+                        min-height: 40vh;
+                    }
+                    .video-card{
+                        max-width: 200px;
+                        padding: 15px;
+                        border-radius: 24px;
+                        .wrapper-video{
+                            min-height: 200px;
+                            margin-bottom: 15px;
+                            border-radius: 12px;
+                        }
+                    }
+                }
             }
             @media(max-width: 575px){
                 .wrapper-feature{
                     .inner-feature{
                         max-width: 200px;
+                    }
+                    &.is-videos{
+                        min-height: 30vh;
+                    }
+                    .video-card{
+                        max-width: 150px;
+                        padding: 12px;
+                        .wrapper-video{
+                            min-height: 150px;
+                            margin-bottom: 12px;
+                        }
+                        &.is-2{
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
                     }
                     &.is-middle{
                         .bubble{
@@ -278,18 +362,16 @@
                             }
                             &.is-1{
                                 max-width: 65px;
-                                top: -12%;
-                                right: 2%;
+                                left: 0%;   
                             }
                             &.is-2{
                                 max-width: 50px;
-                                top: 20%;
-                                left: -2%;
+                                top: 15%;
+                                right: 0%;
                             }
                             &.is-3{
                                 max-width: 55px;
-                                bottom: -20%;
-                                right: 3%;
+                                left: 4%;
                             }
                         }
                     }
