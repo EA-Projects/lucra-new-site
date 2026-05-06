@@ -371,6 +371,18 @@ $(window).scroll(function () {
     }
 });
 
+$('#features-arcade .wrapper-steps a').on('click', function (e) {
+  e.preventDefault();
+
+  const videoType = $(this).data('video');
+
+  $('#features-arcade .wrapper-steps a').removeClass('is-active');
+  $(this).addClass('is-active');
+
+  $('#features-arcade .video-card').removeClass('is-active');
+  $('#features-arcade .video-card[data-video="' + videoType + '"]').addClass('is-active');
+});
+
 window.addEventListener('load', function () {
   (function ($) {
   })(jQuery);
