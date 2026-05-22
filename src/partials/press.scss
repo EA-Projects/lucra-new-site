@@ -97,6 +97,10 @@
                         filter: grayscale(1);
                         max-width: 25px;
                     }
+                    &.fortune{
+                        filter: grayscale(1);
+                        max-width: 70px;
+                    }
                 }
                 &.mb-0 {
                     margin-bottom: 0;
